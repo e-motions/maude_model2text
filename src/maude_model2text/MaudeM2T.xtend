@@ -28,6 +28,8 @@ import Maude.SModule
 import Maude.ModImportation
 import Maude.ImportationMode
 import Maude.ModuleIdModExp
+import Maude.Module
+import Maude.Sort
 
 class MaudeM2T {
     
@@ -95,17 +97,18 @@ class MaudeM2T {
     «FOR smod:mspec.els.filter(typeof(SModule))»
     mod «smod.name» is
       «generateImportations(smod)»
+      «generateSortDeclarations(smod)»
     endm
     «ENDFOR»
     '''
     
     /**
-     * Given a System module, it generates all importations.
+     * Given a Maude module, it generates all importations.
      * @params
-     *  smod    the system module with none or more ModImportation objects
+     *  mod    the Module with none or more ModImportation objects
      */
-    def generateImportations(SModule smod) '''
-    «FOR imp:smod.els.filter(typeof(ModImportation))»
+    def generateImportations(Module mod) '''
+    «FOR imp:mod.els.filter(typeof(ModImportation))»
     «IF imp.mode == ImportationMode.PROTECTING && imp.imports instanceof ModuleIdModExp»
     pr «(imp.imports as ModuleIdModExp).module.name» .
     «ELSEIF imp.mode == ImportationMode.INCLUDING && imp.imports instanceof ModuleIdModExp»
@@ -113,6 +116,17 @@ class MaudeM2T {
     «ELSEIF imp.mode == ImportationMode.EXTENDING && imp.imports instanceof ModuleIdModExp»
     ext «(imp.imports as ModuleIdModExp).module.name» .
     «ENDIF»
+    «ENDFOR»
+    '''
+    
+    /**
+     * Given a Maude module, it generates all sort declarations.
+     * @params
+     *  mod    the Module with none or more sort objects
+     */
+    def generateSortDeclarations(Module mod) '''
+    «FOR sort:mod.els.filter(typeof(Sort))»
+    sort «sort.name» .
     «ENDFOR»
     '''
 

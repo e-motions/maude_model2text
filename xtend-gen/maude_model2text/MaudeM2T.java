@@ -26,6 +26,7 @@ import Maude.ModImportation;
 import Maude.Module;
 import Maude.ModuleIdModExp;
 import Maude.SModule;
+import Maude.Sort;
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import java.io.PrintWriter;
@@ -129,6 +130,10 @@ public class MaudeM2T {
         CharSequence _generateImportations = this.generateImportations(smod);
         _builder.append(_generateImportations, "  ");
         _builder.newLineIfNotEmpty();
+        _builder.append("  ");
+        CharSequence _generateSortDeclarations = this.generateSortDeclarations(smod);
+        _builder.append(_generateSortDeclarations, "  ");
+        _builder.newLineIfNotEmpty();
         _builder.append("endm");
         _builder.newLine();
       }
@@ -137,14 +142,14 @@ public class MaudeM2T {
   }
   
   /**
-   * Given a System module, it generates all importations.
+   * Given a Maude module, it generates all importations.
    * @params
-   *  smod    the system module with none or more ModImportation objects
+   *  mod    the Module with none or more ModImportation objects
    */
-  public CharSequence generateImportations(final SModule smod) {
+  public CharSequence generateImportations(final Module mod) {
     StringConcatenation _builder = new StringConcatenation();
     {
-      EList<ModElement> _els = smod.getEls();
+      EList<ModElement> _els = mod.getEls();
       Iterable<ModImportation> _filter = Iterables.<ModImportation>filter(_els, ModImportation.class);
       for(final ModImportation imp : _filter) {
         {
@@ -205,6 +210,27 @@ public class MaudeM2T {
             }
           }
         }
+      }
+    }
+    return _builder;
+  }
+  
+  /**
+   * Given a Maude module, it generates all sort declarations.
+   * @params
+   *  mod    the Module with none or more sort objects
+   */
+  public CharSequence generateSortDeclarations(final Module mod) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      EList<ModElement> _els = mod.getEls();
+      Iterable<Sort> _filter = Iterables.<Sort>filter(_els, Sort.class);
+      for(final Sort sort : _filter) {
+        _builder.append("sort ");
+        String _name = sort.getName();
+        _builder.append(_name, "");
+        _builder.append(" .");
+        _builder.newLineIfNotEmpty();
       }
     }
     return _builder;

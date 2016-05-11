@@ -24,7 +24,8 @@ import org.junit.runners.Suite.SuiteClasses;
 @SuiteClasses({ 
 	TestMaudeM2TMaudeSpec.class,
 	TestMaudeM2TModules.class,
-	TestMaudeM2TImportations.class})
+	TestMaudeM2TImportations.class,
+	TestMaudeM2TSorts.class})
 public class AllTests {
 
 }
