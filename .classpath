@@ -3,10 +3,12 @@
 	<classpathentry kind="con" path="org.eclipse.xtend.XTEND_CONTAINER"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="xtend-gen"/>
+	<classpathentry kind="src" path="test"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/org.eclipse.emf.common_2.12.0.v20160429-1001.jar"/>
 	<classpathentry kind="lib" path="lib/org.eclipse.emf.ecore_2.12.0.v20160429-1001.jar"/>
 	<classpathentry kind="lib" path="lib/org.eclipse.emf.ecore.xmi_2.12.0.v20160429-1001.jar"/>
 	<classpathentry kind="lib" path="lib/es.uma.lcc.maude_mm_1.0.0.201409131129.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

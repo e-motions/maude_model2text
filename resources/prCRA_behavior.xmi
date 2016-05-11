@@ -1,0 +1,1064 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Maude="http://MaudeMM/1.0">
+  <Maude:MaudeSpec printableEls="/0/@els.0">
+    <els xsi:type="Maude:SModule" name="@ARCHITECTURECRA@BEHAVIOR@">
+      <els xsi:type="Maude:ModImportation">
+        <imports xsi:type="Maude:ModuleIdModExp" module="/2"/>
+      </els>
+      <els xsi:type="Maude:ModImportation">
+        <imports xsi:type="Maude:ModuleIdModExp" module="/1"/>
+      </els>
+      <els xsi:type="Maude:Operation" name="classes@OCLSf" coarity="/2/@els.19"/>
+      <els xsi:type="Maude:Equation">
+        <lhs xsi:type="Maude:RecTerm" type="/2/@els.24" op="name">
+          <args xsi:type="Maude:Constant" type="/2/@els.4" op="classes@OCLSf"/>
+        </lhs>
+        <rhs xsi:type="Maude:Constant" type="/2/@els.24" op="&quot;classes&quot;"/>
+      </els>
+      <els xsi:type="Maude:Operation" name="features@OCLSf" coarity="/2/@els.19"/>
+      <els xsi:type="Maude:Equation">
+        <lhs xsi:type="Maude:RecTerm" type="/2/@els.24" op="name">
+          <args xsi:type="Maude:Constant" type="/2/@els.4" op="features@OCLSf"/>
+        </lhs>
+        <rhs xsi:type="Maude:Constant" type="/2/@els.24" op="&quot;features&quot;"/>
+      </els>
+      <els xsi:type="Maude:Operation" name="encapsulates@OCLSf" coarity="/2/@els.19"/>
+      <els xsi:type="Maude:Equation">
+        <lhs xsi:type="Maude:RecTerm" type="/2/@els.24" op="name">
+          <args xsi:type="Maude:Constant" type="/2/@els.4" op="encapsulates@OCLSf"/>
+        </lhs>
+        <rhs xsi:type="Maude:Constant" type="/2/@els.24" op="&quot;encapsulates&quot;"/>
+      </els>
+      <els xsi:type="Maude:Operation" name="dataDependency@OCLSf" coarity="/2/@els.19"/>
+      <els xsi:type="Maude:Equation">
+        <lhs xsi:type="Maude:RecTerm" type="/2/@els.24" op="name">
+          <args xsi:type="Maude:Constant" type="/2/@els.4" op="dataDependency@OCLSf"/>
+        </lhs>
+        <rhs xsi:type="Maude:Constant" type="/2/@els.24" op="&quot;dataDependency&quot;"/>
+      </els>
+      <els xsi:type="Maude:Operation" name="functionalDependency@OCLSf" coarity="/2/@els.19"/>
+      <els xsi:type="Maude:Equation">
+        <lhs xsi:type="Maude:RecTerm" type="/2/@els.24" op="name">
+          <args xsi:type="Maude:Constant" type="/2/@els.4" op="functionalDependency@OCLSf"/>
+        </lhs>
+        <rhs xsi:type="Maude:Constant" type="/2/@els.24" op="&quot;functionalDependency&quot;"/>
+      </els>
+      <els xsi:type="Maude:Operation" name="isEncapsulatedBy@OCLSf" coarity="/2/@els.19"/>
+      <els xsi:type="Maude:Equation">
+        <lhs xsi:type="Maude:RecTerm" type="/2/@els.24" op="name">
+          <args xsi:type="Maude:Constant" type="/2/@els.4" op="isEncapsulatedBy@OCLSf"/>
+        </lhs>
+        <rhs xsi:type="Maude:Constant" type="/2/@els.24" op="&quot;isEncapsulatedBy&quot;"/>
+      </els>
+      <els xsi:type="Maude:Operation" name="name@OCLSf" coarity="/2/@els.19"/>
+      <els xsi:type="Maude:Equation">
+        <lhs xsi:type="Maude:RecTerm" type="/2/@els.24" op="name">
+          <args xsi:type="Maude:Constant" type="/2/@els.3" op="name@OCLSf"/>
+        </lhs>
+        <rhs xsi:type="Maude:Constant" type="/2/@els.24" op="&quot;name&quot;"/>
+      </els>
+      <els xsi:type="Maude:ModImportation">
+        <imports xsi:type="Maude:ModuleIdModExp" module="/5"/>
+      </els>
+      <els xsi:type="Maude:Equation">
+        <lhs xsi:type="Maude:Constant" type="/2/@els.0" op="rulesInformation"/>
+        <rhs xsi:type="Maude:RecTerm" type="/2/@els.0" op="_`{_`}">
+          <args xsi:type="Maude:Constant" type="/2/@els.0" op="@MGBehavior@"/>
+          <args xsi:type="Maude:RecTerm" type="/2/@els.18" op="__">
+            <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+              <args xsi:type="Maude:Constant" op="oid('Rule0)"/>
+              <args xsi:type="Maude:Constant" type="/2/@els.37" op="AtomicRule@MGBehavior"/>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.21" op="_#_">
+                <args xsi:type="Maude:RecTerm" type="/2/@els.6" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="name@Rule@MGBehavior"/>
+                  <args xsi:type="Maude:Constant" type="/2/@els.40" op="&quot;createClass&quot;"/>
+                </args>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.6" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="lowerBound@Rule@MGBehavior"/>
+                  <args xsi:type="Maude:Constant" type="/2/@els.40" op="null"/>
+                </args>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.6" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="upperBound@Rule@MGBehavior"/>
+                  <args xsi:type="Maude:Constant" type="/2/@els.40" op="null"/>
+                </args>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.6" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="soft@Rule@MGBehavior"/>
+                  <args xsi:type="Maude:Constant" type="/2/@els.40" op="false"/>
+                </args>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.6" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="periodicity@AtomicRule@MGBehavior"/>
+                  <args xsi:type="Maude:Constant" type="/2/@els.40" op="null"/>
+                </args>
+              </args>
+            </args>
+            <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+              <args xsi:type="Maude:Constant" op="oid('Rule0)"/>
+              <args xsi:type="Maude:Constant" type="/2/@els.37" op="AtomicRule@MGBehavior"/>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.21" op="_#_">
+                <args xsi:type="Maude:RecTerm" type="/2/@els.6" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="name@Rule@MGBehavior"/>
+                  <args xsi:type="Maude:Constant" type="/2/@els.40" op="&quot;assignFeature&quot;"/>
+                </args>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.6" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="lowerBound@Rule@MGBehavior"/>
+                  <args xsi:type="Maude:Constant" type="/2/@els.40" op="null"/>
+                </args>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.6" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="upperBound@Rule@MGBehavior"/>
+                  <args xsi:type="Maude:Constant" type="/2/@els.40" op="null"/>
+                </args>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.6" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="soft@Rule@MGBehavior"/>
+                  <args xsi:type="Maude:Constant" type="/2/@els.40" op="false"/>
+                </args>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.6" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="periodicity@AtomicRule@MGBehavior"/>
+                  <args xsi:type="Maude:Constant" type="/2/@els.40" op="null"/>
+                </args>
+              </args>
+            </args>
+          </args>
+        </rhs>
+      </els>
+      <els xsi:type="Maude:Rule" label="createClass@Instantaneous">
+        <conds xsi:type="Maude:MatchingCond">
+          <lhs xsi:type="Maude:Variable" type="/2/@els.12" name="ACTEXEC@"/>
+          <rhs xsi:type="Maude:RecTerm" type="/2/@els.12" op="newId">
+            <args xsi:type="Maude:Variable" type="/2/@els.25" name="VALUE@ids@"/>
+          </rhs>
+        </conds>
+        <conds xsi:type="Maude:MatchingCond">
+          <lhs xsi:type="Maude:Variable" type="/2/@els.0" name="MODEL@"/>
+          <rhs xsi:type="Maude:RecTerm" type="/2/@els.0" op="_`{_`}">
+            <args xsi:type="Maude:Variable" type="/2/@els.1" name="MM@"/>
+            <args xsi:type="Maude:RecTerm" type="/2/@els.18" op="__">
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Variable" type="/2/@els.40" name="cm"/>
+                <args xsi:type="Maude:Variable" type="/2/@els.69" name="CLASSMODEL@ARCHITECTURECRA@cm@CLASS"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.21" op="_#_">
+                  <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                    <args xsi:type="Maude:Constant" type="/2/@els.4" op="classes@ClassModel@architectureCRA"/>
+                    <args xsi:type="Maude:Variable" type="/2/@els.40" name="CLASSES@cm@ATT"/>
+                  </args>
+                  <args xsi:type="Maude:Variable" type="/2/@els.21" name="cm@SFS"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Variable" type="/2/@els.12" name="CLK@"/>
+                <args xsi:type="Maude:Constant" type="/2/@els.33" op="Clock@MGBehavior"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="time@Clock@MGBehavior"/>
+                  <args xsi:type="Maude:Variable" type="/2/@els.44" name="TIME@CLK@"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Constant" type="/2/@els.12" op="oid('ids@)"/>
+                <args xsi:type="Maude:Constant" type="/2/@els.32" op="Counter@MGBehavior"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="value@Counter@MGBehavior"/>
+                  <args xsi:type="Maude:Variable" type="/2/@els.25" name="VALUE@ids@"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Constant" type="/2/@els.12" op="oid('rdm@)"/>
+                <args xsi:type="Maude:Constant" type="/2/@els.32" op="Counter@MGBehavior"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="value@Counter@MGBehavior"/>
+                  <args xsi:type="Maude:Variable" type="/2/@els.25" name="VALUE@rdm@"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:Variable" type="/2/@els.18" name="OBJSET@"/>
+            </args>
+          </rhs>
+        </conds>
+        <conds xsi:type="Maude:MatchingCond">
+          <lhs xsi:type="Maude:Variable" type="/2/@els.40" name="T"/>
+          <rhs xsi:type="Maude:RecTerm" type="/2/@els.41" op="eval">
+            <args xsi:type="Maude:Constant" type="/2/@els.25" op="0"/>
+            <args xsi:type="Maude:RecTerm" type="/2/@els.50" op="env">
+              <args xsi:type="Maude:Constant" type="/2/@els.52" op="empty"/>
+            </args>
+            <args xsi:type="Maude:Variable" type="/2/@els.0" name="MODEL@"/>
+          </rhs>
+        </conds>
+        <conds xsi:type="Maude:MatchingCond">
+          <lhs xsi:type="Maude:Variable" type="/2/@els.12" name="OR1@"/>
+          <rhs xsi:type="Maude:RecTerm" type="/2/@els.12" op="newId">
+            <args xsi:type="Maude:RecTerm" type="/2/@els.25" op="_+_">
+              <args xsi:type="Maude:Variable" type="/2/@els.25" name="VALUE@ids@"/>
+              <args xsi:type="Maude:Constant" type="/2/@els.25" op="1"/>
+            </args>
+          </rhs>
+        </conds>
+        <conds xsi:type="Maude:MatchingCond">
+          <lhs xsi:type="Maude:Variable" type="/2/@els.40" name="c"/>
+          <rhs xsi:type="Maude:RecTerm" type="/2/@els.12" op="newId">
+            <args xsi:type="Maude:RecTerm" type="/2/@els.25" op="_+_">
+              <args xsi:type="Maude:Variable" type="/2/@els.25" name="VALUE@ids@"/>
+              <args xsi:type="Maude:Constant" type="/2/@els.25" op="2"/>
+            </args>
+          </rhs>
+        </conds>
+        <lhs xsi:type="Maude:RecTerm" type="/2/@els.0" op="_`{_`}">
+          <args xsi:type="Maude:Variable" type="/2/@els.1" name="MM@"/>
+          <args xsi:type="Maude:RecTerm" type="/2/@els.18" op="__">
+            <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+              <args xsi:type="Maude:Variable" type="/2/@els.40" name="cm"/>
+              <args xsi:type="Maude:Variable" type="/2/@els.69" name="CLASSMODEL@ARCHITECTURECRA@cm@CLASS"/>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.21" op="_#_">
+                <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.4" op="classes@ClassModel@architectureCRA"/>
+                  <args xsi:type="Maude:Variable" type="/2/@els.40" name="CLASSES@cm@ATT"/>
+                </args>
+                <args xsi:type="Maude:Variable" type="/2/@els.21" name="cm@SFS"/>
+              </args>
+            </args>
+            <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+              <args xsi:type="Maude:Variable" type="/2/@els.12" name="CLK@"/>
+              <args xsi:type="Maude:Constant" type="/2/@els.33" op="Clock@MGBehavior"/>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                <args xsi:type="Maude:Constant" type="/2/@els.3" op="time@Clock@MGBehavior"/>
+                <args xsi:type="Maude:Variable" type="/2/@els.44" name="TIME@CLK@"/>
+              </args>
+            </args>
+            <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+              <args xsi:type="Maude:Constant" type="/2/@els.12" op="oid('ids@)"/>
+              <args xsi:type="Maude:Constant" type="/2/@els.32" op="Counter@MGBehavior"/>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                <args xsi:type="Maude:Constant" type="/2/@els.3" op="value@Counter@MGBehavior"/>
+                <args xsi:type="Maude:Variable" type="/2/@els.25" name="VALUE@ids@"/>
+              </args>
+            </args>
+            <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+              <args xsi:type="Maude:Constant" type="/2/@els.12" op="oid('rdm@)"/>
+              <args xsi:type="Maude:Constant" type="/2/@els.32" op="Counter@MGBehavior"/>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                <args xsi:type="Maude:Constant" type="/2/@els.3" op="value@Counter@MGBehavior"/>
+                <args xsi:type="Maude:Variable" type="/2/@els.25" name="VALUE@rdm@"/>
+              </args>
+            </args>
+            <args xsi:type="Maude:Variable" type="/2/@els.18" name="OBJSET@"/>
+          </args>
+        </lhs>
+        <rhs xsi:type="Maude:RecTerm" type="/2/@els.0" op="readjust">
+          <args xsi:type="Maude:RecTerm" type="/2/@els.53" op="Set`{_`}">
+            <args xsi:type="Maude:Constant" type="/2/@els.57" op="mt"/>
+          </args>
+          <args xsi:type="Maude:Constant" type="/2/@els.48" op="nil"/>
+          <args xsi:type="Maude:RecTerm" type="/2/@els.0" op="_`{_`}">
+            <args xsi:type="Maude:Variable" type="/2/@els.1" name="MM@"/>
+            <args xsi:type="Maude:RecTerm" type="/2/@els.18" op="__">
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Variable" type="/2/@els.40" name="cm"/>
+                <args xsi:type="Maude:Variable" type="/2/@els.69" name="CLASSMODEL@ARCHITECTURECRA@cm@CLASS"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.21" op="_#_">
+                  <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                    <args xsi:type="Maude:Constant" type="/2/@els.40" op="classes@ClassModel@architectureCRA"/>
+                    <args xsi:type="Maude:RecTerm" type="/2/@els.40" op="update">
+                      <args xsi:type="Maude:Constant" type="/2/@els.4" op="classes@ClassModel@architectureCRA"/>
+                      <args xsi:type="Maude:Variable" type="/2/@els.40" name="CLASSES@cm@ATT"/>
+                      <args xsi:type="Maude:Constant" type="/2/@els.48" op="nil"/>
+                      <args xsi:type="Maude:RecTerm" type="/2/@els.58" op="link">
+                        <args xsi:type="Maude:Variable" type="/2/@els.40" name="c"/>
+                        <args xsi:type="Maude:Constant" type="/2/@els.40" op="null"/>
+                      </args>
+                    </args>
+                  </args>
+                  <args xsi:type="Maude:Variable" type="/2/@els.21" name="cm@SFS"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="complete">
+                <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                  <args xsi:type="Maude:Variable" type="/2/@els.40" name="c"/>
+                  <args xsi:type="Maude:Constant" type="/2/@els.70" op="Class@architectureCRA"/>
+                  <args xsi:type="Maude:Constant" type="/2/@els.67" op="empty"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Variable" type="/2/@els.12" name="CLK@"/>
+                <args xsi:type="Maude:Constant" type="/2/@els.33" op="Clock@MGBehavior"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="time@Clock@MGBehavior"/>
+                  <args xsi:type="Maude:Variable" type="/2/@els.44" name="TIME@CLK@"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Constant" type="/2/@els.12" op="oid('rdm@)"/>
+                <args xsi:type="Maude:Constant" type="/2/@els.32" op="Counter@MGBehavior"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="value@Counter@MGBehavior"/>
+                  <args xsi:type="Maude:RecTerm" type="/2/@els.25" op="_+_">
+                    <args xsi:type="Maude:Variable" type="/2/@els.25" name="VALUE@rdm@"/>
+                    <args xsi:type="Maude:Constant" type="/2/@els.25" op="0"/>
+                  </args>
+                </args>
+              </args>
+              <args xsi:type="Maude:Variable" type="/2/@els.18" name="OBJSET@"/>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Constant" type="/2/@els.12" op="oid('ids@)"/>
+                <args xsi:type="Maude:Constant" type="/2/@els.32" op="Counter@MGBehavior"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="value@Counter@MGBehavior"/>
+                  <args xsi:type="Maude:RecTerm" type="/2/@els.25" op="_+_">
+                    <args xsi:type="Maude:Variable" type="/2/@els.25" name="VALUE@ids@"/>
+                    <args xsi:type="Maude:Constant" type="/2/@els.25" op="3"/>
+                  </args>
+                </args>
+              </args>
+            </args>
+          </args>
+        </rhs>
+      </els>
+      <els xsi:type="Maude:Equation" label="createClass">
+        <conds xsi:type="Maude:MatchingCond">
+          <lhs xsi:type="Maude:Variable" type="/2/@els.0" name="MODEL@"/>
+          <rhs xsi:type="Maude:RecTerm" type="/2/@els.0" op="_`{_`}">
+            <args xsi:type="Maude:Variable" type="/2/@els.1" name="MM@"/>
+            <args xsi:type="Maude:RecTerm" type="/2/@els.18" op="__">
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Variable" type="/2/@els.40" name="cm"/>
+                <args xsi:type="Maude:Variable" type="/2/@els.69" name="CLASSMODEL@ARCHITECTURECRA@cm@CLASS"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.21" op="_#_">
+                  <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                    <args xsi:type="Maude:Constant" type="/2/@els.4" op="classes@ClassModel@architectureCRA"/>
+                    <args xsi:type="Maude:Variable" type="/2/@els.40" name="CLASSES@cm@ATT"/>
+                  </args>
+                  <args xsi:type="Maude:Variable" type="/2/@els.21" name="cm@SFS"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Variable" type="/2/@els.12" name="CLK@"/>
+                <args xsi:type="Maude:Constant" type="/2/@els.33" op="Clock@MGBehavior"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="time@Clock@MGBehavior"/>
+                  <args xsi:type="Maude:Variable" type="/2/@els.44" name="TIME@CLK@"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Constant" type="/2/@els.12" op="oid('ids@)"/>
+                <args xsi:type="Maude:Constant" type="/2/@els.32" op="Counter@MGBehavior"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="value@Counter@MGBehavior"/>
+                  <args xsi:type="Maude:Variable" type="/2/@els.25" name="VALUE@ids@"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Constant" type="/2/@els.12" op="oid('rdm@)"/>
+                <args xsi:type="Maude:Constant" type="/2/@els.32" op="Counter@MGBehavior"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="value@Counter@MGBehavior"/>
+                  <args xsi:type="Maude:Variable" type="/2/@els.25" name="VALUE@rdm@"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:Variable" type="/2/@els.18" name="OBJSET@"/>
+            </args>
+          </rhs>
+        </conds>
+        <lhs xsi:type="Maude:RecTerm" type="/2/@els.41" op="mte">
+          <args xsi:type="Maude:RecTerm" type="/2/@els.25" op="_`{_`}">
+            <args xsi:type="Maude:Variable" type="/2/@els.1" name="MM@"/>
+            <args xsi:type="Maude:RecTerm" type="/2/@els.18" op="__">
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Variable" type="/2/@els.40" name="cm"/>
+                <args xsi:type="Maude:Variable" type="/2/@els.69" name="CLASSMODEL@ARCHITECTURECRA@cm@CLASS"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.21" op="_#_">
+                  <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                    <args xsi:type="Maude:Constant" type="/2/@els.4" op="classes@ClassModel@architectureCRA"/>
+                    <args xsi:type="Maude:Variable" type="/2/@els.40" name="CLASSES@cm@ATT"/>
+                  </args>
+                  <args xsi:type="Maude:Variable" type="/2/@els.21" name="cm@SFS"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Variable" type="/2/@els.12" name="CLK@"/>
+                <args xsi:type="Maude:Constant" type="/2/@els.33" op="Clock@MGBehavior"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="time@Clock@MGBehavior"/>
+                  <args xsi:type="Maude:Variable" type="/2/@els.44" name="TIME@CLK@"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Constant" type="/2/@els.12" op="oid('ids@)"/>
+                <args xsi:type="Maude:Constant" type="/2/@els.32" op="Counter@MGBehavior"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="value@Counter@MGBehavior"/>
+                  <args xsi:type="Maude:Variable" type="/2/@els.25" name="VALUE@ids@"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Constant" type="/2/@els.12" op="oid('rdm@)"/>
+                <args xsi:type="Maude:Constant" type="/2/@els.32" op="Counter@MGBehavior"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="value@Counter@MGBehavior"/>
+                  <args xsi:type="Maude:Variable" type="/2/@els.25" name="VALUE@rdm@"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:Variable" type="/2/@els.18" name="OBJSET@"/>
+            </args>
+          </args>
+        </lhs>
+        <rhs xsi:type="Maude:Constant" type="/2/@els.25" op="0"/>
+      </els>
+      <els xsi:type="Maude:Rule" label="assignFeature@Instantaneous">
+        <conds xsi:type="Maude:MatchingCond">
+          <lhs xsi:type="Maude:Variable" type="/2/@els.12" name="ACTEXEC@"/>
+          <rhs xsi:type="Maude:RecTerm" type="/2/@els.12" op="newId">
+            <args xsi:type="Maude:Variable" type="/2/@els.25" name="VALUE@ids@"/>
+          </rhs>
+        </conds>
+        <conds xsi:type="Maude:MatchingCond">
+          <lhs xsi:type="Maude:Variable" type="/2/@els.0" name="MODEL@"/>
+          <rhs xsi:type="Maude:RecTerm" type="/2/@els.0" op="_`{_`}">
+            <args xsi:type="Maude:Variable" type="/2/@els.1" name="MM@"/>
+            <args xsi:type="Maude:RecTerm" type="/2/@els.18" op="__">
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Variable" type="/2/@els.40" name="f"/>
+                <args xsi:type="Maude:Variable" type="/2/@els.71" name="FEATURE@ARCHITECTURECRA@f@CLASS"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.21" op="_#_">
+                  <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                    <args xsi:type="Maude:Constant" type="/2/@els.4" op="isEncapsulatedBy@Feature@architectureCRA"/>
+                    <args xsi:type="Maude:Variable" type="/2/@els.40" name="ISENCAPSULATEDBY@f@ATT"/>
+                  </args>
+                  <args xsi:type="Maude:Variable" type="/2/@els.21" name="f@SFS"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Variable" type="/2/@els.40" name="c"/>
+                <args xsi:type="Maude:Variable" type="/2/@els.70" name="CLASS@ARCHITECTURECRA@c@CLASS"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.21" op="_#_">
+                  <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                    <args xsi:type="Maude:Constant" type="/2/@els.4" op="encapsulates@Class@architectureCRA"/>
+                    <args xsi:type="Maude:Variable" type="/2/@els.40" name="ENCAPSULATES@c@ATT"/>
+                  </args>
+                  <args xsi:type="Maude:Variable" type="/2/@els.21" name="c@SFS"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Variable" type="/2/@els.12" name="CLK@"/>
+                <args xsi:type="Maude:Constant" type="/2/@els.33" op="Clock@MGBehavior"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="time@Clock@MGBehavior"/>
+                  <args xsi:type="Maude:Variable" type="/2/@els.44" name="TIME@CLK@"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Constant" type="/2/@els.12" op="oid('ids@)"/>
+                <args xsi:type="Maude:Constant" type="/2/@els.32" op="Counter@MGBehavior"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="value@Counter@MGBehavior"/>
+                  <args xsi:type="Maude:Variable" type="/2/@els.25" name="VALUE@ids@"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Constant" type="/2/@els.12" op="oid('rdm@)"/>
+                <args xsi:type="Maude:Constant" type="/2/@els.32" op="Counter@MGBehavior"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="value@Counter@MGBehavior"/>
+                  <args xsi:type="Maude:Variable" type="/2/@els.25" name="VALUE@rdm@"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:Variable" type="/2/@els.18" name="OBJSET@"/>
+            </args>
+          </rhs>
+        </conds>
+        <conds xsi:type="Maude:MatchingCond">
+          <lhs xsi:type="Maude:Variable" type="/2/@els.40" name="T"/>
+          <rhs xsi:type="Maude:RecTerm" type="/2/@els.41" op="eval">
+            <args xsi:type="Maude:Constant" type="/2/@els.25" op="0"/>
+            <args xsi:type="Maude:RecTerm" type="/2/@els.50" op="env">
+              <args xsi:type="Maude:Constant" type="/2/@els.52" op="empty"/>
+            </args>
+            <args xsi:type="Maude:Variable" type="/2/@els.0" name="MODEL@"/>
+          </rhs>
+        </conds>
+        <conds xsi:type="Maude:MatchingCond">
+          <lhs xsi:type="Maude:Variable" type="/2/@els.12" name="OR1@"/>
+          <rhs xsi:type="Maude:RecTerm" type="/2/@els.12" op="newId">
+            <args xsi:type="Maude:RecTerm" type="/2/@els.25" op="_+_">
+              <args xsi:type="Maude:Variable" type="/2/@els.25" name="VALUE@ids@"/>
+              <args xsi:type="Maude:Constant" type="/2/@els.25" op="1"/>
+            </args>
+          </rhs>
+        </conds>
+        <conds xsi:type="Maude:MatchingCond">
+          <lhs xsi:type="Maude:Variable" type="/2/@els.12" name="OR2@"/>
+          <rhs xsi:type="Maude:RecTerm" type="/2/@els.12" op="newId">
+            <args xsi:type="Maude:RecTerm" type="/2/@els.25" op="_+_">
+              <args xsi:type="Maude:Variable" type="/2/@els.25" name="VALUE@ids@"/>
+              <args xsi:type="Maude:Constant" type="/2/@els.25" op="2"/>
+            </args>
+          </rhs>
+        </conds>
+        <conds xsi:type="Maude:BooleanCond">
+          <lhs xsi:type="Maude:RecTerm" type="/2/@els.41" op="not_">
+            <args xsi:type="Maude:RecTerm" type="/2/@els.41" op="notassigned@assignFeature">
+              <args xsi:type="Maude:RecTerm" type="/2/@els.53" op="Set`{_`}">
+                <args xsi:type="Maude:RecTerm" type="/2/@els.57" op="_;_">
+                  <args xsi:type="Maude:Variable" type="/2/@els.40" name="f"/>
+                  <args xsi:type="Maude:Variable" type="/2/@els.40" name="c"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:Constant" type="/2/@els.40" op="none"/>
+              <args xsi:type="Maude:Variable" type="/2/@els.0" name="MODEL@"/>
+            </args>
+          </lhs>
+        </conds>
+        <lhs xsi:type="Maude:RecTerm" type="/2/@els.0" op="_`{_`}">
+          <args xsi:type="Maude:Variable" type="/2/@els.1" name="MM@"/>
+          <args xsi:type="Maude:RecTerm" type="/2/@els.18" op="__">
+            <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+              <args xsi:type="Maude:Variable" type="/2/@els.40" name="f"/>
+              <args xsi:type="Maude:Variable" type="/2/@els.71" name="FEATURE@ARCHITECTURECRA@f@CLASS"/>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.21" op="_#_">
+                <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.4" op="isEncapsulatedBy@Feature@architectureCRA"/>
+                  <args xsi:type="Maude:Variable" type="/2/@els.40" name="ISENCAPSULATEDBY@f@ATT"/>
+                </args>
+                <args xsi:type="Maude:Variable" type="/2/@els.21" name="f@SFS"/>
+              </args>
+            </args>
+            <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+              <args xsi:type="Maude:Variable" type="/2/@els.40" name="c"/>
+              <args xsi:type="Maude:Variable" type="/2/@els.70" name="CLASS@ARCHITECTURECRA@c@CLASS"/>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.21" op="_#_">
+                <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.4" op="encapsulates@Class@architectureCRA"/>
+                  <args xsi:type="Maude:Variable" type="/2/@els.40" name="ENCAPSULATES@c@ATT"/>
+                </args>
+                <args xsi:type="Maude:Variable" type="/2/@els.21" name="c@SFS"/>
+              </args>
+            </args>
+            <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+              <args xsi:type="Maude:Variable" type="/2/@els.12" name="CLK@"/>
+              <args xsi:type="Maude:Constant" type="/2/@els.33" op="Clock@MGBehavior"/>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                <args xsi:type="Maude:Constant" type="/2/@els.3" op="time@Clock@MGBehavior"/>
+                <args xsi:type="Maude:Variable" type="/2/@els.44" name="TIME@CLK@"/>
+              </args>
+            </args>
+            <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+              <args xsi:type="Maude:Constant" type="/2/@els.12" op="oid('ids@)"/>
+              <args xsi:type="Maude:Constant" type="/2/@els.32" op="Counter@MGBehavior"/>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                <args xsi:type="Maude:Constant" type="/2/@els.3" op="value@Counter@MGBehavior"/>
+                <args xsi:type="Maude:Variable" type="/2/@els.25" name="VALUE@ids@"/>
+              </args>
+            </args>
+            <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+              <args xsi:type="Maude:Constant" type="/2/@els.12" op="oid('rdm@)"/>
+              <args xsi:type="Maude:Constant" type="/2/@els.32" op="Counter@MGBehavior"/>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                <args xsi:type="Maude:Constant" type="/2/@els.3" op="value@Counter@MGBehavior"/>
+                <args xsi:type="Maude:Variable" type="/2/@els.25" name="VALUE@rdm@"/>
+              </args>
+            </args>
+            <args xsi:type="Maude:Variable" type="/2/@els.18" name="OBJSET@"/>
+          </args>
+        </lhs>
+        <rhs xsi:type="Maude:RecTerm" type="/2/@els.0" op="readjust">
+          <args xsi:type="Maude:RecTerm" type="/2/@els.53" op="Set`{_`}">
+            <args xsi:type="Maude:Constant" type="/2/@els.57" op="mt"/>
+          </args>
+          <args xsi:type="Maude:Constant" type="/2/@els.48" op="nil"/>
+          <args xsi:type="Maude:RecTerm" type="/2/@els.0" op="_`{_`}">
+            <args xsi:type="Maude:Variable" type="/2/@els.1" name="MM@"/>
+            <args xsi:type="Maude:RecTerm" type="/2/@els.18" op="__">
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Variable" type="/2/@els.40" name="f"/>
+                <args xsi:type="Maude:Variable" type="/2/@els.71" name="FEATURE@ARCHITECTURECRA@f@CLASS"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.21" op="_#_">
+                  <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                    <args xsi:type="Maude:Constant" type="/2/@els.40" op="isEncapsulatedBy@Feature@architectureCRA"/>
+                    <args xsi:type="Maude:RecTerm" type="/2/@els.40" op="update">
+                      <args xsi:type="Maude:Constant" type="/2/@els.4" op="isEncapsulatedBy@Feature@architectureCRA"/>
+                      <args xsi:type="Maude:Variable" type="/2/@els.40" name="ISENCAPSULATEDBY@f@ATT"/>
+                      <args xsi:type="Maude:Constant" type="/2/@els.48" op="nil"/>
+                      <args xsi:type="Maude:RecTerm" type="/2/@els.58" op="link">
+                        <args xsi:type="Maude:Variable" type="/2/@els.40" name="c"/>
+                        <args xsi:type="Maude:Constant" type="/2/@els.40" op="null"/>
+                      </args>
+                    </args>
+                  </args>
+                  <args xsi:type="Maude:Variable" type="/2/@els.21" name="f@SFS"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Variable" type="/2/@els.40" name="c"/>
+                <args xsi:type="Maude:Variable" type="/2/@els.70" name="CLASS@ARCHITECTURECRA@c@CLASS"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.21" op="_#_">
+                  <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                    <args xsi:type="Maude:Constant" type="/2/@els.40" op="encapsulates@Class@architectureCRA"/>
+                    <args xsi:type="Maude:RecTerm" type="/2/@els.40" op="update">
+                      <args xsi:type="Maude:Constant" type="/2/@els.4" op="encapsulates@Class@architectureCRA"/>
+                      <args xsi:type="Maude:Variable" type="/2/@els.40" name="ENCAPSULATES@c@ATT"/>
+                      <args xsi:type="Maude:Constant" type="/2/@els.48" op="nil"/>
+                      <args xsi:type="Maude:RecTerm" type="/2/@els.58" op="link">
+                        <args xsi:type="Maude:Variable" type="/2/@els.40" name="f"/>
+                        <args xsi:type="Maude:Constant" type="/2/@els.40" op="null"/>
+                      </args>
+                    </args>
+                  </args>
+                  <args xsi:type="Maude:Variable" type="/2/@els.21" name="c@SFS"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Variable" type="/2/@els.12" name="CLK@"/>
+                <args xsi:type="Maude:Constant" type="/2/@els.33" op="Clock@MGBehavior"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="time@Clock@MGBehavior"/>
+                  <args xsi:type="Maude:Variable" type="/2/@els.44" name="TIME@CLK@"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Constant" type="/2/@els.12" op="oid('rdm@)"/>
+                <args xsi:type="Maude:Constant" type="/2/@els.32" op="Counter@MGBehavior"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="value@Counter@MGBehavior"/>
+                  <args xsi:type="Maude:RecTerm" type="/2/@els.25" op="_+_">
+                    <args xsi:type="Maude:Variable" type="/2/@els.25" name="VALUE@rdm@"/>
+                    <args xsi:type="Maude:Constant" type="/2/@els.25" op="0"/>
+                  </args>
+                </args>
+              </args>
+              <args xsi:type="Maude:Variable" type="/2/@els.18" name="OBJSET@"/>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Constant" type="/2/@els.12" op="oid('ids@)"/>
+                <args xsi:type="Maude:Constant" type="/2/@els.32" op="Counter@MGBehavior"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="value@Counter@MGBehavior"/>
+                  <args xsi:type="Maude:RecTerm" type="/2/@els.25" op="_+_">
+                    <args xsi:type="Maude:Variable" type="/2/@els.25" name="VALUE@ids@"/>
+                    <args xsi:type="Maude:Constant" type="/2/@els.25" op="3"/>
+                  </args>
+                </args>
+              </args>
+            </args>
+          </args>
+        </rhs>
+      </els>
+      <els xsi:type="Maude:Operation" name="notassigned@assignFeature" coarity="/2/@els.27" arity="/2/@els.53 /2/@els.18 /2/@els.0"/>
+      <els xsi:type="Maude:Equation">
+        <conds xsi:type="Maude:MatchingCond">
+          <lhs xsi:type="Maude:Variable" type="/2/@els.0" name="MODEL@"/>
+          <rhs xsi:type="Maude:RecTerm" type="/2/@els.0" op="_`{_`}">
+            <args xsi:type="Maude:Variable" type="/2/@els.1" name="MM@"/>
+            <args xsi:type="Maude:RecTerm" type="/2/@els.18" op="__">
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Variable" type="/2/@els.40" name="f"/>
+                <args xsi:type="Maude:Variable" type="/2/@els.71" name="FEATURE@ARCHITECTURECRA@f@CLASS"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.21" op="_#_">
+                  <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                    <args xsi:type="Maude:Constant" type="/2/@els.4" op="isEncapsulatedBy@Feature@architectureCRA"/>
+                    <args xsi:type="Maude:Variable" type="/2/@els.40" name="ISENCAPSULATEDBY@f@ATT"/>
+                  </args>
+                  <args xsi:type="Maude:Variable" type="/2/@els.21" name="f@SFS"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Variable" type="/2/@els.40" name="c1"/>
+                <args xsi:type="Maude:Variable" type="/2/@els.70" name="CLASS@ARCHITECTURECRA@c1@CLASS"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.21" op="_#_">
+                  <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                    <args xsi:type="Maude:Constant" type="/2/@els.4" op="encapsulates@Class@architectureCRA"/>
+                    <args xsi:type="Maude:Variable" type="/2/@els.40" name="ENCAPSULATES@c1@ATT"/>
+                  </args>
+                  <args xsi:type="Maude:Variable" type="/2/@els.21" name="c1@SFS"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:Variable" type="/2/@els.18" name="OBJSET@"/>
+            </args>
+          </rhs>
+        </conds>
+        <conds xsi:type="Maude:BooleanCond">
+          <lhs xsi:type="Maude:RecTerm" type="/2/@els.40" op="_in_">
+            <args xsi:type="Maude:Variable" type="/2/@els.40" name="c1"/>
+            <args xsi:type="Maude:Variable" type="/2/@els.40" name="ISENCAPSULATEDBY@f@ATT"/>
+          </lhs>
+        </conds>
+        <lhs xsi:type="Maude:RecTerm" type="/2/@els.27" op="notassigned@assignFeature">
+          <args xsi:type="Maude:RecTerm" type="/2/@els.53" op="Set`{_`}">
+            <args xsi:type="Maude:RecTerm" type="/2/@els.57" op="_;_">
+              <args xsi:type="Maude:Variable" type="/2/@els.40" name="f"/>
+              <args xsi:type="Maude:Variable" type="/2/@els.40" name="c"/>
+            </args>
+          </args>
+          <args xsi:type="Maude:Constant" type="/2/@els.40" op="none"/>
+          <args xsi:type="Maude:RecTerm" type="/2/@els.0" op="_`{_`}">
+            <args xsi:type="Maude:Variable" type="/2/@els.1" name="MM@"/>
+            <args xsi:type="Maude:RecTerm" type="/2/@els.18" op="__">
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Variable" type="/2/@els.40" name="f"/>
+                <args xsi:type="Maude:Variable" type="/2/@els.71" name="FEATURE@ARCHITECTURECRA@f@CLASS"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.21" op="_#_">
+                  <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                    <args xsi:type="Maude:Constant" type="/2/@els.4" op="isEncapsulatedBy@Feature@architectureCRA"/>
+                    <args xsi:type="Maude:Variable" type="/2/@els.40" name="ISENCAPSULATEDBY@f@ATT"/>
+                  </args>
+                  <args xsi:type="Maude:Variable" type="/2/@els.21" name="f@SFS"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Variable" type="/2/@els.40" name="c1"/>
+                <args xsi:type="Maude:Variable" type="/2/@els.70" name="CLASS@ARCHITECTURECRA@c1@CLASS"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.21" op="_#_">
+                  <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                    <args xsi:type="Maude:Constant" type="/2/@els.4" op="encapsulates@Class@architectureCRA"/>
+                    <args xsi:type="Maude:Variable" type="/2/@els.40" name="ENCAPSULATES@c1@ATT"/>
+                  </args>
+                  <args xsi:type="Maude:Variable" type="/2/@els.21" name="c1@SFS"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:Variable" type="/2/@els.18" name="OBJSET@"/>
+            </args>
+          </args>
+        </lhs>
+        <rhs xsi:type="Maude:Constant" type="/2/@els.27" op="true"/>
+      </els>
+      <els xsi:type="Maude:Equation">
+        <atts>owise</atts>
+        <lhs xsi:type="Maude:RecTerm" type="/2/@els.27" op="notassigned@assignFeature">
+          <args xsi:type="Maude:Variable" type="/2/@els.53" name="OIDSET@"/>
+          <args xsi:type="Maude:Variable" type="/2/@els.18" name="OBJSET@"/>
+          <args xsi:type="Maude:Variable" type="/2/@els.0" name="MODEL@"/>
+        </lhs>
+        <rhs xsi:type="Maude:Constant" type="/2/@els.27" op="false"/>
+      </els>
+      <els xsi:type="Maude:Equation" label="assignFeature">
+        <conds xsi:type="Maude:MatchingCond">
+          <lhs xsi:type="Maude:Variable" type="/2/@els.0" name="MODEL@"/>
+          <rhs xsi:type="Maude:RecTerm" type="/2/@els.0" op="_`{_`}">
+            <args xsi:type="Maude:Variable" type="/2/@els.1" name="MM@"/>
+            <args xsi:type="Maude:RecTerm" type="/2/@els.18" op="__">
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Variable" type="/2/@els.40" name="f"/>
+                <args xsi:type="Maude:Variable" type="/2/@els.71" name="FEATURE@ARCHITECTURECRA@f@CLASS"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.21" op="_#_">
+                  <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                    <args xsi:type="Maude:Constant" type="/2/@els.4" op="isEncapsulatedBy@Feature@architectureCRA"/>
+                    <args xsi:type="Maude:Variable" type="/2/@els.40" name="ISENCAPSULATEDBY@f@ATT"/>
+                  </args>
+                  <args xsi:type="Maude:Variable" type="/2/@els.21" name="f@SFS"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Variable" type="/2/@els.40" name="c"/>
+                <args xsi:type="Maude:Variable" type="/2/@els.70" name="CLASS@ARCHITECTURECRA@c@CLASS"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.21" op="_#_">
+                  <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                    <args xsi:type="Maude:Constant" type="/2/@els.4" op="encapsulates@Class@architectureCRA"/>
+                    <args xsi:type="Maude:Variable" type="/2/@els.40" name="ENCAPSULATES@c@ATT"/>
+                  </args>
+                  <args xsi:type="Maude:Variable" type="/2/@els.21" name="c@SFS"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Variable" type="/2/@els.12" name="CLK@"/>
+                <args xsi:type="Maude:Constant" type="/2/@els.33" op="Clock@MGBehavior"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="time@Clock@MGBehavior"/>
+                  <args xsi:type="Maude:Variable" type="/2/@els.44" name="TIME@CLK@"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Constant" type="/2/@els.12" op="oid('ids@)"/>
+                <args xsi:type="Maude:Constant" type="/2/@els.32" op="Counter@MGBehavior"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="value@Counter@MGBehavior"/>
+                  <args xsi:type="Maude:Variable" type="/2/@els.25" name="VALUE@ids@"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Constant" type="/2/@els.12" op="oid('rdm@)"/>
+                <args xsi:type="Maude:Constant" type="/2/@els.32" op="Counter@MGBehavior"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="value@Counter@MGBehavior"/>
+                  <args xsi:type="Maude:Variable" type="/2/@els.25" name="VALUE@rdm@"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:Variable" type="/2/@els.18" name="OBJSET@"/>
+            </args>
+          </rhs>
+        </conds>
+        <conds xsi:type="Maude:BooleanCond">
+          <lhs xsi:type="Maude:RecTerm" type="/2/@els.41" op="not_">
+            <args xsi:type="Maude:RecTerm" type="/2/@els.41" op="notassigned@assignFeature">
+              <args xsi:type="Maude:RecTerm" type="/2/@els.53" op="Set`{_`}">
+                <args xsi:type="Maude:RecTerm" type="/2/@els.57" op="_;_">
+                  <args xsi:type="Maude:Variable" type="/2/@els.40" name="f"/>
+                  <args xsi:type="Maude:Variable" type="/2/@els.40" name="c"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:Constant" type="/2/@els.40" op="none"/>
+              <args xsi:type="Maude:Variable" type="/2/@els.0" name="MODEL@"/>
+            </args>
+          </lhs>
+        </conds>
+        <lhs xsi:type="Maude:RecTerm" type="/2/@els.41" op="mte">
+          <args xsi:type="Maude:RecTerm" type="/2/@els.25" op="_`{_`}">
+            <args xsi:type="Maude:Variable" type="/2/@els.1" name="MM@"/>
+            <args xsi:type="Maude:RecTerm" type="/2/@els.18" op="__">
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Variable" type="/2/@els.40" name="f"/>
+                <args xsi:type="Maude:Variable" type="/2/@els.71" name="FEATURE@ARCHITECTURECRA@f@CLASS"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.21" op="_#_">
+                  <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                    <args xsi:type="Maude:Constant" type="/2/@els.4" op="isEncapsulatedBy@Feature@architectureCRA"/>
+                    <args xsi:type="Maude:Variable" type="/2/@els.40" name="ISENCAPSULATEDBY@f@ATT"/>
+                  </args>
+                  <args xsi:type="Maude:Variable" type="/2/@els.21" name="f@SFS"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Variable" type="/2/@els.40" name="c"/>
+                <args xsi:type="Maude:Variable" type="/2/@els.70" name="CLASS@ARCHITECTURECRA@c@CLASS"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.21" op="_#_">
+                  <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                    <args xsi:type="Maude:Constant" type="/2/@els.4" op="encapsulates@Class@architectureCRA"/>
+                    <args xsi:type="Maude:Variable" type="/2/@els.40" name="ENCAPSULATES@c@ATT"/>
+                  </args>
+                  <args xsi:type="Maude:Variable" type="/2/@els.21" name="c@SFS"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Variable" type="/2/@els.12" name="CLK@"/>
+                <args xsi:type="Maude:Constant" type="/2/@els.33" op="Clock@MGBehavior"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="time@Clock@MGBehavior"/>
+                  <args xsi:type="Maude:Variable" type="/2/@els.44" name="TIME@CLK@"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Constant" type="/2/@els.12" op="oid('ids@)"/>
+                <args xsi:type="Maude:Constant" type="/2/@els.32" op="Counter@MGBehavior"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="value@Counter@MGBehavior"/>
+                  <args xsi:type="Maude:Variable" type="/2/@els.25" name="VALUE@ids@"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.2" op="&lt;_:_|_>">
+                <args xsi:type="Maude:Constant" type="/2/@els.12" op="oid('rdm@)"/>
+                <args xsi:type="Maude:Constant" type="/2/@els.32" op="Counter@MGBehavior"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.5" op="_:_">
+                  <args xsi:type="Maude:Constant" type="/2/@els.3" op="value@Counter@MGBehavior"/>
+                  <args xsi:type="Maude:Variable" type="/2/@els.25" name="VALUE@rdm@"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:Variable" type="/2/@els.18" name="OBJSET@"/>
+            </args>
+          </args>
+        </lhs>
+        <rhs xsi:type="Maude:Constant" type="/2/@els.25" op="0"/>
+      </els>
+      <els xsi:type="Maude:Operation" name="DMM" coarity="/2/@els.60"/>
+      <els xsi:type="Maude:Equation">
+        <lhs xsi:type="Maude:RecTerm" type="/2/@els.29" op="DMM">
+          <args xsi:type="Maude:RecTerm" type="/2/@els.46" op="_#_">
+            <args xsi:type="Maude:Variable" type="/2/@els.40" name="m1"/>
+            <args xsi:type="Maude:Variable" type="/2/@els.40" name="m2"/>
+          </args>
+        </lhs>
+        <rhs xsi:type="Maude:RecTerm" type="/2/@els.41" op="if_then_else_endif">
+          <args xsi:type="Maude:RecTerm" type="/2/@els.41" op="_->`includes`(_`)">
+            <args xsi:type="Maude:RecTerm" type="/2/@els.41" op="__">
+              <args xsi:type="Maude:Variable" type="/2/@els.40" name="m1"/>
+              <args xsi:type="Maude:RecTerm" type="/4/@els.2" op="._">
+                <args xsi:type="Maude:Constant" type="/4/@els.3" op="functionalDependency@OCLSf"/>
+              </args>
+            </args>
+            <args xsi:type="Maude:Variable" type="/2/@els.40" name="m2"/>
+          </args>
+          <args xsi:type="Maude:Constant" type="/2/@els.29" op="1.0"/>
+          <args xsi:type="Maude:Constant" type="/2/@els.29" op="0.0"/>
+        </rhs>
+      </els>
+      <els xsi:type="Maude:Operation" name="DMA" coarity="/2/@els.60"/>
+      <els xsi:type="Maude:Equation">
+        <lhs xsi:type="Maude:RecTerm" type="/2/@els.29" op="DMA">
+          <args xsi:type="Maude:RecTerm" type="/2/@els.46" op="_#_">
+            <args xsi:type="Maude:Variable" type="/2/@els.40" name="m1"/>
+            <args xsi:type="Maude:Variable" type="/2/@els.40" name="a2"/>
+          </args>
+        </lhs>
+        <rhs xsi:type="Maude:RecTerm" type="/2/@els.41" op="if_then_else_endif">
+          <args xsi:type="Maude:RecTerm" type="/2/@els.41" op="_->`includes`(_`)">
+            <args xsi:type="Maude:RecTerm" type="/2/@els.41" op="__">
+              <args xsi:type="Maude:Variable" type="/2/@els.40" name="m1"/>
+              <args xsi:type="Maude:RecTerm" type="/4/@els.2" op="._">
+                <args xsi:type="Maude:Constant" type="/4/@els.3" op="dataDependency@OCLSf"/>
+              </args>
+            </args>
+            <args xsi:type="Maude:Variable" type="/2/@els.40" name="a2"/>
+          </args>
+          <args xsi:type="Maude:Constant" type="/2/@els.29" op="1.0"/>
+          <args xsi:type="Maude:Constant" type="/2/@els.29" op="0.0"/>
+        </rhs>
+      </els>
+      <els xsi:type="Maude:Operation" name="MAI" coarity="/2/@els.60"/>
+      <els xsi:type="Maude:Operation" name="f" coarity="/2/@els.43"/>
+      <els xsi:type="Maude:Operation" name="m1" coarity="/2/@els.43"/>
+      <els xsi:type="Maude:Operation" name="m2" coarity="/2/@els.43"/>
+      <els xsi:type="Maude:Equation">
+        <lhs xsi:type="Maude:RecTerm" type="/2/@els.29" op="MAI">
+          <args xsi:type="Maude:RecTerm" type="/2/@els.46" op="_#_">
+            <args xsi:type="Maude:Variable" type="/2/@els.40" name="c1"/>
+            <args xsi:type="Maude:Variable" type="/2/@els.40" name="c2"/>
+          </args>
+        </lhs>
+        <rhs xsi:type="Maude:RecTerm" type="/2/@els.41" op="_->`sum`(`)">
+          <args xsi:type="Maude:RecTerm" type="/2/@els.41" op="_->`collect_">
+            <args xsi:type="Maude:RecTerm" type="/2/@els.41" op="_->`select_">
+              <args xsi:type="Maude:RecTerm" type="/2/@els.41" op="__">
+                <args xsi:type="Maude:Variable" type="/2/@els.40" name="c1"/>
+                <args xsi:type="Maude:RecTerm" type="/4/@els.2" op="._">
+                  <args xsi:type="Maude:Constant" type="/4/@els.3" op="encapsulates@OCLSf"/>
+                </args>
+              </args>
+              <args xsi:type="Maude:RecTerm" type="/4/@els.0" op="_|_">
+                <args xsi:type="Maude:Constant" type="/2/@els.41" op="f"/>
+                <args xsi:type="Maude:RecTerm" type="/2/@els.41" op="_.`oclIsTypeOf`(_`)">
+                  <args xsi:type="Maude:Constant" type="/2/@els.12" op="f"/>
+                  <args xsi:type="Maude:Constant" type="/2/@els.12" op="Method@architectureCRA"/>
+                </args>
+              </args>
+            </args>
+            <args xsi:type="Maude:RecTerm" type="/4/@els.0" op="_|_">
+              <args xsi:type="Maude:Constant" type="/2/@els.41" op="m1"/>
+              <args xsi:type="Maude:RecTerm" type="/2/@els.41" op="_->`sum`(`)">
+                <args xsi:type="Maude:RecTerm" type="/2/@els.41" op="_->`collect_">
+                  <args xsi:type="Maude:RecTerm" type="/2/@els.41" op="_->`select_">
+                    <args xsi:type="Maude:RecTerm" type="/2/@els.41" op="__">
+                      <args xsi:type="Maude:Variable" type="/2/@els.40" name="c2"/>
+                      <args xsi:type="Maude:RecTerm" type="/4/@els.2" op="._">
+                        <args xsi:type="Maude:Constant" type="/4/@els.3" op="encapsulates@OCLSf"/>
+                      </args>
+                    </args>
+                    <args xsi:type="Maude:RecTerm" type="/4/@els.0" op="_|_">
+                      <args xsi:type="Maude:Constant" type="/2/@els.41" op="f"/>
+                      <args xsi:type="Maude:RecTerm" type="/2/@els.41" op="_.`oclIsTypeOf`(_`)">
+                        <args xsi:type="Maude:Constant" type="/2/@els.12" op="f"/>
+                        <args xsi:type="Maude:Constant" type="/2/@els.12" op="Method@architectureCRA"/>
+                      </args>
+                    </args>
+                  </args>
+                  <args xsi:type="Maude:RecTerm" type="/4/@els.0" op="_|_">
+                    <args xsi:type="Maude:Constant" type="/2/@els.41" op="m2"/>
+                    <args xsi:type="Maude:RecTerm" type="/2/@els.41" op="__">
+                      <args xsi:type="Maude:Constant" type="/2/@els.12" op="self"/>
+                      <args xsi:type="Maude:RecTerm" type="/4/@els.1" op="._`(_`)">
+                        <args xsi:type="Maude:Constant" type="/2/@els.60" op="DMM"/>
+                        <args xsi:type="Maude:RecTerm" type="/2/@els.46" op="_#_">
+                          <args xsi:type="Maude:Constant" type="/2/@els.12" op="m1"/>
+                          <args xsi:type="Maude:Constant" type="/2/@els.12" op="m2"/>
+                        </args>
+                      </args>
+                    </args>
+                  </args>
+                </args>
+              </args>
+            </args>
+          </args>
+        </rhs>
+      </els>
+    </els>
+  </Maude:MaudeSpec>
+  <Maude:SModule name="DISCRETE_TIME"/>
+  <Maude:SModule name="E-MOTIONS">
+    <els xsi:type="Maude:Sort" name="@Model"/>
+    <els xsi:type="Maude:Sort" name="@Metamodel"/>
+    <els xsi:type="Maude:Sort" name="@Object"/>
+    <els xsi:type="Maude:Sort" name="@Attribute"/>
+    <els xsi:type="Maude:Sort" name="@Reference"/>
+    <els xsi:type="Maude:Sort" name="@ReferenceInstance"/>
+    <els xsi:type="Maude:Sort" name="@AttributeInstance"/>
+    <els xsi:type="Maude:Sort" name="@ReferenceMaybe"/>
+    <els xsi:type="Maude:Sort" name="@ReferenceSet"/>
+    <els xsi:type="Maude:Sort" name="@ReferenceOrderedSet"/>
+    <els xsi:type="Maude:Sort" name="@ReferenceBag"/>
+    <els xsi:type="Maude:Sort" name="@ReferenceSequence"/>
+    <els xsi:type="Maude:Sort" name="Oid"/>
+    <els xsi:type="Maude:Sort" name="Maybe{Oid}"/>
+    <els xsi:type="Maude:Sort" name="Set{Oid}"/>
+    <els xsi:type="Maude:Sort" name="OrderedSet{Oid}"/>
+    <els xsi:type="Maude:Sort" name="Bag{Oid}"/>
+    <els xsi:type="Maude:Sort" name="Sequence{Oid}"/>
+    <els xsi:type="Maude:Sort" name="Set{@Object}"/>
+    <els xsi:type="Maude:Sort" name="@StructuralFeature"/>
+    <els xsi:type="Maude:Sort" name="@StructuralFeatureInstance"/>
+    <els xsi:type="Maude:Sort" name="Set{@StructuralFeatureInstance}"/>
+    <els xsi:type="Maude:Sort" name="Set{@StructuralFeature}"/>
+    <els xsi:type="Maude:Sort" name="List{Oid}"/>
+    <els xsi:type="Maude:Sort" name="String"/>
+    <els xsi:type="Maude:Sort" name="Int"/>
+    <els xsi:type="Maude:Sort" name="Enum"/>
+    <els xsi:type="Maude:Sort" name="Bool"/>
+    <els xsi:type="Maude:Sort" name="Float"/>
+    <els xsi:type="Maude:Sort" name="Real"/>
+    <els xsi:type="Maude:Sort" name="@DataTypeInstance"/>
+    <els xsi:type="Maude:Sort" name="EEnumLiteral@ecore"/>
+    <els xsi:type="Maude:Sort" name="Counter@MGBehavior"/>
+    <els xsi:type="Maude:Sort" name="Clock@MGBehavior"/>
+    <els xsi:type="Maude:Sort" name="Variable@MGBehavior"/>
+    <els xsi:type="Maude:Sort" name="ObjectRole@Time"/>
+    <els xsi:type="Maude:Sort" name="AtomicActionExec@MGBehavior"/>
+    <els xsi:type="Maude:Sort" name="AtomicRule@MGBehavior"/>
+    <els xsi:type="Maude:Sort" name="Nat"/>
+    <els xsi:type="Maude:Sort" name="Time"/>
+    <els xsi:type="Maude:Sort" name="OCL-Type"/>
+    <els xsi:type="Maude:Sort" name="OCL-Exp"/>
+    <els xsi:type="Maude:Sort" name="Env"/>
+    <els xsi:type="Maude:Sort" name="Vid"/>
+    <els xsi:type="Maude:Sort" name="Time"/>
+    <els xsi:type="Maude:Sort" name="Time"/>
+    <els xsi:type="Maude:Sort" name="List{OCL-Exp}"/>
+    <els xsi:type="Maude:Sort" name="ListOrd"/>
+    <els xsi:type="Maude:Sort" name="EmptyList"/>
+    <els xsi:type="Maude:Sort" name="VarPair"/>
+    <els xsi:type="Maude:Sort" name="Msg"/>
+    <els xsi:type="Maude:Sort" name="Empty"/>
+    <els xsi:type="Maude:Sort" name="EmptySet"/>
+    <els xsi:type="Maude:Sort" name="Set"/>
+    <els xsi:type="Maude:Sort" name="Sequence"/>
+    <els xsi:type="Maude:Sort" name="Bag"/>
+    <els xsi:type="Maude:Sort" name="OrdSet"/>
+    <els xsi:type="Maude:Sort" name="MSet{OCL-Exp}"/>
+    <els xsi:type="Maude:Sort" name="@Link"/>
+    <els xsi:type="Maude:Sort" name="MyLinkList"/>
+    <els xsi:type="Maude:Sort" name="OpName"/>
+    <els xsi:type="Maude:Sort" name="NzTime"/>
+    <els xsi:type="Maude:Sort" name="ActionExec@MGBehavior"/>
+    <els xsi:type="Maude:Sort" name="ActionStatus@MGBehavior"/>
+    <els xsi:type="Maude:Sort" name="ItemList"/>
+    <els xsi:type="Maude:Sort" name="ItemListOrd"/>
+    <els xsi:type="Maude:Sort" name="Collection"/>
+    <els xsi:type="Maude:Sort" name="AttributeSet"/>
+    <els xsi:type="Maude:Sort" name="Rat"/>
+    <els xsi:type="Maude:Sort" name="ClassModel@architectureCRA"/>
+    <els xsi:type="Maude:Sort" name="Class@architectureCRA"/>
+    <els xsi:type="Maude:Sort" name="Feature@architectureCRA"/>
+  </Maude:SModule>
+  <Maude:SModule name="OCL">
+    <els xsi:type="Maude:Equation">
+      <lhs xsi:type="Maude:RecTerm" type="/2/@els.41" op="0">
+        <args xsi:type="Maude:Constant" type="/2/@els.25" op="0"/>
+      </lhs>
+      <rhs xsi:type="Maude:Constant" type="/2/@els.24" op="String"/>
+    </els>
+    <els xsi:type="Maude:Equation">
+      <lhs xsi:type="Maude:RecTerm" type="/2/@els.41" op="0">
+        <args xsi:type="Maude:Constant" type="/2/@els.25" op="0"/>
+      </lhs>
+      <rhs xsi:type="Maude:Constant" type="/2/@els.24" op="String"/>
+    </els>
+  </Maude:SModule>
+  <Maude:SModule name="MAUDELING">
+    <els xsi:type="Maude:Sort" name="iter-vble"/>
+    <els xsi:type="Maude:Sort" name="UserOpNav"/>
+    <els xsi:type="Maude:Sort" name="OCL-Attr"/>
+    <els xsi:type="Maude:Sort" name="AttributeName"/>
+    <els xsi:type="Maude:Sort" name="LetExp"/>
+    <els xsi:type="Maude:Sort" name="VbleDecl"/>
+    <els xsi:type="Maude:Sort" name="iterate-exp"/>
+    <els xsi:type="Maude:Sort" name="AttributeOp"/>
+  </Maude:SModule>
+  <Maude:SModule name="@ARCHITECTURECRA@"/>
+</xmi:XMI>
