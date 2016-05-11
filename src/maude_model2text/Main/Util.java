@@ -21,7 +21,10 @@ public class Util {
 	public final static String[] CASE_STUDIES = {
 		"prTrajectory_behavior.xmi",
 		"prCRA_behavior.xmi",
-		"palladio_behavior.xmi"};
+		"palladio_behavior.xmi",
+		"prTrajectory_metamodel.xmi",
+		"prCRA_metamodel.xmi",
+		"palladio_metamodel.xmi"};
 	
 	public static String getPath(String caseStudy) {
 		return PATH + "/" + caseStudy;
