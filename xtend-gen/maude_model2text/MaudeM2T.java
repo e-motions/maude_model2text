@@ -27,10 +27,13 @@ import Maude.Module;
 import Maude.ModuleIdModExp;
 import Maude.SModule;
 import Maude.Sort;
+import Maude.SubsortRel;
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import java.io.PrintWriter;
 import java.util.Map;
+import java.util.Set;
+import maude_model2text.Main.Util;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -40,6 +43,8 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.eclipse.xtext.xbase.lib.Functions.Function1;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
 @SuppressWarnings("all")
 public class MaudeM2T {
@@ -120,19 +125,43 @@ public class MaudeM2T {
     {
       EList<MaudeTopEl> _els = mspec.getEls();
       Iterable<SModule> _filter = Iterables.<SModule>filter(_els, SModule.class);
-      for(final SModule smod : _filter) {
+      final Function1<Module, Boolean> _function = (Module m) -> {
+        Set<String> _skippedModules = Util.skippedModules();
+        String _name = m.getName();
+        boolean _contains = _skippedModules.contains(_name);
+        return Boolean.valueOf((!_contains));
+      };
+      Iterable<SModule> _filter_1 = IterableExtensions.<SModule>filter(_filter, _function);
+      for(final SModule smod : _filter_1) {
         _builder.append("mod ");
         String _name = smod.getName();
         _builder.append(_name, "");
         _builder.append(" is");
         _builder.newLineIfNotEmpty();
         _builder.append("  ");
+        _builder.append("---- Importations");
+        _builder.newLine();
+        _builder.append("  ");
         CharSequence _generateImportations = this.generateImportations(smod);
         _builder.append(_generateImportations, "  ");
         _builder.newLineIfNotEmpty();
         _builder.append("  ");
+        _builder.newLine();
+        _builder.append("  ");
+        _builder.append("---- Sort declarations");
+        _builder.newLine();
+        _builder.append("  ");
         CharSequence _generateSortDeclarations = this.generateSortDeclarations(smod);
         _builder.append(_generateSortDeclarations, "  ");
+        _builder.newLineIfNotEmpty();
+        _builder.append("  ");
+        _builder.newLine();
+        _builder.append("  ");
+        _builder.append("---- Subsort declarations");
+        _builder.newLine();
+        _builder.append("  ");
+        CharSequence _generateSubsortDeclarations = this.generateSubsortDeclarations(smod);
+        _builder.append(_generateSubsortDeclarations, "  ");
         _builder.newLineIfNotEmpty();
         _builder.append("endm");
         _builder.newLine();
@@ -229,6 +258,34 @@ public class MaudeM2T {
         _builder.append("sort ");
         String _name = sort.getName();
         _builder.append(_name, "");
+        _builder.append(" .");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    return _builder;
+  }
+  
+  /**
+   * Given a Maude module, it generates all subsort declarations.
+   * @params
+   *  mod    the Module with none or more sort objects
+   */
+  public CharSequence generateSubsortDeclarations(final Module mod) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      EList<ModElement> _els = mod.getEls();
+      Iterable<SubsortRel> _filter = Iterables.<SubsortRel>filter(_els, SubsortRel.class);
+      for(final SubsortRel ssort : _filter) {
+        _builder.append("subsort ");
+        EList<Sort> _subsorts = ssort.getSubsorts();
+        Sort _get = _subsorts.get(0);
+        String _name = _get.getName();
+        _builder.append(_name, "");
+        _builder.append(" < ");
+        EList<Sort> _supersorts = ssort.getSupersorts();
+        Sort _get_1 = _supersorts.get(0);
+        String _name_1 = _get_1.getName();
+        _builder.append(_name_1, "");
         _builder.append(" .");
         _builder.newLineIfNotEmpty();
       }

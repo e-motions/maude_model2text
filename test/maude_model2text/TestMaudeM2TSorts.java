@@ -54,15 +54,15 @@ public class TestMaudeM2TSorts {
 	}
 	
 	/**
-	 * Tests (for each case study), for each system module, it tests the *protecting* importations without
-	 * renamings
+	 * Tests (for each case study), for each system module, it tests sorts declarations
 	 */
 	@Test
-	public void testProtectingSModules() {
+	public void testSorts() {
 		for(MaudeSpec spec : models) {
 			String result = transformation.generateCode(spec).toString();
 			Set<SModule> smods = spec.getEls().stream()
 					.filter(SModule.class::isInstance)
+					.filter(m -> !Util.skippedModules().contains(m.getName()))
 					.map(SModule.class::cast)
 					.collect(Collectors.toSet());
 			for(SModule smod : smods) {

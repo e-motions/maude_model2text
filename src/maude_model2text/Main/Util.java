@@ -16,6 +16,10 @@
  */
 package maude_model2text.Main;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 public class Util {
 	public final static String PATH = "resources/";
 	public final static String[] CASE_STUDIES = {
@@ -26,7 +30,15 @@ public class Util {
 		"prCRA_metamodel.xmi",
 		"palladio_metamodel.xmi"};
 	
+	public final static String[] SKIPPED_MODULES = {
+		"@ECORE@"
+	};
+	
 	public static String getPath(String caseStudy) {
 		return PATH + "/" + caseStudy;
+	}
+	
+	public static Set<String> skippedModules() {
+		return new HashSet<String>(Arrays.asList(SKIPPED_MODULES));
 	}
 }

@@ -17,19 +17,21 @@
 
 package maude_model2text
 
+import Maude.ImportationMode
 import Maude.MaudePackage
 import Maude.MaudeSpec
+import Maude.ModImportation
+import Maude.Module
+import Maude.ModuleIdModExp
+import Maude.SModule
+import Maude.Sort
+import Maude.SubsortRel
+import java.io.PrintWriter
+import maude_model2text.Main.Util
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
-import java.io.PrintWriter
-import Maude.SModule
-import Maude.ModImportation
-import Maude.ImportationMode
-import Maude.ModuleIdModExp
-import Maude.Module
-import Maude.Sort
 
 class MaudeM2T {
     
@@ -94,10 +96,16 @@ class MaudeM2T {
      * Given a Maude specification, it generates the Maude code
      */
     def generateCode(MaudeSpec mspec) '''
-    «FOR smod:mspec.els.filter(typeof(SModule))»
+    «FOR smod:mspec.els.filter(typeof(SModule)).filter[Module m | !Util.skippedModules().contains(m.name)]»
     mod «smod.name» is
+      ---- Importations
       «generateImportations(smod)»
+      
+      ---- Sort declarations
       «generateSortDeclarations(smod)»
+      
+      ---- Subsort declarations
+      «generateSubsortDeclarations(smod)»
     endm
     «ENDFOR»
     '''
@@ -127,6 +135,17 @@ class MaudeM2T {
     def generateSortDeclarations(Module mod) '''
     «FOR sort:mod.els.filter(typeof(Sort))»
     sort «sort.name» .
+    «ENDFOR»
+    '''
+    
+    /**
+     * Given a Maude module, it generates all subsort declarations.
+     * @params
+     *  mod    the Module with none or more sort objects
+     */
+    def generateSubsortDeclarations(Module mod) '''
+    «FOR ssort:mod.els.filter(typeof(SubsortRel))»
+    subsort «ssort.subsorts.get(0).name» < «ssort.supersorts.get(0).name» .
     «ENDFOR»
     '''
 
