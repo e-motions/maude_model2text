@@ -17,17 +17,28 @@
 
 package maude_model2text
 
+import Maude.BooleanCond
+import Maude.Condition
+import Maude.Constant
+import Maude.Equation
 import Maude.ImportationMode
+import Maude.MatchingCond
 import Maude.MaudePackage
 import Maude.MaudeSpec
 import Maude.ModImportation
 import Maude.Module
 import Maude.ModuleIdModExp
+import Maude.Operation
+import Maude.RecTerm
 import Maude.SModule
 import Maude.Sort
 import Maude.SubsortRel
+import Maude.Term
+import Maude.Type
+import Maude.Variable
 import java.io.PrintWriter
 import maude_model2text.Main.Util
+import org.eclipse.emf.common.util.EList
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
@@ -99,13 +110,19 @@ class MaudeM2T {
     «FOR smod:mspec.els.filter(typeof(SModule)).filter[Module m | !Util.skippedModules().contains(m.name)]»
     mod «smod.name» is
       ---- Importations
-      «generateImportations(smod)»
+      «generateImportations(smod.els.filter(typeof(ModImportation)))»
       
       ---- Sort declarations
-      «generateSortDeclarations(smod)»
+      «generateSortDeclarations(smod.els.filter(typeof(Sort)))»
       
       ---- Subsort declarations
-      «generateSubsortDeclarations(smod)»
+      «generateSubsortDeclarations(smod.els.filter(typeof(SubsortRel)))»
+      
+      ---- Operation declarations
+      «generateOperations(smod.els.filter(typeof(Operation)))»
+      
+      ---- Equations
+      «generateEquations(smod.els.filter(typeof(Equation)))»
     endm
     «ENDFOR»
     '''
@@ -115,8 +132,8 @@ class MaudeM2T {
      * @params
      *  mod    the Module with none or more ModImportation objects
      */
-    def generateImportations(Module mod) '''
-    «FOR imp:mod.els.filter(typeof(ModImportation))»
+    def generateImportations(Iterable<ModImportation> importations) '''
+    «FOR imp:importations»
     «IF imp.mode == ImportationMode.PROTECTING && imp.imports instanceof ModuleIdModExp»
     pr «(imp.imports as ModuleIdModExp).module.name» .
     «ELSEIF imp.mode == ImportationMode.INCLUDING && imp.imports instanceof ModuleIdModExp»
@@ -132,8 +149,8 @@ class MaudeM2T {
      * @params
      *  mod    the Module with none or more sort objects
      */
-    def generateSortDeclarations(Module mod) '''
-    «FOR sort:mod.els.filter(typeof(Sort))»
+    def generateSortDeclarations(Iterable<Sort> sorts) '''
+    «FOR sort:sorts»
     sort «sort.name» .
     «ENDFOR»
     '''
@@ -143,10 +160,73 @@ class MaudeM2T {
      * @params
      *  mod    the Module with none or more sort objects
      */
-    def generateSubsortDeclarations(Module mod) '''
-    «FOR ssort:mod.els.filter(typeof(SubsortRel))»
+    def generateSubsortDeclarations(Iterable<SubsortRel> ssorts) '''
+    «FOR ssort:ssorts»
     subsort «ssort.subsorts.get(0).name» < «ssort.supersorts.get(0).name» .
     «ENDFOR»
     '''
+    
+    def generateOperations(Iterable<Operation> operations) '''
+    «FOR op:operations»
+    op «op.name» : «printArity(op.arity)»-> «printCoarity(op.coarity)» «IF !op.atts.empty»[«printAtts(op.atts)»] «ENDIF».
+    «ENDFOR»
+    '''
+    
+    def printAtts(EList<String> list) '''
+    «FOR a : list»
+    «a»
+    «ENDFOR»
+    '''
+    
+    
+    def printArity(EList<Type> list) '''«FOR t : list SEPARATOR " " AFTER " "»«t.name»«ENDFOR»'''
+    
+    def printCoarity(Type type) '''«type.name»'''
+    
+    def generateEquations(Iterable<Equation> equations) '''
+    «FOR eq : equations SEPARATOR "\n"»
+    «IF eq.conds.empty»«printNoConditionalEq(eq)»«ELSE»«printConditionalEq(eq)»«ENDIF»«ENDFOR»
+    '''
+    
+    def printConditionalEq(Equation equation) '''
+    ceq «IF equation.label != null && !equation.label.equals("")»[«equation.label»] : «ENDIF»«printTerm(equation.lhs)»
+      = «printTerm(equation.rhs)»
+      if «printConditions(equation.conds)» .
+    '''
+    
+    def printConditions(EList<Condition> conditions) '''«FOR cond : conditions SEPARATOR "\n/\\ "»«printCond(cond)»«ENDFOR»'''
+    
+    def printCond(Condition condition) {
+        if(condition instanceof MatchingCond) {
+            printMatchingCond(condition as MatchingCond)
+        } else if(condition instanceof BooleanCond) {
+            printBooleanCond(condition as BooleanCond)
+        }
+    }
+    
+    def printMatchingCond(MatchingCond cond) '''«printTerm(cond.lhs)» := «printTerm(cond.rhs)»'''
+        
+    def printBooleanCond(BooleanCond cond) '''«printTerm(cond.lhs)»'''
+    
+    def printNoConditionalEq(Equation equation) '''
+    eq «IF equation.label != null && !equation.label.equals("")»[«equation.label»] : «ENDIF»«printTerm(equation.lhs)»
+      = «printTerm(equation.rhs)» .
+    '''
+    
+    def printTerm(Term term) {
+        if(term instanceof Variable) {
+            printVariable(term)
+        } else if(term instanceof Constant) {
+            printConstant(term)
+        } else if (term instanceof RecTerm){
+            printRecTerm(term)
+        }
+    }
+    
+    def printRecTerm(RecTerm rt) '''«rt.op»«FOR t : rt.args BEFORE "(" SEPARATOR "," AFTER ")"»«printTerm(t as Term)»«ENDFOR»'''
 
+    def printConstant(Constant constant) '''«constant.op»'''
+    
+    def printVariable(Variable variable) '''«variable.name»:«variable.type.name»'''
+    
 }

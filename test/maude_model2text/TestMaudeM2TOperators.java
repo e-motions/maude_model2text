@@ -29,10 +29,11 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import Maude.MaudeSpec;
+import Maude.Operation;
 import Maude.SModule;
-import Maude.SubsortRel;
+import Maude.Type;
 
-public class TestMaudeM2TSubSorts {
+public class TestMaudeM2TOperators {
 	
 	private static MaudeM2T transformation;
 	private static Set<MaudeSpec> models;
@@ -54,10 +55,10 @@ public class TestMaudeM2TSubSorts {
 	}
 	
 	/**
-	 * Tests (for each case study), for each system module, it tests the subsort declarations
+	 * Tests (for each case study), for each system module, it tests if an operator with that name exists
 	 */
 	@Test
-	public void testSubsorts() {
+	public void testOperatorNames() {
 		for(MaudeSpec spec : models) {
 			String result = transformation.generateCode(spec).toString();
 			Set<SModule> smods = spec.getEls().stream()
@@ -66,17 +67,63 @@ public class TestMaudeM2TSubSorts {
 					.map(SModule.class::cast)
 					.collect(Collectors.toSet());
 			for(SModule smod : smods) {
-				for(SubsortRel ssort : smod.getEls().stream()
-						.filter(SubsortRel.class::isInstance)
-						.map(SubsortRel.class::cast)
+				for(Operation oper : smod.getEls().stream()
+						.filter(Operation.class::isInstance)
+						.map(Operation.class::cast)
 						.collect(Collectors.toList())) {
-					/* there is a subsort... */
-					assertTrue(result.indexOf("subsort " + ssort.getSubsorts().get(0).getName() + " < " 
-							+ ssort.getSupersorts().get(0).getName()) > -1);
+					/* there is an operator...... */
+					assertTrue(result.indexOf("op " + oper.getName()) > -1);
 					/* the sort is inside the module */
-					assertTrue(result.indexOf("subsort " + ssort.getSubsorts().get(0).getName() + " < " 
-							+ ssort.getSupersorts().get(0).getName()) >
-							result.indexOf("mod " + ssort.getModule().getName() + "is"));
+					assertTrue(result.indexOf("op " + oper.getName()) >
+							result.indexOf("mod " + oper.getModule().getName() + "is"));
+				}
+			}
+		}
+	}
+	
+	/**
+	 * Tests (for each case study), for each system module, it tests if the operator has its arity elements
+	 */
+	@Test
+	public void testOperatorArity() {
+		for(MaudeSpec spec : models) {
+			String result = transformation.generateCode(spec).toString();
+			Set<SModule> smods = spec.getEls().stream()
+					.filter(SModule.class::isInstance)
+					.filter(m -> !Util.skippedModules().contains(m.getName()))
+					.map(SModule.class::cast)
+					.collect(Collectors.toSet());
+			for(SModule smod : smods) {
+				for(Operation oper : smod.getEls().stream()
+						.filter(Operation.class::isInstance)
+						.map(Operation.class::cast)
+						.collect(Collectors.toList())) {
+					for(Type type : oper.getArity()) {
+						assertTrue(result.indexOf(type.getName(), result.indexOf("op " + oper.getName())) > - 1);
+					}
+				}
+			}
+		}
+	}
+	
+	/**
+	 * Tests (for each case study), for each system module, it tests if the operator has its coarity
+	 */
+	@Test
+	public void testOperatorCoarity() {
+		for(MaudeSpec spec : models) {
+			String result = transformation.generateCode(spec).toString();
+			Set<SModule> smods = spec.getEls().stream()
+					.filter(SModule.class::isInstance)
+					.filter(m -> !Util.skippedModules().contains(m.getName()))
+					.map(SModule.class::cast)
+					.collect(Collectors.toSet());
+			for(SModule smod : smods) {
+				for(Operation oper : smod.getEls().stream()
+						.filter(Operation.class::isInstance)
+						.map(Operation.class::cast)
+						.collect(Collectors.toList())) {
+						assertTrue(result.indexOf(oper.getCoarity().getName(), result.indexOf("->")) > - 1);
 				}
 			}
 		}
