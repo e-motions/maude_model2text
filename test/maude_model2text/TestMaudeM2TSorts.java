@@ -22,8 +22,6 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import maude_model2text.Main.Util;
-
 import org.eclipse.emf.ecore.resource.Resource;
 import org.junit.BeforeClass;
 import org.junit.Test;

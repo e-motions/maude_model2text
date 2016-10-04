@@ -16,7 +16,12 @@
  */
 package maude_model2text;
 
+import Maude.BooleanCond;
+import Maude.Condition;
+import Maude.Constant;
+import Maude.Equation;
 import Maude.ImportationMode;
+import Maude.MatchingCond;
 import Maude.MaudePackage;
 import Maude.MaudeSpec;
 import Maude.MaudeTopEl;
@@ -25,15 +30,20 @@ import Maude.ModExpression;
 import Maude.ModImportation;
 import Maude.Module;
 import Maude.ModuleIdModExp;
+import Maude.Operation;
+import Maude.RecTerm;
 import Maude.SModule;
 import Maude.Sort;
 import Maude.SubsortRel;
+import Maude.Term;
+import Maude.Type;
+import Maude.Variable;
 import com.google.common.base.Objects;
 import com.google.common.collect.Iterables;
 import java.io.PrintWriter;
 import java.util.Map;
 import java.util.Set;
-import maude_model2text.Main.Util;
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -142,7 +152,9 @@ public class MaudeM2T {
         _builder.append("---- Importations");
         _builder.newLine();
         _builder.append("  ");
-        CharSequence _generateImportations = this.generateImportations(smod);
+        EList<ModElement> _els_1 = smod.getEls();
+        Iterable<ModImportation> _filter_2 = Iterables.<ModImportation>filter(_els_1, ModImportation.class);
+        CharSequence _generateImportations = this.generateImportations(_filter_2);
         _builder.append(_generateImportations, "  ");
         _builder.newLineIfNotEmpty();
         _builder.append("  ");
@@ -151,7 +163,9 @@ public class MaudeM2T {
         _builder.append("---- Sort declarations");
         _builder.newLine();
         _builder.append("  ");
-        CharSequence _generateSortDeclarations = this.generateSortDeclarations(smod);
+        EList<ModElement> _els_2 = smod.getEls();
+        Iterable<Sort> _filter_3 = Iterables.<Sort>filter(_els_2, Sort.class);
+        CharSequence _generateSortDeclarations = this.generateSortDeclarations(_filter_3);
         _builder.append(_generateSortDeclarations, "  ");
         _builder.newLineIfNotEmpty();
         _builder.append("  ");
@@ -160,8 +174,32 @@ public class MaudeM2T {
         _builder.append("---- Subsort declarations");
         _builder.newLine();
         _builder.append("  ");
-        CharSequence _generateSubsortDeclarations = this.generateSubsortDeclarations(smod);
+        EList<ModElement> _els_3 = smod.getEls();
+        Iterable<SubsortRel> _filter_4 = Iterables.<SubsortRel>filter(_els_3, SubsortRel.class);
+        CharSequence _generateSubsortDeclarations = this.generateSubsortDeclarations(_filter_4);
         _builder.append(_generateSubsortDeclarations, "  ");
+        _builder.newLineIfNotEmpty();
+        _builder.append("  ");
+        _builder.newLine();
+        _builder.append("  ");
+        _builder.append("---- Operation declarations");
+        _builder.newLine();
+        _builder.append("  ");
+        EList<ModElement> _els_4 = smod.getEls();
+        Iterable<Operation> _filter_5 = Iterables.<Operation>filter(_els_4, Operation.class);
+        CharSequence _generateOperations = this.generateOperations(_filter_5);
+        _builder.append(_generateOperations, "  ");
+        _builder.newLineIfNotEmpty();
+        _builder.append("  ");
+        _builder.newLine();
+        _builder.append("  ");
+        _builder.append("---- Equations");
+        _builder.newLine();
+        _builder.append("  ");
+        EList<ModElement> _els_5 = smod.getEls();
+        Iterable<Equation> _filter_6 = Iterables.<Equation>filter(_els_5, Equation.class);
+        CharSequence _generateEquations = this.generateEquations(_filter_6);
+        _builder.append(_generateEquations, "  ");
         _builder.newLineIfNotEmpty();
         _builder.append("endm");
         _builder.newLine();
@@ -175,62 +213,33 @@ public class MaudeM2T {
    * @params
    *  mod    the Module with none or more ModImportation objects
    */
-  public CharSequence generateImportations(final Module mod) {
+  public CharSequence generateImportations(final Iterable<ModImportation> importations) {
     StringConcatenation _builder = new StringConcatenation();
     {
-      EList<ModElement> _els = mod.getEls();
-      Iterable<ModImportation> _filter = Iterables.<ModImportation>filter(_els, ModImportation.class);
-      for(final ModImportation imp : _filter) {
+      for(final ModImportation imp : importations) {
         {
-          boolean _and = false;
-          ImportationMode _mode = imp.getMode();
-          boolean _equals = Objects.equal(_mode, ImportationMode.PROTECTING);
-          if (!_equals) {
-            _and = false;
-          } else {
-            ModExpression _imports = imp.getImports();
-            _and = (_imports instanceof ModuleIdModExp);
-          }
-          if (_and) {
+          if ((Objects.equal(imp.getMode(), ImportationMode.PROTECTING) && (imp.getImports() instanceof ModuleIdModExp))) {
             _builder.append("pr ");
-            ModExpression _imports_1 = imp.getImports();
-            Module _module = ((ModuleIdModExp) _imports_1).getModule();
+            ModExpression _imports = imp.getImports();
+            Module _module = ((ModuleIdModExp) _imports).getModule();
             String _name = _module.getName();
             _builder.append(_name, "");
             _builder.append(" .");
             _builder.newLineIfNotEmpty();
           } else {
-            boolean _and_1 = false;
-            ImportationMode _mode_1 = imp.getMode();
-            boolean _equals_1 = Objects.equal(_mode_1, ImportationMode.INCLUDING);
-            if (!_equals_1) {
-              _and_1 = false;
-            } else {
-              ModExpression _imports_2 = imp.getImports();
-              _and_1 = (_imports_2 instanceof ModuleIdModExp);
-            }
-            if (_and_1) {
+            if ((Objects.equal(imp.getMode(), ImportationMode.INCLUDING) && (imp.getImports() instanceof ModuleIdModExp))) {
               _builder.append("inc ");
-              ModExpression _imports_3 = imp.getImports();
-              Module _module_1 = ((ModuleIdModExp) _imports_3).getModule();
+              ModExpression _imports_1 = imp.getImports();
+              Module _module_1 = ((ModuleIdModExp) _imports_1).getModule();
               String _name_1 = _module_1.getName();
               _builder.append(_name_1, "");
               _builder.append(" .");
               _builder.newLineIfNotEmpty();
             } else {
-              boolean _and_2 = false;
-              ImportationMode _mode_2 = imp.getMode();
-              boolean _equals_2 = Objects.equal(_mode_2, ImportationMode.EXTENDING);
-              if (!_equals_2) {
-                _and_2 = false;
-              } else {
-                ModExpression _imports_4 = imp.getImports();
-                _and_2 = (_imports_4 instanceof ModuleIdModExp);
-              }
-              if (_and_2) {
+              if ((Objects.equal(imp.getMode(), ImportationMode.EXTENDING) && (imp.getImports() instanceof ModuleIdModExp))) {
                 _builder.append("ext ");
-                ModExpression _imports_5 = imp.getImports();
-                Module _module_2 = ((ModuleIdModExp) _imports_5).getModule();
+                ModExpression _imports_2 = imp.getImports();
+                Module _module_2 = ((ModuleIdModExp) _imports_2).getModule();
                 String _name_2 = _module_2.getName();
                 _builder.append(_name_2, "");
                 _builder.append(" .");
@@ -249,12 +258,10 @@ public class MaudeM2T {
    * @params
    *  mod    the Module with none or more sort objects
    */
-  public CharSequence generateSortDeclarations(final Module mod) {
+  public CharSequence generateSortDeclarations(final Iterable<Sort> sorts) {
     StringConcatenation _builder = new StringConcatenation();
     {
-      EList<ModElement> _els = mod.getEls();
-      Iterable<Sort> _filter = Iterables.<Sort>filter(_els, Sort.class);
-      for(final Sort sort : _filter) {
+      for(final Sort sort : sorts) {
         _builder.append("sort ");
         String _name = sort.getName();
         _builder.append(_name, "");
@@ -270,12 +277,10 @@ public class MaudeM2T {
    * @params
    *  mod    the Module with none or more sort objects
    */
-  public CharSequence generateSubsortDeclarations(final Module mod) {
+  public CharSequence generateSubsortDeclarations(final Iterable<SubsortRel> ssorts) {
     StringConcatenation _builder = new StringConcatenation();
     {
-      EList<ModElement> _els = mod.getEls();
-      Iterable<SubsortRel> _filter = Iterables.<SubsortRel>filter(_els, SubsortRel.class);
-      for(final SubsortRel ssort : _filter) {
+      for(final SubsortRel ssort : ssorts) {
         _builder.append("subsort ");
         EList<Sort> _subsorts = ssort.getSubsorts();
         Sort _get = _subsorts.get(0);
@@ -290,6 +295,275 @@ public class MaudeM2T {
         _builder.newLineIfNotEmpty();
       }
     }
+    return _builder;
+  }
+  
+  public CharSequence generateOperations(final Iterable<Operation> operations) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      for(final Operation op : operations) {
+        _builder.append("op ");
+        String _name = op.getName();
+        _builder.append(_name, "");
+        _builder.append(" : ");
+        EList<Type> _arity = op.getArity();
+        CharSequence _printArity = this.printArity(_arity);
+        _builder.append(_printArity, "");
+        _builder.append("-> ");
+        Type _coarity = op.getCoarity();
+        CharSequence _printCoarity = this.printCoarity(_coarity);
+        _builder.append(_printCoarity, "");
+        _builder.append(" ");
+        {
+          EList<String> _atts = op.getAtts();
+          boolean _isEmpty = _atts.isEmpty();
+          boolean _not = (!_isEmpty);
+          if (_not) {
+            _builder.append("[");
+            EList<String> _atts_1 = op.getAtts();
+            CharSequence _printAtts = this.printAtts(_atts_1);
+            _builder.append(_printAtts, "");
+            _builder.append("] ");
+          }
+        }
+        _builder.append(".");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    return _builder;
+  }
+  
+  public CharSequence printAtts(final EList<String> list) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      for(final String a : list) {
+        _builder.append(a, "");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    return _builder;
+  }
+  
+  public CharSequence printArity(final EList<Type> list) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      boolean _hasElements = false;
+      for(final Type t : list) {
+        if (!_hasElements) {
+          _hasElements = true;
+        } else {
+          _builder.appendImmediate(" ", "");
+        }
+        String _name = t.getName();
+        _builder.append(_name, "");
+      }
+      if (_hasElements) {
+        _builder.append(" ", "");
+      }
+    }
+    return _builder;
+  }
+  
+  public CharSequence printCoarity(final Type type) {
+    StringConcatenation _builder = new StringConcatenation();
+    String _name = type.getName();
+    _builder.append(_name, "");
+    return _builder;
+  }
+  
+  public CharSequence generateEquations(final Iterable<Equation> equations) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      boolean _hasElements = false;
+      for(final Equation eq : equations) {
+        if (!_hasElements) {
+          _hasElements = true;
+        } else {
+          _builder.appendImmediate("\n", "");
+        }
+        {
+          EList<Condition> _conds = eq.getConds();
+          boolean _isEmpty = _conds.isEmpty();
+          if (_isEmpty) {
+            CharSequence _printNoConditionalEq = this.printNoConditionalEq(eq);
+            _builder.append(_printNoConditionalEq, "");
+          } else {
+            CharSequence _printConditionalEq = this.printConditionalEq(eq);
+            _builder.append(_printConditionalEq, "");
+          }
+        }
+      }
+    }
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  public CharSequence printConditionalEq(final Equation equation) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("ceq ");
+    {
+      if (((!Objects.equal(equation.getLabel(), null)) && (!equation.getLabel().equals("")))) {
+        _builder.append("[");
+        String _label = equation.getLabel();
+        _builder.append(_label, "");
+        _builder.append("] : ");
+      }
+    }
+    Term _lhs = equation.getLhs();
+    CharSequence _printTerm = this.printTerm(_lhs);
+    _builder.append(_printTerm, "");
+    _builder.newLineIfNotEmpty();
+    _builder.append("  ");
+    _builder.append("= ");
+    Term _rhs = equation.getRhs();
+    CharSequence _printTerm_1 = this.printTerm(_rhs);
+    _builder.append(_printTerm_1, "  ");
+    _builder.newLineIfNotEmpty();
+    _builder.append("  ");
+    _builder.append("if ");
+    EList<Condition> _conds = equation.getConds();
+    CharSequence _printConditions = this.printConditions(_conds);
+    _builder.append(_printConditions, "  ");
+    _builder.append(" .");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  public CharSequence printConditions(final EList<Condition> conditions) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      boolean _hasElements = false;
+      for(final Condition cond : conditions) {
+        if (!_hasElements) {
+          _hasElements = true;
+        } else {
+          _builder.appendImmediate("\n/\\ ", "");
+        }
+        CharSequence _printCond = this.printCond(cond);
+        _builder.append(_printCond, "");
+      }
+    }
+    return _builder;
+  }
+  
+  public CharSequence printCond(final Condition condition) {
+    CharSequence _xifexpression = null;
+    if ((condition instanceof MatchingCond)) {
+      _xifexpression = this.printMatchingCond(((MatchingCond) condition));
+    } else {
+      CharSequence _xifexpression_1 = null;
+      if ((condition instanceof BooleanCond)) {
+        _xifexpression_1 = this.printBooleanCond(((BooleanCond) condition));
+      }
+      _xifexpression = _xifexpression_1;
+    }
+    return _xifexpression;
+  }
+  
+  public CharSequence printMatchingCond(final MatchingCond cond) {
+    StringConcatenation _builder = new StringConcatenation();
+    Term _lhs = cond.getLhs();
+    CharSequence _printTerm = this.printTerm(_lhs);
+    _builder.append(_printTerm, "");
+    _builder.append(" := ");
+    Term _rhs = cond.getRhs();
+    CharSequence _printTerm_1 = this.printTerm(_rhs);
+    _builder.append(_printTerm_1, "");
+    return _builder;
+  }
+  
+  public CharSequence printBooleanCond(final BooleanCond cond) {
+    StringConcatenation _builder = new StringConcatenation();
+    Term _lhs = cond.getLhs();
+    CharSequence _printTerm = this.printTerm(_lhs);
+    _builder.append(_printTerm, "");
+    return _builder;
+  }
+  
+  public CharSequence printNoConditionalEq(final Equation equation) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("eq ");
+    {
+      if (((!Objects.equal(equation.getLabel(), null)) && (!equation.getLabel().equals("")))) {
+        _builder.append("[");
+        String _label = equation.getLabel();
+        _builder.append(_label, "");
+        _builder.append("] : ");
+      }
+    }
+    Term _lhs = equation.getLhs();
+    CharSequence _printTerm = this.printTerm(_lhs);
+    _builder.append(_printTerm, "");
+    _builder.newLineIfNotEmpty();
+    _builder.append("  ");
+    _builder.append("= ");
+    Term _rhs = equation.getRhs();
+    CharSequence _printTerm_1 = this.printTerm(_rhs);
+    _builder.append(_printTerm_1, "  ");
+    _builder.append(" .");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  public CharSequence printTerm(final Term term) {
+    CharSequence _xifexpression = null;
+    if ((term instanceof Variable)) {
+      _xifexpression = this.printVariable(((Variable)term));
+    } else {
+      CharSequence _xifexpression_1 = null;
+      if ((term instanceof Constant)) {
+        _xifexpression_1 = this.printConstant(((Constant)term));
+      } else {
+        CharSequence _xifexpression_2 = null;
+        if ((term instanceof RecTerm)) {
+          _xifexpression_2 = this.printRecTerm(((RecTerm)term));
+        }
+        _xifexpression_1 = _xifexpression_2;
+      }
+      _xifexpression = _xifexpression_1;
+    }
+    return _xifexpression;
+  }
+  
+  public CharSequence printRecTerm(final RecTerm rt) {
+    StringConcatenation _builder = new StringConcatenation();
+    String _op = rt.getOp();
+    _builder.append(_op, "");
+    {
+      EList<Term> _args = rt.getArgs();
+      boolean _hasElements = false;
+      for(final Term t : _args) {
+        if (!_hasElements) {
+          _hasElements = true;
+          _builder.append("(", "");
+        } else {
+          _builder.appendImmediate(",", "");
+        }
+        Object _printTerm = this.printTerm(((Term) t));
+        _builder.append(_printTerm, "");
+      }
+      if (_hasElements) {
+        _builder.append(")", "");
+      }
+    }
+    return _builder;
+  }
+  
+  public CharSequence printConstant(final Constant constant) {
+    StringConcatenation _builder = new StringConcatenation();
+    String _op = constant.getOp();
+    _builder.append(_op, "");
+    return _builder;
+  }
+  
+  public CharSequence printVariable(final Variable variable) {
+    StringConcatenation _builder = new StringConcatenation();
+    String _name = variable.getName();
+    _builder.append(_name, "");
+    _builder.append(":");
+    Type _type = variable.getType();
+    String _name_1 = _type.getName();
+    _builder.append(_name_1, "");
     return _builder;
   }
 }

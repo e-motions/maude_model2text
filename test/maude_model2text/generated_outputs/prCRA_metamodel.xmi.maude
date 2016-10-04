@@ -1,0 +1,353 @@
+mod @ARCHITECTURECRA@ is
+  ---- Importations
+  pr @ECORE@ .
+  
+  ---- Sort declarations
+  sort ClassModel@architectureCRA .
+  sort Class@architectureCRA .
+  sort Attribute@architectureCRA .
+  sort Method@architectureCRA .
+  sort Feature@architectureCRA .
+  sort NamedElement@architectureCRA .
+  
+  ---- Subsort declarations
+  subsort ClassModel@architectureCRA < NamedElement@architectureCRA .
+  subsort Class@architectureCRA < NamedElement@architectureCRA .
+  subsort Attribute@architectureCRA < Feature@architectureCRA .
+  subsort Method@architectureCRA < Feature@architectureCRA .
+  subsort Feature@architectureCRA < NamedElement@architectureCRA .
+  subsort NamedElement@architectureCRA < @Class .
+  
+  ---- Operation declarations
+  op @architectureCRA@ : -> @Metamodel .
+  op architectureCRA : -> @Package .
+  op ClassModel@architectureCRA : -> ClassModel@architectureCRA .
+  op Class@architectureCRA : -> Class@architectureCRA .
+  op Attribute@architectureCRA : -> Attribute@architectureCRA .
+  op Method@architectureCRA : -> Method@architectureCRA .
+  op Feature@architectureCRA : -> Feature@architectureCRA .
+  op NamedElement@architectureCRA : -> NamedElement@architectureCRA .
+  op classes@ClassModel@architectureCRA : -> @Reference .
+  op features@ClassModel@architectureCRA : -> @Reference .
+  op encapsulates@Class@architectureCRA : -> @Reference .
+  op dataDependency@Method@architectureCRA : -> @Reference .
+  op functionalDependency@Method@architectureCRA : -> @Reference .
+  op isEncapsulatedBy@Feature@architectureCRA : -> @Reference .
+  op name@NamedElement@architectureCRA : -> @Attribute .
+  
+  ---- Equations
+  eq name(@architectureCRA@)
+    = "architectureCRA" .
+  
+  eq packages(@architectureCRA@)
+    = architectureCRA .
+  
+  eq name(architectureCRA)
+    = "architectureCRA" .
+  
+  eq metamodel(architectureCRA)
+    = @architectureCRA@ .
+  
+  eq superPackage(architectureCRA)
+    = null .
+  
+  eq subPackages(architectureCRA)
+    = nil .
+  
+  eq classes(architectureCRA)
+    = __(ClassModel@architectureCRA,Class@architectureCRA,Attribute@architectureCRA,Method@architectureCRA,Feature@architectureCRA,NamedElement@architectureCRA) .
+  
+  eq name(ClassModel@architectureCRA)
+    = "ClassModel" .
+  
+  eq isAbstract(ClassModel@architectureCRA)
+    = false .
+  
+  eq package(ClassModel@architectureCRA)
+    = architectureCRA .
+  
+  eq superTypes(ClassModel@architectureCRA)
+    = NamedElement@architectureCRA .
+  
+  eq references(ClassModel@architectureCRA)
+    = __(classes@ClassModel@architectureCRA,features@ClassModel@architectureCRA) .
+  
+  eq attributes(ClassModel@architectureCRA)
+    = nil .
+  
+  eq name(Class@architectureCRA)
+    = "Class" .
+  
+  eq isAbstract(Class@architectureCRA)
+    = false .
+  
+  eq package(Class@architectureCRA)
+    = architectureCRA .
+  
+  eq superTypes(Class@architectureCRA)
+    = NamedElement@architectureCRA .
+  
+  eq references(Class@architectureCRA)
+    = encapsulates@Class@architectureCRA .
+  
+  eq attributes(Class@architectureCRA)
+    = nil .
+  
+  eq name(Attribute@architectureCRA)
+    = "Attribute" .
+  
+  eq isAbstract(Attribute@architectureCRA)
+    = false .
+  
+  eq package(Attribute@architectureCRA)
+    = architectureCRA .
+  
+  eq superTypes(Attribute@architectureCRA)
+    = Feature@architectureCRA .
+  
+  eq references(Attribute@architectureCRA)
+    = nil .
+  
+  eq attributes(Attribute@architectureCRA)
+    = nil .
+  
+  eq name(Method@architectureCRA)
+    = "Method" .
+  
+  eq isAbstract(Method@architectureCRA)
+    = false .
+  
+  eq package(Method@architectureCRA)
+    = architectureCRA .
+  
+  eq superTypes(Method@architectureCRA)
+    = Feature@architectureCRA .
+  
+  eq references(Method@architectureCRA)
+    = __(dataDependency@Method@architectureCRA,functionalDependency@Method@architectureCRA) .
+  
+  eq attributes(Method@architectureCRA)
+    = nil .
+  
+  eq name(Feature@architectureCRA)
+    = "Feature" .
+  
+  eq isAbstract(Feature@architectureCRA)
+    = true .
+  
+  eq package(Feature@architectureCRA)
+    = architectureCRA .
+  
+  eq superTypes(Feature@architectureCRA)
+    = NamedElement@architectureCRA .
+  
+  eq references(Feature@architectureCRA)
+    = isEncapsulatedBy@Feature@architectureCRA .
+  
+  eq attributes(Feature@architectureCRA)
+    = nil .
+  
+  eq name(NamedElement@architectureCRA)
+    = "NamedElement" .
+  
+  eq isAbstract(NamedElement@architectureCRA)
+    = true .
+  
+  eq package(NamedElement@architectureCRA)
+    = architectureCRA .
+  
+  eq superTypes(NamedElement@architectureCRA)
+    = nil .
+  
+  eq references(NamedElement@architectureCRA)
+    = nil .
+  
+  eq attributes(NamedElement@architectureCRA)
+    = name@NamedElement@architectureCRA .
+  
+  eq name(classes@ClassModel@architectureCRA)
+    = "classes" .
+  
+  eq type(classes@ClassModel@architectureCRA)
+    = Class@architectureCRA .
+  
+  eq opposite(classes@ClassModel@architectureCRA)
+    = null .
+  
+  eq lowerBound(classes@ClassModel@architectureCRA)
+    = 0 .
+  
+  eq upperBound(classes@ClassModel@architectureCRA)
+    = * .
+  
+  eq containingClass(classes@ClassModel@architectureCRA)
+    = ClassModel@architectureCRA .
+  
+  eq isContainment(classes@ClassModel@architectureCRA)
+    = true .
+  
+  eq isOrdered(classes@ClassModel@architectureCRA)
+    = false .
+  
+  eq isUnique(classes@ClassModel@architectureCRA)
+    = true .
+  
+  eq name(features@ClassModel@architectureCRA)
+    = "features" .
+  
+  eq type(features@ClassModel@architectureCRA)
+    = Feature@architectureCRA .
+  
+  eq opposite(features@ClassModel@architectureCRA)
+    = null .
+  
+  eq lowerBound(features@ClassModel@architectureCRA)
+    = 0 .
+  
+  eq upperBound(features@ClassModel@architectureCRA)
+    = * .
+  
+  eq containingClass(features@ClassModel@architectureCRA)
+    = ClassModel@architectureCRA .
+  
+  eq isContainment(features@ClassModel@architectureCRA)
+    = true .
+  
+  eq isOrdered(features@ClassModel@architectureCRA)
+    = false .
+  
+  eq isUnique(features@ClassModel@architectureCRA)
+    = true .
+  
+  eq name(encapsulates@Class@architectureCRA)
+    = "encapsulates" .
+  
+  eq type(encapsulates@Class@architectureCRA)
+    = Feature@architectureCRA .
+  
+  eq opposite(encapsulates@Class@architectureCRA)
+    = isEncapsulatedBy@Feature@architectureCRA .
+  
+  eq lowerBound(encapsulates@Class@architectureCRA)
+    = 1 .
+  
+  eq upperBound(encapsulates@Class@architectureCRA)
+    = * .
+  
+  eq containingClass(encapsulates@Class@architectureCRA)
+    = Class@architectureCRA .
+  
+  eq isContainment(encapsulates@Class@architectureCRA)
+    = false .
+  
+  eq isOrdered(encapsulates@Class@architectureCRA)
+    = true .
+  
+  eq isUnique(encapsulates@Class@architectureCRA)
+    = true .
+  
+  eq name(dataDependency@Method@architectureCRA)
+    = "dataDependency" .
+  
+  eq type(dataDependency@Method@architectureCRA)
+    = Attribute@architectureCRA .
+  
+  eq opposite(dataDependency@Method@architectureCRA)
+    = null .
+  
+  eq lowerBound(dataDependency@Method@architectureCRA)
+    = 0 .
+  
+  eq upperBound(dataDependency@Method@architectureCRA)
+    = * .
+  
+  eq containingClass(dataDependency@Method@architectureCRA)
+    = Method@architectureCRA .
+  
+  eq isContainment(dataDependency@Method@architectureCRA)
+    = false .
+  
+  eq isOrdered(dataDependency@Method@architectureCRA)
+    = true .
+  
+  eq isUnique(dataDependency@Method@architectureCRA)
+    = true .
+  
+  eq name(functionalDependency@Method@architectureCRA)
+    = "functionalDependency" .
+  
+  eq type(functionalDependency@Method@architectureCRA)
+    = Method@architectureCRA .
+  
+  eq opposite(functionalDependency@Method@architectureCRA)
+    = null .
+  
+  eq lowerBound(functionalDependency@Method@architectureCRA)
+    = 0 .
+  
+  eq upperBound(functionalDependency@Method@architectureCRA)
+    = * .
+  
+  eq containingClass(functionalDependency@Method@architectureCRA)
+    = Method@architectureCRA .
+  
+  eq isContainment(functionalDependency@Method@architectureCRA)
+    = false .
+  
+  eq isOrdered(functionalDependency@Method@architectureCRA)
+    = true .
+  
+  eq isUnique(functionalDependency@Method@architectureCRA)
+    = true .
+  
+  eq name(isEncapsulatedBy@Feature@architectureCRA)
+    = "isEncapsulatedBy" .
+  
+  eq type(isEncapsulatedBy@Feature@architectureCRA)
+    = Class@architectureCRA .
+  
+  eq opposite(isEncapsulatedBy@Feature@architectureCRA)
+    = encapsulates@Class@architectureCRA .
+  
+  eq lowerBound(isEncapsulatedBy@Feature@architectureCRA)
+    = 0 .
+  
+  eq upperBound(isEncapsulatedBy@Feature@architectureCRA)
+    = 1 .
+  
+  eq containingClass(isEncapsulatedBy@Feature@architectureCRA)
+    = Feature@architectureCRA .
+  
+  eq isContainment(isEncapsulatedBy@Feature@architectureCRA)
+    = false .
+  
+  eq isOrdered(isEncapsulatedBy@Feature@architectureCRA)
+    = true .
+  
+  eq isUnique(isEncapsulatedBy@Feature@architectureCRA)
+    = true .
+  
+  eq name(name@NamedElement@architectureCRA)
+    = "name" .
+  
+  eq type(name@NamedElement@architectureCRA)
+    = @String .
+  
+  eq lowerBound(name@NamedElement@architectureCRA)
+    = 1 .
+  
+  eq upperBound(name@NamedElement@architectureCRA)
+    = 1 .
+  
+  eq containingClass(name@NamedElement@architectureCRA)
+    = NamedElement@architectureCRA .
+  
+  eq isId(name@NamedElement@architectureCRA)
+    = false .
+  
+  eq isOrdered(name@NamedElement@architectureCRA)
+    = true .
+  
+  eq isUnique(name@NamedElement@architectureCRA)
+    = true .
+endm

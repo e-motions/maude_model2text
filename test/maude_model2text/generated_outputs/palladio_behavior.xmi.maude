@@ -1,0 +1,1927 @@
+mod @PCMFLATTEN@BEHAVIOR@ is
+  ---- Importations
+  pr E-MOTIONS .
+  pr DISCRETE_TIME .
+  pr @PCMFLATTEN@ .
+  
+  ---- Sort declarations
+  
+  ---- Subsort declarations
+  
+  ---- Operation declarations
+  op closedWorkload@-@PCMRandomVariable@OCLSf : -> @StructuralFeature .
+  op passiveResource@-@capacity@-@PCMRandomVariable@OCLSf : -> @StructuralFeature .
+  op variableCharacterisation@-@Specification@OCLSf : -> @StructuralFeature .
+  op infrastructureCall@-@@-@PCMRandomVariable@OCLSf : -> @StructuralFeature .
+  op resourceCall@-@@-@PCMRandomVariable@OCLSf : -> @StructuralFeature .
+  op parametricResourceDemand@-@PCMRandomVariable@OCLSf : -> @StructuralFeature .
+  op loopAction@-@PCMRandomVariable@OCLSf : -> @StructuralFeature .
+  op guardedBranchTransition@-@PCMRandomVariable@OCLSf : -> @StructuralFeature .
+  op specifiedExecutionTime@-@PCMRandomVariable@OCLSf : -> @StructuralFeature .
+  op eventChannelSinkConnector@-@@-@FilterCondition@OCLSf : -> @StructuralFeature .
+  op assemblyEventConnector@-@@-@FilterCondition@OCLSf : -> @StructuralFeature .
+  op loop@-@LoopIteration@OCLSf : -> @StructuralFeature .
+  op openWorkload@-@PCMRandomVariable@OCLSf : -> @StructuralFeature .
+  op delay@-@TimeSpecification@OCLSf : -> @StructuralFeature .
+  op communicationLinkResourceSpecifcation@-@throughput@-@PCMRandomVariable@OCLSf : -> @StructuralFeature .
+  op processingResourceSpecification@-@processingRate@-@PCMRandomVariable@OCLSf : -> @StructuralFeature .
+  op communicationLinkResourceSpecification@-@latency@-@PCMRandomVariable@OCLSf : -> @StructuralFeature .
+  op resourceInterfaceProvidingEntity@-@@-@ResourceProvidedRole@OCLSf : -> @StructuralFeature .
+  op providedResourceInterface@-@@-@ResourceProvidedRole@OCLSf : -> @StructuralFeature .
+  op providedRoles@-@InterfaceProvidingEntity@OCLSf : -> @StructuralFeature .
+  op requiredRoles@-@InterfaceRequiringEntity@OCLSf : -> @StructuralFeature .
+  op resourceRequiredRoles@-@@-@ResourceInterfaceRequiringEntity@OCLSf : -> @StructuralFeature .
+  op requiredResourceInterface@-@@-@ResourceRequiredRole@OCLSf : -> @StructuralFeature .
+  op resourceInterfaceRequiringEntity@-@@-@ResourceRequiredRole@OCLSf : -> @StructuralFeature .
+  op resourceProvidedRoles@-@@-@ResourceInterfaceProvidingEntity@OCLSf : -> @StructuralFeature .
+  op entityName@OCLSf : -> @StructuralFeature .
+  op parentStructure@-@@-@Connector@OCLSf : -> @StructuralFeature .
+  op assemblyContexts@-@@-@ComposedStructure@OCLSf : -> @StructuralFeature .
+  op resourceRequiredDelegationConnectors@-@ComposedStructure@OCLSf : -> @StructuralFeature .
+  op eventChannel@-@@-@ComposedStructure@OCLSf : -> @StructuralFeature .
+  op connectors@-@@-@ComposedStructure@OCLSf : -> @StructuralFeature .
+  op innerResourceRequiredRole@-@ResourceRequiredDelegationConnector@OCLSf : -> @StructuralFeature .
+  op outerResourceRequiredRole@-@ResourceRequiredDelegationConnector@OCLSf : -> @StructuralFeature .
+  op parentStructure@-@ResourceRequiredDelegationConnector@OCLSf : -> @StructuralFeature .
+  op eventGroup@-@@-@EventChannel@OCLSf : -> @StructuralFeature .
+  op eventChannelSourceConnector@-@@-@EventChannel@OCLSf : -> @StructuralFeature .
+  op eventChannelSinkConnector@-@@-@EventChannel@OCLSf : -> @StructuralFeature .
+  op parentStructure@-@@-@EventChannel@OCLSf : -> @StructuralFeature .
+  op sourceRole@-@@-@EventChannelSourceRole@OCLSf : -> @StructuralFeature .
+  op assemblyContext@-@@-@EventChannelSourceConnector@OCLSf : -> @StructuralFeature .
+  op eventChannel@-@@-@EventChannelSourceConnector@OCLSf : -> @StructuralFeature .
+  op sinkRole@-@@-@EventChannelSinkConnector@OCLSf : -> @StructuralFeature .
+  op filterCondition@-@@-@EventChannelSinkConnector@OCLSf : -> @StructuralFeature .
+  op assemblyContext@-@@-@EventChannelSinkConnector@OCLSf : -> @StructuralFeature .
+  op eventChannel@-@@-@EventChannelSinkConnector@OCLSf : -> @StructuralFeature .
+  op innerProvidedRole@-@ProvidedDelegationConnector@OCLSf : -> @StructuralFeature .
+  op outerProvidedRole@-@ProvidedDelegationConnector@OCLSf : -> @StructuralFeature .
+  op assemblyContext@-@ProvidedDelegationConnector@OCLSf : -> @StructuralFeature .
+  op innerRequiredRole@-@RequiredDelegationConnector@OCLSf : -> @StructuralFeature .
+  op outerRequiredRole@-@RequiredDelegationConnector@OCLSf : -> @StructuralFeature .
+  op assemblyContext@-@RequiredDelegationConnector@OCLSf : -> @StructuralFeature .
+  op requiringAssemblyContext@-@AssemblyConnector@OCLSf : -> @StructuralFeature .
+  op providingAssemblyContext@-@AssemblyConnector@OCLSf : -> @StructuralFeature .
+  op providedRole@-@AssemblyConnector@OCLSf : -> @StructuralFeature .
+  op requiredRole@-@AssemblyConnector@OCLSf : -> @StructuralFeature .
+  op sinkRole@-@@-@AssemblyEventConnector@OCLSf : -> @StructuralFeature .
+  op sourceRole@-@@-@AssemblyEventConnector@OCLSf : -> @StructuralFeature .
+  op sinkAssemblyContext@-@@-@AssemblyEventConnector@OCLSf : -> @StructuralFeature .
+  op sourceAssemblyContext@-@@-@AssemblyEventConnector@OCLSf : -> @StructuralFeature .
+  op filterCondition@-@@-@AssemblyEventConnector@OCLSf : -> @StructuralFeature .
+  op innerSourceRole@-@@-@SourceRole@OCLSf : -> @StructuralFeature .
+  op outerSourceRole@-@@-@SourceRole@OCLSf : -> @StructuralFeature .
+  op assemblyContext@-@@-@SourceDelegationConnector@OCLSf : -> @StructuralFeature .
+  op assemblyContext@-@@-@SinkDelegationConnector@OCLSf : -> @StructuralFeature .
+  op innerSinkRole@-@@-@SinkRole@OCLSf : -> @StructuralFeature .
+  op outerSinkRole@-@@-@SinkRole@OCLSf : -> @StructuralFeature .
+  op providedRole@-@@-@AssemblyInfrastructureConnector@OCLSf : -> @StructuralFeature .
+  op requiredRole@-@@-@AssemblyInfrastructureConnector@OCLSf : -> @StructuralFeature .
+  op providingAssemblyContext@-@@-@AssemblyInfrastructureConnector@OCLSf : -> @StructuralFeature .
+  op requiringAssemblyContext@-@@-@AssemblyInfrastructureConnector@OCLSf : -> @StructuralFeature .
+  op innerProvidedRole@-@@-@ProvidedInfrastructureDelegationConnector@OCLSf : -> @StructuralFeature .
+  op outerProvidedRole@-@@-@ProvidedInfrastructureDelegationConnector@OCLSf : -> @StructuralFeature .
+  op assemblyContext@-@@-@ProvidedInfrastructureDelegationConnector@OCLSf : -> @StructuralFeature .
+  op innerRequiredRole@-@@-@RequiredInfrastructureDelegationConnector@OCLSf : -> @StructuralFeature .
+  op outerRequiredRole@-@@-@RequiredInfrastructureDelegationConnector@OCLSf : -> @StructuralFeature .
+  op assemblyContext@-@@-@RequiredInfrastructureDelegationConnector@OCLSf : -> @StructuralFeature .
+  op assemblyContext@-@@-@RequiredResourceDelegationConnector@OCLSf : -> @StructuralFeature .
+  op innerRequiredRole@-@@-@RequiredResourceDelegationConnector@OCLSf : -> @StructuralFeature .
+  op outerRequiredRole@-@@-@RequiredResourceDelegationConnector@OCLSf : -> @StructuralFeature .
+  op parentStructure@-@@-@AssemblyContext@OCLSf : -> @StructuralFeature .
+  op encapsulatedComponent@-@@-@AssemblyContext@OCLSf : -> @StructuralFeature .
+  op configParameterUsages@-@@-@AssemblyContext@OCLSf : -> @StructuralFeature .
+  op usageScenario@-@Workload@OCLSf : -> @StructuralFeature .
+  op usageModel@-@UsageScenario@OCLSf : -> @StructuralFeature .
+  op scenarioBehaviour@-@UsageScenario@OCLSf : -> @StructuralFeature .
+  op workload@-@UsageScenario@OCLSf : -> @StructuralFeature .
+  op assemblyContext@-@userData@OCLSf : -> @StructuralFeature .
+  op usageModel@-@UserData@OCLSf : -> @StructuralFeature .
+  op userDataParameterUsages@-@UserData@OCLSf : -> @StructuralFeature .
+  op usageScenario@-@UsageModel@OCLSf : -> @StructuralFeature .
+  op userData@-@UsageModel@OCLSf : -> @StructuralFeature .
+  op providedRole@-@EntryLevelSystemCall@OCLSf : -> @StructuralFeature .
+  op operationSignature@-@@-@EntryLevelSystemCall@OCLSf : -> @StructuralFeature .
+  op outputParameterUsages@-@EntryLevelSystemCall@OCLSf : -> @StructuralFeature .
+  op inputParameterUsages@-@EntryLevelSystemCall@OCLSf : -> @StructuralFeature .
+  op priority@OCLSf : -> @StructuralFeature .
+  op successor@OCLSf : -> @StructuralFeature .
+  op predecessor@OCLSf : -> @StructuralFeature .
+  op scenarioBehaviour@-@AbstractUserAction@OCLSf : -> @StructuralFeature .
+  op token@OCLSf : -> @StructuralFeature .
+  op usageScenario@-@SenarioBehaviour@OCLSf : -> @StructuralFeature .
+  op branchTransition@-@ScenarioBehaviour@OCLSf : -> @StructuralFeature .
+  op loop@-@ScenarioBehaviour@OCLSf : -> @StructuralFeature .
+  op actions@-@ScenarioBehaviour@OCLSf : -> @StructuralFeature .
+  op rtOb@OCLSf : -> @StructuralFeature .
+  op tpOb@OCLSf : -> @StructuralFeature .
+  op branchProbability@OCLSf : -> @StructuralFeature .
+  op branch@-@BranchTransition@OCLSf : -> @StructuralFeature .
+  op branchedBehaviour@-@BranchTransition@OCLSf : -> @StructuralFeature .
+  op branchTransitions@-@Branch@OCLSf : -> @StructuralFeature .
+  op loopIteration@-@Loop@OCLSf : -> @StructuralFeature .
+  op bodyBehaviour@-@Loop@OCLSf : -> @StructuralFeature .
+  op interArrivalTime@-@OpenWorkload@OCLSf : -> @StructuralFeature .
+  op sandTimer@OCLSf : -> @StructuralFeature .
+  op timeSpecification@-@Delay@OCLSf : -> @StructuralFeature .
+  op population@OCLSf : -> @StructuralFeature .
+  op thinkTime@-@ClosedWorkload@OCLSf : -> @StructuralFeature .
+  op capacity@-@PassiveResource@OCLSf : -> @StructuralFeature .
+  op basicComponent@-@PassiveResource@OCLSf : -> @StructuralFeature .
+  op resourceTimeoutFailureType@-@@-@PassiveResource@OCLSf : -> @StructuralFeature .
+  op serviceEffectSpecifications@-@@-@BasicComponent@OCLSf : -> @StructuralFeature .
+  op passiveResource@-@BasicComponent@OCLSf : -> @StructuralFeature .
+  op parentCompleteComponentTypes@OCLSf : -> @StructuralFeature .
+  op componentParameterUsage@-@ImplementationComponentType@OCLSf : -> @StructuralFeature .
+  op repository@-@@-@RepositoryComponent@OCLSf : -> @StructuralFeature .
+  op providingEntity@-@ProvidedRole@OCLSf : -> @StructuralFeature .
+  op dataType@-@@-@Parameter@OCLSf : -> @StructuralFeature .
+  op infrastructureSignature@-@@-@Parameter@OCLSf : -> @StructuralFeature .
+  op operationSignature@-@@-@Parameter@OCLSf : -> @StructuralFeature .
+  op eventType@-@@-@Parameter@OCLSf : -> @StructuralFeature .
+  op parameterName@OCLSf : -> @StructuralFeature .
+  op modifier@-@@-@Parameter@OCLSf : -> @StructuralFeature .
+  op resourceSignature@-@@-@Parameter@OCLSf : -> @StructuralFeature .
+  op repository@-@@-@DataType@OCLSf : -> @StructuralFeature .
+  op repositoryDescription@OCLSf : -> @StructuralFeature .
+  op components@-@@-@Repository@OCLSf : -> @StructuralFeature .
+  op interfaces@-@@-@Repository@OCLSf : -> @StructuralFeature .
+  op failureTypes@-@@-@Repository@OCLSf : -> @StructuralFeature .
+  op dataTypes@-@@-@Repository@OCLSf : -> @StructuralFeature .
+  op parentInterfaces@-@@-@Interface@OCLSf : -> @StructuralFeature .
+  op protocols@-@@-@Interface@OCLSf : -> @StructuralFeature .
+  op requiredCharacterisations@OCLSf : -> @StructuralFeature .
+  op repository@-@@-@Interface@OCLSf : -> @StructuralFeature .
+  op type@OCLSf : -> @StructuralFeature .
+  op parameter@OCLSf : -> @StructuralFeature .
+  op interface@-@RequiredCharacterisation@OCLSf : -> @StructuralFeature .
+  op eventTypes@-@@-@EventGroup@OCLSf : -> @StructuralFeature .
+  op parameter@-@@-@EventType@OCLSf : -> @StructuralFeature .
+  op eventGroup@-@@-@EventType@OCLSf : -> @StructuralFeature .
+  op exceptions@-@@-@Signature@OCLSf : -> @StructuralFeature .
+  op failureType@OCLSf : -> @StructuralFeature .
+  op exceptionName@OCLSf : -> @StructuralFeature .
+  op exceptionMessage@OCLSf : -> @StructuralFeature .
+  op parameters@-@@-@InfrastructureSignature@OCLSf : -> @StructuralFeature .
+  op infrastructureInterface@-@@-@InfrastructureSignature@OCLSf : -> @StructuralFeature .
+  op infrastructureSignatures@-@@-@InfrastructureInterface@OCLSf : -> @StructuralFeature .
+  op requiredInterface@-@@-@InfrastructureRequiredRole@OCLSf : -> @StructuralFeature .
+  op requiringEntity@-@RequiredRole@OCLSf : -> @StructuralFeature .
+  op interface@-@@-@OperationSignature@OCLSf : -> @StructuralFeature .
+  op parameters@-@@-@OperationSignature@OCLSf : -> @StructuralFeature .
+  op returnType@-@@-@OperationSignature@OCLSf : -> @StructuralFeature .
+  op signatures@-@@-@OperationInterface@OCLSf : -> @StructuralFeature .
+  op requiredInterface@-@@-@OperationRequiredRole@OCLSf : -> @StructuralFeature .
+  op eventGroup@-@@-@SourceRole@OCLSf : -> @StructuralFeature .
+  op eventGroup@-@@-@SinkRole@OCLSf : -> @StructuralFeature .
+  op providedInterface@-@@-@OperationProvidedRole@OCLSf : -> @StructuralFeature .
+  op providedInterface@-@@-@InfrastructureProvidedRole@OCLSf : -> @StructuralFeature .
+  op parentProvidesComponentTypes@OCLSf : -> @StructuralFeature .
+  op type@OCLSf : -> @StructuralFeature .
+  op innerType@-@CollectionDataType@OCLSf : -> @StructuralFeature .
+  op parentType@-@CompositeDataType@OCLSf : -> @StructuralFeature .
+  op innerDeclaration@-@CompositeDataType@OCLSf : -> @StructuralFeature .
+  op datatype@-@InnerDeclaration@OCLSf : -> @StructuralFeature .
+  op compositeDataType@-@InnerDeclaration@OCLSf : -> @StructuralFeature .
+  op parameter@-@@-@ResourceSignature@OCLSf : -> @StructuralFeature .
+  op resourceServiceId@OCLSf : -> @StructuralFeature .
+  op resourceInterface@-@@-@ResourceSignature@OCLSf : -> @StructuralFeature .
+  op hardwareInducedFailureType@-@@-@ProcessingResourceType@OCLSf : -> @StructuralFeature .
+  op resourceRepository@-@ResourceType@OCLSf : -> @StructuralFeature .
+  op resourceInterfaces@-@@-@ResourceRepository@OCLSf : -> @StructuralFeature .
+  op schedulingPolicies@-@@-@ResourceRepository@OCLSf : -> @StructuralFeature .
+  op availableResourceTypes@-@ResourceRepository@OCLSf : -> @StructuralFeature .
+  op resourceRepository@-@@-@SchedulingPolicy@OCLSf : -> @StructuralFeature .
+  op networkInducedFailureType@-@@-@CommunicationLinkResourceType@OCLSf : -> @StructuralFeature .
+  op resourceRepository@-@@-@ResourceInterface@OCLSf : -> @StructuralFeature .
+  op resourceSignatures@-@@-@ResourceInterface@OCLSf : -> @StructuralFeature .
+  op protocolTypeID@OCLSf : -> @StructuralFeature .
+  op variableCharacterisation@-@VariableUsage@OCLSf : -> @StructuralFeature .
+  op userData@-@VariableUsage@OCLSf : -> @StructuralFeature .
+  op callAction@-@@-@VariableUsage@OCLSf : -> @StructuralFeature .
+  op synchronisationPoint@-@VariableUsage@OCLSf : -> @StructuralFeature .
+  op callReturnAction@-@@-@VariableUsage@OCLSf : -> @StructuralFeature .
+  op setVariableAction@-@VariableUsage@OCLSf : -> @StructuralFeature .
+  op specifiedOutputParameterAbstraction@-@expectedExternalOutputs@-@VariableUsage@OCLSf : -> @StructuralFeature .
+  op assemblyContext@-@@-@VariableUsage@OCLSf : -> @StructuralFeature .
+  op entryLevelSystemCall@-@InputParameterUsage@OCLSf : -> @StructuralFeature .
+  op entryLevelSystemCall@-@OutputParameterUsage@OCLSf : -> @StructuralFeature .
+  op namedReference@-@@-@VariableUsage@OCLSf : -> @StructuralFeature .
+  op type@OCLSf : -> @StructuralFeature .
+  op specification@-@VariableCharacterisation@OCLSf : -> @StructuralFeature .
+  op variableUsage@-@VariableCharacterisation@OCLSf : -> @StructuralFeature .
+  op characterisationType@OCLSf : -> @StructuralFeature .
+  op failureProbability@OCLSf : -> @StructuralFeature .
+  op processingResourceType@-@@-@HardwareInducedFailureType@OCLSf : -> @StructuralFeature .
+  op internalFailureOccurrenceDescriptions@-@@-@SoftwareInducedFailureType@OCLSf : -> @StructuralFeature .
+  op internalAction@-@@-@InternalFailureOccurrenceDescription@OCLSf : -> @StructuralFeature .
+  op softwareInducedFailureType@-@@-@InternalFailureOccurrenceDescription@OCLSf : -> @StructuralFeature .
+  op communicationLinkResourceType@-@@-@NetworkInducedFailureType@OCLSf : -> @StructuralFeature .
+  op specifiedReliabilityAnnotation@-@@-@ExternalFailureOccurrenceDescription@OCLSf : -> @StructuralFeature .
+  op failureType@-@@-@ExternalFailureOccurrenceDescription@OCLSf : -> @StructuralFeature .
+  op passiveResource@-@@-@ResourceTimeoutFailureType@OCLSf : -> @StructuralFeature .
+  op repository@-@@-@FailureType@OCLSf : -> @StructuralFeature .
+  op resourceDemand@-@Action@OCLSf : -> @StructuralFeature .
+  op infrastructureCall@-@@-@Action@OCLSf : -> @StructuralFeature .
+  op resourceCall@-@@-@Action@OCLSf : -> @StructuralFeature .
+  op predecessor@-@AbstractAction@OCLSf : -> @StructuralFeature .
+  op successor@-@AbstractAction@OCLSf : -> @StructuralFeature .
+  op resourceDemandingBehaviour@-@AbstractAction@OCLSf : -> @StructuralFeature .
+  op token@OCLSf : -> @StructuralFeature .
+  op abstractLoopAction@-@ResourceDemandingBehaviour@OCLSf : -> @StructuralFeature .
+  op abstractBranchTransition@-@ResourceDemandingBehaviour@OCLSf : -> @StructuralFeature .
+  op steps@-@Behaviour@OCLSf : -> @StructuralFeature .
+  op tpOb@OCLSf : -> @StructuralFeature .
+  op rtOb@OCLSf : -> @StructuralFeature .
+  op bodyBehaviour@-@Loop@OCLSf : -> @StructuralFeature .
+  op branchAction@-@AbstractBranchTransition@OCLSf : -> @StructuralFeature .
+  op branchBehaviour@-@BranchTransition@OCLSf : -> @StructuralFeature .
+  op branches@-@Branch@OCLSf : -> @StructuralFeature .
+  op inputVariableUsages@-@@-@CallAction@OCLSf : -> @StructuralFeature .
+  op seffTypeID@OCLSf : -> @StructuralFeature .
+  op describedService@-@@-@SEFF@OCLSf : -> @StructuralFeature .
+  op basicComponent@-@ServiceEffectSpecification@OCLSf : -> @StructuralFeature .
+  op resourceDemandingInternalBehaviours@OCLSf : -> @StructuralFeature .
+  op resourceDemandingSEFF@-@ResourceDemandingInternalBehaviour@OCLSf : -> @StructuralFeature .
+  op passiveResource@-@ReleaseAction@OCLSf : -> @StructuralFeature .
+  op iterationCount@-@LoopAction@OCLSf : -> @StructuralFeature .
+  op asynchronousForkedBehaviours@-@ForkAction@OCLSf : -> @StructuralFeature .
+  op synchronisingBehaviours@-@ForkAction@OCLSf : -> @StructuralFeature .
+  op synchronisationPoint@-@ForkedBehaviour@OCLSf : -> @StructuralFeature .
+  op forkAction@-@ForkedBehaivour@OCLSf : -> @StructuralFeature .
+  op outputParameterUsage@-@SynchronisationPoint@OCLSf : -> @StructuralFeature .
+  op forkAction@-@SynchronisationPoint@OCLSf : -> @StructuralFeature .
+  op synchronousForkedBehaviours@-@SynchronisationPoint@OCLSf : -> @StructuralFeature .
+  op calledService@-@ExternalService@OCLSf : -> @StructuralFeature .
+  op role@-@ExternalService@OCLSf : -> @StructuralFeature .
+  op retryCount@OCLSf : -> @StructuralFeature .
+  op returnVariableUsage@-@@-@CallReturnAction@OCLSf : -> @StructuralFeature .
+  op branchProbability@OCLSf : -> @StructuralFeature .
+  op passiveresource@-@AcquireAction@OCLSf : -> @StructuralFeature .
+  op timeout@OCLSf : -> @StructuralFeature .
+  op timeoutValue@OCLSf : -> @StructuralFeature .
+  op parameter@-@CollectionIteratorAction@OCLSf : -> @StructuralFeature .
+  op branchCondition@-@GuardedBranchTransition@OCLSf : -> @StructuralFeature .
+  op localVariableUsages@-@SetVariableAction@OCLSf : -> @StructuralFeature .
+  op calledResourceDemandingInternalBehaviour@OCLSf : -> @StructuralFeature .
+  op eventType@-@@-@EmitEventAction@OCLSf : -> @StructuralFeature .
+  op sourceRole@-@@-@EmitEventAction@OCLSf : -> @StructuralFeature .
+  op internalFailureOccurrenceDescriptions@-@@-@InternalAction@OCLSf : -> @StructuralFeature .
+  op queue@OCLSf : -> @StructuralFeature .
+  op signature@-@@-@InfrastructureCall@OCLSf : -> @StructuralFeature .
+  op numberOfCalls@-@@-@InfrastructureCall@OCLSf : -> @StructuralFeature .
+  op action@-@@-@InfrastructureCall@OCLSf : -> @StructuralFeature .
+  op requiredRole@-@@-@InfrastructureCall@OCLSf : -> @StructuralFeature .
+  op action@-@@-@ResourceCall@OCLSf : -> @StructuralFeature .
+  op resourceRequiredRole@-@@-@ResourceCall@OCLSf : -> @StructuralFeature .
+  op signature@-@@-@ResourceCall@OCLSf : -> @StructuralFeature .
+  op numberOfCalls@-@@-@ResourceCall@OCLSf : -> @StructuralFeature .
+  op specification@-@ParametericResourceDemand@OCLSf : -> @StructuralFeature .
+  op requiredResource@-@ParametricResourceDemand@OCLSf : -> @StructuralFeature .
+  op action@-@ParametricResourceDemand@OCLSf : -> @StructuralFeature .
+  op failureHandlingAlternatives@-@@-@RecoveryActionBehaviour@OCLSf : -> @StructuralFeature .
+  op recoveryAction@-@@-@RecoveryActionBehaviour@OCLSf : -> @StructuralFeature .
+  op primaryBehaviour@-@@-@RecoveryAction@OCLSf : -> @StructuralFeature .
+  op recoveryActionBehaviours@-@@-@RecoveryAction@OCLSf : -> @StructuralFeature .
+  op failureTypes@-@FailureHandlingEntity@OCLSf : -> @StructuralFeature .
+  op signature@-@SpecifiedQoSAnnation@OCLSf : -> @StructuralFeature .
+  op role@-@SpecifiedQoSAnnotation@OCLSf : -> @StructuralFeature .
+  op qosAnnotations@-@SpecifiedQoSAnnotation@OCLSf : -> @StructuralFeature .
+  op specifiedOutputParameterAbstractions@-@QoSAnnotations@OCLSf : -> @StructuralFeature .
+  op system@-@QoSAnnotations@OCLSf : -> @StructuralFeature .
+  op specifiedQoSAnnotations@-@QoSAnnotations@OCLSf : -> @StructuralFeature .
+  op signature@-@SpecifiedOutputParameterAbstraction@OCLSf : -> @StructuralFeature .
+  op role@-@SpecifiedOutputParameterAbstraction@OCLSf : -> @StructuralFeature .
+  op expectedExternalOutputs@-@SpecifiedOutputParameterAbstraction@OCLSf : -> @StructuralFeature .
+  op qosAnnotations@-@SpecifiedOutputParameterAbstraction@OCLSf : -> @StructuralFeature .
+  op specification@-@SpecifiedExecutionTime@OCLSf : -> @StructuralFeature .
+  op assemblyContext@-@ComponentSpecifiedExecutionTime@OCLSf : -> @StructuralFeature .
+  op externalFailureOccurrenceDescriptions@-@@-@SpecifiedReliabilityAnnotation@OCLSf : -> @StructuralFeature .
+  op qosAnnotations@-@System@OCLSf : -> @StructuralFeature .
+  op linkingResources@-@@-@ResourceEnvironment@OCLSf : -> @StructuralFeature .
+  op resourceContainer@-@ResourceEnvironment@OCLSf : -> @StructuralFeature .
+  op connectedResourceContainers@-@LinkingResource@OCLSf : -> @StructuralFeature .
+  op communicationLinkResourceSpecifications@-@LinkingResource@OCLSf : -> @StructuralFeature .
+  op resourceEnvironment@-@LinkingResource@OCLSf : -> @StructuralFeature .
+  op activeResourceSpecifications@-@ResourceContainer@OCLSf : -> @StructuralFeature .
+  op resourceEnvironment@-@ResourceContainer@OCLSf : -> @StructuralFeature .
+  op nestedResourceContainers@-@@-@ResourceContainer@OCLSf : -> @StructuralFeature .
+  op parentResourceContainer@-@@-@ResourceContainer@OCLSf : -> @StructuralFeature .
+  op MTTR@OCLSf : -> @StructuralFeature .
+  op MTTF@OCLSf : -> @StructuralFeature .
+  op requiredByContainer@OCLSf : -> @StructuralFeature .
+  op schedulingPolicy@OCLSf : -> @StructuralFeature .
+  op activeResourceType@-@ActiveResourceSpecification@OCLSf : -> @StructuralFeature .
+  op processingRate@-@ProcessingResourceSpecification@OCLSf : -> @StructuralFeature .
+  op numberOfReplicas@OCLSf : -> @StructuralFeature .
+  op resourceContainer@-@ProcessingResourceSpecification@OCLSf : -> @StructuralFeature .
+  op queue@OCLSf : -> @StructuralFeature .
+  op linkingResource@-@CommunicationLinkResourceSpecification@OCLSf : -> @StructuralFeature .
+  op failureProbability@OCLSf : -> @StructuralFeature .
+  op communicationLinkResourceType@-@CommunicationLinkResourceSpecification@OCLSf : -> @StructuralFeature .
+  op latency@-@CommunicationLinkResourceSpecification@OCLSf : -> @StructuralFeature .
+  op throughput@-@CommunicationLinkResourceSpecification@OCLSf : -> @StructuralFeature .
+  op resourceContainer@-@AllocationContext@OCLSf : -> @StructuralFeature .
+  op assemblyContext@-@AllocationContext@OCLSf : -> @StructuralFeature .
+  op allocation@-@AllocationContext@OCLSf : -> @StructuralFeature .
+  op eventChannel@-@@-@AllocationContext@OCLSf : -> @StructuralFeature .
+  op targetResourceEnvironment@-@Allocation@OCLSf : -> @StructuralFeature .
+  op system@-@Allocation@OCLSf : -> @StructuralFeature .
+  op allocationContexts@-@Allocation@OCLSf : -> @StructuralFeature .
+  op referenceName@OCLSf : -> @StructuralFeature .
+  op innerReference@-@NamespaceReference@OCLSf : -> @StructuralFeature .
+  op id@-@Variable@OCLSf : -> @StructuralFeature .
+  op left@OCLSf : -> @StructuralFeature .
+  op right@OCLSf : -> @StructuralFeature .
+  op operation@OCLSf : -> @StructuralFeature .
+  op left@OCLSf : -> @StructuralFeature .
+  op right@OCLSf : -> @StructuralFeature .
+  op operation@OCLSf : -> @StructuralFeature .
+  op function@-@ProbabilityFunctionLiteral@OCLSf : -> @StructuralFeature .
+  op innerExpression@OCLSf : -> @StructuralFeature .
+  op value@OCLSf : -> @StructuralFeature .
+  op value@OCLSf : -> @StructuralFeature .
+  op left@OCLSf : -> @StructuralFeature .
+  op right@OCLSf : -> @StructuralFeature .
+  op operation@OCLSf : -> @StructuralFeature .
+  op value@OCLSf : -> @StructuralFeature .
+  op value@OCLSf : -> @StructuralFeature .
+  op base@OCLSf : -> @StructuralFeature .
+  op exponent@OCLSf : -> @StructuralFeature .
+  op left@OCLSf : -> @StructuralFeature .
+  op right@OCLSf : -> @StructuralFeature .
+  op operation@OCLSf : -> @StructuralFeature .
+  op inner@OCLSf : -> @StructuralFeature .
+  op inner@OCLSf : -> @StructuralFeature .
+  op id@OCLSf : -> @StructuralFeature .
+  op parameters@-@FunctionLiteral@OCLSf : -> @StructuralFeature .
+  op ifExpression@OCLSf : -> @StructuralFeature .
+  op elseExpression@OCLSf : -> @StructuralFeature .
+  op conditionExpression@OCLSf : -> @StructuralFeature .
+  op specification@OCLSf : -> @StructuralFeature .
+  op name@OCLSf : -> @StructuralFeature .
+  op units@OCLSf : -> @StructuralFeature .
+  op units@OCLSf : -> @StructuralFeature .
+  op unit@OCLSf : -> @StructuralFeature .
+  op exponent@OCLSf : -> @StructuralFeature .
+  op baseUnit@OCLSf : -> @StructuralFeature .
+  op unit@OCLSf : -> @StructuralFeature .
+  op unitSpecification@OCLSf : -> @StructuralFeature .
+  op id@OCLSf : -> @StructuralFeature .
+  op id@OCLSf : -> @StructuralFeature .
+  op completed@OCLSf : -> @StructuralFeature .
+  op branchNumber@OCLSf : -> @StructuralFeature .
+  op tsOb@OCLSf : -> @StructuralFeature .
+  op branchesProb@OCLSf : -> @StructuralFeature .
+  op prob@OCLSf : -> @StructuralFeature .
+  op context@OCLSf : -> @StructuralFeature .
+  op nestedToken@OCLSf : -> @StructuralFeature .
+  op loopToken@OCLSf : -> @StructuralFeature .
+  op returnVars@OCLSf : -> @StructuralFeature .
+  op branchesProb@OCLSf : -> @StructuralFeature .
+  op prob@OCLSf : -> @StructuralFeature .
+  op tStamp@OCLSf : -> @StructuralFeature .
+  op counter@OCLSf : -> @StructuralFeature .
+  op tTime@OCLSf : -> @StructuralFeature .
+  op rTime@OCLSf : -> @StructuralFeature .
+  op allRT@OCLSf : -> @StructuralFeature .
+  op id@OCLSf : -> @StructuralFeature .
+  op completed@OCLSf : -> @StructuralFeature .
+  op branchNumber@OCLSf : -> @StructuralFeature .
+  op tsOb@OCLSf : -> @StructuralFeature .
+  op cToken@OCLSf : -> @StructuralFeature .
+  op branchesProb@OCLSf : -> @StructuralFeature .
+  op prob@OCLSf : -> @StructuralFeature .
+  op loopToken@OCLSf : -> @StructuralFeature .
+  op counter@OCLSf : -> @StructuralFeature .
+  op thp@OCLSf : -> @StructuralFeature .
+  op iterations@OCLSf : -> @StructuralFeature .
+  op started@OCLSf : -> @StructuralFeature .
+  op countDown@OCLSf : -> @StructuralFeature .
+  op iterations@OCLSf : -> @StructuralFeature .
+  op started@OCLSf : -> @StructuralFeature .
+  op varUsage@OCLSf : -> @StructuralFeature .
+  op value@OCLSf : -> @StructuralFeature .
+  op currentExec@DelayUsageModel : Set @Model -> Bool .
+  op currentExec@InternalActionSEFF : Set @Model -> Bool .
+  op currentExec@DecreaseCountDown : Set @Model -> Bool .
+  op v : -> Vid .
+  op i : -> Vid .
+  op S : -> Vid .
+  
+  ---- Equations
+  eq name(closedWorkload@-@PCMRandomVariable@OCLSf)
+    = "closedWorkload_PCMRandomVariable" .
+  
+  eq name(passiveResource@-@capacity@-@PCMRandomVariable@OCLSf)
+    = "passiveResource_capacity_PCMRandomVariable" .
+  
+  eq name(variableCharacterisation@-@Specification@OCLSf)
+    = "variableCharacterisation_Specification" .
+  
+  eq name(infrastructureCall@-@@-@PCMRandomVariable@OCLSf)
+    = "infrastructureCall__PCMRandomVariable" .
+  
+  eq name(resourceCall@-@@-@PCMRandomVariable@OCLSf)
+    = "resourceCall__PCMRandomVariable" .
+  
+  eq name(parametricResourceDemand@-@PCMRandomVariable@OCLSf)
+    = "parametricResourceDemand_PCMRandomVariable" .
+  
+  eq name(loopAction@-@PCMRandomVariable@OCLSf)
+    = "loopAction_PCMRandomVariable" .
+  
+  eq name(guardedBranchTransition@-@PCMRandomVariable@OCLSf)
+    = "guardedBranchTransition_PCMRandomVariable" .
+  
+  eq name(specifiedExecutionTime@-@PCMRandomVariable@OCLSf)
+    = "specifiedExecutionTime_PCMRandomVariable" .
+  
+  eq name(eventChannelSinkConnector@-@@-@FilterCondition@OCLSf)
+    = "eventChannelSinkConnector__FilterCondition" .
+  
+  eq name(assemblyEventConnector@-@@-@FilterCondition@OCLSf)
+    = "assemblyEventConnector__FilterCondition" .
+  
+  eq name(loop@-@LoopIteration@OCLSf)
+    = "loop_LoopIteration" .
+  
+  eq name(openWorkload@-@PCMRandomVariable@OCLSf)
+    = "openWorkload_PCMRandomVariable" .
+  
+  eq name(delay@-@TimeSpecification@OCLSf)
+    = "delay_TimeSpecification" .
+  
+  eq name(communicationLinkResourceSpecifcation@-@throughput@-@PCMRandomVariable@OCLSf)
+    = "communicationLinkResourceSpecifcation_throughput_PCMRandomVariable" .
+  
+  eq name(processingResourceSpecification@-@processingRate@-@PCMRandomVariable@OCLSf)
+    = "processingResourceSpecification_processingRate_PCMRandomVariable" .
+  
+  eq name(communicationLinkResourceSpecification@-@latency@-@PCMRandomVariable@OCLSf)
+    = "communicationLinkResourceSpecification_latency_PCMRandomVariable" .
+  
+  eq name(resourceInterfaceProvidingEntity@-@@-@ResourceProvidedRole@OCLSf)
+    = "resourceInterfaceProvidingEntity__ResourceProvidedRole" .
+  
+  eq name(providedResourceInterface@-@@-@ResourceProvidedRole@OCLSf)
+    = "providedResourceInterface__ResourceProvidedRole" .
+  
+  eq name(providedRoles@-@InterfaceProvidingEntity@OCLSf)
+    = "providedRoles_InterfaceProvidingEntity" .
+  
+  eq name(requiredRoles@-@InterfaceRequiringEntity@OCLSf)
+    = "requiredRoles_InterfaceRequiringEntity" .
+  
+  eq name(resourceRequiredRoles@-@@-@ResourceInterfaceRequiringEntity@OCLSf)
+    = "resourceRequiredRoles__ResourceInterfaceRequiringEntity" .
+  
+  eq name(requiredResourceInterface@-@@-@ResourceRequiredRole@OCLSf)
+    = "requiredResourceInterface__ResourceRequiredRole" .
+  
+  eq name(resourceInterfaceRequiringEntity@-@@-@ResourceRequiredRole@OCLSf)
+    = "resourceInterfaceRequiringEntity__ResourceRequiredRole" .
+  
+  eq name(resourceProvidedRoles@-@@-@ResourceInterfaceProvidingEntity@OCLSf)
+    = "resourceProvidedRoles__ResourceInterfaceProvidingEntity" .
+  
+  eq name(entityName@OCLSf)
+    = "entityName" .
+  
+  eq name(parentStructure@-@@-@Connector@OCLSf)
+    = "parentStructure__Connector" .
+  
+  eq name(assemblyContexts@-@@-@ComposedStructure@OCLSf)
+    = "assemblyContexts__ComposedStructure" .
+  
+  eq name(resourceRequiredDelegationConnectors@-@ComposedStructure@OCLSf)
+    = "resourceRequiredDelegationConnectors_ComposedStructure" .
+  
+  eq name(eventChannel@-@@-@ComposedStructure@OCLSf)
+    = "eventChannel__ComposedStructure" .
+  
+  eq name(connectors@-@@-@ComposedStructure@OCLSf)
+    = "connectors__ComposedStructure" .
+  
+  eq name(innerResourceRequiredRole@-@ResourceRequiredDelegationConnector@OCLSf)
+    = "innerResourceRequiredRole_ResourceRequiredDelegationConnector" .
+  
+  eq name(outerResourceRequiredRole@-@ResourceRequiredDelegationConnector@OCLSf)
+    = "outerResourceRequiredRole_ResourceRequiredDelegationConnector" .
+  
+  eq name(parentStructure@-@ResourceRequiredDelegationConnector@OCLSf)
+    = "parentStructure_ResourceRequiredDelegationConnector" .
+  
+  eq name(eventGroup@-@@-@EventChannel@OCLSf)
+    = "eventGroup__EventChannel" .
+  
+  eq name(eventChannelSourceConnector@-@@-@EventChannel@OCLSf)
+    = "eventChannelSourceConnector__EventChannel" .
+  
+  eq name(eventChannelSinkConnector@-@@-@EventChannel@OCLSf)
+    = "eventChannelSinkConnector__EventChannel" .
+  
+  eq name(parentStructure@-@@-@EventChannel@OCLSf)
+    = "parentStructure__EventChannel" .
+  
+  eq name(sourceRole@-@@-@EventChannelSourceRole@OCLSf)
+    = "sourceRole__EventChannelSourceRole" .
+  
+  eq name(assemblyContext@-@@-@EventChannelSourceConnector@OCLSf)
+    = "assemblyContext__EventChannelSourceConnector" .
+  
+  eq name(eventChannel@-@@-@EventChannelSourceConnector@OCLSf)
+    = "eventChannel__EventChannelSourceConnector" .
+  
+  eq name(sinkRole@-@@-@EventChannelSinkConnector@OCLSf)
+    = "sinkRole__EventChannelSinkConnector" .
+  
+  eq name(filterCondition@-@@-@EventChannelSinkConnector@OCLSf)
+    = "filterCondition__EventChannelSinkConnector" .
+  
+  eq name(assemblyContext@-@@-@EventChannelSinkConnector@OCLSf)
+    = "assemblyContext__EventChannelSinkConnector" .
+  
+  eq name(eventChannel@-@@-@EventChannelSinkConnector@OCLSf)
+    = "eventChannel__EventChannelSinkConnector" .
+  
+  eq name(innerProvidedRole@-@ProvidedDelegationConnector@OCLSf)
+    = "innerProvidedRole_ProvidedDelegationConnector" .
+  
+  eq name(outerProvidedRole@-@ProvidedDelegationConnector@OCLSf)
+    = "outerProvidedRole_ProvidedDelegationConnector" .
+  
+  eq name(assemblyContext@-@ProvidedDelegationConnector@OCLSf)
+    = "assemblyContext_ProvidedDelegationConnector" .
+  
+  eq name(innerRequiredRole@-@RequiredDelegationConnector@OCLSf)
+    = "innerRequiredRole_RequiredDelegationConnector" .
+  
+  eq name(outerRequiredRole@-@RequiredDelegationConnector@OCLSf)
+    = "outerRequiredRole_RequiredDelegationConnector" .
+  
+  eq name(assemblyContext@-@RequiredDelegationConnector@OCLSf)
+    = "assemblyContext_RequiredDelegationConnector" .
+  
+  eq name(requiringAssemblyContext@-@AssemblyConnector@OCLSf)
+    = "requiringAssemblyContext_AssemblyConnector" .
+  
+  eq name(providingAssemblyContext@-@AssemblyConnector@OCLSf)
+    = "providingAssemblyContext_AssemblyConnector" .
+  
+  eq name(providedRole@-@AssemblyConnector@OCLSf)
+    = "providedRole_AssemblyConnector" .
+  
+  eq name(requiredRole@-@AssemblyConnector@OCLSf)
+    = "requiredRole_AssemblyConnector" .
+  
+  eq name(sinkRole@-@@-@AssemblyEventConnector@OCLSf)
+    = "sinkRole__AssemblyEventConnector" .
+  
+  eq name(sourceRole@-@@-@AssemblyEventConnector@OCLSf)
+    = "sourceRole__AssemblyEventConnector" .
+  
+  eq name(sinkAssemblyContext@-@@-@AssemblyEventConnector@OCLSf)
+    = "sinkAssemblyContext__AssemblyEventConnector" .
+  
+  eq name(sourceAssemblyContext@-@@-@AssemblyEventConnector@OCLSf)
+    = "sourceAssemblyContext__AssemblyEventConnector" .
+  
+  eq name(filterCondition@-@@-@AssemblyEventConnector@OCLSf)
+    = "filterCondition__AssemblyEventConnector" .
+  
+  eq name(innerSourceRole@-@@-@SourceRole@OCLSf)
+    = "innerSourceRole__SourceRole" .
+  
+  eq name(outerSourceRole@-@@-@SourceRole@OCLSf)
+    = "outerSourceRole__SourceRole" .
+  
+  eq name(assemblyContext@-@@-@SourceDelegationConnector@OCLSf)
+    = "assemblyContext__SourceDelegationConnector" .
+  
+  eq name(assemblyContext@-@@-@SinkDelegationConnector@OCLSf)
+    = "assemblyContext__SinkDelegationConnector" .
+  
+  eq name(innerSinkRole@-@@-@SinkRole@OCLSf)
+    = "innerSinkRole__SinkRole" .
+  
+  eq name(outerSinkRole@-@@-@SinkRole@OCLSf)
+    = "outerSinkRole__SinkRole" .
+  
+  eq name(providedRole@-@@-@AssemblyInfrastructureConnector@OCLSf)
+    = "providedRole__AssemblyInfrastructureConnector" .
+  
+  eq name(requiredRole@-@@-@AssemblyInfrastructureConnector@OCLSf)
+    = "requiredRole__AssemblyInfrastructureConnector" .
+  
+  eq name(providingAssemblyContext@-@@-@AssemblyInfrastructureConnector@OCLSf)
+    = "providingAssemblyContext__AssemblyInfrastructureConnector" .
+  
+  eq name(requiringAssemblyContext@-@@-@AssemblyInfrastructureConnector@OCLSf)
+    = "requiringAssemblyContext__AssemblyInfrastructureConnector" .
+  
+  eq name(innerProvidedRole@-@@-@ProvidedInfrastructureDelegationConnector@OCLSf)
+    = "innerProvidedRole__ProvidedInfrastructureDelegationConnector" .
+  
+  eq name(outerProvidedRole@-@@-@ProvidedInfrastructureDelegationConnector@OCLSf)
+    = "outerProvidedRole__ProvidedInfrastructureDelegationConnector" .
+  
+  eq name(assemblyContext@-@@-@ProvidedInfrastructureDelegationConnector@OCLSf)
+    = "assemblyContext__ProvidedInfrastructureDelegationConnector" .
+  
+  eq name(innerRequiredRole@-@@-@RequiredInfrastructureDelegationConnector@OCLSf)
+    = "innerRequiredRole__RequiredInfrastructureDelegationConnector" .
+  
+  eq name(outerRequiredRole@-@@-@RequiredInfrastructureDelegationConnector@OCLSf)
+    = "outerRequiredRole__RequiredInfrastructureDelegationConnector" .
+  
+  eq name(assemblyContext@-@@-@RequiredInfrastructureDelegationConnector@OCLSf)
+    = "assemblyContext__RequiredInfrastructureDelegationConnector" .
+  
+  eq name(assemblyContext@-@@-@RequiredResourceDelegationConnector@OCLSf)
+    = "assemblyContext__RequiredResourceDelegationConnector" .
+  
+  eq name(innerRequiredRole@-@@-@RequiredResourceDelegationConnector@OCLSf)
+    = "innerRequiredRole__RequiredResourceDelegationConnector" .
+  
+  eq name(outerRequiredRole@-@@-@RequiredResourceDelegationConnector@OCLSf)
+    = "outerRequiredRole__RequiredResourceDelegationConnector" .
+  
+  eq name(parentStructure@-@@-@AssemblyContext@OCLSf)
+    = "parentStructure__AssemblyContext" .
+  
+  eq name(encapsulatedComponent@-@@-@AssemblyContext@OCLSf)
+    = "encapsulatedComponent__AssemblyContext" .
+  
+  eq name(configParameterUsages@-@@-@AssemblyContext@OCLSf)
+    = "configParameterUsages__AssemblyContext" .
+  
+  eq name(usageScenario@-@Workload@OCLSf)
+    = "usageScenario_Workload" .
+  
+  eq name(usageModel@-@UsageScenario@OCLSf)
+    = "usageModel_UsageScenario" .
+  
+  eq name(scenarioBehaviour@-@UsageScenario@OCLSf)
+    = "scenarioBehaviour_UsageScenario" .
+  
+  eq name(workload@-@UsageScenario@OCLSf)
+    = "workload_UsageScenario" .
+  
+  eq name(assemblyContext@-@userData@OCLSf)
+    = "assemblyContext_userData" .
+  
+  eq name(usageModel@-@UserData@OCLSf)
+    = "usageModel_UserData" .
+  
+  eq name(userDataParameterUsages@-@UserData@OCLSf)
+    = "userDataParameterUsages_UserData" .
+  
+  eq name(usageScenario@-@UsageModel@OCLSf)
+    = "usageScenario_UsageModel" .
+  
+  eq name(userData@-@UsageModel@OCLSf)
+    = "userData_UsageModel" .
+  
+  eq name(providedRole@-@EntryLevelSystemCall@OCLSf)
+    = "providedRole_EntryLevelSystemCall" .
+  
+  eq name(operationSignature@-@@-@EntryLevelSystemCall@OCLSf)
+    = "operationSignature__EntryLevelSystemCall" .
+  
+  eq name(outputParameterUsages@-@EntryLevelSystemCall@OCLSf)
+    = "outputParameterUsages_EntryLevelSystemCall" .
+  
+  eq name(inputParameterUsages@-@EntryLevelSystemCall@OCLSf)
+    = "inputParameterUsages_EntryLevelSystemCall" .
+  
+  eq name(priority@OCLSf)
+    = "priority" .
+  
+  eq name(successor@OCLSf)
+    = "successor" .
+  
+  eq name(predecessor@OCLSf)
+    = "predecessor" .
+  
+  eq name(scenarioBehaviour@-@AbstractUserAction@OCLSf)
+    = "scenarioBehaviour_AbstractUserAction" .
+  
+  eq name(token@OCLSf)
+    = "token" .
+  
+  eq name(usageScenario@-@SenarioBehaviour@OCLSf)
+    = "usageScenario_SenarioBehaviour" .
+  
+  eq name(branchTransition@-@ScenarioBehaviour@OCLSf)
+    = "branchTransition_ScenarioBehaviour" .
+  
+  eq name(loop@-@ScenarioBehaviour@OCLSf)
+    = "loop_ScenarioBehaviour" .
+  
+  eq name(actions@-@ScenarioBehaviour@OCLSf)
+    = "actions_ScenarioBehaviour" .
+  
+  eq name(rtOb@OCLSf)
+    = "rtOb" .
+  
+  eq name(tpOb@OCLSf)
+    = "tpOb" .
+  
+  eq name(branchProbability@OCLSf)
+    = "branchProbability" .
+  
+  eq name(branch@-@BranchTransition@OCLSf)
+    = "branch_BranchTransition" .
+  
+  eq name(branchedBehaviour@-@BranchTransition@OCLSf)
+    = "branchedBehaviour_BranchTransition" .
+  
+  eq name(branchTransitions@-@Branch@OCLSf)
+    = "branchTransitions_Branch" .
+  
+  eq name(loopIteration@-@Loop@OCLSf)
+    = "loopIteration_Loop" .
+  
+  eq name(bodyBehaviour@-@Loop@OCLSf)
+    = "bodyBehaviour_Loop" .
+  
+  eq name(interArrivalTime@-@OpenWorkload@OCLSf)
+    = "interArrivalTime_OpenWorkload" .
+  
+  eq name(sandTimer@OCLSf)
+    = "sandTimer" .
+  
+  eq name(timeSpecification@-@Delay@OCLSf)
+    = "timeSpecification_Delay" .
+  
+  eq name(population@OCLSf)
+    = "population" .
+  
+  eq name(thinkTime@-@ClosedWorkload@OCLSf)
+    = "thinkTime_ClosedWorkload" .
+  
+  eq name(capacity@-@PassiveResource@OCLSf)
+    = "capacity_PassiveResource" .
+  
+  eq name(basicComponent@-@PassiveResource@OCLSf)
+    = "basicComponent_PassiveResource" .
+  
+  eq name(resourceTimeoutFailureType@-@@-@PassiveResource@OCLSf)
+    = "resourceTimeoutFailureType__PassiveResource" .
+  
+  eq name(serviceEffectSpecifications@-@@-@BasicComponent@OCLSf)
+    = "serviceEffectSpecifications__BasicComponent" .
+  
+  eq name(passiveResource@-@BasicComponent@OCLSf)
+    = "passiveResource_BasicComponent" .
+  
+  eq name(parentCompleteComponentTypes@OCLSf)
+    = "parentCompleteComponentTypes" .
+  
+  eq name(componentParameterUsage@-@ImplementationComponentType@OCLSf)
+    = "componentParameterUsage_ImplementationComponentType" .
+  
+  eq name(repository@-@@-@RepositoryComponent@OCLSf)
+    = "repository__RepositoryComponent" .
+  
+  eq name(providingEntity@-@ProvidedRole@OCLSf)
+    = "providingEntity_ProvidedRole" .
+  
+  eq name(dataType@-@@-@Parameter@OCLSf)
+    = "dataType__Parameter" .
+  
+  eq name(infrastructureSignature@-@@-@Parameter@OCLSf)
+    = "infrastructureSignature__Parameter" .
+  
+  eq name(operationSignature@-@@-@Parameter@OCLSf)
+    = "operationSignature__Parameter" .
+  
+  eq name(eventType@-@@-@Parameter@OCLSf)
+    = "eventType__Parameter" .
+  
+  eq name(parameterName@OCLSf)
+    = "parameterName" .
+  
+  eq name(modifier@-@@-@Parameter@OCLSf)
+    = "modifier__Parameter" .
+  
+  eq name(resourceSignature@-@@-@Parameter@OCLSf)
+    = "resourceSignature__Parameter" .
+  
+  eq name(repository@-@@-@DataType@OCLSf)
+    = "repository__DataType" .
+  
+  eq name(repositoryDescription@OCLSf)
+    = "repositoryDescription" .
+  
+  eq name(components@-@@-@Repository@OCLSf)
+    = "components__Repository" .
+  
+  eq name(interfaces@-@@-@Repository@OCLSf)
+    = "interfaces__Repository" .
+  
+  eq name(failureTypes@-@@-@Repository@OCLSf)
+    = "failureTypes__Repository" .
+  
+  eq name(dataTypes@-@@-@Repository@OCLSf)
+    = "dataTypes__Repository" .
+  
+  eq name(parentInterfaces@-@@-@Interface@OCLSf)
+    = "parentInterfaces__Interface" .
+  
+  eq name(protocols@-@@-@Interface@OCLSf)
+    = "protocols__Interface" .
+  
+  eq name(requiredCharacterisations@OCLSf)
+    = "requiredCharacterisations" .
+  
+  eq name(repository@-@@-@Interface@OCLSf)
+    = "repository__Interface" .
+  
+  eq name(type@OCLSf)
+    = "type" .
+  
+  eq name(parameter@OCLSf)
+    = "parameter" .
+  
+  eq name(interface@-@RequiredCharacterisation@OCLSf)
+    = "interface_RequiredCharacterisation" .
+  
+  eq name(eventTypes@-@@-@EventGroup@OCLSf)
+    = "eventTypes__EventGroup" .
+  
+  eq name(parameter@-@@-@EventType@OCLSf)
+    = "parameter__EventType" .
+  
+  eq name(eventGroup@-@@-@EventType@OCLSf)
+    = "eventGroup__EventType" .
+  
+  eq name(exceptions@-@@-@Signature@OCLSf)
+    = "exceptions__Signature" .
+  
+  eq name(failureType@OCLSf)
+    = "failureType" .
+  
+  eq name(exceptionName@OCLSf)
+    = "exceptionName" .
+  
+  eq name(exceptionMessage@OCLSf)
+    = "exceptionMessage" .
+  
+  eq name(parameters@-@@-@InfrastructureSignature@OCLSf)
+    = "parameters__InfrastructureSignature" .
+  
+  eq name(infrastructureInterface@-@@-@InfrastructureSignature@OCLSf)
+    = "infrastructureInterface__InfrastructureSignature" .
+  
+  eq name(infrastructureSignatures@-@@-@InfrastructureInterface@OCLSf)
+    = "infrastructureSignatures__InfrastructureInterface" .
+  
+  eq name(requiredInterface@-@@-@InfrastructureRequiredRole@OCLSf)
+    = "requiredInterface__InfrastructureRequiredRole" .
+  
+  eq name(requiringEntity@-@RequiredRole@OCLSf)
+    = "requiringEntity_RequiredRole" .
+  
+  eq name(interface@-@@-@OperationSignature@OCLSf)
+    = "interface__OperationSignature" .
+  
+  eq name(parameters@-@@-@OperationSignature@OCLSf)
+    = "parameters__OperationSignature" .
+  
+  eq name(returnType@-@@-@OperationSignature@OCLSf)
+    = "returnType__OperationSignature" .
+  
+  eq name(signatures@-@@-@OperationInterface@OCLSf)
+    = "signatures__OperationInterface" .
+  
+  eq name(requiredInterface@-@@-@OperationRequiredRole@OCLSf)
+    = "requiredInterface__OperationRequiredRole" .
+  
+  eq name(eventGroup@-@@-@SourceRole@OCLSf)
+    = "eventGroup__SourceRole" .
+  
+  eq name(eventGroup@-@@-@SinkRole@OCLSf)
+    = "eventGroup__SinkRole" .
+  
+  eq name(providedInterface@-@@-@OperationProvidedRole@OCLSf)
+    = "providedInterface__OperationProvidedRole" .
+  
+  eq name(providedInterface@-@@-@InfrastructureProvidedRole@OCLSf)
+    = "providedInterface__InfrastructureProvidedRole" .
+  
+  eq name(parentProvidesComponentTypes@OCLSf)
+    = "parentProvidesComponentTypes" .
+  
+  eq name(type@OCLSf)
+    = "type" .
+  
+  eq name(innerType@-@CollectionDataType@OCLSf)
+    = "innerType_CollectionDataType" .
+  
+  eq name(parentType@-@CompositeDataType@OCLSf)
+    = "parentType_CompositeDataType" .
+  
+  eq name(innerDeclaration@-@CompositeDataType@OCLSf)
+    = "innerDeclaration_CompositeDataType" .
+  
+  eq name(datatype@-@InnerDeclaration@OCLSf)
+    = "datatype_InnerDeclaration" .
+  
+  eq name(compositeDataType@-@InnerDeclaration@OCLSf)
+    = "compositeDataType_InnerDeclaration" .
+  
+  eq name(parameter@-@@-@ResourceSignature@OCLSf)
+    = "parameter__ResourceSignature" .
+  
+  eq name(resourceServiceId@OCLSf)
+    = "resourceServiceId" .
+  
+  eq name(resourceInterface@-@@-@ResourceSignature@OCLSf)
+    = "resourceInterface__ResourceSignature" .
+  
+  eq name(hardwareInducedFailureType@-@@-@ProcessingResourceType@OCLSf)
+    = "hardwareInducedFailureType__ProcessingResourceType" .
+  
+  eq name(resourceRepository@-@ResourceType@OCLSf)
+    = "resourceRepository_ResourceType" .
+  
+  eq name(resourceInterfaces@-@@-@ResourceRepository@OCLSf)
+    = "resourceInterfaces__ResourceRepository" .
+  
+  eq name(schedulingPolicies@-@@-@ResourceRepository@OCLSf)
+    = "schedulingPolicies__ResourceRepository" .
+  
+  eq name(availableResourceTypes@-@ResourceRepository@OCLSf)
+    = "availableResourceTypes_ResourceRepository" .
+  
+  eq name(resourceRepository@-@@-@SchedulingPolicy@OCLSf)
+    = "resourceRepository__SchedulingPolicy" .
+  
+  eq name(networkInducedFailureType@-@@-@CommunicationLinkResourceType@OCLSf)
+    = "networkInducedFailureType__CommunicationLinkResourceType" .
+  
+  eq name(resourceRepository@-@@-@ResourceInterface@OCLSf)
+    = "resourceRepository__ResourceInterface" .
+  
+  eq name(resourceSignatures@-@@-@ResourceInterface@OCLSf)
+    = "resourceSignatures__ResourceInterface" .
+  
+  eq name(protocolTypeID@OCLSf)
+    = "protocolTypeID" .
+  
+  eq name(variableCharacterisation@-@VariableUsage@OCLSf)
+    = "variableCharacterisation_VariableUsage" .
+  
+  eq name(userData@-@VariableUsage@OCLSf)
+    = "userData_VariableUsage" .
+  
+  eq name(callAction@-@@-@VariableUsage@OCLSf)
+    = "callAction__VariableUsage" .
+  
+  eq name(synchronisationPoint@-@VariableUsage@OCLSf)
+    = "synchronisationPoint_VariableUsage" .
+  
+  eq name(callReturnAction@-@@-@VariableUsage@OCLSf)
+    = "callReturnAction__VariableUsage" .
+  
+  eq name(setVariableAction@-@VariableUsage@OCLSf)
+    = "setVariableAction_VariableUsage" .
+  
+  eq name(specifiedOutputParameterAbstraction@-@expectedExternalOutputs@-@VariableUsage@OCLSf)
+    = "specifiedOutputParameterAbstraction_expectedExternalOutputs_VariableUsage" .
+  
+  eq name(assemblyContext@-@@-@VariableUsage@OCLSf)
+    = "assemblyContext__VariableUsage" .
+  
+  eq name(entryLevelSystemCall@-@InputParameterUsage@OCLSf)
+    = "entryLevelSystemCall_InputParameterUsage" .
+  
+  eq name(entryLevelSystemCall@-@OutputParameterUsage@OCLSf)
+    = "entryLevelSystemCall_OutputParameterUsage" .
+  
+  eq name(namedReference@-@@-@VariableUsage@OCLSf)
+    = "namedReference__VariableUsage" .
+  
+  eq name(type@OCLSf)
+    = "type" .
+  
+  eq name(specification@-@VariableCharacterisation@OCLSf)
+    = "specification_VariableCharacterisation" .
+  
+  eq name(variableUsage@-@VariableCharacterisation@OCLSf)
+    = "variableUsage_VariableCharacterisation" .
+  
+  eq name(characterisationType@OCLSf)
+    = "characterisationType" .
+  
+  eq name(failureProbability@OCLSf)
+    = "failureProbability" .
+  
+  eq name(processingResourceType@-@@-@HardwareInducedFailureType@OCLSf)
+    = "processingResourceType__HardwareInducedFailureType" .
+  
+  eq name(internalFailureOccurrenceDescriptions@-@@-@SoftwareInducedFailureType@OCLSf)
+    = "internalFailureOccurrenceDescriptions__SoftwareInducedFailureType" .
+  
+  eq name(internalAction@-@@-@InternalFailureOccurrenceDescription@OCLSf)
+    = "internalAction__InternalFailureOccurrenceDescription" .
+  
+  eq name(softwareInducedFailureType@-@@-@InternalFailureOccurrenceDescription@OCLSf)
+    = "softwareInducedFailureType__InternalFailureOccurrenceDescription" .
+  
+  eq name(communicationLinkResourceType@-@@-@NetworkInducedFailureType@OCLSf)
+    = "communicationLinkResourceType__NetworkInducedFailureType" .
+  
+  eq name(specifiedReliabilityAnnotation@-@@-@ExternalFailureOccurrenceDescription@OCLSf)
+    = "specifiedReliabilityAnnotation__ExternalFailureOccurrenceDescription" .
+  
+  eq name(failureType@-@@-@ExternalFailureOccurrenceDescription@OCLSf)
+    = "failureType__ExternalFailureOccurrenceDescription" .
+  
+  eq name(passiveResource@-@@-@ResourceTimeoutFailureType@OCLSf)
+    = "passiveResource__ResourceTimeoutFailureType" .
+  
+  eq name(repository@-@@-@FailureType@OCLSf)
+    = "repository__FailureType" .
+  
+  eq name(resourceDemand@-@Action@OCLSf)
+    = "resourceDemand_Action" .
+  
+  eq name(infrastructureCall@-@@-@Action@OCLSf)
+    = "infrastructureCall__Action" .
+  
+  eq name(resourceCall@-@@-@Action@OCLSf)
+    = "resourceCall__Action" .
+  
+  eq name(predecessor@-@AbstractAction@OCLSf)
+    = "predecessor_AbstractAction" .
+  
+  eq name(successor@-@AbstractAction@OCLSf)
+    = "successor_AbstractAction" .
+  
+  eq name(resourceDemandingBehaviour@-@AbstractAction@OCLSf)
+    = "resourceDemandingBehaviour_AbstractAction" .
+  
+  eq name(token@OCLSf)
+    = "token" .
+  
+  eq name(abstractLoopAction@-@ResourceDemandingBehaviour@OCLSf)
+    = "abstractLoopAction_ResourceDemandingBehaviour" .
+  
+  eq name(abstractBranchTransition@-@ResourceDemandingBehaviour@OCLSf)
+    = "abstractBranchTransition_ResourceDemandingBehaviour" .
+  
+  eq name(steps@-@Behaviour@OCLSf)
+    = "steps_Behaviour" .
+  
+  eq name(tpOb@OCLSf)
+    = "tpOb" .
+  
+  eq name(rtOb@OCLSf)
+    = "rtOb" .
+  
+  eq name(bodyBehaviour@-@Loop@OCLSf)
+    = "bodyBehaviour_Loop" .
+  
+  eq name(branchAction@-@AbstractBranchTransition@OCLSf)
+    = "branchAction_AbstractBranchTransition" .
+  
+  eq name(branchBehaviour@-@BranchTransition@OCLSf)
+    = "branchBehaviour_BranchTransition" .
+  
+  eq name(branches@-@Branch@OCLSf)
+    = "branches_Branch" .
+  
+  eq name(inputVariableUsages@-@@-@CallAction@OCLSf)
+    = "inputVariableUsages__CallAction" .
+  
+  eq name(seffTypeID@OCLSf)
+    = "seffTypeID" .
+  
+  eq name(describedService@-@@-@SEFF@OCLSf)
+    = "describedService__SEFF" .
+  
+  eq name(basicComponent@-@ServiceEffectSpecification@OCLSf)
+    = "basicComponent_ServiceEffectSpecification" .
+  
+  eq name(resourceDemandingInternalBehaviours@OCLSf)
+    = "resourceDemandingInternalBehaviours" .
+  
+  eq name(resourceDemandingSEFF@-@ResourceDemandingInternalBehaviour@OCLSf)
+    = "resourceDemandingSEFF_ResourceDemandingInternalBehaviour" .
+  
+  eq name(passiveResource@-@ReleaseAction@OCLSf)
+    = "passiveResource_ReleaseAction" .
+  
+  eq name(iterationCount@-@LoopAction@OCLSf)
+    = "iterationCount_LoopAction" .
+  
+  eq name(asynchronousForkedBehaviours@-@ForkAction@OCLSf)
+    = "asynchronousForkedBehaviours_ForkAction" .
+  
+  eq name(synchronisingBehaviours@-@ForkAction@OCLSf)
+    = "synchronisingBehaviours_ForkAction" .
+  
+  eq name(synchronisationPoint@-@ForkedBehaviour@OCLSf)
+    = "synchronisationPoint_ForkedBehaviour" .
+  
+  eq name(forkAction@-@ForkedBehaivour@OCLSf)
+    = "forkAction_ForkedBehaivour" .
+  
+  eq name(outputParameterUsage@-@SynchronisationPoint@OCLSf)
+    = "outputParameterUsage_SynchronisationPoint" .
+  
+  eq name(forkAction@-@SynchronisationPoint@OCLSf)
+    = "forkAction_SynchronisationPoint" .
+  
+  eq name(synchronousForkedBehaviours@-@SynchronisationPoint@OCLSf)
+    = "synchronousForkedBehaviours_SynchronisationPoint" .
+  
+  eq name(calledService@-@ExternalService@OCLSf)
+    = "calledService_ExternalService" .
+  
+  eq name(role@-@ExternalService@OCLSf)
+    = "role_ExternalService" .
+  
+  eq name(retryCount@OCLSf)
+    = "retryCount" .
+  
+  eq name(returnVariableUsage@-@@-@CallReturnAction@OCLSf)
+    = "returnVariableUsage__CallReturnAction" .
+  
+  eq name(branchProbability@OCLSf)
+    = "branchProbability" .
+  
+  eq name(passiveresource@-@AcquireAction@OCLSf)
+    = "passiveresource_AcquireAction" .
+  
+  eq name(timeout@OCLSf)
+    = "timeout" .
+  
+  eq name(timeoutValue@OCLSf)
+    = "timeoutValue" .
+  
+  eq name(parameter@-@CollectionIteratorAction@OCLSf)
+    = "parameter_CollectionIteratorAction" .
+  
+  eq name(branchCondition@-@GuardedBranchTransition@OCLSf)
+    = "branchCondition_GuardedBranchTransition" .
+  
+  eq name(localVariableUsages@-@SetVariableAction@OCLSf)
+    = "localVariableUsages_SetVariableAction" .
+  
+  eq name(calledResourceDemandingInternalBehaviour@OCLSf)
+    = "calledResourceDemandingInternalBehaviour" .
+  
+  eq name(eventType@-@@-@EmitEventAction@OCLSf)
+    = "eventType__EmitEventAction" .
+  
+  eq name(sourceRole@-@@-@EmitEventAction@OCLSf)
+    = "sourceRole__EmitEventAction" .
+  
+  eq name(internalFailureOccurrenceDescriptions@-@@-@InternalAction@OCLSf)
+    = "internalFailureOccurrenceDescriptions__InternalAction" .
+  
+  eq name(queue@OCLSf)
+    = "queue" .
+  
+  eq name(signature@-@@-@InfrastructureCall@OCLSf)
+    = "signature__InfrastructureCall" .
+  
+  eq name(numberOfCalls@-@@-@InfrastructureCall@OCLSf)
+    = "numberOfCalls__InfrastructureCall" .
+  
+  eq name(action@-@@-@InfrastructureCall@OCLSf)
+    = "action__InfrastructureCall" .
+  
+  eq name(requiredRole@-@@-@InfrastructureCall@OCLSf)
+    = "requiredRole__InfrastructureCall" .
+  
+  eq name(action@-@@-@ResourceCall@OCLSf)
+    = "action__ResourceCall" .
+  
+  eq name(resourceRequiredRole@-@@-@ResourceCall@OCLSf)
+    = "resourceRequiredRole__ResourceCall" .
+  
+  eq name(signature@-@@-@ResourceCall@OCLSf)
+    = "signature__ResourceCall" .
+  
+  eq name(numberOfCalls@-@@-@ResourceCall@OCLSf)
+    = "numberOfCalls__ResourceCall" .
+  
+  eq name(specification@-@ParametericResourceDemand@OCLSf)
+    = "specification_ParametericResourceDemand" .
+  
+  eq name(requiredResource@-@ParametricResourceDemand@OCLSf)
+    = "requiredResource_ParametricResourceDemand" .
+  
+  eq name(action@-@ParametricResourceDemand@OCLSf)
+    = "action_ParametricResourceDemand" .
+  
+  eq name(failureHandlingAlternatives@-@@-@RecoveryActionBehaviour@OCLSf)
+    = "failureHandlingAlternatives__RecoveryActionBehaviour" .
+  
+  eq name(recoveryAction@-@@-@RecoveryActionBehaviour@OCLSf)
+    = "recoveryAction__RecoveryActionBehaviour" .
+  
+  eq name(primaryBehaviour@-@@-@RecoveryAction@OCLSf)
+    = "primaryBehaviour__RecoveryAction" .
+  
+  eq name(recoveryActionBehaviours@-@@-@RecoveryAction@OCLSf)
+    = "recoveryActionBehaviours__RecoveryAction" .
+  
+  eq name(failureTypes@-@FailureHandlingEntity@OCLSf)
+    = "failureTypes_FailureHandlingEntity" .
+  
+  eq name(signature@-@SpecifiedQoSAnnation@OCLSf)
+    = "signature_SpecifiedQoSAnnation" .
+  
+  eq name(role@-@SpecifiedQoSAnnotation@OCLSf)
+    = "role_SpecifiedQoSAnnotation" .
+  
+  eq name(qosAnnotations@-@SpecifiedQoSAnnotation@OCLSf)
+    = "qosAnnotations_SpecifiedQoSAnnotation" .
+  
+  eq name(specifiedOutputParameterAbstractions@-@QoSAnnotations@OCLSf)
+    = "specifiedOutputParameterAbstractions_QoSAnnotations" .
+  
+  eq name(system@-@QoSAnnotations@OCLSf)
+    = "system_QoSAnnotations" .
+  
+  eq name(specifiedQoSAnnotations@-@QoSAnnotations@OCLSf)
+    = "specifiedQoSAnnotations_QoSAnnotations" .
+  
+  eq name(signature@-@SpecifiedOutputParameterAbstraction@OCLSf)
+    = "signature_SpecifiedOutputParameterAbstraction" .
+  
+  eq name(role@-@SpecifiedOutputParameterAbstraction@OCLSf)
+    = "role_SpecifiedOutputParameterAbstraction" .
+  
+  eq name(expectedExternalOutputs@-@SpecifiedOutputParameterAbstraction@OCLSf)
+    = "expectedExternalOutputs_SpecifiedOutputParameterAbstraction" .
+  
+  eq name(qosAnnotations@-@SpecifiedOutputParameterAbstraction@OCLSf)
+    = "qosAnnotations_SpecifiedOutputParameterAbstraction" .
+  
+  eq name(specification@-@SpecifiedExecutionTime@OCLSf)
+    = "specification_SpecifiedExecutionTime" .
+  
+  eq name(assemblyContext@-@ComponentSpecifiedExecutionTime@OCLSf)
+    = "assemblyContext_ComponentSpecifiedExecutionTime" .
+  
+  eq name(externalFailureOccurrenceDescriptions@-@@-@SpecifiedReliabilityAnnotation@OCLSf)
+    = "externalFailureOccurrenceDescriptions__SpecifiedReliabilityAnnotation" .
+  
+  eq name(qosAnnotations@-@System@OCLSf)
+    = "qosAnnotations_System" .
+  
+  eq name(linkingResources@-@@-@ResourceEnvironment@OCLSf)
+    = "linkingResources__ResourceEnvironment" .
+  
+  eq name(resourceContainer@-@ResourceEnvironment@OCLSf)
+    = "resourceContainer_ResourceEnvironment" .
+  
+  eq name(connectedResourceContainers@-@LinkingResource@OCLSf)
+    = "connectedResourceContainers_LinkingResource" .
+  
+  eq name(communicationLinkResourceSpecifications@-@LinkingResource@OCLSf)
+    = "communicationLinkResourceSpecifications_LinkingResource" .
+  
+  eq name(resourceEnvironment@-@LinkingResource@OCLSf)
+    = "resourceEnvironment_LinkingResource" .
+  
+  eq name(activeResourceSpecifications@-@ResourceContainer@OCLSf)
+    = "activeResourceSpecifications_ResourceContainer" .
+  
+  eq name(resourceEnvironment@-@ResourceContainer@OCLSf)
+    = "resourceEnvironment_ResourceContainer" .
+  
+  eq name(nestedResourceContainers@-@@-@ResourceContainer@OCLSf)
+    = "nestedResourceContainers__ResourceContainer" .
+  
+  eq name(parentResourceContainer@-@@-@ResourceContainer@OCLSf)
+    = "parentResourceContainer__ResourceContainer" .
+  
+  eq name(MTTR@OCLSf)
+    = "MTTR" .
+  
+  eq name(MTTF@OCLSf)
+    = "MTTF" .
+  
+  eq name(requiredByContainer@OCLSf)
+    = "requiredByContainer" .
+  
+  eq name(schedulingPolicy@OCLSf)
+    = "schedulingPolicy" .
+  
+  eq name(activeResourceType@-@ActiveResourceSpecification@OCLSf)
+    = "activeResourceType_ActiveResourceSpecification" .
+  
+  eq name(processingRate@-@ProcessingResourceSpecification@OCLSf)
+    = "processingRate_ProcessingResourceSpecification" .
+  
+  eq name(numberOfReplicas@OCLSf)
+    = "numberOfReplicas" .
+  
+  eq name(resourceContainer@-@ProcessingResourceSpecification@OCLSf)
+    = "resourceContainer_ProcessingResourceSpecification" .
+  
+  eq name(queue@OCLSf)
+    = "queue" .
+  
+  eq name(linkingResource@-@CommunicationLinkResourceSpecification@OCLSf)
+    = "linkingResource_CommunicationLinkResourceSpecification" .
+  
+  eq name(failureProbability@OCLSf)
+    = "failureProbability" .
+  
+  eq name(communicationLinkResourceType@-@CommunicationLinkResourceSpecification@OCLSf)
+    = "communicationLinkResourceType_CommunicationLinkResourceSpecification" .
+  
+  eq name(latency@-@CommunicationLinkResourceSpecification@OCLSf)
+    = "latency_CommunicationLinkResourceSpecification" .
+  
+  eq name(throughput@-@CommunicationLinkResourceSpecification@OCLSf)
+    = "throughput_CommunicationLinkResourceSpecification" .
+  
+  eq name(resourceContainer@-@AllocationContext@OCLSf)
+    = "resourceContainer_AllocationContext" .
+  
+  eq name(assemblyContext@-@AllocationContext@OCLSf)
+    = "assemblyContext_AllocationContext" .
+  
+  eq name(allocation@-@AllocationContext@OCLSf)
+    = "allocation_AllocationContext" .
+  
+  eq name(eventChannel@-@@-@AllocationContext@OCLSf)
+    = "eventChannel__AllocationContext" .
+  
+  eq name(targetResourceEnvironment@-@Allocation@OCLSf)
+    = "targetResourceEnvironment_Allocation" .
+  
+  eq name(system@-@Allocation@OCLSf)
+    = "system_Allocation" .
+  
+  eq name(allocationContexts@-@Allocation@OCLSf)
+    = "allocationContexts_Allocation" .
+  
+  eq name(referenceName@OCLSf)
+    = "referenceName" .
+  
+  eq name(innerReference@-@NamespaceReference@OCLSf)
+    = "innerReference_NamespaceReference" .
+  
+  eq name(id@-@Variable@OCLSf)
+    = "id_Variable" .
+  
+  eq name(left@OCLSf)
+    = "left" .
+  
+  eq name(right@OCLSf)
+    = "right" .
+  
+  eq name(operation@OCLSf)
+    = "operation" .
+  
+  eq name(left@OCLSf)
+    = "left" .
+  
+  eq name(right@OCLSf)
+    = "right" .
+  
+  eq name(operation@OCLSf)
+    = "operation" .
+  
+  eq name(function@-@ProbabilityFunctionLiteral@OCLSf)
+    = "function_ProbabilityFunctionLiteral" .
+  
+  eq name(innerExpression@OCLSf)
+    = "innerExpression" .
+  
+  eq name(value@OCLSf)
+    = "value" .
+  
+  eq name(value@OCLSf)
+    = "value" .
+  
+  eq name(left@OCLSf)
+    = "left" .
+  
+  eq name(right@OCLSf)
+    = "right" .
+  
+  eq name(operation@OCLSf)
+    = "operation" .
+  
+  eq name(value@OCLSf)
+    = "value" .
+  
+  eq name(value@OCLSf)
+    = "value" .
+  
+  eq name(base@OCLSf)
+    = "base" .
+  
+  eq name(exponent@OCLSf)
+    = "exponent" .
+  
+  eq name(left@OCLSf)
+    = "left" .
+  
+  eq name(right@OCLSf)
+    = "right" .
+  
+  eq name(operation@OCLSf)
+    = "operation" .
+  
+  eq name(inner@OCLSf)
+    = "inner" .
+  
+  eq name(inner@OCLSf)
+    = "inner" .
+  
+  eq name(id@OCLSf)
+    = "id" .
+  
+  eq name(parameters@-@FunctionLiteral@OCLSf)
+    = "parameters_FunctionLiteral" .
+  
+  eq name(ifExpression@OCLSf)
+    = "ifExpression" .
+  
+  eq name(elseExpression@OCLSf)
+    = "elseExpression" .
+  
+  eq name(conditionExpression@OCLSf)
+    = "conditionExpression" .
+  
+  eq name(specification@OCLSf)
+    = "specification" .
+  
+  eq name(name@OCLSf)
+    = "name" .
+  
+  eq name(units@OCLSf)
+    = "units" .
+  
+  eq name(units@OCLSf)
+    = "units" .
+  
+  eq name(unit@OCLSf)
+    = "unit" .
+  
+  eq name(exponent@OCLSf)
+    = "exponent" .
+  
+  eq name(baseUnit@OCLSf)
+    = "baseUnit" .
+  
+  eq name(unit@OCLSf)
+    = "unit" .
+  
+  eq name(unitSpecification@OCLSf)
+    = "unitSpecification" .
+  
+  eq name(id@OCLSf)
+    = "id" .
+  
+  eq name(id@OCLSf)
+    = "id" .
+  
+  eq name(completed@OCLSf)
+    = "completed" .
+  
+  eq name(branchNumber@OCLSf)
+    = "branchNumber" .
+  
+  eq name(tsOb@OCLSf)
+    = "tsOb" .
+  
+  eq name(branchesProb@OCLSf)
+    = "branchesProb" .
+  
+  eq name(prob@OCLSf)
+    = "prob" .
+  
+  eq name(context@OCLSf)
+    = "context" .
+  
+  eq name(nestedToken@OCLSf)
+    = "nestedToken" .
+  
+  eq name(loopToken@OCLSf)
+    = "loopToken" .
+  
+  eq name(returnVars@OCLSf)
+    = "returnVars" .
+  
+  eq name(branchesProb@OCLSf)
+    = "branchesProb" .
+  
+  eq name(prob@OCLSf)
+    = "prob" .
+  
+  eq name(tStamp@OCLSf)
+    = "tStamp" .
+  
+  eq name(counter@OCLSf)
+    = "counter" .
+  
+  eq name(tTime@OCLSf)
+    = "tTime" .
+  
+  eq name(rTime@OCLSf)
+    = "rTime" .
+  
+  eq name(allRT@OCLSf)
+    = "allRT" .
+  
+  eq name(id@OCLSf)
+    = "id" .
+  
+  eq name(completed@OCLSf)
+    = "completed" .
+  
+  eq name(branchNumber@OCLSf)
+    = "branchNumber" .
+  
+  eq name(tsOb@OCLSf)
+    = "tsOb" .
+  
+  eq name(cToken@OCLSf)
+    = "cToken" .
+  
+  eq name(branchesProb@OCLSf)
+    = "branchesProb" .
+  
+  eq name(prob@OCLSf)
+    = "prob" .
+  
+  eq name(loopToken@OCLSf)
+    = "loopToken" .
+  
+  eq name(counter@OCLSf)
+    = "counter" .
+  
+  eq name(thp@OCLSf)
+    = "thp" .
+  
+  eq name(iterations@OCLSf)
+    = "iterations" .
+  
+  eq name(started@OCLSf)
+    = "started" .
+  
+  eq name(countDown@OCLSf)
+    = "countDown" .
+  
+  eq name(iterations@OCLSf)
+    = "iterations" .
+  
+  eq name(started@OCLSf)
+    = "started" .
+  
+  eq name(varUsage@OCLSf)
+    = "varUsage" .
+  
+  eq name(value@OCLSf)
+    = "value" .
+  
+  eq rulesInformation
+    = _`{_`}(@MGBehavior@,__(<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"OpenWorkloadSpec"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"StartUsageModel"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"ActionUsageModelTrans"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"StopUsageModel"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"EntryLevelSystemCall"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"StartSEFF"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"ActionSEFFTrans"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"StopSEFF"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"TokenProb2ProbabilisticBranch"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"DelayUsageModel"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"BranchUM2TokenProb"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"EnterInExternalCallAction"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"LoopToLoopTokenSEFF"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"LoopStop2StartSEFF"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"LoopStartTokenExistSEFF"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"SetVariableActionSEFF"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"ExitOfAExternalCallAction"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"ExitLevelUsageModel"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"IntActSEFFSchFCFS"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"OpenWorkloadCreateSandTimer"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"RTObserverBirthUsageModel"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"InternalActionSEFF"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"TokenExitBranchUM"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"LoopToLoopTokenUM"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"LoopStartTokenUM"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"LoopStartTokenSEFF"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"LoopStartTokenExitUM"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"BranchSEFF2TokenProb"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"TokenEnterInABranchSEFF"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"TokenExitFromBranchSEFF"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"LoopStop2StartUM"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))),<_:_|_>(oid('Rule0),AtomicRule@MGBehavior,_#_(_:_(name@Rule@MGBehavior,"TokenEnterInABranchUM"),_:_(lowerBound@Rule@MGBehavior,null),_:_(upperBound@Rule@MGBehavior,null),_:_(soft@Rule@MGBehavior,false),_:_(periodicity@AtomicRule@MGBehavior,null))))) .
+  
+  eq currentExec@DelayUsageModel(Set`{_`}(_;_(delay:OCL-Type,sToken:OCL-Type)),_`{_`}(MM@:@Metamodel,__(<_:_|_>(ACTEXEC@:Oid,AtomicActionExec@MGBehavior,_#_(_:_(action@ActionExec@MGBehavior,"DelayUsageModel"),_:_(endingTime@ActionExec@MGBehavior,null),_:_(participants@ActionExec@MGBehavior,Set`{_`}(_;_(L@ACTEXEC@:MSet{OCL-Exp},OR1@:Oid,OR2@:Oid))),ACTEXEC@@SFS:Set{@StructuralFeatureInstance})),OBJSET@:Set{@Object},<_:_|_>(OR1@:Oid,ObjectRole@MGBehavior,_#_(_:_(actualObject@ObjectRole@MGBehavior,delay:OCL-Type),_:_(role@ObjectRole@MGBehavior,"delay"))),<_:_|_>(OR2@:Oid,ObjectRole@MGBehavior,_#_(_:_(actualObject@ObjectRole@MGBehavior,sToken:OCL-Type),_:_(role@ObjectRole@MGBehavior,"sToken"))))))
+    = true .
+  
+  eq currentExec@DelayUsageModel(OIDSET@:Set,MODEL@:@Model)
+    = false .
+  
+  ceq [DelayUsageModel] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(delay:OCL-Type,PCMUSAGEMODELDELAY@PCMFLATTEN@delay@CLASS:PCMusagemodelDelay@pcmflatten,_#_(_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@delay@ATT:OCL-Type),delay@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(sToken:OCL-Type,TOKENTOKENSUSTOKEN@PCMFLATTEN@sToken@CLASS:TOKENtokensUSToken@pcmflatten,_#_(_:_(completed@TOKENtokensUSToken@pcmflatten,COMPLETED@sToken@ATT:OCL-Type),sToken@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(delay:OCL-Type,PCMUSAGEMODELDELAY@PCMFLATTEN@delay@CLASS:PCMusagemodelDelay@pcmflatten,_#_(_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@delay@ATT:OCL-Type),delay@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(sToken:OCL-Type,TOKENTOKENSUSTOKEN@PCMFLATTEN@sToken@CLASS:TOKENtokensUSToken@pcmflatten,_#_(_:_(completed@TOKENtokensUSToken@pcmflatten,COMPLETED@sToken@ATT:OCL-Type),sToken@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(sToken:OCL-Type,TOKEN@delay@ATT:OCL-Type)
+    /\ VAR1@:Oid := newId(_+_(VALUE@ids@:Int,3))
+    /\ spec:OCL-Type := eval(parseExp(eval(__(__(delay:OCL-Type,._(timeSpecification@-@Delay@OCLSf)),._(specification@OCLSf)),env(empty),MODEL@:@Model),_+_(VALUE@rdm@:Int,1)),env(empty),MODEL@:@Model)
+    /\ COMPLETED@sToken@ATT:OCL-Type := eval(false,env(_<-_(self,sToken:OCL-Type)),MODEL@:@Model)
+    /\ not_(currentExec@DelayUsageModel(Set`{_`}(_;_(delay:OCL-Type,sToken:OCL-Type)),MODEL@:@Model)) .
+  
+  eq currentExec@InternalActionSEFF(Set`{_`}(_;_(IA:OCL-Type,PRD:OCL-Type,PRT:OCL-Type,PRS:OCL-Type,Sch:OCL-Type,t:OCL-Type)),_`{_`}(MM@:@Metamodel,__(<_:_|_>(ACTEXEC@:Oid,AtomicActionExec@MGBehavior,_#_(_:_(action@ActionExec@MGBehavior,"InternalActionSEFF"),_:_(endingTime@ActionExec@MGBehavior,null),_:_(participants@ActionExec@MGBehavior,Set`{_`}(_;_(L@ACTEXEC@:MSet{OCL-Exp},OR1@:Oid,OR2@:Oid,OR3@:Oid,OR4@:Oid,OR5@:Oid,OR6@:Oid))),ACTEXEC@@SFS:Set{@StructuralFeatureInstance})),OBJSET@:Set{@Object},<_:_|_>(OR1@:Oid,ObjectRole@MGBehavior,_#_(_:_(actualObject@ObjectRole@MGBehavior,IA:OCL-Type),_:_(role@ObjectRole@MGBehavior,"IA"))),<_:_|_>(OR2@:Oid,ObjectRole@MGBehavior,_#_(_:_(actualObject@ObjectRole@MGBehavior,PRD:OCL-Type),_:_(role@ObjectRole@MGBehavior,"PRD"))),<_:_|_>(OR3@:Oid,ObjectRole@MGBehavior,_#_(_:_(actualObject@ObjectRole@MGBehavior,PRT:OCL-Type),_:_(role@ObjectRole@MGBehavior,"PRT"))),<_:_|_>(OR4@:Oid,ObjectRole@MGBehavior,_#_(_:_(actualObject@ObjectRole@MGBehavior,PRS:OCL-Type),_:_(role@ObjectRole@MGBehavior,"PRS"))),<_:_|_>(OR5@:Oid,ObjectRole@MGBehavior,_#_(_:_(actualObject@ObjectRole@MGBehavior,Sch:OCL-Type),_:_(role@ObjectRole@MGBehavior,"Sch"))),<_:_|_>(OR6@:Oid,ObjectRole@MGBehavior,_#_(_:_(actualObject@ObjectRole@MGBehavior,t:OCL-Type),_:_(role@ObjectRole@MGBehavior,"t"))))))
+    = true .
+  
+  eq currentExec@InternalActionSEFF(OIDSET@:Set,MODEL@:@Model)
+    = false .
+  
+  ceq [InternalActionSEFF] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(IA:OCL-Type,PCMSEFFINTERNALACTION@PCMFLATTEN@IA@CLASS:PCMseffInternalAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@IA@ATT:OCL-Type),_:_(resourceDemand@-@Action@PCMseffAbstractInternalControlFlowAction@pcmflatten,RESOURCEDEMAND@-@ACTION@IA@ATT:OCL-Type),IA@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(PRD:OCL-Type,PCMSEFFPERFORMANCEPARAMETRICRESOURCEDEMAND@PCMFLATTEN@PRD@CLASS:PCMseffperformanceParametricResourceDemand@pcmflatten,_#_(_:_(action@-@ParametricResourceDemand@PCMseffperformanceParametricResourceDemand@pcmflatten,ACTION@-@PARAMETRICRESOURCEDEMAND@PRD@ATT:OCL-Type),_:_(requiredResource@-@ParametricResourceDemand@PCMseffperformanceParametricResourceDemand@pcmflatten,REQUIREDRESOURCE@-@PARAMETRICRESOURCEDEMAND@PRD@ATT:OCL-Type),PRD@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(PRT:OCL-Type,PCMRESOURCETYPEPROCESSINGRESOURCETYPE@PCMFLATTEN@PRT@CLASS:PCMresourcetypeProcessingResourceType@pcmflatten,PRT@SFS:Set{@StructuralFeatureInstance}),<_:_|_>(PRS:OCL-Type,PCMRESOURCEENVIRONMENTPROCESSINGRESOURCESPECIFICATION@PCMFLATTEN@PRS@CLASS:PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,_#_(_:_(schedulingPolicy@PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,SCHEDULINGPOLICY@PRS@ATT:OCL-Type),_:_(activeResourceType@-@ActiveResourceSpecification@PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,ACTIVERESOURCETYPE@-@ACTIVERESOURCESPECIFICATION@PRS@ATT:OCL-Type),PRS@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(Sch:OCL-Type,PCMRESOURCETYPESCHEDULINGPOLICY@PCMFLATTEN@Sch@CLASS:PCMresourcetypeSchedulingPolicy@pcmflatten,_#_(_:_(id@IDENTIFIERidentifierIdentifier@pcmflatten,ID@Sch@ATT:OCL-Type),Sch@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(IA:OCL-Type,PCMSEFFINTERNALACTION@PCMFLATTEN@IA@CLASS:PCMseffInternalAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@IA@ATT:OCL-Type),_:_(resourceDemand@-@Action@PCMseffAbstractInternalControlFlowAction@pcmflatten,RESOURCEDEMAND@-@ACTION@IA@ATT:OCL-Type),IA@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(PRD:OCL-Type,PCMSEFFPERFORMANCEPARAMETRICRESOURCEDEMAND@PCMFLATTEN@PRD@CLASS:PCMseffperformanceParametricResourceDemand@pcmflatten,_#_(_:_(action@-@ParametricResourceDemand@PCMseffperformanceParametricResourceDemand@pcmflatten,ACTION@-@PARAMETRICRESOURCEDEMAND@PRD@ATT:OCL-Type),_:_(requiredResource@-@ParametricResourceDemand@PCMseffperformanceParametricResourceDemand@pcmflatten,REQUIREDRESOURCE@-@PARAMETRICRESOURCEDEMAND@PRD@ATT:OCL-Type),PRD@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(PRT:OCL-Type,PCMRESOURCETYPEPROCESSINGRESOURCETYPE@PCMFLATTEN@PRT@CLASS:PCMresourcetypeProcessingResourceType@pcmflatten,PRT@SFS:Set{@StructuralFeatureInstance}),<_:_|_>(PRS:OCL-Type,PCMRESOURCEENVIRONMENTPROCESSINGRESOURCESPECIFICATION@PCMFLATTEN@PRS@CLASS:PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,_#_(_:_(schedulingPolicy@PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,SCHEDULINGPOLICY@PRS@ATT:OCL-Type),_:_(activeResourceType@-@ActiveResourceSpecification@PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,ACTIVERESOURCETYPE@-@ACTIVERESOURCESPECIFICATION@PRS@ATT:OCL-Type),PRS@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(Sch:OCL-Type,PCMRESOURCETYPESCHEDULINGPOLICY@PCMFLATTEN@Sch@CLASS:PCMresourcetypeSchedulingPolicy@pcmflatten,_#_(_:_(id@IDENTIFIERidentifierIdentifier@pcmflatten,ID@Sch@ATT:OCL-Type),Sch@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(PRD:OCL-Type,RESOURCEDEMAND@-@ACTION@IA@ATT:OCL-Type)
+    /\ _in_(PRT:OCL-Type,REQUIREDRESOURCE@-@PARAMETRICRESOURCEDEMAND@PRD@ATT:OCL-Type)
+    /\ _in_(PRT:OCL-Type,ACTIVERESOURCETYPE@-@ACTIVERESOURCESPECIFICATION@PRS@ATT:OCL-Type)
+    /\ _in_(Sch:OCL-Type,SCHEDULINGPOLICY@PRS@ATT:OCL-Type)
+    /\ _in_(t:OCL-Type,TOKEN@IA@ATT:OCL-Type)
+    /\ VAR1@:Oid := newId(_+_(VALUE@ids@:Int,7))
+    /\ rTime:OCL-Type := eval(_/_(parseExp(eval(__(__(PRD:OCL-Type,._(specification@-@ParametericResourceDemand@OCLSf)),._(specification@OCLSf)),env(empty),MODEL@:@Model),_+_(VALUE@rdm@:Int,4)),parseExp(eval(__(__(PRS:OCL-Type,._(processingRate@-@ProcessingResourceSpecification@OCLSf)),._(specification@OCLSf)),env(empty),MODEL@:@Model),_+_(VALUE@rdm@:Int,5))),env(empty),MODEL@:@Model)
+    /\ ID@Sch@ATT:OCL-Type := eval("FCFS",env(_<-_(self,Sch:OCL-Type)),MODEL@:@Model)
+    /\ COMPLETED@t@ATT:OCL-Type := eval(false,env(_<-_(self,t:OCL-Type)),MODEL@:@Model)
+    /\ eval(_<=_(_->`indexOf`(_`)(__(PRS:OCL-Type,._(queue@OCLSf)),t:OCL-Type),__(PRS:OCL-Type,._(numberOfReplicas@OCLSf))),env(empty),MODEL@:@Model)
+    /\ not_(currentExec@InternalActionSEFF(Set`{_`}(_;_(IA:OCL-Type,PRD:OCL-Type,PRT:OCL-Type,PRS:OCL-Type,Sch:OCL-Type,t:OCL-Type)),MODEL@:@Model)) .
+  
+  eq currentExec@DecreaseCountDown(Set`{_`}(st:OCL-Type),_`{_`}(MM@:@Metamodel,__(<_:_|_>(ACTEXEC@:Oid,OngoingActionExec@MGBehavior,_#_(_:_(action@ActionExec@MGBehavior,"DecreaseCountDown"),_:_(endingTime@ActionExec@MGBehavior,null),_:_(participants@ActionExec@MGBehavior,Set`{_`}(_;_(L@ACTEXEC@:MSet{OCL-Exp},OR1@:Oid))),ACTEXEC@@SFS:Set{@StructuralFeatureInstance})),OBJSET@:Set{@Object},<_:_|_>(OR1@:Oid,ObjectRole@MGBehavior,_#_(_:_(actualObject@ObjectRole@MGBehavior,st:OCL-Type),_:_(role@ObjectRole@MGBehavior,"st"))))))
+    = true .
+  
+  eq currentExec@DecreaseCountDown(OIDSET@:Set,MODEL@:@Model)
+    = false .
+  
+  ceq [DecreaseCountDown] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(st:OCL-Type,TOKENTOKENSSANDTIMER@PCMFLATTEN@st@CLASS:TOKENtokensSandTimer@pcmflatten,st@SFS:Set{@StructuralFeatureInstance}),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(st:OCL-Type,TOKENTOKENSSANDTIMER@PCMFLATTEN@st@CLASS:TOKENtokensSandTimer@pcmflatten,st@SFS:Set{@StructuralFeatureInstance}),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ not_(currentExec@DecreaseCountDown(Set`{_`}(st:OCL-Type),MODEL@:@Model))
+    /\ _>_(toRat(eval(__(st:OCL-Type,._(countDown@OCLSf)),env(empty),MODEL@:@Model)),0) .
+  
+  ceq applyOngoingRules(_`{_`}(MM@:@Metamodel,__(<_:_|_>(st:OCL-Type,TOKENTOKENSSANDTIMER@PCMFLATTEN@st@CLASS:TOKENtokensSandTimer@pcmflatten,_#_(_:_(countDown@TOKENtokensSandTimer@pcmflatten,COUNTDOWN@st@ATT:OCL-Type),st@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(ACTEXEC@:Oid,OngoingActionExec@MGBehavior,_#_(_:_(action@ActionExec@MGBehavior,"DecreaseCountDown"),_:_(endingTime@ActionExec@MGBehavior,null),_:_(participants@ActionExec@MGBehavior,Set`{_`}(OR1@:Oid)),_:_(variables@ActionExec@MGBehavior,Set`{_`}(mt)),_:_(maxTimer@ActionExec@MGBehavior,freeze(MAXDURATIONONGOING@:OCL-Exp)),ACTEXEC@@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object},<_:_|_>(OR1@:Oid,ObjectRole@MGBehavior,_#_(_:_(actualObject@ObjectRole@MGBehavior,st:OCL-Type),_:_(role@ObjectRole@MGBehavior,"st"))))),T:OCL-Type)
+    = applyOngoingRules(readjust(Set`{_`}(mt),nil,_`{_`}(MM@:@Metamodel,__(<_:_|_>(st:OCL-Type,TOKENTOKENSSANDTIMER@PCMFLATTEN@st@CLASS:TOKENtokensSandTimer@pcmflatten,_#_(_:_(countDown@TOKENtokensSandTimer@pcmflatten,eval(_-_(__(st:OCL-Type,._(countDown@OCLSf)),T:OCL-Type),env(_<-_(self,st:OCL-Type)),MODEL@:@Model)),st@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,_+_(VALUE@rdm@:Int,8))),OBJSET@:Set{@Object}))),T:OCL-Type)
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(st:OCL-Type,TOKENTOKENSSANDTIMER@PCMFLATTEN@st@CLASS:TOKENtokensSandTimer@pcmflatten,_#_(_:_(countDown@TOKENtokensSandTimer@pcmflatten,COUNTDOWN@st@ATT:OCL-Type),st@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(ACTEXEC@:Oid,OngoingActionExec@MGBehavior,_#_(_:_(action@ActionExec@MGBehavior,"DecreaseCountDown"),_:_(endingTime@ActionExec@MGBehavior,null),_:_(participants@ActionExec@MGBehavior,Set`{_`}(OR1@:Oid)),_:_(variables@ActionExec@MGBehavior,Set`{_`}(mt)),_:_(maxTimer@ActionExec@MGBehavior,freeze(MAXDURATIONONGOING@:OCL-Exp)),ACTEXEC@@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object},<_:_|_>(OR1@:Oid,ObjectRole@MGBehavior,_#_(_:_(actualObject@ObjectRole@MGBehavior,st:OCL-Type),_:_(role@ObjectRole@MGBehavior,"st")))))
+    /\ _>_(toRat(eval(MAXDURATIONONGOING@:OCL-Exp,env(empty),MODEL@:@Model)),0) .
+  
+  ceq [OpenWorkloadSpec] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(start:OCL-Type,PCMUSAGEMODELSTART@PCMFLATTEN@start@CLASS:PCMusagemodelStart@pcmflatten,_#_(_:_(scenarioBehaviour@-@AbstractUserAction@PCMusagemodelAbstractUserAction@pcmflatten,SCENARIOBEHAVIOUR@-@ABSTRACTUSERACTION@start@ATT:OCL-Type),_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@start@ATT:OCL-Type),start@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(ow:OCL-Type,PCMUSAGEMODELOPENWORKLOAD@PCMFLATTEN@ow@CLASS:PCMusagemodelOpenWorkload@pcmflatten,_#_(_:_(sandTimer@PCMusagemodelOpenWorkload@pcmflatten,SANDTIMER@ow@ATT:OCL-Type),_:_(usageScenario@-@Workload@PCMusagemodelWorkload@pcmflatten,USAGESCENARIO@-@WORKLOAD@ow@ATT:OCL-Type),ow@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(usSc:OCL-Type,PCMUSAGEMODELUSAGESCENARIO@PCMFLATTEN@usSc@CLASS:PCMusagemodelUsageScenario@pcmflatten,_#_(_:_(workload@-@UsageScenario@PCMusagemodelUsageScenario@pcmflatten,WORKLOAD@-@USAGESCENARIO@usSc@ATT:OCL-Type),_:_(scenarioBehaviour@-@UsageScenario@PCMusagemodelUsageScenario@pcmflatten,SCENARIOBEHAVIOUR@-@USAGESCENARIO@usSc@ATT:OCL-Type),usSc@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(scBeh:OCL-Type,PCMUSAGEMODELSCENARIOBEHAVIOUR@PCMFLATTEN@scBeh@CLASS:PCMusagemodelScenarioBehaviour@pcmflatten,_#_(_:_(actions@-@ScenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,ACTIONS@-@SCENARIOBEHAVIOUR@scBeh@ATT:OCL-Type),_:_(usageScenario@-@SenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,USAGESCENARIO@-@SENARIOBEHAVIOUR@scBeh@ATT:OCL-Type),scBeh@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(st:OCL-Type,TOKENTOKENSSANDTIMER@PCMFLATTEN@st@CLASS:TOKENtokensSandTimer@pcmflatten,_#_(_:_(countDown@TOKENtokensSandTimer@pcmflatten,COUNTDOWN@st@ATT:OCL-Type),st@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(clk:OCL-Type,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(start:OCL-Type,PCMUSAGEMODELSTART@PCMFLATTEN@start@CLASS:PCMusagemodelStart@pcmflatten,_#_(_:_(scenarioBehaviour@-@AbstractUserAction@PCMusagemodelAbstractUserAction@pcmflatten,SCENARIOBEHAVIOUR@-@ABSTRACTUSERACTION@start@ATT:OCL-Type),_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@start@ATT:OCL-Type),start@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(ow:OCL-Type,PCMUSAGEMODELOPENWORKLOAD@PCMFLATTEN@ow@CLASS:PCMusagemodelOpenWorkload@pcmflatten,_#_(_:_(sandTimer@PCMusagemodelOpenWorkload@pcmflatten,SANDTIMER@ow@ATT:OCL-Type),_:_(usageScenario@-@Workload@PCMusagemodelWorkload@pcmflatten,USAGESCENARIO@-@WORKLOAD@ow@ATT:OCL-Type),ow@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(usSc:OCL-Type,PCMUSAGEMODELUSAGESCENARIO@PCMFLATTEN@usSc@CLASS:PCMusagemodelUsageScenario@pcmflatten,_#_(_:_(workload@-@UsageScenario@PCMusagemodelUsageScenario@pcmflatten,WORKLOAD@-@USAGESCENARIO@usSc@ATT:OCL-Type),_:_(scenarioBehaviour@-@UsageScenario@PCMusagemodelUsageScenario@pcmflatten,SCENARIOBEHAVIOUR@-@USAGESCENARIO@usSc@ATT:OCL-Type),usSc@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(scBeh:OCL-Type,PCMUSAGEMODELSCENARIOBEHAVIOUR@PCMFLATTEN@scBeh@CLASS:PCMusagemodelScenarioBehaviour@pcmflatten,_#_(_:_(actions@-@ScenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,ACTIONS@-@SCENARIOBEHAVIOUR@scBeh@ATT:OCL-Type),_:_(usageScenario@-@SenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,USAGESCENARIO@-@SENARIOBEHAVIOUR@scBeh@ATT:OCL-Type),scBeh@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(st:OCL-Type,TOKENTOKENSSANDTIMER@PCMFLATTEN@st@CLASS:TOKENtokensSandTimer@pcmflatten,_#_(_:_(countDown@TOKENtokensSandTimer@pcmflatten,COUNTDOWN@st@ATT:OCL-Type),st@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(clk:OCL-Type,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(ow:OCL-Type,WORKLOAD@-@USAGESCENARIO@usSc@ATT:OCL-Type)
+    /\ _in_(scBeh:OCL-Type,SCENARIOBEHAVIOUR@-@USAGESCENARIO@usSc@ATT:OCL-Type)
+    /\ _in_(start:OCL-Type,ACTIONS@-@SCENARIOBEHAVIOUR@scBeh@ATT:OCL-Type)
+    /\ _in_(st:OCL-Type,SANDTIMER@ow@ATT:OCL-Type)
+    /\ VAR1@:Oid := newId(_+_(VALUE@ids@:Int,6))
+    /\ owRate:OCL-Type := eval(parseExp(eval(__(__(ow:OCL-Type,._(interArrivalTime@-@OpenWorkload@OCLSf)),._(specification@OCLSf)),env(empty),MODEL@:@Model),_+_(VALUE@rdm@:Int,7)),env(empty),MODEL@:@Model)
+    /\ COUNTDOWN@st@ATT:OCL-Type := eval(0,env(_<-_(self,st:OCL-Type)),MODEL@:@Model) .
+  
+  ceq [StartUsageModel] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(start:OCL-Type,PCMUSAGEMODELSTART@PCMFLATTEN@start@CLASS:PCMusagemodelStart@pcmflatten,_#_(_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@start@ATT:OCL-Type),start@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(sToken:OCL-Type,TOKENTOKENSUSTOKEN@PCMFLATTEN@sToken@CLASS:TOKENtokensUSToken@pcmflatten,_#_(_:_(completed@TOKENtokensUSToken@pcmflatten,COMPLETED@sToken@ATT:OCL-Type),sToken@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(start:OCL-Type,PCMUSAGEMODELSTART@PCMFLATTEN@start@CLASS:PCMusagemodelStart@pcmflatten,_#_(_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@start@ATT:OCL-Type),start@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(sToken:OCL-Type,TOKENTOKENSUSTOKEN@PCMFLATTEN@sToken@CLASS:TOKENtokensUSToken@pcmflatten,_#_(_:_(completed@TOKENtokensUSToken@pcmflatten,COMPLETED@sToken@ATT:OCL-Type),sToken@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(sToken:OCL-Type,TOKEN@start@ATT:OCL-Type)
+    /\ COMPLETED@sToken@ATT:OCL-Type := eval(false,env(_<-_(self,sToken:OCL-Type)),MODEL@:@Model) .
+  
+  ceq [ActionUsageModelTrans] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(current:OCL-Type,PCMUSAGEMODELABSTRACTUSERACTION@PCMFLATTEN@current@CLASS:PCMusagemodelAbstractUserAction@pcmflatten,_#_(_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@current@ATT:OCL-Type),_:_(successor@PCMusagemodelAbstractUserAction@pcmflatten,SUCCESSOR@current@ATT:OCL-Type),current@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(next:OCL-Type,PCMUSAGEMODELABSTRACTUSERACTION@PCMFLATTEN@next@CLASS:PCMusagemodelAbstractUserAction@pcmflatten,_#_(_:_(predecessor@PCMusagemodelAbstractUserAction@pcmflatten,PREDECESSOR@next@ATT:OCL-Type),_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@next@ATT:OCL-Type),next@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(sToken:OCL-Type,TOKENTOKENSUSTOKEN@PCMFLATTEN@sToken@CLASS:TOKENtokensUSToken@pcmflatten,_#_(_:_(completed@TOKENtokensUSToken@pcmflatten,COMPLETED@sToken@ATT:OCL-Type),sToken@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(current:OCL-Type,PCMUSAGEMODELABSTRACTUSERACTION@PCMFLATTEN@current@CLASS:PCMusagemodelAbstractUserAction@pcmflatten,_#_(_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@current@ATT:OCL-Type),_:_(successor@PCMusagemodelAbstractUserAction@pcmflatten,SUCCESSOR@current@ATT:OCL-Type),current@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(next:OCL-Type,PCMUSAGEMODELABSTRACTUSERACTION@PCMFLATTEN@next@CLASS:PCMusagemodelAbstractUserAction@pcmflatten,_#_(_:_(predecessor@PCMusagemodelAbstractUserAction@pcmflatten,PREDECESSOR@next@ATT:OCL-Type),_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@next@ATT:OCL-Type),next@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(sToken:OCL-Type,TOKENTOKENSUSTOKEN@PCMFLATTEN@sToken@CLASS:TOKENtokensUSToken@pcmflatten,_#_(_:_(completed@TOKENtokensUSToken@pcmflatten,COMPLETED@sToken@ATT:OCL-Type),sToken@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(next:OCL-Type,SUCCESSOR@current@ATT:OCL-Type)
+    /\ _in_(sToken:OCL-Type,TOKEN@current@ATT:OCL-Type)
+    /\ COMPLETED@sToken@ATT:OCL-Type := eval(true,env(_<-_(self,sToken:OCL-Type)),MODEL@:@Model) .
+  
+  ceq [StopUsageModel] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(stop:OCL-Type,PCMUSAGEMODELSTOP@PCMFLATTEN@stop@CLASS:PCMusagemodelStop@pcmflatten,_#_(_:_(scenarioBehaviour@-@AbstractUserAction@PCMusagemodelAbstractUserAction@pcmflatten,SCENARIOBEHAVIOUR@-@ABSTRACTUSERACTION@stop@ATT:OCL-Type),_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@stop@ATT:OCL-Type),stop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(scBeh:OCL-Type,PCMUSAGEMODELSCENARIOBEHAVIOUR@PCMFLATTEN@scBeh@CLASS:PCMusagemodelScenarioBehaviour@pcmflatten,_#_(_:_(actions@-@ScenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,ACTIONS@-@SCENARIOBEHAVIOUR@scBeh@ATT:OCL-Type),_:_(rtOb@PCMusagemodelScenarioBehaviour@pcmflatten,RTOB@scBeh@ATT:OCL-Type),scBeh@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(sToken:OCL-Type,TOKENTOKENSUSTOKEN@PCMFLATTEN@sToken@CLASS:TOKENtokensUSToken@pcmflatten,_#_(_:_(tsOb@TOKENtokensUSToken@pcmflatten,TSOB@sToken@ATT:OCL-Type),_:_(completed@TOKENtokensUSToken@pcmflatten,COMPLETED@sToken@ATT:OCL-Type),sToken@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(rt:OCL-Type,OBRESPONSETIME@PCMFLATTEN@rt@CLASS:ObResponseTime@pcmflatten,_#_(_:_(counter@ObResponseTime@pcmflatten,COUNTER@rt@ATT:OCL-Type),_:_(tTime@ObResponseTime@pcmflatten,TTIME@rt@ATT:OCL-Type),_:_(allRT@ObResponseTime@pcmflatten,ALLRT@rt@ATT:OCL-Type),_:_(rTime@ObResponseTime@pcmflatten,RTIME@rt@ATT:OCL-Type),rt@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(ts:OCL-Type,OBTIMESTAMP@PCMFLATTEN@ts@CLASS:ObTimeStamp@pcmflatten,ts@SFS:Set{@StructuralFeatureInstance}),<_:_|_>(clk:OCL-Type,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(stop:OCL-Type,PCMUSAGEMODELSTOP@PCMFLATTEN@stop@CLASS:PCMusagemodelStop@pcmflatten,_#_(_:_(scenarioBehaviour@-@AbstractUserAction@PCMusagemodelAbstractUserAction@pcmflatten,SCENARIOBEHAVIOUR@-@ABSTRACTUSERACTION@stop@ATT:OCL-Type),_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@stop@ATT:OCL-Type),stop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(scBeh:OCL-Type,PCMUSAGEMODELSCENARIOBEHAVIOUR@PCMFLATTEN@scBeh@CLASS:PCMusagemodelScenarioBehaviour@pcmflatten,_#_(_:_(actions@-@ScenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,ACTIONS@-@SCENARIOBEHAVIOUR@scBeh@ATT:OCL-Type),_:_(rtOb@PCMusagemodelScenarioBehaviour@pcmflatten,RTOB@scBeh@ATT:OCL-Type),scBeh@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(sToken:OCL-Type,TOKENTOKENSUSTOKEN@PCMFLATTEN@sToken@CLASS:TOKENtokensUSToken@pcmflatten,_#_(_:_(tsOb@TOKENtokensUSToken@pcmflatten,TSOB@sToken@ATT:OCL-Type),_:_(completed@TOKENtokensUSToken@pcmflatten,COMPLETED@sToken@ATT:OCL-Type),sToken@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(rt:OCL-Type,OBRESPONSETIME@PCMFLATTEN@rt@CLASS:ObResponseTime@pcmflatten,_#_(_:_(counter@ObResponseTime@pcmflatten,COUNTER@rt@ATT:OCL-Type),_:_(tTime@ObResponseTime@pcmflatten,TTIME@rt@ATT:OCL-Type),_:_(allRT@ObResponseTime@pcmflatten,ALLRT@rt@ATT:OCL-Type),_:_(rTime@ObResponseTime@pcmflatten,RTIME@rt@ATT:OCL-Type),rt@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(ts:OCL-Type,OBTIMESTAMP@PCMFLATTEN@ts@CLASS:ObTimeStamp@pcmflatten,ts@SFS:Set{@StructuralFeatureInstance}),<_:_|_>(clk:OCL-Type,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(stop:OCL-Type,ACTIONS@-@SCENARIOBEHAVIOUR@scBeh@ATT:OCL-Type)
+    /\ _in_(sToken:OCL-Type,TOKEN@stop@ATT:OCL-Type)
+    /\ _in_(rt:OCL-Type,RTOB@scBeh@ATT:OCL-Type)
+    /\ _in_(ts:OCL-Type,TSOB@sToken@ATT:OCL-Type)
+    /\ VAR1@:Oid := newId(_+_(VALUE@ids@:Int,6))
+    /\ thisRT:OCL-Type := eval(_-_(__(clk:OCL-Type,._(time@OCLSf)),__(ts:OCL-Type,._(tStamp@OCLSf))),env(empty),MODEL@:@Model)
+    /\ COMPLETED@sToken@ATT:OCL-Type := eval(false,env(_<-_(self,sToken:OCL-Type)),MODEL@:@Model) .
+  
+  ceq [EntryLevelSystemCall] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(elsc:OCL-Type,PCMUSAGEMODELENTRYLEVELSYSTEMCALL@PCMFLATTEN@elsc@CLASS:PCMusagemodelEntryLevelSystemCall@pcmflatten,_#_(_:_(operationSignature@-@@-@EntryLevelSystemCall@PCMusagemodelEntryLevelSystemCall@pcmflatten,OPERATIONSIGNATURE@-@@-@ENTRYLEVELSYSTEMCALL@elsc@ATT:OCL-Type),_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@elsc@ATT:OCL-Type),elsc@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(signature:OCL-Type,PCMREPOSITORYOPERATIONSIGNATURE@PCMFLATTEN@signature@CLASS:PCMrepositoryOperationSignature@pcmflatten,signature@SFS:Set{@StructuralFeatureInstance}),<_:_|_>(rdseff:OCL-Type,PCMSEFFRESOURCEDEMANDINGSEFF@PCMFLATTEN@rdseff@CLASS:PCMseffResourceDemandingSEFF@pcmflatten,_#_(_:_(steps@-@Behaviour@PCMseffResourceDemandingBehaviour@pcmflatten,STEPS@-@BEHAVIOUR@rdseff@ATT:OCL-Type),_:_(basicComponent@-@ServiceEffectSpecification@PCMseffServiceEffectSpecification@pcmflatten,BASICCOMPONENT@-@SERVICEEFFECTSPECIFICATION@rdseff@ATT:OCL-Type),_:_(describedService@-@@-@SEFF@PCMseffServiceEffectSpecification@pcmflatten,DESCRIBEDSERVICE@-@@-@SEFF@rdseff@ATT:OCL-Type),rdseff@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(start:OCL-Type,PCMSEFFSTARTACTION@PCMFLATTEN@start@CLASS:PCMseffStartAction@pcmflatten,_#_(_:_(resourceDemandingBehaviour@-@AbstractAction@PCMseffAbstractAction@pcmflatten,RESOURCEDEMANDINGBEHAVIOUR@-@ABSTRACTACTION@start@ATT:OCL-Type),_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@start@ATT:OCL-Type),start@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(sToken:OCL-Type,TOKENTOKENSUSTOKEN@PCMFLATTEN@sToken@CLASS:TOKENtokensUSToken@pcmflatten,_#_(_:_(completed@TOKENtokensUSToken@pcmflatten,COMPLETED@sToken@ATT:OCL-Type),_:_(cToken@TOKENtokensUSToken@pcmflatten,CTOKEN@sToken@ATT:OCL-Type),sToken@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(basicComp:OCL-Type,PCMREPOSITORYBASICCOMPONENT@PCMFLATTEN@basicComp@CLASS:PCMrepositoryBasicComponent@pcmflatten,_#_(_:_(serviceEffectSpecifications@-@@-@BasicComponent@PCMrepositoryBasicComponent@pcmflatten,SERVICEEFFECTSPECIFICATIONS@-@@-@BASICCOMPONENT@basicComp@ATT:OCL-Type),basicComp@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(assCtx:OCL-Type,PCMCOMPOSITIONASSEMBLYCONTEXT@PCMFLATTEN@assCtx@CLASS:PCMcompositionAssemblyContext@pcmflatten,_#_(_:_(encapsulatedComponent@-@@-@AssemblyContext@PCMcompositionAssemblyContext@pcmflatten,ENCAPSULATEDCOMPONENT@-@@-@ASSEMBLYCONTEXT@assCtx@ATT:OCL-Type),assCtx@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(clk:OCL-Type,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(elsc:OCL-Type,PCMUSAGEMODELENTRYLEVELSYSTEMCALL@PCMFLATTEN@elsc@CLASS:PCMusagemodelEntryLevelSystemCall@pcmflatten,_#_(_:_(operationSignature@-@@-@EntryLevelSystemCall@PCMusagemodelEntryLevelSystemCall@pcmflatten,OPERATIONSIGNATURE@-@@-@ENTRYLEVELSYSTEMCALL@elsc@ATT:OCL-Type),_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@elsc@ATT:OCL-Type),elsc@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(signature:OCL-Type,PCMREPOSITORYOPERATIONSIGNATURE@PCMFLATTEN@signature@CLASS:PCMrepositoryOperationSignature@pcmflatten,signature@SFS:Set{@StructuralFeatureInstance}),<_:_|_>(rdseff:OCL-Type,PCMSEFFRESOURCEDEMANDINGSEFF@PCMFLATTEN@rdseff@CLASS:PCMseffResourceDemandingSEFF@pcmflatten,_#_(_:_(steps@-@Behaviour@PCMseffResourceDemandingBehaviour@pcmflatten,STEPS@-@BEHAVIOUR@rdseff@ATT:OCL-Type),_:_(basicComponent@-@ServiceEffectSpecification@PCMseffServiceEffectSpecification@pcmflatten,BASICCOMPONENT@-@SERVICEEFFECTSPECIFICATION@rdseff@ATT:OCL-Type),_:_(describedService@-@@-@SEFF@PCMseffServiceEffectSpecification@pcmflatten,DESCRIBEDSERVICE@-@@-@SEFF@rdseff@ATT:OCL-Type),rdseff@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(start:OCL-Type,PCMSEFFSTARTACTION@PCMFLATTEN@start@CLASS:PCMseffStartAction@pcmflatten,_#_(_:_(resourceDemandingBehaviour@-@AbstractAction@PCMseffAbstractAction@pcmflatten,RESOURCEDEMANDINGBEHAVIOUR@-@ABSTRACTACTION@start@ATT:OCL-Type),_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@start@ATT:OCL-Type),start@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(sToken:OCL-Type,TOKENTOKENSUSTOKEN@PCMFLATTEN@sToken@CLASS:TOKENtokensUSToken@pcmflatten,_#_(_:_(completed@TOKENtokensUSToken@pcmflatten,COMPLETED@sToken@ATT:OCL-Type),_:_(cToken@TOKENtokensUSToken@pcmflatten,CTOKEN@sToken@ATT:OCL-Type),sToken@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(basicComp:OCL-Type,PCMREPOSITORYBASICCOMPONENT@PCMFLATTEN@basicComp@CLASS:PCMrepositoryBasicComponent@pcmflatten,_#_(_:_(serviceEffectSpecifications@-@@-@BasicComponent@PCMrepositoryBasicComponent@pcmflatten,SERVICEEFFECTSPECIFICATIONS@-@@-@BASICCOMPONENT@basicComp@ATT:OCL-Type),basicComp@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(assCtx:OCL-Type,PCMCOMPOSITIONASSEMBLYCONTEXT@PCMFLATTEN@assCtx@CLASS:PCMcompositionAssemblyContext@pcmflatten,_#_(_:_(encapsulatedComponent@-@@-@AssemblyContext@PCMcompositionAssemblyContext@pcmflatten,ENCAPSULATEDCOMPONENT@-@@-@ASSEMBLYCONTEXT@assCtx@ATT:OCL-Type),assCtx@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(clk:OCL-Type,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(signature:OCL-Type,OPERATIONSIGNATURE@-@@-@ENTRYLEVELSYSTEMCALL@elsc@ATT:OCL-Type)
+    /\ _in_(signature:OCL-Type,DESCRIBEDSERVICE@-@@-@SEFF@rdseff@ATT:OCL-Type)
+    /\ _in_(start:OCL-Type,STEPS@-@BEHAVIOUR@rdseff@ATT:OCL-Type)
+    /\ _in_(sToken:OCL-Type,TOKEN@elsc@ATT:OCL-Type)
+    /\ _in_(rdseff:OCL-Type,SERVICEEFFECTSPECIFICATIONS@-@@-@BASICCOMPONENT@basicComp@ATT:OCL-Type)
+    /\ _in_(basicComp:OCL-Type,ENCAPSULATEDCOMPONENT@-@@-@ASSEMBLYCONTEXT@assCtx@ATT:OCL-Type)
+    /\ COMPLETED@sToken@ATT:OCL-Type := eval(false,env(_<-_(self,sToken:OCL-Type)),MODEL@:@Model)
+    /\ eval(_.`oclIsUndefined`(`)(__(sToken:OCL-Type,._(cToken@OCLSf))),env(empty),MODEL@:@Model) .
+  
+  ceq [StartSEFF] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(start:OCL-Type,PCMSEFFSTARTACTION@PCMFLATTEN@start@CLASS:PCMseffStartAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@start@ATT:OCL-Type),start@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(token:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@token@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@token@ATT:OCL-Type),token@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(start:OCL-Type,PCMSEFFSTARTACTION@PCMFLATTEN@start@CLASS:PCMseffStartAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@start@ATT:OCL-Type),start@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(token:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@token@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@token@ATT:OCL-Type),token@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(token:OCL-Type,TOKEN@start@ATT:OCL-Type)
+    /\ COMPLETED@token@ATT:OCL-Type := eval(false,env(_<-_(self,token:OCL-Type)),MODEL@:@Model) .
+  
+  ceq [ActionSEFFTrans] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(current:OCL-Type,PCMSEFFABSTRACTACTION@PCMFLATTEN@current@CLASS:PCMseffAbstractAction@pcmflatten,_#_(_:_(successor@-@AbstractAction@PCMseffAbstractAction@pcmflatten,SUCCESSOR@-@ABSTRACTACTION@current@ATT:OCL-Type),_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@current@ATT:OCL-Type),current@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(succ:OCL-Type,PCMSEFFABSTRACTACTION@PCMFLATTEN@succ@CLASS:PCMseffAbstractAction@pcmflatten,_#_(_:_(predecessor@-@AbstractAction@PCMseffAbstractAction@pcmflatten,PREDECESSOR@-@ABSTRACTACTION@succ@ATT:OCL-Type),_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@succ@ATT:OCL-Type),succ@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(token:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@token@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@token@ATT:OCL-Type),token@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(current:OCL-Type,PCMSEFFABSTRACTACTION@PCMFLATTEN@current@CLASS:PCMseffAbstractAction@pcmflatten,_#_(_:_(successor@-@AbstractAction@PCMseffAbstractAction@pcmflatten,SUCCESSOR@-@ABSTRACTACTION@current@ATT:OCL-Type),_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@current@ATT:OCL-Type),current@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(succ:OCL-Type,PCMSEFFABSTRACTACTION@PCMFLATTEN@succ@CLASS:PCMseffAbstractAction@pcmflatten,_#_(_:_(predecessor@-@AbstractAction@PCMseffAbstractAction@pcmflatten,PREDECESSOR@-@ABSTRACTACTION@succ@ATT:OCL-Type),_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@succ@ATT:OCL-Type),succ@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(token:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@token@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@token@ATT:OCL-Type),token@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(succ:OCL-Type,SUCCESSOR@-@ABSTRACTACTION@current@ATT:OCL-Type)
+    /\ _in_(token:OCL-Type,TOKEN@current@ATT:OCL-Type)
+    /\ COMPLETED@token@ATT:OCL-Type := eval(true,env(_<-_(self,token:OCL-Type)),MODEL@:@Model)
+    /\ eval(not_(_.`oclIsTypeOf`(_`)(succ:OCL-Type,PCMseffInternalAction@pcmflatten)),env(empty),MODEL@:@Model) .
+  
+  ceq [StopSEFF] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(stop:OCL-Type,PCMSEFFSTOPACTION@PCMFLATTEN@stop@CLASS:PCMseffStopAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@stop@ATT:OCL-Type),stop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(token:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@token@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@token@ATT:OCL-Type),token@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(stop:OCL-Type,PCMSEFFSTOPACTION@PCMFLATTEN@stop@CLASS:PCMseffStopAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@stop@ATT:OCL-Type),stop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(token:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@token@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@token@ATT:OCL-Type),token@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(token:OCL-Type,TOKEN@stop@ATT:OCL-Type)
+    /\ COMPLETED@token@ATT:OCL-Type := eval(false,env(_<-_(self,token:OCL-Type)),MODEL@:@Model) .
+  
+  ceq [TokenProb2ProbabilisticBranch] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(bA:OCL-Type,PCMSEFFBRANCHACTION@PCMFLATTEN@bA@CLASS:PCMseffBranchAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@bA@ATT:OCL-Type),bA@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(token:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@token@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@token@ATT:OCL-Type),_:_(branchNumber@TOKENtokensSEFFToken@pcmflatten,BRANCHNUMBER@token@ATT:OCL-Type),token@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(bA:OCL-Type,PCMSEFFBRANCHACTION@PCMFLATTEN@bA@CLASS:PCMseffBranchAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@bA@ATT:OCL-Type),bA@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(token:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@token@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@token@ATT:OCL-Type),_:_(branchNumber@TOKENtokensSEFFToken@pcmflatten,BRANCHNUMBER@token@ATT:OCL-Type),token@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(token:OCL-Type,TOKEN@bA@ATT:OCL-Type)
+    /\ VAR1@:Oid := newId(_+_(VALUE@ids@:Int,3))
+    /\ branchNumberAux:OCL-Type := eval(_->`iterate_(__(token:OCL-Type,._(branchesProb@OCLSf)),_`,_|_(v,_=_(i,1),if_then_else_endif(_<=_(__(token:OCL-Type,._(prob@OCLSf)),_->`sum`(`)(_->`subSequence`(_`,_`)(__(token:OCL-Type,._(branchesProb@OCLSf)),1,i))),i,_+_(i,1)))),env(empty),MODEL@:@Model)
+    /\ COMPLETED@token@ATT:OCL-Type := eval(false,env(_<-_(self,token:OCL-Type)),MODEL@:@Model)
+    /\ eval(_<_(__(token:OCL-Type,._(branchNumber@OCLSf)),1),env(empty),MODEL@:@Model)
+    /\ eval(_>_(_->`size`(`)(__(token:OCL-Type,._(branchesProb@OCLSf))),0),env(empty),MODEL@:@Model) .
+  
+  ceq [BranchUM2TokenProb] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(b:OCL-Type,PCMUSAGEMODELBRANCH@PCMFLATTEN@b@CLASS:PCMusagemodelBranch@pcmflatten,_#_(_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@b@ATT:OCL-Type),b@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSUSTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensUSToken@pcmflatten,_#_(_:_(completed@TOKENtokensUSToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),_:_(branchNumber@TOKENtokensUSToken@pcmflatten,BRANCHNUMBER@t@ATT:OCL-Type),_:_(prob@TOKENtokensUSToken@pcmflatten,PROB@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(b:OCL-Type,PCMUSAGEMODELBRANCH@PCMFLATTEN@b@CLASS:PCMusagemodelBranch@pcmflatten,_#_(_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@b@ATT:OCL-Type),b@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSUSTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensUSToken@pcmflatten,_#_(_:_(completed@TOKENtokensUSToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),_:_(branchNumber@TOKENtokensUSToken@pcmflatten,BRANCHNUMBER@t@ATT:OCL-Type),_:_(prob@TOKENtokensUSToken@pcmflatten,PROB@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(t:OCL-Type,TOKEN@b@ATT:OCL-Type)
+    /\ VAR1@:Oid := newId(_+_(VALUE@ids@:Int,3))
+    /\ VAR2@:Oid := newId(_+_(VALUE@ids@:Int,4))
+    /\ VAR3@:Oid := newId(_+_(VALUE@ids@:Int,5))
+    /\ auxSeq:OCL-Type := eval(_->`asSequence`(`)(_->`collect_(__(b:OCL-Type,._(branchTransitions@-@Branch@OCLSf)),_|_(S,_.`round`(`)(_*_(__(S,._(branchProbability@OCLSf)),1000))))),env(empty),MODEL@:@Model)
+    /\ prob:OCL-Type := eval(_+_(_rem_(random(_+_(VALUE@rdm@:Int,9)),eval(1000,env(empty),MODEL@:@Model)),1),env(empty),MODEL@:@Model)
+    /\ branchNumberAux:OCL-Type := eval(_->`iterate_(auxSeq:OCL-Type,_`,_|_(v,_=_(i,1),if_then_else_endif(_<=_(prob:OCL-Type,_->`sum`(`)(_->`subSequence`(_`,_`)(auxSeq:OCL-Type,1,i))),i,_+_(i,1)))),env(empty),MODEL@:@Model)
+    /\ COMPLETED@t@ATT:OCL-Type := eval(false,env(_<-_(self,t:OCL-Type)),MODEL@:@Model)
+    /\ eval(_.=._(__(t:OCL-Type,._(prob@OCLSf)),0),env(empty),MODEL@:@Model) .
+  
+  ceq [EnterInExternalCallAction] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(eca:OCL-Type,PCMSEFFEXTERNALCALLACTION@PCMFLATTEN@eca@CLASS:PCMseffExternalCallAction@pcmflatten,_#_(_:_(calledService@-@ExternalService@PCMseffExternalCallAction@pcmflatten,CALLEDSERVICE@-@EXTERNALSERVICE@eca@ATT:OCL-Type),_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@eca@ATT:OCL-Type),eca@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),_:_(nestedToken@TOKENtokensSEFFToken@pcmflatten,NESTEDTOKEN@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(sign:OCL-Type,PCMREPOSITORYOPERATIONSIGNATURE@PCMFLATTEN@sign@CLASS:PCMrepositoryOperationSignature@pcmflatten,sign@SFS:Set{@StructuralFeatureInstance}),<_:_|_>(SEFF:OCL-Type,PCMSEFFRESOURCEDEMANDINGSEFF@PCMFLATTEN@SEFF@CLASS:PCMseffResourceDemandingSEFF@pcmflatten,_#_(_:_(steps@-@Behaviour@PCMseffResourceDemandingBehaviour@pcmflatten,STEPS@-@BEHAVIOUR@SEFF@ATT:OCL-Type),_:_(basicComponent@-@ServiceEffectSpecification@PCMseffServiceEffectSpecification@pcmflatten,BASICCOMPONENT@-@SERVICEEFFECTSPECIFICATION@SEFF@ATT:OCL-Type),_:_(describedService@-@@-@SEFF@PCMseffServiceEffectSpecification@pcmflatten,DESCRIBEDSERVICE@-@@-@SEFF@SEFF@ATT:OCL-Type),SEFF@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(start:OCL-Type,PCMSEFFSTARTACTION@PCMFLATTEN@start@CLASS:PCMseffStartAction@pcmflatten,_#_(_:_(resourceDemandingBehaviour@-@AbstractAction@PCMseffAbstractAction@pcmflatten,RESOURCEDEMANDINGBEHAVIOUR@-@ABSTRACTACTION@start@ATT:OCL-Type),_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@start@ATT:OCL-Type),start@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(basicComp:OCL-Type,PCMREPOSITORYBASICCOMPONENT@PCMFLATTEN@basicComp@CLASS:PCMrepositoryBasicComponent@pcmflatten,_#_(_:_(serviceEffectSpecifications@-@@-@BasicComponent@PCMrepositoryBasicComponent@pcmflatten,SERVICEEFFECTSPECIFICATIONS@-@@-@BASICCOMPONENT@basicComp@ATT:OCL-Type),basicComp@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(allCtx:OCL-Type,PCMCOMPOSITIONASSEMBLYCONTEXT@PCMFLATTEN@allCtx@CLASS:PCMcompositionAssemblyContext@pcmflatten,_#_(_:_(encapsulatedComponent@-@@-@AssemblyContext@PCMcompositionAssemblyContext@pcmflatten,ENCAPSULATEDCOMPONENT@-@@-@ASSEMBLYCONTEXT@allCtx@ATT:OCL-Type),allCtx@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(eca:OCL-Type,PCMSEFFEXTERNALCALLACTION@PCMFLATTEN@eca@CLASS:PCMseffExternalCallAction@pcmflatten,_#_(_:_(calledService@-@ExternalService@PCMseffExternalCallAction@pcmflatten,CALLEDSERVICE@-@EXTERNALSERVICE@eca@ATT:OCL-Type),_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@eca@ATT:OCL-Type),eca@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),_:_(nestedToken@TOKENtokensSEFFToken@pcmflatten,NESTEDTOKEN@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(sign:OCL-Type,PCMREPOSITORYOPERATIONSIGNATURE@PCMFLATTEN@sign@CLASS:PCMrepositoryOperationSignature@pcmflatten,sign@SFS:Set{@StructuralFeatureInstance}),<_:_|_>(SEFF:OCL-Type,PCMSEFFRESOURCEDEMANDINGSEFF@PCMFLATTEN@SEFF@CLASS:PCMseffResourceDemandingSEFF@pcmflatten,_#_(_:_(steps@-@Behaviour@PCMseffResourceDemandingBehaviour@pcmflatten,STEPS@-@BEHAVIOUR@SEFF@ATT:OCL-Type),_:_(basicComponent@-@ServiceEffectSpecification@PCMseffServiceEffectSpecification@pcmflatten,BASICCOMPONENT@-@SERVICEEFFECTSPECIFICATION@SEFF@ATT:OCL-Type),_:_(describedService@-@@-@SEFF@PCMseffServiceEffectSpecification@pcmflatten,DESCRIBEDSERVICE@-@@-@SEFF@SEFF@ATT:OCL-Type),SEFF@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(start:OCL-Type,PCMSEFFSTARTACTION@PCMFLATTEN@start@CLASS:PCMseffStartAction@pcmflatten,_#_(_:_(resourceDemandingBehaviour@-@AbstractAction@PCMseffAbstractAction@pcmflatten,RESOURCEDEMANDINGBEHAVIOUR@-@ABSTRACTACTION@start@ATT:OCL-Type),_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@start@ATT:OCL-Type),start@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(basicComp:OCL-Type,PCMREPOSITORYBASICCOMPONENT@PCMFLATTEN@basicComp@CLASS:PCMrepositoryBasicComponent@pcmflatten,_#_(_:_(serviceEffectSpecifications@-@@-@BasicComponent@PCMrepositoryBasicComponent@pcmflatten,SERVICEEFFECTSPECIFICATIONS@-@@-@BASICCOMPONENT@basicComp@ATT:OCL-Type),basicComp@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(allCtx:OCL-Type,PCMCOMPOSITIONASSEMBLYCONTEXT@PCMFLATTEN@allCtx@CLASS:PCMcompositionAssemblyContext@pcmflatten,_#_(_:_(encapsulatedComponent@-@@-@AssemblyContext@PCMcompositionAssemblyContext@pcmflatten,ENCAPSULATEDCOMPONENT@-@@-@ASSEMBLYCONTEXT@allCtx@ATT:OCL-Type),allCtx@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(t:OCL-Type,TOKEN@eca@ATT:OCL-Type)
+    /\ _in_(sign:OCL-Type,CALLEDSERVICE@-@EXTERNALSERVICE@eca@ATT:OCL-Type)
+    /\ _in_(sign:OCL-Type,DESCRIBEDSERVICE@-@@-@SEFF@SEFF@ATT:OCL-Type)
+    /\ _in_(start:OCL-Type,STEPS@-@BEHAVIOUR@SEFF@ATT:OCL-Type)
+    /\ _in_(SEFF:OCL-Type,SERVICEEFFECTSPECIFICATIONS@-@@-@BASICCOMPONENT@basicComp@ATT:OCL-Type)
+    /\ _in_(basicComp:OCL-Type,ENCAPSULATEDCOMPONENT@-@@-@ASSEMBLYCONTEXT@allCtx@ATT:OCL-Type)
+    /\ COMPLETED@t@ATT:OCL-Type := eval(false,env(_<-_(self,t:OCL-Type)),MODEL@:@Model)
+    /\ eval(_.`oclIsUndefined`(`)(__(t:OCL-Type,._(nestedToken@OCLSf))),env(empty),MODEL@:@Model) .
+  
+  ceq [LoopToLoopTokenSEFF] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(loop:OCL-Type,PCMSEFFLOOPACTION@PCMFLATTEN@loop@CLASS:PCMseffLoopAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@loop@ATT:OCL-Type),loop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),_:_(loopToken@TOKENtokensSEFFToken@pcmflatten,LOOPTOKEN@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(loop:OCL-Type,PCMSEFFLOOPACTION@PCMFLATTEN@loop@CLASS:PCMseffLoopAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@loop@ATT:OCL-Type),loop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),_:_(loopToken@TOKENtokensSEFFToken@pcmflatten,LOOPTOKEN@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(t:OCL-Type,TOKEN@loop@ATT:OCL-Type)
+    /\ VAR1@:Oid := newId(_+_(VALUE@ids@:Int,3))
+    /\ iter:OCL-Type := eval(parseExp(eval(__(__(loop:OCL-Type,._(iterationCount@-@LoopAction@OCLSf)),._(specification@OCLSf)),env(empty),MODEL@:@Model),_+_(VALUE@rdm@:Int,11)),env(empty),MODEL@:@Model)
+    /\ COMPLETED@t@ATT:OCL-Type := eval(false,env(_<-_(self,t:OCL-Type)),MODEL@:@Model)
+    /\ eval(_.`oclIsUndefined`(`)(__(t:OCL-Type,._(loopToken@OCLSf))),env(empty),MODEL@:@Model) .
+  
+  ceq [LoopStop2StartSEFF] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(loop:OCL-Type,PCMSEFFLOOPACTION@PCMFLATTEN@loop@CLASS:PCMseffLoopAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@loop@ATT:OCL-Type),_:_(bodyBehaviour@-@Loop@PCMseffAbstractLoopAction@pcmflatten,BODYBEHAVIOUR@-@LOOP@loop@ATT:OCL-Type),loop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(loopToken@TOKENtokensSEFFToken@pcmflatten,LOOPTOKEN@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(beh:OCL-Type,PCMSEFFRESOURCEDEMANDINGBEHAVIOUR@PCMFLATTEN@beh@CLASS:PCMseffResourceDemandingBehaviour@pcmflatten,_#_(_:_(steps@-@Behaviour@PCMseffResourceDemandingBehaviour@pcmflatten,STEPS@-@BEHAVIOUR@beh@ATT:OCL-Type),_:_(abstractLoopAction@-@ResourceDemandingBehaviour@PCMseffResourceDemandingBehaviour@pcmflatten,ABSTRACTLOOPACTION@-@RESOURCEDEMANDINGBEHAVIOUR@beh@ATT:OCL-Type),beh@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(stop:OCL-Type,PCMSEFFSTOPACTION@PCMFLATTEN@stop@CLASS:PCMseffStopAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@stop@ATT:OCL-Type),_:_(resourceDemandingBehaviour@-@AbstractAction@PCMseffAbstractAction@pcmflatten,RESOURCEDEMANDINGBEHAVIOUR@-@ABSTRACTACTION@stop@ATT:OCL-Type),stop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(loopT:OCL-Type,TOKENTOKENSSEFFLOOPTOKEN@PCMFLATTEN@loopT@CLASS:TOKENtokensSEFFLoopToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@loopT@ATT:OCL-Type),_:_(iterations@TOKENtokensSEFFLoopToken@pcmflatten,ITERATIONS@loopT@ATT:OCL-Type),_:_(started@TOKENtokensSEFFLoopToken@pcmflatten,STARTED@loopT@ATT:OCL-Type),loopT@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(loop:OCL-Type,PCMSEFFLOOPACTION@PCMFLATTEN@loop@CLASS:PCMseffLoopAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@loop@ATT:OCL-Type),_:_(bodyBehaviour@-@Loop@PCMseffAbstractLoopAction@pcmflatten,BODYBEHAVIOUR@-@LOOP@loop@ATT:OCL-Type),loop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(loopToken@TOKENtokensSEFFToken@pcmflatten,LOOPTOKEN@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(beh:OCL-Type,PCMSEFFRESOURCEDEMANDINGBEHAVIOUR@PCMFLATTEN@beh@CLASS:PCMseffResourceDemandingBehaviour@pcmflatten,_#_(_:_(steps@-@Behaviour@PCMseffResourceDemandingBehaviour@pcmflatten,STEPS@-@BEHAVIOUR@beh@ATT:OCL-Type),_:_(abstractLoopAction@-@ResourceDemandingBehaviour@PCMseffResourceDemandingBehaviour@pcmflatten,ABSTRACTLOOPACTION@-@RESOURCEDEMANDINGBEHAVIOUR@beh@ATT:OCL-Type),beh@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(stop:OCL-Type,PCMSEFFSTOPACTION@PCMFLATTEN@stop@CLASS:PCMseffStopAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@stop@ATT:OCL-Type),_:_(resourceDemandingBehaviour@-@AbstractAction@PCMseffAbstractAction@pcmflatten,RESOURCEDEMANDINGBEHAVIOUR@-@ABSTRACTACTION@stop@ATT:OCL-Type),stop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(loopT:OCL-Type,TOKENTOKENSSEFFLOOPTOKEN@PCMFLATTEN@loopT@CLASS:TOKENtokensSEFFLoopToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@loopT@ATT:OCL-Type),_:_(iterations@TOKENtokensSEFFLoopToken@pcmflatten,ITERATIONS@loopT@ATT:OCL-Type),_:_(started@TOKENtokensSEFFLoopToken@pcmflatten,STARTED@loopT@ATT:OCL-Type),loopT@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(t:OCL-Type,TOKEN@loop@ATT:OCL-Type)
+    /\ _in_(stop:OCL-Type,STEPS@-@BEHAVIOUR@beh@ATT:OCL-Type)
+    /\ _in_(beh:OCL-Type,BODYBEHAVIOUR@-@LOOP@loop@ATT:OCL-Type)
+    /\ _in_(loopT:OCL-Type,LOOPTOKEN@t@ATT:OCL-Type)
+    /\ _in_(loopT:OCL-Type,TOKEN@stop@ATT:OCL-Type)
+    /\ COMPLETED@loopT@ATT:OCL-Type := eval(true,env(_<-_(self,loopT:OCL-Type)),MODEL@:@Model) .
+  
+  ceq [LoopStartTokenExistSEFF] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(loop:OCL-Type,PCMSEFFLOOPACTION@PCMFLATTEN@loop@CLASS:PCMseffLoopAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@loop@ATT:OCL-Type),loop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(loopToken@TOKENtokensSEFFToken@pcmflatten,LOOPTOKEN@t@ATT:OCL-Type),_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(loopT:OCL-Type,TOKENTOKENSSEFFLOOPTOKEN@PCMFLATTEN@loopT@CLASS:TOKENtokensSEFFLoopToken@pcmflatten,_#_(_:_(iterations@TOKENtokensSEFFLoopToken@pcmflatten,ITERATIONS@loopT@ATT:OCL-Type),loopT@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(loop:OCL-Type,PCMSEFFLOOPACTION@PCMFLATTEN@loop@CLASS:PCMseffLoopAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@loop@ATT:OCL-Type),loop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(loopToken@TOKENtokensSEFFToken@pcmflatten,LOOPTOKEN@t@ATT:OCL-Type),_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(loopT:OCL-Type,TOKENTOKENSSEFFLOOPTOKEN@PCMFLATTEN@loopT@CLASS:TOKENtokensSEFFLoopToken@pcmflatten,_#_(_:_(iterations@TOKENtokensSEFFLoopToken@pcmflatten,ITERATIONS@loopT@ATT:OCL-Type),loopT@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(t:OCL-Type,TOKEN@loop@ATT:OCL-Type)
+    /\ _in_(loopT:OCL-Type,LOOPTOKEN@t@ATT:OCL-Type)
+    /\ ITERATIONS@loopT@ATT:OCL-Type := eval(0,env(_<-_(self,loopT:OCL-Type)),MODEL@:@Model) .
+  
+  ceq [SetVariableActionSEFF] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(sva:OCL-Type,PCMSEFFSETVARIABLEACTION@PCMFLATTEN@sva@CLASS:PCMseffSetVariableAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@sva@ATT:OCL-Type),sva@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(sva:OCL-Type,PCMSEFFSETVARIABLEACTION@PCMFLATTEN@sva@CLASS:PCMseffSetVariableAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@sva@ATT:OCL-Type),sva@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(t:OCL-Type,TOKEN@sva@ATT:OCL-Type)
+    /\ COMPLETED@t@ATT:OCL-Type := eval(false,env(_<-_(self,t:OCL-Type)),MODEL@:@Model) .
+  
+  ceq [ExitOfAExternalCallAction] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(eca:OCL-Type,PCMSEFFEXTERNALCALLACTION@PCMFLATTEN@eca@CLASS:PCMseffExternalCallAction@pcmflatten,_#_(_:_(calledService@-@ExternalService@PCMseffExternalCallAction@pcmflatten,CALLEDSERVICE@-@EXTERNALSERVICE@eca@ATT:OCL-Type),_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@eca@ATT:OCL-Type),eca@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(sign:OCL-Type,PCMREPOSITORYOPERATIONSIGNATURE@PCMFLATTEN@sign@CLASS:PCMrepositoryOperationSignature@pcmflatten,sign@SFS:Set{@StructuralFeatureInstance}),<_:_|_>(SEFF:OCL-Type,PCMSEFFRESOURCEDEMANDINGSEFF@PCMFLATTEN@SEFF@CLASS:PCMseffResourceDemandingSEFF@pcmflatten,_#_(_:_(steps@-@Behaviour@PCMseffResourceDemandingBehaviour@pcmflatten,STEPS@-@BEHAVIOUR@SEFF@ATT:OCL-Type),_:_(describedService@-@@-@SEFF@PCMseffServiceEffectSpecification@pcmflatten,DESCRIBEDSERVICE@-@@-@SEFF@SEFF@ATT:OCL-Type),SEFF@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(stop:OCL-Type,PCMSEFFSTOPACTION@PCMFLATTEN@stop@CLASS:PCMseffStopAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@stop@ATT:OCL-Type),_:_(resourceDemandingBehaviour@-@AbstractAction@PCMseffAbstractAction@pcmflatten,RESOURCEDEMANDINGBEHAVIOUR@-@ABSTRACTACTION@stop@ATT:OCL-Type),stop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(nestedToken@TOKENtokensSEFFToken@pcmflatten,NESTEDTOKEN@t@ATT:OCL-Type),_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(nestedToken:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@nestedToken@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@nestedToken@ATT:OCL-Type),nestedToken@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(eca:OCL-Type,PCMSEFFEXTERNALCALLACTION@PCMFLATTEN@eca@CLASS:PCMseffExternalCallAction@pcmflatten,_#_(_:_(calledService@-@ExternalService@PCMseffExternalCallAction@pcmflatten,CALLEDSERVICE@-@EXTERNALSERVICE@eca@ATT:OCL-Type),_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@eca@ATT:OCL-Type),eca@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(sign:OCL-Type,PCMREPOSITORYOPERATIONSIGNATURE@PCMFLATTEN@sign@CLASS:PCMrepositoryOperationSignature@pcmflatten,sign@SFS:Set{@StructuralFeatureInstance}),<_:_|_>(SEFF:OCL-Type,PCMSEFFRESOURCEDEMANDINGSEFF@PCMFLATTEN@SEFF@CLASS:PCMseffResourceDemandingSEFF@pcmflatten,_#_(_:_(steps@-@Behaviour@PCMseffResourceDemandingBehaviour@pcmflatten,STEPS@-@BEHAVIOUR@SEFF@ATT:OCL-Type),_:_(describedService@-@@-@SEFF@PCMseffServiceEffectSpecification@pcmflatten,DESCRIBEDSERVICE@-@@-@SEFF@SEFF@ATT:OCL-Type),SEFF@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(stop:OCL-Type,PCMSEFFSTOPACTION@PCMFLATTEN@stop@CLASS:PCMseffStopAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@stop@ATT:OCL-Type),_:_(resourceDemandingBehaviour@-@AbstractAction@PCMseffAbstractAction@pcmflatten,RESOURCEDEMANDINGBEHAVIOUR@-@ABSTRACTACTION@stop@ATT:OCL-Type),stop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(nestedToken@TOKENtokensSEFFToken@pcmflatten,NESTEDTOKEN@t@ATT:OCL-Type),_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(nestedToken:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@nestedToken@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@nestedToken@ATT:OCL-Type),nestedToken@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(sign:OCL-Type,CALLEDSERVICE@-@EXTERNALSERVICE@eca@ATT:OCL-Type)
+    /\ _in_(sign:OCL-Type,DESCRIBEDSERVICE@-@@-@SEFF@SEFF@ATT:OCL-Type)
+    /\ _in_(stop:OCL-Type,STEPS@-@BEHAVIOUR@SEFF@ATT:OCL-Type)
+    /\ _in_(t:OCL-Type,TOKEN@eca@ATT:OCL-Type)
+    /\ _in_(nestedToken:OCL-Type,NESTEDTOKEN@t@ATT:OCL-Type)
+    /\ _in_(nestedToken:OCL-Type,TOKEN@stop@ATT:OCL-Type)
+    /\ COMPLETED@t@ATT:OCL-Type := eval(false,env(_<-_(self,t:OCL-Type)),MODEL@:@Model)
+    /\ COMPLETED@nestedToken@ATT:OCL-Type := eval(true,env(_<-_(self,nestedToken:OCL-Type)),MODEL@:@Model) .
+  
+  ceq [ExitLevelUsageModel] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(elsc:OCL-Type,PCMUSAGEMODELENTRYLEVELSYSTEMCALL@PCMFLATTEN@elsc@CLASS:PCMusagemodelEntryLevelSystemCall@pcmflatten,_#_(_:_(operationSignature@-@@-@EntryLevelSystemCall@PCMusagemodelEntryLevelSystemCall@pcmflatten,OPERATIONSIGNATURE@-@@-@ENTRYLEVELSYSTEMCALL@elsc@ATT:OCL-Type),_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@elsc@ATT:OCL-Type),elsc@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(signature:OCL-Type,PCMREPOSITORYOPERATIONSIGNATURE@PCMFLATTEN@signature@CLASS:PCMrepositoryOperationSignature@pcmflatten,signature@SFS:Set{@StructuralFeatureInstance}),<_:_|_>(rdseff:OCL-Type,PCMSEFFRESOURCEDEMANDINGSEFF@PCMFLATTEN@rdseff@CLASS:PCMseffResourceDemandingSEFF@pcmflatten,_#_(_:_(steps@-@Behaviour@PCMseffResourceDemandingBehaviour@pcmflatten,STEPS@-@BEHAVIOUR@rdseff@ATT:OCL-Type),_:_(describedService@-@@-@SEFF@PCMseffServiceEffectSpecification@pcmflatten,DESCRIBEDSERVICE@-@@-@SEFF@rdseff@ATT:OCL-Type),rdseff@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(stop:OCL-Type,PCMSEFFSTOPACTION@PCMFLATTEN@stop@CLASS:PCMseffStopAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@stop@ATT:OCL-Type),_:_(resourceDemandingBehaviour@-@AbstractAction@PCMseffAbstractAction@pcmflatten,RESOURCEDEMANDINGBEHAVIOUR@-@ABSTRACTACTION@stop@ATT:OCL-Type),stop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(sToken:OCL-Type,TOKENTOKENSUSTOKEN@PCMFLATTEN@sToken@CLASS:TOKENtokensUSToken@pcmflatten,_#_(_:_(cToken@TOKENtokensUSToken@pcmflatten,CTOKEN@sToken@ATT:OCL-Type),_:_(completed@TOKENtokensUSToken@pcmflatten,COMPLETED@sToken@ATT:OCL-Type),sToken@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(seffT:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@seffT@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@seffT@ATT:OCL-Type),seffT@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(elsc:OCL-Type,PCMUSAGEMODELENTRYLEVELSYSTEMCALL@PCMFLATTEN@elsc@CLASS:PCMusagemodelEntryLevelSystemCall@pcmflatten,_#_(_:_(operationSignature@-@@-@EntryLevelSystemCall@PCMusagemodelEntryLevelSystemCall@pcmflatten,OPERATIONSIGNATURE@-@@-@ENTRYLEVELSYSTEMCALL@elsc@ATT:OCL-Type),_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@elsc@ATT:OCL-Type),elsc@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(signature:OCL-Type,PCMREPOSITORYOPERATIONSIGNATURE@PCMFLATTEN@signature@CLASS:PCMrepositoryOperationSignature@pcmflatten,signature@SFS:Set{@StructuralFeatureInstance}),<_:_|_>(rdseff:OCL-Type,PCMSEFFRESOURCEDEMANDINGSEFF@PCMFLATTEN@rdseff@CLASS:PCMseffResourceDemandingSEFF@pcmflatten,_#_(_:_(steps@-@Behaviour@PCMseffResourceDemandingBehaviour@pcmflatten,STEPS@-@BEHAVIOUR@rdseff@ATT:OCL-Type),_:_(describedService@-@@-@SEFF@PCMseffServiceEffectSpecification@pcmflatten,DESCRIBEDSERVICE@-@@-@SEFF@rdseff@ATT:OCL-Type),rdseff@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(stop:OCL-Type,PCMSEFFSTOPACTION@PCMFLATTEN@stop@CLASS:PCMseffStopAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@stop@ATT:OCL-Type),_:_(resourceDemandingBehaviour@-@AbstractAction@PCMseffAbstractAction@pcmflatten,RESOURCEDEMANDINGBEHAVIOUR@-@ABSTRACTACTION@stop@ATT:OCL-Type),stop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(sToken:OCL-Type,TOKENTOKENSUSTOKEN@PCMFLATTEN@sToken@CLASS:TOKENtokensUSToken@pcmflatten,_#_(_:_(cToken@TOKENtokensUSToken@pcmflatten,CTOKEN@sToken@ATT:OCL-Type),_:_(completed@TOKENtokensUSToken@pcmflatten,COMPLETED@sToken@ATT:OCL-Type),sToken@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(seffT:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@seffT@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@seffT@ATT:OCL-Type),seffT@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(signature:OCL-Type,OPERATIONSIGNATURE@-@@-@ENTRYLEVELSYSTEMCALL@elsc@ATT:OCL-Type)
+    /\ _in_(signature:OCL-Type,DESCRIBEDSERVICE@-@@-@SEFF@rdseff@ATT:OCL-Type)
+    /\ _in_(stop:OCL-Type,STEPS@-@BEHAVIOUR@rdseff@ATT:OCL-Type)
+    /\ _in_(sToken:OCL-Type,TOKEN@elsc@ATT:OCL-Type)
+    /\ _in_(seffT:OCL-Type,CTOKEN@sToken@ATT:OCL-Type)
+    /\ _in_(seffT:OCL-Type,TOKEN@stop@ATT:OCL-Type)
+    /\ COMPLETED@sToken@ATT:OCL-Type := eval(false,env(_<-_(self,sToken:OCL-Type)),MODEL@:@Model)
+    /\ COMPLETED@seffT@ATT:OCL-Type := eval(true,env(_<-_(self,seffT:OCL-Type)),MODEL@:@Model) .
+  
+  ceq [IntActSEFFSchFCFS] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(pred:OCL-Type,PCMSEFFABSTRACTACTION@PCMFLATTEN@pred@CLASS:PCMseffAbstractAction@pcmflatten,_#_(_:_(successor@-@AbstractAction@PCMseffAbstractAction@pcmflatten,SUCCESSOR@-@ABSTRACTACTION@pred@ATT:OCL-Type),_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@pred@ATT:OCL-Type),pred@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(IA:OCL-Type,PCMSEFFINTERNALACTION@PCMFLATTEN@IA@CLASS:PCMseffInternalAction@pcmflatten,_#_(_:_(predecessor@-@AbstractAction@PCMseffAbstractAction@pcmflatten,PREDECESSOR@-@ABSTRACTACTION@IA@ATT:OCL-Type),_:_(resourceDemand@-@Action@PCMseffAbstractInternalControlFlowAction@pcmflatten,RESOURCEDEMAND@-@ACTION@IA@ATT:OCL-Type),_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@IA@ATT:OCL-Type),IA@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(PRD:OCL-Type,PCMSEFFPERFORMANCEPARAMETRICRESOURCEDEMAND@PCMFLATTEN@PRD@CLASS:PCMseffperformanceParametricResourceDemand@pcmflatten,_#_(_:_(action@-@ParametricResourceDemand@PCMseffperformanceParametricResourceDemand@pcmflatten,ACTION@-@PARAMETRICRESOURCEDEMAND@PRD@ATT:OCL-Type),_:_(requiredResource@-@ParametricResourceDemand@PCMseffperformanceParametricResourceDemand@pcmflatten,REQUIREDRESOURCE@-@PARAMETRICRESOURCEDEMAND@PRD@ATT:OCL-Type),PRD@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(PRT:OCL-Type,PCMRESOURCETYPEPROCESSINGRESOURCETYPE@PCMFLATTEN@PRT@CLASS:PCMresourcetypeProcessingResourceType@pcmflatten,PRT@SFS:Set{@StructuralFeatureInstance}),<_:_|_>(PRS:OCL-Type,PCMRESOURCEENVIRONMENTPROCESSINGRESOURCESPECIFICATION@PCMFLATTEN@PRS@CLASS:PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,_#_(_:_(schedulingPolicy@PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,SCHEDULINGPOLICY@PRS@ATT:OCL-Type),_:_(activeResourceType@-@ActiveResourceSpecification@PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,ACTIVERESOURCETYPE@-@ACTIVERESOURCESPECIFICATION@PRS@ATT:OCL-Type),_:_(queue@PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,QUEUE@PRS@ATT:OCL-Type),PRS@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(SP:OCL-Type,PCMRESOURCETYPESCHEDULINGPOLICY@PCMFLATTEN@SP@CLASS:PCMresourcetypeSchedulingPolicy@pcmflatten,_#_(_:_(id@IDENTIFIERidentifierIdentifier@pcmflatten,ID@SP@ATT:OCL-Type),SP@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(pred:OCL-Type,PCMSEFFABSTRACTACTION@PCMFLATTEN@pred@CLASS:PCMseffAbstractAction@pcmflatten,_#_(_:_(successor@-@AbstractAction@PCMseffAbstractAction@pcmflatten,SUCCESSOR@-@ABSTRACTACTION@pred@ATT:OCL-Type),_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@pred@ATT:OCL-Type),pred@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(IA:OCL-Type,PCMSEFFINTERNALACTION@PCMFLATTEN@IA@CLASS:PCMseffInternalAction@pcmflatten,_#_(_:_(predecessor@-@AbstractAction@PCMseffAbstractAction@pcmflatten,PREDECESSOR@-@ABSTRACTACTION@IA@ATT:OCL-Type),_:_(resourceDemand@-@Action@PCMseffAbstractInternalControlFlowAction@pcmflatten,RESOURCEDEMAND@-@ACTION@IA@ATT:OCL-Type),_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@IA@ATT:OCL-Type),IA@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(PRD:OCL-Type,PCMSEFFPERFORMANCEPARAMETRICRESOURCEDEMAND@PCMFLATTEN@PRD@CLASS:PCMseffperformanceParametricResourceDemand@pcmflatten,_#_(_:_(action@-@ParametricResourceDemand@PCMseffperformanceParametricResourceDemand@pcmflatten,ACTION@-@PARAMETRICRESOURCEDEMAND@PRD@ATT:OCL-Type),_:_(requiredResource@-@ParametricResourceDemand@PCMseffperformanceParametricResourceDemand@pcmflatten,REQUIREDRESOURCE@-@PARAMETRICRESOURCEDEMAND@PRD@ATT:OCL-Type),PRD@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(PRT:OCL-Type,PCMRESOURCETYPEPROCESSINGRESOURCETYPE@PCMFLATTEN@PRT@CLASS:PCMresourcetypeProcessingResourceType@pcmflatten,PRT@SFS:Set{@StructuralFeatureInstance}),<_:_|_>(PRS:OCL-Type,PCMRESOURCEENVIRONMENTPROCESSINGRESOURCESPECIFICATION@PCMFLATTEN@PRS@CLASS:PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,_#_(_:_(schedulingPolicy@PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,SCHEDULINGPOLICY@PRS@ATT:OCL-Type),_:_(activeResourceType@-@ActiveResourceSpecification@PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,ACTIVERESOURCETYPE@-@ACTIVERESOURCESPECIFICATION@PRS@ATT:OCL-Type),_:_(queue@PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,QUEUE@PRS@ATT:OCL-Type),PRS@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(SP:OCL-Type,PCMRESOURCETYPESCHEDULINGPOLICY@PCMFLATTEN@SP@CLASS:PCMresourcetypeSchedulingPolicy@pcmflatten,_#_(_:_(id@IDENTIFIERidentifierIdentifier@pcmflatten,ID@SP@ATT:OCL-Type),SP@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(IA:OCL-Type,SUCCESSOR@-@ABSTRACTACTION@pred@ATT:OCL-Type)
+    /\ _in_(t:OCL-Type,TOKEN@pred@ATT:OCL-Type)
+    /\ _in_(SP:OCL-Type,SCHEDULINGPOLICY@PRS@ATT:OCL-Type)
+    /\ _in_(PRT:OCL-Type,ACTIVERESOURCETYPE@-@ACTIVERESOURCESPECIFICATION@PRS@ATT:OCL-Type)
+    /\ _in_(PRD:OCL-Type,RESOURCEDEMAND@-@ACTION@IA@ATT:OCL-Type)
+    /\ _in_(PRT:OCL-Type,REQUIREDRESOURCE@-@PARAMETRICRESOURCEDEMAND@PRD@ATT:OCL-Type)
+    /\ COMPLETED@t@ATT:OCL-Type := eval(true,env(_<-_(self,t:OCL-Type)),MODEL@:@Model)
+    /\ ID@SP@ATT:OCL-Type := eval("FCFS",env(_<-_(self,SP:OCL-Type)),MODEL@:@Model) .
+  
+  ceq [OpenWorkloadCreateSandTimer] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(ow:OCL-Type,PCMUSAGEMODELOPENWORKLOAD@PCMFLATTEN@ow@CLASS:PCMusagemodelOpenWorkload@pcmflatten,_#_(_:_(sandTimer@PCMusagemodelOpenWorkload@pcmflatten,SANDTIMER@ow@ATT:OCL-Type),ow@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(ow:OCL-Type,PCMUSAGEMODELOPENWORKLOAD@PCMFLATTEN@ow@CLASS:PCMusagemodelOpenWorkload@pcmflatten,_#_(_:_(sandTimer@PCMusagemodelOpenWorkload@pcmflatten,SANDTIMER@ow@ATT:OCL-Type),ow@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ eval(_.`oclIsUndefined`(`)(__(ow:OCL-Type,._(sandTimer@OCLSf))),env(empty),MODEL@:@Model) .
+  
+  ceq [RTObserverBirthUsageModel] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(sB:OCL-Type,PCMUSAGEMODELSCENARIOBEHAVIOUR@PCMFLATTEN@sB@CLASS:PCMusagemodelScenarioBehaviour@pcmflatten,_#_(_:_(usageScenario@-@SenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,USAGESCENARIO@-@SENARIOBEHAVIOUR@sB@ATT:OCL-Type),_:_(rtOb@PCMusagemodelScenarioBehaviour@pcmflatten,RTOB@sB@ATT:OCL-Type),sB@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(usSc:OCL-Type,PCMUSAGEMODELUSAGESCENARIO@PCMFLATTEN@usSc@CLASS:PCMusagemodelUsageScenario@pcmflatten,_#_(_:_(scenarioBehaviour@-@UsageScenario@PCMusagemodelUsageScenario@pcmflatten,SCENARIOBEHAVIOUR@-@USAGESCENARIO@usSc@ATT:OCL-Type),usSc@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(sB:OCL-Type,PCMUSAGEMODELSCENARIOBEHAVIOUR@PCMFLATTEN@sB@CLASS:PCMusagemodelScenarioBehaviour@pcmflatten,_#_(_:_(usageScenario@-@SenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,USAGESCENARIO@-@SENARIOBEHAVIOUR@sB@ATT:OCL-Type),_:_(rtOb@PCMusagemodelScenarioBehaviour@pcmflatten,RTOB@sB@ATT:OCL-Type),sB@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(usSc:OCL-Type,PCMUSAGEMODELUSAGESCENARIO@PCMFLATTEN@usSc@CLASS:PCMusagemodelUsageScenario@pcmflatten,_#_(_:_(scenarioBehaviour@-@UsageScenario@PCMusagemodelUsageScenario@pcmflatten,SCENARIOBEHAVIOUR@-@USAGESCENARIO@usSc@ATT:OCL-Type),usSc@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(sB:OCL-Type,SCENARIOBEHAVIOUR@-@USAGESCENARIO@usSc@ATT:OCL-Type)
+    /\ eval(_.`oclIsUndefined`(`)(__(sB:OCL-Type,._(rtOb@OCLSf))),env(empty),MODEL@:@Model) .
+  
+  ceq [TokenExitBranchUM] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(bA:OCL-Type,PCMUSAGEMODELBRANCH@PCMFLATTEN@bA@CLASS:PCMusagemodelBranch@pcmflatten,_#_(_:_(branchTransitions@-@Branch@PCMusagemodelBranch@pcmflatten,BRANCHTRANSITIONS@-@BRANCH@bA@ATT:OCL-Type),_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@bA@ATT:OCL-Type),bA@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(bT:OCL-Type,PCMUSAGEMODELBRANCHTRANSITION@PCMFLATTEN@bT@CLASS:PCMusagemodelBranchTransition@pcmflatten,_#_(_:_(branchedBehaviour@-@BranchTransition@PCMusagemodelBranchTransition@pcmflatten,BRANCHEDBEHAVIOUR@-@BRANCHTRANSITION@bT@ATT:OCL-Type),_:_(branch@-@BranchTransition@PCMusagemodelBranchTransition@pcmflatten,BRANCH@-@BRANCHTRANSITION@bT@ATT:OCL-Type),bT@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(scBeh:OCL-Type,PCMUSAGEMODELSCENARIOBEHAVIOUR@PCMFLATTEN@scBeh@CLASS:PCMusagemodelScenarioBehaviour@pcmflatten,_#_(_:_(actions@-@ScenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,ACTIONS@-@SCENARIOBEHAVIOUR@scBeh@ATT:OCL-Type),_:_(branchTransition@-@ScenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,BRANCHTRANSITION@-@SCENARIOBEHAVIOUR@scBeh@ATT:OCL-Type),scBeh@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(stop:OCL-Type,PCMUSAGEMODELSTOP@PCMFLATTEN@stop@CLASS:PCMusagemodelStop@pcmflatten,_#_(_:_(scenarioBehaviour@-@AbstractUserAction@PCMusagemodelAbstractUserAction@pcmflatten,SCENARIOBEHAVIOUR@-@ABSTRACTUSERACTION@stop@ATT:OCL-Type),_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@stop@ATT:OCL-Type),stop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSUSTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensUSToken@pcmflatten,_#_(_:_(completed@TOKENtokensUSToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(bA:OCL-Type,PCMUSAGEMODELBRANCH@PCMFLATTEN@bA@CLASS:PCMusagemodelBranch@pcmflatten,_#_(_:_(branchTransitions@-@Branch@PCMusagemodelBranch@pcmflatten,BRANCHTRANSITIONS@-@BRANCH@bA@ATT:OCL-Type),_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@bA@ATT:OCL-Type),bA@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(bT:OCL-Type,PCMUSAGEMODELBRANCHTRANSITION@PCMFLATTEN@bT@CLASS:PCMusagemodelBranchTransition@pcmflatten,_#_(_:_(branchedBehaviour@-@BranchTransition@PCMusagemodelBranchTransition@pcmflatten,BRANCHEDBEHAVIOUR@-@BRANCHTRANSITION@bT@ATT:OCL-Type),_:_(branch@-@BranchTransition@PCMusagemodelBranchTransition@pcmflatten,BRANCH@-@BRANCHTRANSITION@bT@ATT:OCL-Type),bT@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(scBeh:OCL-Type,PCMUSAGEMODELSCENARIOBEHAVIOUR@PCMFLATTEN@scBeh@CLASS:PCMusagemodelScenarioBehaviour@pcmflatten,_#_(_:_(actions@-@ScenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,ACTIONS@-@SCENARIOBEHAVIOUR@scBeh@ATT:OCL-Type),_:_(branchTransition@-@ScenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,BRANCHTRANSITION@-@SCENARIOBEHAVIOUR@scBeh@ATT:OCL-Type),scBeh@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(stop:OCL-Type,PCMUSAGEMODELSTOP@PCMFLATTEN@stop@CLASS:PCMusagemodelStop@pcmflatten,_#_(_:_(scenarioBehaviour@-@AbstractUserAction@PCMusagemodelAbstractUserAction@pcmflatten,SCENARIOBEHAVIOUR@-@ABSTRACTUSERACTION@stop@ATT:OCL-Type),_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@stop@ATT:OCL-Type),stop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSUSTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensUSToken@pcmflatten,_#_(_:_(completed@TOKENtokensUSToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(bT:OCL-Type,BRANCHTRANSITIONS@-@BRANCH@bA@ATT:OCL-Type)
+    /\ _in_(scBeh:OCL-Type,BRANCHEDBEHAVIOUR@-@BRANCHTRANSITION@bT@ATT:OCL-Type)
+    /\ _in_(stop:OCL-Type,ACTIONS@-@SCENARIOBEHAVIOUR@scBeh@ATT:OCL-Type)
+    /\ _in_(t:OCL-Type,TOKEN@stop@ATT:OCL-Type)
+    /\ COMPLETED@t@ATT:OCL-Type := eval(false,env(_<-_(self,t:OCL-Type)),MODEL@:@Model) .
+  
+  ceq [LoopToLoopTokenUM] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(loop:OCL-Type,PCMUSAGEMODELLOOP@PCMFLATTEN@loop@CLASS:PCMusagemodelLoop@pcmflatten,_#_(_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@loop@ATT:OCL-Type),loop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSUSTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensUSToken@pcmflatten,_#_(_:_(completed@TOKENtokensUSToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),_:_(loopToken@TOKENtokensUSToken@pcmflatten,LOOPTOKEN@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(loop:OCL-Type,PCMUSAGEMODELLOOP@PCMFLATTEN@loop@CLASS:PCMusagemodelLoop@pcmflatten,_#_(_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@loop@ATT:OCL-Type),loop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSUSTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensUSToken@pcmflatten,_#_(_:_(completed@TOKENtokensUSToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),_:_(loopToken@TOKENtokensUSToken@pcmflatten,LOOPTOKEN@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(t:OCL-Type,TOKEN@loop@ATT:OCL-Type)
+    /\ VAR1@:Oid := newId(_+_(VALUE@ids@:Int,3))
+    /\ iter:OCL-Type := eval(parseExp(eval(__(__(loop:OCL-Type,._(loopIteration@-@Loop@OCLSf)),._(specification@OCLSf)),env(empty),MODEL@:@Model),_+_(VALUE@rdm@:Int,13)),env(empty),MODEL@:@Model)
+    /\ COMPLETED@t@ATT:OCL-Type := eval(false,env(_<-_(self,t:OCL-Type)),MODEL@:@Model)
+    /\ eval(_.`oclIsUndefined`(`)(__(t:OCL-Type,._(loopToken@OCLSf))),env(empty),MODEL@:@Model) .
+  
+  ceq [LoopStartTokenUM] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(loop:OCL-Type,PCMUSAGEMODELLOOP@PCMFLATTEN@loop@CLASS:PCMusagemodelLoop@pcmflatten,_#_(_:_(bodyBehaviour@-@Loop@PCMusagemodelLoop@pcmflatten,BODYBEHAVIOUR@-@LOOP@loop@ATT:OCL-Type),_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@loop@ATT:OCL-Type),loop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(sToken:OCL-Type,TOKENTOKENSUSTOKEN@PCMFLATTEN@sToken@CLASS:TOKENtokensUSToken@pcmflatten,_#_(_:_(loopToken@TOKENtokensUSToken@pcmflatten,LOOPTOKEN@sToken@ATT:OCL-Type),_:_(completed@TOKENtokensUSToken@pcmflatten,COMPLETED@sToken@ATT:OCL-Type),sToken@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(loopT:OCL-Type,TOKENTOKENSUSLOOPTOKEN@PCMFLATTEN@loopT@CLASS:TOKENtokensUSLoopToken@pcmflatten,_#_(_:_(started@TOKENtokensUSLoopToken@pcmflatten,STARTED@loopT@ATT:OCL-Type),loopT@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(scBeh:OCL-Type,PCMUSAGEMODELSCENARIOBEHAVIOUR@PCMFLATTEN@scBeh@CLASS:PCMusagemodelScenarioBehaviour@pcmflatten,_#_(_:_(loop@-@ScenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,LOOP@-@SCENARIOBEHAVIOUR@scBeh@ATT:OCL-Type),_:_(actions@-@ScenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,ACTIONS@-@SCENARIOBEHAVIOUR@scBeh@ATT:OCL-Type),scBeh@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(start:OCL-Type,PCMUSAGEMODELSTART@PCMFLATTEN@start@CLASS:PCMusagemodelStart@pcmflatten,_#_(_:_(scenarioBehaviour@-@AbstractUserAction@PCMusagemodelAbstractUserAction@pcmflatten,SCENARIOBEHAVIOUR@-@ABSTRACTUSERACTION@start@ATT:OCL-Type),_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@start@ATT:OCL-Type),start@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(loop:OCL-Type,PCMUSAGEMODELLOOP@PCMFLATTEN@loop@CLASS:PCMusagemodelLoop@pcmflatten,_#_(_:_(bodyBehaviour@-@Loop@PCMusagemodelLoop@pcmflatten,BODYBEHAVIOUR@-@LOOP@loop@ATT:OCL-Type),_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@loop@ATT:OCL-Type),loop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(sToken:OCL-Type,TOKENTOKENSUSTOKEN@PCMFLATTEN@sToken@CLASS:TOKENtokensUSToken@pcmflatten,_#_(_:_(loopToken@TOKENtokensUSToken@pcmflatten,LOOPTOKEN@sToken@ATT:OCL-Type),_:_(completed@TOKENtokensUSToken@pcmflatten,COMPLETED@sToken@ATT:OCL-Type),sToken@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(loopT:OCL-Type,TOKENTOKENSUSLOOPTOKEN@PCMFLATTEN@loopT@CLASS:TOKENtokensUSLoopToken@pcmflatten,_#_(_:_(started@TOKENtokensUSLoopToken@pcmflatten,STARTED@loopT@ATT:OCL-Type),loopT@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(scBeh:OCL-Type,PCMUSAGEMODELSCENARIOBEHAVIOUR@PCMFLATTEN@scBeh@CLASS:PCMusagemodelScenarioBehaviour@pcmflatten,_#_(_:_(loop@-@ScenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,LOOP@-@SCENARIOBEHAVIOUR@scBeh@ATT:OCL-Type),_:_(actions@-@ScenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,ACTIONS@-@SCENARIOBEHAVIOUR@scBeh@ATT:OCL-Type),scBeh@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(start:OCL-Type,PCMUSAGEMODELSTART@PCMFLATTEN@start@CLASS:PCMusagemodelStart@pcmflatten,_#_(_:_(scenarioBehaviour@-@AbstractUserAction@PCMusagemodelAbstractUserAction@pcmflatten,SCENARIOBEHAVIOUR@-@ABSTRACTUSERACTION@start@ATT:OCL-Type),_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@start@ATT:OCL-Type),start@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(sToken:OCL-Type,TOKEN@loop@ATT:OCL-Type)
+    /\ _in_(loopT:OCL-Type,LOOPTOKEN@sToken@ATT:OCL-Type)
+    /\ _in_(scBeh:OCL-Type,BODYBEHAVIOUR@-@LOOP@loop@ATT:OCL-Type)
+    /\ _in_(start:OCL-Type,ACTIONS@-@SCENARIOBEHAVIOUR@scBeh@ATT:OCL-Type)
+    /\ COMPLETED@sToken@ATT:OCL-Type := eval(false,env(_<-_(self,sToken:OCL-Type)),MODEL@:@Model)
+    /\ STARTED@loopT@ATT:OCL-Type := eval(false,env(_<-_(self,loopT:OCL-Type)),MODEL@:@Model)
+    /\ eval(_>_(__(loopT:OCL-Type,._(iterations@OCLSf)),0),env(empty),MODEL@:@Model) .
+  
+  ceq [LoopStartTokenSEFF] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(loop:OCL-Type,PCMSEFFLOOPACTION@PCMFLATTEN@loop@CLASS:PCMseffLoopAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@loop@ATT:OCL-Type),_:_(bodyBehaviour@-@Loop@PCMseffAbstractLoopAction@pcmflatten,BODYBEHAVIOUR@-@LOOP@loop@ATT:OCL-Type),loop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(beh:OCL-Type,PCMSEFFRESOURCEDEMANDINGBEHAVIOUR@PCMFLATTEN@beh@CLASS:PCMseffResourceDemandingBehaviour@pcmflatten,_#_(_:_(steps@-@Behaviour@PCMseffResourceDemandingBehaviour@pcmflatten,STEPS@-@BEHAVIOUR@beh@ATT:OCL-Type),_:_(abstractLoopAction@-@ResourceDemandingBehaviour@PCMseffResourceDemandingBehaviour@pcmflatten,ABSTRACTLOOPACTION@-@RESOURCEDEMANDINGBEHAVIOUR@beh@ATT:OCL-Type),beh@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(start:OCL-Type,PCMSEFFSTARTACTION@PCMFLATTEN@start@CLASS:PCMseffStartAction@pcmflatten,_#_(_:_(resourceDemandingBehaviour@-@AbstractAction@PCMseffAbstractAction@pcmflatten,RESOURCEDEMANDINGBEHAVIOUR@-@ABSTRACTACTION@start@ATT:OCL-Type),_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@start@ATT:OCL-Type),start@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(loopToken@TOKENtokensSEFFToken@pcmflatten,LOOPTOKEN@t@ATT:OCL-Type),_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(loopT:OCL-Type,TOKENTOKENSSEFFLOOPTOKEN@PCMFLATTEN@loopT@CLASS:TOKENtokensSEFFLoopToken@pcmflatten,_#_(_:_(started@TOKENtokensSEFFLoopToken@pcmflatten,STARTED@loopT@ATT:OCL-Type),loopT@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(loop:OCL-Type,PCMSEFFLOOPACTION@PCMFLATTEN@loop@CLASS:PCMseffLoopAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@loop@ATT:OCL-Type),_:_(bodyBehaviour@-@Loop@PCMseffAbstractLoopAction@pcmflatten,BODYBEHAVIOUR@-@LOOP@loop@ATT:OCL-Type),loop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(beh:OCL-Type,PCMSEFFRESOURCEDEMANDINGBEHAVIOUR@PCMFLATTEN@beh@CLASS:PCMseffResourceDemandingBehaviour@pcmflatten,_#_(_:_(steps@-@Behaviour@PCMseffResourceDemandingBehaviour@pcmflatten,STEPS@-@BEHAVIOUR@beh@ATT:OCL-Type),_:_(abstractLoopAction@-@ResourceDemandingBehaviour@PCMseffResourceDemandingBehaviour@pcmflatten,ABSTRACTLOOPACTION@-@RESOURCEDEMANDINGBEHAVIOUR@beh@ATT:OCL-Type),beh@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(start:OCL-Type,PCMSEFFSTARTACTION@PCMFLATTEN@start@CLASS:PCMseffStartAction@pcmflatten,_#_(_:_(resourceDemandingBehaviour@-@AbstractAction@PCMseffAbstractAction@pcmflatten,RESOURCEDEMANDINGBEHAVIOUR@-@ABSTRACTACTION@start@ATT:OCL-Type),_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@start@ATT:OCL-Type),start@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(loopToken@TOKENtokensSEFFToken@pcmflatten,LOOPTOKEN@t@ATT:OCL-Type),_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(loopT:OCL-Type,TOKENTOKENSSEFFLOOPTOKEN@PCMFLATTEN@loopT@CLASS:TOKENtokensSEFFLoopToken@pcmflatten,_#_(_:_(started@TOKENtokensSEFFLoopToken@pcmflatten,STARTED@loopT@ATT:OCL-Type),loopT@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(beh:OCL-Type,BODYBEHAVIOUR@-@LOOP@loop@ATT:OCL-Type)
+    /\ _in_(start:OCL-Type,STEPS@-@BEHAVIOUR@beh@ATT:OCL-Type)
+    /\ _in_(t:OCL-Type,TOKEN@loop@ATT:OCL-Type)
+    /\ _in_(loopT:OCL-Type,LOOPTOKEN@t@ATT:OCL-Type)
+    /\ COMPLETED@t@ATT:OCL-Type := eval(false,env(_<-_(self,t:OCL-Type)),MODEL@:@Model)
+    /\ STARTED@loopT@ATT:OCL-Type := eval(false,env(_<-_(self,loopT:OCL-Type)),MODEL@:@Model)
+    /\ eval(_>_(__(loopT:OCL-Type,._(iterations@OCLSf)),0),env(empty),MODEL@:@Model) .
+  
+  ceq [LoopStartTokenExitUM] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(loop:OCL-Type,PCMUSAGEMODELLOOP@PCMFLATTEN@loop@CLASS:PCMusagemodelLoop@pcmflatten,_#_(_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@loop@ATT:OCL-Type),loop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSUSTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensUSToken@pcmflatten,_#_(_:_(loopToken@TOKENtokensUSToken@pcmflatten,LOOPTOKEN@t@ATT:OCL-Type),_:_(completed@TOKENtokensUSToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(loopT:OCL-Type,TOKENTOKENSUSLOOPTOKEN@PCMFLATTEN@loopT@CLASS:TOKENtokensUSLoopToken@pcmflatten,_#_(_:_(iterations@TOKENtokensUSLoopToken@pcmflatten,ITERATIONS@loopT@ATT:OCL-Type),loopT@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(loop:OCL-Type,PCMUSAGEMODELLOOP@PCMFLATTEN@loop@CLASS:PCMusagemodelLoop@pcmflatten,_#_(_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@loop@ATT:OCL-Type),loop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSUSTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensUSToken@pcmflatten,_#_(_:_(loopToken@TOKENtokensUSToken@pcmflatten,LOOPTOKEN@t@ATT:OCL-Type),_:_(completed@TOKENtokensUSToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(loopT:OCL-Type,TOKENTOKENSUSLOOPTOKEN@PCMFLATTEN@loopT@CLASS:TOKENtokensUSLoopToken@pcmflatten,_#_(_:_(iterations@TOKENtokensUSLoopToken@pcmflatten,ITERATIONS@loopT@ATT:OCL-Type),loopT@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(loopT:OCL-Type,LOOPTOKEN@t@ATT:OCL-Type)
+    /\ _in_(t:OCL-Type,TOKEN@loop@ATT:OCL-Type)
+    /\ ITERATIONS@loopT@ATT:OCL-Type := eval(0,env(_<-_(self,loopT:OCL-Type)),MODEL@:@Model) .
+  
+  ceq [BranchSEFF2TokenProb] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(b:OCL-Type,PCMSEFFBRANCHACTION@PCMFLATTEN@b@CLASS:PCMseffBranchAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@b@ATT:OCL-Type),b@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),_:_(prob@TOKENtokensSEFFToken@pcmflatten,PROB@t@ATT:OCL-Type),_:_(branchesProb@TOKENtokensSEFFToken@pcmflatten,BRANCHESPROB@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(b:OCL-Type,PCMSEFFBRANCHACTION@PCMFLATTEN@b@CLASS:PCMseffBranchAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@b@ATT:OCL-Type),b@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),_:_(prob@TOKENtokensSEFFToken@pcmflatten,PROB@t@ATT:OCL-Type),_:_(branchesProb@TOKENtokensSEFFToken@pcmflatten,BRANCHESPROB@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(t:OCL-Type,TOKEN@b@ATT:OCL-Type)
+    /\ VAR1@:Oid := newId(_+_(VALUE@ids@:Int,3))
+    /\ auxSeq:OCL-Type := eval(_->`asSequence`(`)(_->`collect_(__(b:OCL-Type,._(branches@-@Branch@OCLSf)),_|_(S,_.`round`(`)(_*_(__(S,._(branchProbability@OCLSf)),1000))))),env(empty),MODEL@:@Model)
+    /\ COMPLETED@t@ATT:OCL-Type := eval(false,env(_<-_(self,t:OCL-Type)),MODEL@:@Model)
+    /\ eval(_.=._(__(t:OCL-Type,._(prob@OCLSf)),0),env(empty),MODEL@:@Model) .
+  
+  ceq [TokenEnterInABranchSEFF] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(bA:OCL-Type,PCMSEFFBRANCHACTION@PCMFLATTEN@bA@CLASS:PCMseffBranchAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@bA@ATT:OCL-Type),_:_(branches@-@Branch@PCMseffBranchAction@pcmflatten,BRANCHES@-@BRANCH@bA@ATT:OCL-Type),bA@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),_:_(prob@TOKENtokensSEFFToken@pcmflatten,PROB@t@ATT:OCL-Type),_:_(branchNumber@TOKENtokensSEFFToken@pcmflatten,BRANCHNUMBER@t@ATT:OCL-Type),_:_(branchesProb@TOKENtokensSEFFToken@pcmflatten,BRANCHESPROB@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(bT:OCL-Type,PCMSEFFPROBABILISTICBRANCHTRANSITION@PCMFLATTEN@bT@CLASS:PCMseffProbabilisticBranchTransition@pcmflatten,_#_(_:_(branchBehaviour@-@BranchTransition@PCMseffAbstractBranchTransition@pcmflatten,BRANCHBEHAVIOUR@-@BRANCHTRANSITION@bT@ATT:OCL-Type),_:_(branchAction@-@AbstractBranchTransition@PCMseffAbstractBranchTransition@pcmflatten,BRANCHACTION@-@ABSTRACTBRANCHTRANSITION@bT@ATT:OCL-Type),bT@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(scBeh:OCL-Type,PCMSEFFRESOURCEDEMANDINGBEHAVIOUR@PCMFLATTEN@scBeh@CLASS:PCMseffResourceDemandingBehaviour@pcmflatten,_#_(_:_(steps@-@Behaviour@PCMseffResourceDemandingBehaviour@pcmflatten,STEPS@-@BEHAVIOUR@scBeh@ATT:OCL-Type),_:_(abstractBranchTransition@-@ResourceDemandingBehaviour@PCMseffResourceDemandingBehaviour@pcmflatten,ABSTRACTBRANCHTRANSITION@-@RESOURCEDEMANDINGBEHAVIOUR@scBeh@ATT:OCL-Type),scBeh@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(start:OCL-Type,PCMSEFFSTARTACTION@PCMFLATTEN@start@CLASS:PCMseffStartAction@pcmflatten,_#_(_:_(resourceDemandingBehaviour@-@AbstractAction@PCMseffAbstractAction@pcmflatten,RESOURCEDEMANDINGBEHAVIOUR@-@ABSTRACTACTION@start@ATT:OCL-Type),_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@start@ATT:OCL-Type),start@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(bA:OCL-Type,PCMSEFFBRANCHACTION@PCMFLATTEN@bA@CLASS:PCMseffBranchAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@bA@ATT:OCL-Type),_:_(branches@-@Branch@PCMseffBranchAction@pcmflatten,BRANCHES@-@BRANCH@bA@ATT:OCL-Type),bA@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),_:_(prob@TOKENtokensSEFFToken@pcmflatten,PROB@t@ATT:OCL-Type),_:_(branchNumber@TOKENtokensSEFFToken@pcmflatten,BRANCHNUMBER@t@ATT:OCL-Type),_:_(branchesProb@TOKENtokensSEFFToken@pcmflatten,BRANCHESPROB@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(bT:OCL-Type,PCMSEFFPROBABILISTICBRANCHTRANSITION@PCMFLATTEN@bT@CLASS:PCMseffProbabilisticBranchTransition@pcmflatten,_#_(_:_(branchBehaviour@-@BranchTransition@PCMseffAbstractBranchTransition@pcmflatten,BRANCHBEHAVIOUR@-@BRANCHTRANSITION@bT@ATT:OCL-Type),_:_(branchAction@-@AbstractBranchTransition@PCMseffAbstractBranchTransition@pcmflatten,BRANCHACTION@-@ABSTRACTBRANCHTRANSITION@bT@ATT:OCL-Type),bT@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(scBeh:OCL-Type,PCMSEFFRESOURCEDEMANDINGBEHAVIOUR@PCMFLATTEN@scBeh@CLASS:PCMseffResourceDemandingBehaviour@pcmflatten,_#_(_:_(steps@-@Behaviour@PCMseffResourceDemandingBehaviour@pcmflatten,STEPS@-@BEHAVIOUR@scBeh@ATT:OCL-Type),_:_(abstractBranchTransition@-@ResourceDemandingBehaviour@PCMseffResourceDemandingBehaviour@pcmflatten,ABSTRACTBRANCHTRANSITION@-@RESOURCEDEMANDINGBEHAVIOUR@scBeh@ATT:OCL-Type),scBeh@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(start:OCL-Type,PCMSEFFSTARTACTION@PCMFLATTEN@start@CLASS:PCMseffStartAction@pcmflatten,_#_(_:_(resourceDemandingBehaviour@-@AbstractAction@PCMseffAbstractAction@pcmflatten,RESOURCEDEMANDINGBEHAVIOUR@-@ABSTRACTACTION@start@ATT:OCL-Type),_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@start@ATT:OCL-Type),start@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(t:OCL-Type,TOKEN@bA@ATT:OCL-Type)
+    /\ _in_(bT:OCL-Type,BRANCHES@-@BRANCH@bA@ATT:OCL-Type)
+    /\ _in_(scBeh:OCL-Type,BRANCHBEHAVIOUR@-@BRANCHTRANSITION@bT@ATT:OCL-Type)
+    /\ _in_(start:OCL-Type,STEPS@-@BEHAVIOUR@scBeh@ATT:OCL-Type)
+    /\ VAR1@:Oid := newId(_+_(VALUE@ids@:Int,6))
+    /\ ind:OCL-Type := eval(_->`indexOf`(_`)(_->`asSequence`(`)(__(bA:OCL-Type,._(branches@-@Branch@OCLSf))),bT:OCL-Type),env(empty),MODEL@:@Model)
+    /\ COMPLETED@t@ATT:OCL-Type := eval(false,env(_<-_(self,t:OCL-Type)),MODEL@:@Model)
+    /\ eval(_.=._(ind:OCL-Type,__(t:OCL-Type,._(branchNumber@OCLSf))),env(empty),MODEL@:@Model) .
+  
+  ceq [TokenExitFromBranchSEFF] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(bA:OCL-Type,PCMSEFFBRANCHACTION@PCMFLATTEN@bA@CLASS:PCMseffBranchAction@pcmflatten,_#_(_:_(branches@-@Branch@PCMseffBranchAction@pcmflatten,BRANCHES@-@BRANCH@bA@ATT:OCL-Type),_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@bA@ATT:OCL-Type),bA@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(bT:OCL-Type,PCMSEFFPROBABILISTICBRANCHTRANSITION@PCMFLATTEN@bT@CLASS:PCMseffProbabilisticBranchTransition@pcmflatten,_#_(_:_(branchBehaviour@-@BranchTransition@PCMseffAbstractBranchTransition@pcmflatten,BRANCHBEHAVIOUR@-@BRANCHTRANSITION@bT@ATT:OCL-Type),_:_(branchAction@-@AbstractBranchTransition@PCMseffAbstractBranchTransition@pcmflatten,BRANCHACTION@-@ABSTRACTBRANCHTRANSITION@bT@ATT:OCL-Type),bT@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(scBeh:OCL-Type,PCMSEFFRESOURCEDEMANDINGBEHAVIOUR@PCMFLATTEN@scBeh@CLASS:PCMseffResourceDemandingBehaviour@pcmflatten,_#_(_:_(steps@-@Behaviour@PCMseffResourceDemandingBehaviour@pcmflatten,STEPS@-@BEHAVIOUR@scBeh@ATT:OCL-Type),_:_(abstractBranchTransition@-@ResourceDemandingBehaviour@PCMseffResourceDemandingBehaviour@pcmflatten,ABSTRACTBRANCHTRANSITION@-@RESOURCEDEMANDINGBEHAVIOUR@scBeh@ATT:OCL-Type),scBeh@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(stop:OCL-Type,PCMSEFFSTOPACTION@PCMFLATTEN@stop@CLASS:PCMseffStopAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@stop@ATT:OCL-Type),_:_(resourceDemandingBehaviour@-@AbstractAction@PCMseffAbstractAction@pcmflatten,RESOURCEDEMANDINGBEHAVIOUR@-@ABSTRACTACTION@stop@ATT:OCL-Type),stop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(bA:OCL-Type,PCMSEFFBRANCHACTION@PCMFLATTEN@bA@CLASS:PCMseffBranchAction@pcmflatten,_#_(_:_(branches@-@Branch@PCMseffBranchAction@pcmflatten,BRANCHES@-@BRANCH@bA@ATT:OCL-Type),_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@bA@ATT:OCL-Type),bA@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(bT:OCL-Type,PCMSEFFPROBABILISTICBRANCHTRANSITION@PCMFLATTEN@bT@CLASS:PCMseffProbabilisticBranchTransition@pcmflatten,_#_(_:_(branchBehaviour@-@BranchTransition@PCMseffAbstractBranchTransition@pcmflatten,BRANCHBEHAVIOUR@-@BRANCHTRANSITION@bT@ATT:OCL-Type),_:_(branchAction@-@AbstractBranchTransition@PCMseffAbstractBranchTransition@pcmflatten,BRANCHACTION@-@ABSTRACTBRANCHTRANSITION@bT@ATT:OCL-Type),bT@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(scBeh:OCL-Type,PCMSEFFRESOURCEDEMANDINGBEHAVIOUR@PCMFLATTEN@scBeh@CLASS:PCMseffResourceDemandingBehaviour@pcmflatten,_#_(_:_(steps@-@Behaviour@PCMseffResourceDemandingBehaviour@pcmflatten,STEPS@-@BEHAVIOUR@scBeh@ATT:OCL-Type),_:_(abstractBranchTransition@-@ResourceDemandingBehaviour@PCMseffResourceDemandingBehaviour@pcmflatten,ABSTRACTBRANCHTRANSITION@-@RESOURCEDEMANDINGBEHAVIOUR@scBeh@ATT:OCL-Type),scBeh@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(stop:OCL-Type,PCMSEFFSTOPACTION@PCMFLATTEN@stop@CLASS:PCMseffStopAction@pcmflatten,_#_(_:_(token@PCMseffAbstractAction@pcmflatten,TOKEN@stop@ATT:OCL-Type),_:_(resourceDemandingBehaviour@-@AbstractAction@PCMseffAbstractAction@pcmflatten,RESOURCEDEMANDINGBEHAVIOUR@-@ABSTRACTACTION@stop@ATT:OCL-Type),stop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSSEFFTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensSEFFToken@pcmflatten,_#_(_:_(completed@TOKENtokensSEFFToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(bT:OCL-Type,BRANCHES@-@BRANCH@bA@ATT:OCL-Type)
+    /\ _in_(scBeh:OCL-Type,BRANCHBEHAVIOUR@-@BRANCHTRANSITION@bT@ATT:OCL-Type)
+    /\ _in_(stop:OCL-Type,STEPS@-@BEHAVIOUR@scBeh@ATT:OCL-Type)
+    /\ _in_(t:OCL-Type,TOKEN@stop@ATT:OCL-Type)
+    /\ COMPLETED@t@ATT:OCL-Type := eval(true,env(_<-_(self,t:OCL-Type)),MODEL@:@Model) .
+  
+  ceq [LoopStop2StartUM] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(loop:OCL-Type,PCMUSAGEMODELLOOP@PCMFLATTEN@loop@CLASS:PCMusagemodelLoop@pcmflatten,_#_(_:_(bodyBehaviour@-@Loop@PCMusagemodelLoop@pcmflatten,BODYBEHAVIOUR@-@LOOP@loop@ATT:OCL-Type),_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@loop@ATT:OCL-Type),loop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(scBeh:OCL-Type,PCMUSAGEMODELSCENARIOBEHAVIOUR@PCMFLATTEN@scBeh@CLASS:PCMusagemodelScenarioBehaviour@pcmflatten,_#_(_:_(loop@-@ScenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,LOOP@-@SCENARIOBEHAVIOUR@scBeh@ATT:OCL-Type),_:_(actions@-@ScenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,ACTIONS@-@SCENARIOBEHAVIOUR@scBeh@ATT:OCL-Type),scBeh@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(stop:OCL-Type,PCMUSAGEMODELSTOP@PCMFLATTEN@stop@CLASS:PCMusagemodelStop@pcmflatten,_#_(_:_(scenarioBehaviour@-@AbstractUserAction@PCMusagemodelAbstractUserAction@pcmflatten,SCENARIOBEHAVIOUR@-@ABSTRACTUSERACTION@stop@ATT:OCL-Type),_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@stop@ATT:OCL-Type),stop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(loopT:OCL-Type,TOKENTOKENSUSLOOPTOKEN@PCMFLATTEN@loopT@CLASS:TOKENtokensUSLoopToken@pcmflatten,_#_(_:_(completed@TOKENtokensUSToken@pcmflatten,COMPLETED@loopT@ATT:OCL-Type),_:_(iterations@TOKENtokensUSLoopToken@pcmflatten,ITERATIONS@loopT@ATT:OCL-Type),_:_(started@TOKENtokensUSLoopToken@pcmflatten,STARTED@loopT@ATT:OCL-Type),loopT@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSUSTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensUSToken@pcmflatten,_#_(_:_(loopToken@TOKENtokensUSToken@pcmflatten,LOOPTOKEN@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(loop:OCL-Type,PCMUSAGEMODELLOOP@PCMFLATTEN@loop@CLASS:PCMusagemodelLoop@pcmflatten,_#_(_:_(bodyBehaviour@-@Loop@PCMusagemodelLoop@pcmflatten,BODYBEHAVIOUR@-@LOOP@loop@ATT:OCL-Type),_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@loop@ATT:OCL-Type),loop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(scBeh:OCL-Type,PCMUSAGEMODELSCENARIOBEHAVIOUR@PCMFLATTEN@scBeh@CLASS:PCMusagemodelScenarioBehaviour@pcmflatten,_#_(_:_(loop@-@ScenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,LOOP@-@SCENARIOBEHAVIOUR@scBeh@ATT:OCL-Type),_:_(actions@-@ScenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,ACTIONS@-@SCENARIOBEHAVIOUR@scBeh@ATT:OCL-Type),scBeh@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(stop:OCL-Type,PCMUSAGEMODELSTOP@PCMFLATTEN@stop@CLASS:PCMusagemodelStop@pcmflatten,_#_(_:_(scenarioBehaviour@-@AbstractUserAction@PCMusagemodelAbstractUserAction@pcmflatten,SCENARIOBEHAVIOUR@-@ABSTRACTUSERACTION@stop@ATT:OCL-Type),_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@stop@ATT:OCL-Type),stop@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(loopT:OCL-Type,TOKENTOKENSUSLOOPTOKEN@PCMFLATTEN@loopT@CLASS:TOKENtokensUSLoopToken@pcmflatten,_#_(_:_(completed@TOKENtokensUSToken@pcmflatten,COMPLETED@loopT@ATT:OCL-Type),_:_(iterations@TOKENtokensUSLoopToken@pcmflatten,ITERATIONS@loopT@ATT:OCL-Type),_:_(started@TOKENtokensUSLoopToken@pcmflatten,STARTED@loopT@ATT:OCL-Type),loopT@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSUSTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensUSToken@pcmflatten,_#_(_:_(loopToken@TOKENtokensUSToken@pcmflatten,LOOPTOKEN@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(scBeh:OCL-Type,BODYBEHAVIOUR@-@LOOP@loop@ATT:OCL-Type)
+    /\ _in_(stop:OCL-Type,ACTIONS@-@SCENARIOBEHAVIOUR@scBeh@ATT:OCL-Type)
+    /\ _in_(loopT:OCL-Type,TOKEN@stop@ATT:OCL-Type)
+    /\ _in_(t:OCL-Type,TOKEN@loop@ATT:OCL-Type)
+    /\ _in_(loopT:OCL-Type,LOOPTOKEN@t@ATT:OCL-Type)
+    /\ COMPLETED@loopT@ATT:OCL-Type := eval(false,env(_<-_(self,loopT:OCL-Type)),MODEL@:@Model) .
+  
+  ceq [TokenEnterInABranchUM] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(bA:OCL-Type,PCMUSAGEMODELBRANCH@PCMFLATTEN@bA@CLASS:PCMusagemodelBranch@pcmflatten,_#_(_:_(branchTransitions@-@Branch@PCMusagemodelBranch@pcmflatten,BRANCHTRANSITIONS@-@BRANCH@bA@ATT:OCL-Type),_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@bA@ATT:OCL-Type),bA@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(bT:OCL-Type,PCMUSAGEMODELBRANCHTRANSITION@PCMFLATTEN@bT@CLASS:PCMusagemodelBranchTransition@pcmflatten,_#_(_:_(branchedBehaviour@-@BranchTransition@PCMusagemodelBranchTransition@pcmflatten,BRANCHEDBEHAVIOUR@-@BRANCHTRANSITION@bT@ATT:OCL-Type),_:_(branch@-@BranchTransition@PCMusagemodelBranchTransition@pcmflatten,BRANCH@-@BRANCHTRANSITION@bT@ATT:OCL-Type),bT@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(scBeh:OCL-Type,PCMUSAGEMODELSCENARIOBEHAVIOUR@PCMFLATTEN@scBeh@CLASS:PCMusagemodelScenarioBehaviour@pcmflatten,_#_(_:_(actions@-@ScenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,ACTIONS@-@SCENARIOBEHAVIOUR@scBeh@ATT:OCL-Type),_:_(branchTransition@-@ScenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,BRANCHTRANSITION@-@SCENARIOBEHAVIOUR@scBeh@ATT:OCL-Type),scBeh@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(start:OCL-Type,PCMUSAGEMODELSTART@PCMFLATTEN@start@CLASS:PCMusagemodelStart@pcmflatten,_#_(_:_(scenarioBehaviour@-@AbstractUserAction@PCMusagemodelAbstractUserAction@pcmflatten,SCENARIOBEHAVIOUR@-@ABSTRACTUSERACTION@start@ATT:OCL-Type),_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@start@ATT:OCL-Type),start@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSUSTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensUSToken@pcmflatten,_#_(_:_(completed@TOKENtokensUSToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),_:_(prob@TOKENtokensUSToken@pcmflatten,PROB@t@ATT:OCL-Type),_:_(branchNumber@TOKENtokensUSToken@pcmflatten,BRANCHNUMBER@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
+    = 0
+    if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(bA:OCL-Type,PCMUSAGEMODELBRANCH@PCMFLATTEN@bA@CLASS:PCMusagemodelBranch@pcmflatten,_#_(_:_(branchTransitions@-@Branch@PCMusagemodelBranch@pcmflatten,BRANCHTRANSITIONS@-@BRANCH@bA@ATT:OCL-Type),_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@bA@ATT:OCL-Type),bA@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(bT:OCL-Type,PCMUSAGEMODELBRANCHTRANSITION@PCMFLATTEN@bT@CLASS:PCMusagemodelBranchTransition@pcmflatten,_#_(_:_(branchedBehaviour@-@BranchTransition@PCMusagemodelBranchTransition@pcmflatten,BRANCHEDBEHAVIOUR@-@BRANCHTRANSITION@bT@ATT:OCL-Type),_:_(branch@-@BranchTransition@PCMusagemodelBranchTransition@pcmflatten,BRANCH@-@BRANCHTRANSITION@bT@ATT:OCL-Type),bT@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(scBeh:OCL-Type,PCMUSAGEMODELSCENARIOBEHAVIOUR@PCMFLATTEN@scBeh@CLASS:PCMusagemodelScenarioBehaviour@pcmflatten,_#_(_:_(actions@-@ScenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,ACTIONS@-@SCENARIOBEHAVIOUR@scBeh@ATT:OCL-Type),_:_(branchTransition@-@ScenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,BRANCHTRANSITION@-@SCENARIOBEHAVIOUR@scBeh@ATT:OCL-Type),scBeh@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(start:OCL-Type,PCMUSAGEMODELSTART@PCMFLATTEN@start@CLASS:PCMusagemodelStart@pcmflatten,_#_(_:_(scenarioBehaviour@-@AbstractUserAction@PCMusagemodelAbstractUserAction@pcmflatten,SCENARIOBEHAVIOUR@-@ABSTRACTUSERACTION@start@ATT:OCL-Type),_:_(token@PCMusagemodelAbstractUserAction@pcmflatten,TOKEN@start@ATT:OCL-Type),start@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(t:OCL-Type,TOKENTOKENSUSTOKEN@PCMFLATTEN@t@CLASS:TOKENtokensUSToken@pcmflatten,_#_(_:_(completed@TOKENtokensUSToken@pcmflatten,COMPLETED@t@ATT:OCL-Type),_:_(prob@TOKENtokensUSToken@pcmflatten,PROB@t@ATT:OCL-Type),_:_(branchNumber@TOKENtokensUSToken@pcmflatten,BRANCHNUMBER@t@ATT:OCL-Type),t@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ _in_(bT:OCL-Type,BRANCHTRANSITIONS@-@BRANCH@bA@ATT:OCL-Type)
+    /\ _in_(scBeh:OCL-Type,BRANCHEDBEHAVIOUR@-@BRANCHTRANSITION@bT@ATT:OCL-Type)
+    /\ _in_(start:OCL-Type,ACTIONS@-@SCENARIOBEHAVIOUR@scBeh@ATT:OCL-Type)
+    /\ _in_(t:OCL-Type,TOKEN@bA@ATT:OCL-Type)
+    /\ VAR1@:Oid := newId(_+_(VALUE@ids@:Int,6))
+    /\ ind:OCL-Type := eval(_->`indexOf`(_`)(_->`asSequence`(`)(__(bA:OCL-Type,._(branchTransitions@-@Branch@OCLSf))),bT:OCL-Type),env(empty),MODEL@:@Model)
+    /\ COMPLETED@t@ATT:OCL-Type := eval(false,env(_<-_(self,t:OCL-Type)),MODEL@:@Model)
+    /\ eval(_.=._(ind:OCL-Type,__(t:OCL-Type,._(branchNumber@OCLSf))),env(empty),MODEL@:@Model) .
+endm
