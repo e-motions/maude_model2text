@@ -21,7 +21,7 @@ mod @ARCHITECTURECRA@BEHAVIOR@ is
   op f : -> Vid .
   op m1 : -> Vid .
   op m2 : -> Vid .
-  ---- <begin> Operation declarations
+  ---- <end> Operation declarations
    
   ---- <begin> Equations
   eq name(classes@OCLSf)
@@ -58,7 +58,7 @@ mod @ARCHITECTURECRA@BEHAVIOR@ is
     /\ _in_(c1:OCL-Type,ISENCAPSULATEDBY@f@ATT:OCL-Type) .
   
   eq notassigned@assignFeature(OIDSET@:Set,OBJSET@:Set{@Object},MODEL@:@Model)
-    = false .
+    = false [owise] .
   
   ceq [assignFeature] : mte(_`{_`}(MM@:@Metamodel,__(<_:_|_>(f:OCL-Type,FEATURE@ARCHITECTURECRA@f@CLASS:Feature@architectureCRA,_#_(_:_(isEncapsulatedBy@Feature@architectureCRA,ISENCAPSULATEDBY@f@ATT:OCL-Type),f@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(c:OCL-Type,CLASS@ARCHITECTURECRA@c@CLASS:Class@architectureCRA,_#_(_:_(encapsulates@Class@architectureCRA,ENCAPSULATES@c@ATT:OCL-Type),c@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object})))
     = 0
@@ -74,4 +74,23 @@ mod @ARCHITECTURECRA@BEHAVIOR@ is
   eq MAI(_#_(c1:OCL-Type,c2:OCL-Type))
     = _->`sum`(`)(_->`collect_(_->`select_(__(c1:OCL-Type,._(encapsulates@OCLSf)),_|_(f,_.`oclIsTypeOf`(_`)(f,Method@architectureCRA))),_|_(m1,_->`sum`(`)(_->`collect_(_->`select_(__(c2:OCL-Type,._(encapsulates@OCLSf)),_|_(f,_.`oclIsTypeOf`(_`)(f,Method@architectureCRA))),_|_(m2,__(self,._`(_`)(DMM,_#_(m1,m2))))))))) .
   ---- <end> Equations
+   
+  ---- <begin> Rules
+  crl [createClass@Instantaneous] : _`{_`}(MM@:@Metamodel,__(<_:_|_>(cm:OCL-Type,CLASSMODEL@ARCHITECTURECRA@cm@CLASS:ClassModel@architectureCRA,_#_(_:_(classes@ClassModel@architectureCRA,CLASSES@cm@ATT:OCL-Type),cm@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    => readjust(Set`{_`}(mt),nil,_`{_`}(MM@:@Metamodel,__(<_:_|_>(cm:OCL-Type,CLASSMODEL@ARCHITECTURECRA@cm@CLASS:ClassModel@architectureCRA,_#_(_:_(classes@ClassModel@architectureCRA,update(classes@ClassModel@architectureCRA,CLASSES@cm@ATT:OCL-Type,nil,link(c:OCL-Type,null))),cm@SFS:Set{@StructuralFeatureInstance})),complete(<_:_|_>(c:OCL-Type,Class@architectureCRA,empty)),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,_+_(VALUE@rdm@:Int,0))),OBJSET@:Set{@Object},<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,_+_(VALUE@ids@:Int,3))))))
+    if ACTEXEC@:Oid := newId(VALUE@ids@:Int)
+    /\ MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(cm:OCL-Type,CLASSMODEL@ARCHITECTURECRA@cm@CLASS:ClassModel@architectureCRA,_#_(_:_(classes@ClassModel@architectureCRA,CLASSES@cm@ATT:OCL-Type),cm@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ T:OCL-Type := eval(0,env(empty),MODEL@:@Model)
+    /\ OR1@:Oid := newId(_+_(VALUE@ids@:Int,1))
+    /\ c:OCL-Type := newId(_+_(VALUE@ids@:Int,2)) .
+  
+  crl [assignFeature@Instantaneous] : _`{_`}(MM@:@Metamodel,__(<_:_|_>(f:OCL-Type,FEATURE@ARCHITECTURECRA@f@CLASS:Feature@architectureCRA,_#_(_:_(isEncapsulatedBy@Feature@architectureCRA,ISENCAPSULATEDBY@f@ATT:OCL-Type),f@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(c:OCL-Type,CLASS@ARCHITECTURECRA@c@CLASS:Class@architectureCRA,_#_(_:_(encapsulates@Class@architectureCRA,ENCAPSULATES@c@ATT:OCL-Type),c@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    => readjust(Set`{_`}(mt),nil,_`{_`}(MM@:@Metamodel,__(<_:_|_>(f:OCL-Type,FEATURE@ARCHITECTURECRA@f@CLASS:Feature@architectureCRA,_#_(_:_(isEncapsulatedBy@Feature@architectureCRA,update(isEncapsulatedBy@Feature@architectureCRA,ISENCAPSULATEDBY@f@ATT:OCL-Type,nil,link(c:OCL-Type,null))),f@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(c:OCL-Type,CLASS@ARCHITECTURECRA@c@CLASS:Class@architectureCRA,_#_(_:_(encapsulates@Class@architectureCRA,update(encapsulates@Class@architectureCRA,ENCAPSULATES@c@ATT:OCL-Type,nil,link(f:OCL-Type,null))),c@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,_+_(VALUE@rdm@:Int,0))),OBJSET@:Set{@Object},<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,_+_(VALUE@ids@:Int,3))))))
+    if ACTEXEC@:Oid := newId(VALUE@ids@:Int)
+    /\ MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(f:OCL-Type,FEATURE@ARCHITECTURECRA@f@CLASS:Feature@architectureCRA,_#_(_:_(isEncapsulatedBy@Feature@architectureCRA,ISENCAPSULATEDBY@f@ATT:OCL-Type),f@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(c:OCL-Type,CLASS@ARCHITECTURECRA@c@CLASS:Class@architectureCRA,_#_(_:_(encapsulates@Class@architectureCRA,ENCAPSULATES@c@ATT:OCL-Type),c@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
+    /\ T:OCL-Type := eval(0,env(empty),MODEL@:@Model)
+    /\ OR1@:Oid := newId(_+_(VALUE@ids@:Int,1))
+    /\ OR2@:Oid := newId(_+_(VALUE@ids@:Int,2))
+    /\ not_(notassigned@assignFeature(Set`{_`}(_;_(f:OCL-Type,c:OCL-Type)),none,MODEL@:@Model)) .
+  ---- <end> Rules
 endm

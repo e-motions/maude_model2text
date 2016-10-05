@@ -38,7 +38,7 @@ mod @ARCHITECTURECRA@ is
   op functionalDependency@Method@architectureCRA : -> @Reference .
   op isEncapsulatedBy@Feature@architectureCRA : -> @Reference .
   op name@NamedElement@architectureCRA : -> @Attribute .
-  ---- <begin> Operation declarations
+  ---- <end> Operation declarations
    
   ---- <begin> Equations
   eq name(@architectureCRA@)

@@ -32,6 +32,7 @@ import Maude.Module;
 import Maude.ModuleIdModExp;
 import Maude.Operation;
 import Maude.RecTerm;
+import Maude.Rule;
 import Maude.SModule;
 import Maude.Sort;
 import Maude.SubsortRel;
@@ -177,6 +178,12 @@ public class MaudeM2T {
         Iterable<Equation> _filter_6 = Iterables.<Equation>filter(_els_5, Equation.class);
         CharSequence _generateEquations = this.generateEquations(_filter_6);
         _builder.append(_generateEquations, "  ");
+        _builder.newLineIfNotEmpty();
+        _builder.append("  ");
+        EList<ModElement> _els_6 = smod.getEls();
+        Iterable<Rule> _filter_7 = Iterables.<Rule>filter(_els_6, Rule.class);
+        CharSequence _generateRules = this.generateRules(_filter_7);
+        _builder.append(_generateRules, "  ");
         _builder.newLineIfNotEmpty();
         _builder.append("endm");
         _builder.newLine();
@@ -375,7 +382,7 @@ public class MaudeM2T {
       boolean _isEmpty_2 = IterableExtensions.isEmpty(operations);
       boolean _not_2 = (!_isEmpty_2);
       if (_not_2) {
-        _builder.append("---- <begin> Operation declarations");
+        _builder.append("---- <end> Operation declarations");
       }
     }
     _builder.newLineIfNotEmpty();
@@ -387,7 +394,16 @@ public class MaudeM2T {
     {
       for(final String a : list) {
         _builder.append(a, "");
-        _builder.newLineIfNotEmpty();
+        {
+          int _size = list.size();
+          int _minus = (_size - 1);
+          String _get = list.get(_minus);
+          boolean _equals = a.equals(_get);
+          boolean _not = (!_equals);
+          if (_not) {
+            _builder.append(" ");
+          }
+        }
       }
     }
     return _builder;
@@ -491,7 +507,20 @@ public class MaudeM2T {
     EList<Condition> _conds = equation.getConds();
     CharSequence _printConditions = this.printConditions(_conds);
     _builder.append(_printConditions, "  ");
-    _builder.append(" .");
+    _builder.append(" ");
+    {
+      EList<String> _atts = equation.getAtts();
+      boolean _isEmpty = _atts.isEmpty();
+      boolean _not = (!_isEmpty);
+      if (_not) {
+        _builder.append("[");
+        EList<String> _atts_1 = equation.getAtts();
+        CharSequence _printAtts = this.printAtts(_atts_1);
+        _builder.append(_printAtts, "  ");
+        _builder.append("] ");
+      }
+    }
+    _builder.append(".");
     _builder.newLineIfNotEmpty();
     return _builder;
   }
@@ -567,7 +596,20 @@ public class MaudeM2T {
     Term _rhs = equation.getRhs();
     CharSequence _printTerm_1 = this.printTerm(_rhs);
     _builder.append(_printTerm_1, "  ");
-    _builder.append(" .");
+    _builder.append(" ");
+    {
+      EList<String> _atts = equation.getAtts();
+      boolean _isEmpty = _atts.isEmpty();
+      boolean _not = (!_isEmpty);
+      if (_not) {
+        _builder.append("[");
+        EList<String> _atts_1 = equation.getAtts();
+        CharSequence _printAtts = this.printAtts(_atts_1);
+        _builder.append(_printAtts, "  ");
+        _builder.append("] ");
+      }
+    }
+    _builder.append(".");
     _builder.newLineIfNotEmpty();
     return _builder;
   }
@@ -631,6 +673,133 @@ public class MaudeM2T {
     Type _type = variable.getType();
     String _name_1 = _type.getName();
     _builder.append(_name_1, "");
+    return _builder;
+  }
+  
+  public CharSequence generateRules(final Iterable<Rule> rules) {
+    StringConcatenation _builder = new StringConcatenation();
+    {
+      boolean _isEmpty = IterableExtensions.isEmpty(rules);
+      boolean _not = (!_isEmpty);
+      if (_not) {
+        _builder.append(" ");
+        _builder.newLine();
+        _builder.append("---- <begin> Rules");
+      }
+    }
+    _builder.newLineIfNotEmpty();
+    {
+      boolean _hasElements = false;
+      for(final Rule rl : rules) {
+        if (!_hasElements) {
+          _hasElements = true;
+        } else {
+          _builder.appendImmediate("\n", "");
+        }
+        {
+          EList<Condition> _conds = rl.getConds();
+          boolean _isEmpty_1 = _conds.isEmpty();
+          if (_isEmpty_1) {
+            CharSequence _printNoConditionalRule = this.printNoConditionalRule(rl);
+            _builder.append(_printNoConditionalRule, "");
+          } else {
+            CharSequence _printConditionalRule = this.printConditionalRule(rl);
+            _builder.append(_printConditionalRule, "");
+          }
+        }
+      }
+    }
+    _builder.newLineIfNotEmpty();
+    {
+      boolean _isEmpty_2 = IterableExtensions.isEmpty(rules);
+      boolean _not_1 = (!_isEmpty_2);
+      if (_not_1) {
+        _builder.append("---- <end> Rules");
+      }
+    }
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  public CharSequence printNoConditionalRule(final Rule rl) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("rl ");
+    {
+      if (((!Objects.equal(rl.getLabel(), null)) && (!rl.getLabel().equals("")))) {
+        _builder.append("[");
+        String _label = rl.getLabel();
+        _builder.append(_label, "");
+        _builder.append("] : ");
+      }
+    }
+    Term _lhs = rl.getLhs();
+    CharSequence _printTerm = this.printTerm(_lhs);
+    _builder.append(_printTerm, "");
+    _builder.newLineIfNotEmpty();
+    _builder.append("  ");
+    _builder.append("=> ");
+    Term _rhs = rl.getRhs();
+    CharSequence _printTerm_1 = this.printTerm(_rhs);
+    _builder.append(_printTerm_1, "  ");
+    _builder.append(" ");
+    {
+      EList<String> _atts = rl.getAtts();
+      boolean _isEmpty = _atts.isEmpty();
+      boolean _not = (!_isEmpty);
+      if (_not) {
+        _builder.append("[");
+        EList<String> _atts_1 = rl.getAtts();
+        CharSequence _printAtts = this.printAtts(_atts_1);
+        _builder.append(_printAtts, "  ");
+        _builder.append("] ");
+      }
+    }
+    _builder.append(".");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  public CharSequence printConditionalRule(final Rule rl) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("crl ");
+    {
+      if (((!Objects.equal(rl.getLabel(), null)) && (!rl.getLabel().equals("")))) {
+        _builder.append("[");
+        String _label = rl.getLabel();
+        _builder.append(_label, "");
+        _builder.append("] : ");
+      }
+    }
+    Term _lhs = rl.getLhs();
+    CharSequence _printTerm = this.printTerm(_lhs);
+    _builder.append(_printTerm, "");
+    _builder.newLineIfNotEmpty();
+    _builder.append("  ");
+    _builder.append("=> ");
+    Term _rhs = rl.getRhs();
+    CharSequence _printTerm_1 = this.printTerm(_rhs);
+    _builder.append(_printTerm_1, "  ");
+    _builder.newLineIfNotEmpty();
+    _builder.append("  ");
+    _builder.append("if ");
+    EList<Condition> _conds = rl.getConds();
+    CharSequence _printConditions = this.printConditions(_conds);
+    _builder.append(_printConditions, "  ");
+    _builder.append(" ");
+    {
+      EList<String> _atts = rl.getAtts();
+      boolean _isEmpty = _atts.isEmpty();
+      boolean _not = (!_isEmpty);
+      if (_not) {
+        _builder.append("[");
+        EList<String> _atts_1 = rl.getAtts();
+        CharSequence _printAtts = this.printAtts(_atts_1);
+        _builder.append(_printAtts, "  ");
+        _builder.append("] ");
+      }
+    }
+    _builder.append(".");
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
 }

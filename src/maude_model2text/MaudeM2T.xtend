@@ -42,6 +42,7 @@ import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
+import Maude.Rule
 
 class MaudeM2T {
     
@@ -113,6 +114,7 @@ class MaudeM2T {
       «generateSubsortDeclarations(smod.els.filter(typeof(SubsortRel)))»
       «generateOperations(smod.els.filter(typeof(Operation)))»
       «generateEquations(smod.els.filter(typeof(Equation)))»
+      «generateRules(smod.els.filter(typeof(Rule)))»
     endm
     «ENDFOR»
     '''
@@ -175,14 +177,12 @@ class MaudeM2T {
     «FOR op:operations»
     op «op.name» : «printArity(op.arity)»-> «printCoarity(op.coarity)» «IF !op.atts.empty»[«printAtts(op.atts)»] «ENDIF».
     «ENDFOR»
-    «IF !operations.empty»---- <begin> Operation declarations«ENDIF»
+    «IF !operations.empty»---- <end> Operation declarations«ENDIF»
     '''
     
     def printAtts(EList<String> list) '''
     «FOR a : list»
-    «a»
-    «ENDFOR»
-    '''
+    «a»«IF !a.equals(list.get(list.size-1))» «ENDIF»«ENDFOR»'''
     
     
     def printArity(EList<Type> list) '''«FOR t : list SEPARATOR " " AFTER " "»«t.name»«ENDFOR»'''
@@ -201,7 +201,7 @@ class MaudeM2T {
     def printConditionalEq(Equation equation) '''
     ceq «IF equation.label != null && !equation.label.equals("")»[«equation.label»] : «ENDIF»«printTerm(equation.lhs)»
       = «printTerm(equation.rhs)»
-      if «printConditions(equation.conds)» .
+      if «printConditions(equation.conds)» «IF !equation.atts.empty»[«printAtts(equation.atts)»] «ENDIF».
     '''
     
     def printConditions(EList<Condition> conditions) '''«FOR cond : conditions SEPARATOR "\n/\\ "»«printCond(cond)»«ENDFOR»'''
@@ -220,7 +220,7 @@ class MaudeM2T {
     
     def printNoConditionalEq(Equation equation) '''
     eq «IF equation.label != null && !equation.label.equals("")»[«equation.label»] : «ENDIF»«printTerm(equation.lhs)»
-      = «printTerm(equation.rhs)» .
+      = «printTerm(equation.rhs)» «IF !equation.atts.empty»[«printAtts(equation.atts)»] «ENDIF».
     '''
     
     def printTerm(Term term) {
@@ -239,4 +239,23 @@ class MaudeM2T {
     
     def printVariable(Variable variable) '''«variable.name»:«variable.type.name»'''
     
+    def generateRules(Iterable<Rule> rules) '''
+    «IF !rules.empty»
+     
+    ---- <begin> Rules«ENDIF»
+    «FOR rl : rules SEPARATOR "\n"»
+    «IF rl.conds.empty»«printNoConditionalRule(rl)»«ELSE»«printConditionalRule(rl)»«ENDIF»«ENDFOR»
+    «IF !rules.empty»---- <end> Rules«ENDIF»
+    '''
+    
+    def printNoConditionalRule(Rule rl) '''
+    rl «IF rl.label != null && !rl.label.equals("")»[«rl.label»] : «ENDIF»«printTerm(rl.lhs)»
+      => «printTerm(rl.rhs)» «IF !rl.atts.empty»[«printAtts(rl.atts)»] «ENDIF».
+    '''
+    
+    def printConditionalRule(Rule rl) '''
+    crl «IF rl.label != null && !rl.label.equals("")»[«rl.label»] : «ENDIF»«printTerm(rl.lhs)»
+      => «printTerm(rl.rhs)»
+      if «printConditions(rl.conds)» «IF !rl.atts.empty»[«printAtts(rl.atts)»] «ENDIF».
+    '''
 }

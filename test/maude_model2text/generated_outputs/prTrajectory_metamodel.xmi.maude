@@ -29,7 +29,7 @@ mod @DEFAULTNAME@ is
   op y@Arrow@defaultname : -> @Attribute .
   op xspeed@Arrow@defaultname : -> @Attribute .
   op yspeed@Arrow@defaultname : -> @Attribute .
-  ---- <begin> Operation declarations
+  ---- <end> Operation declarations
    
   ---- <begin> Equations
   eq name(@defaultname@)

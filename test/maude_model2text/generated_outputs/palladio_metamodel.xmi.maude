@@ -1047,7 +1047,7 @@ mod @PCMFLATTEN@ is
   op AND@BooleanOperations@pcmflatten : -> BooleanOperations@pcmflatten .
   op OR@BooleanOperations@pcmflatten : -> BooleanOperations@pcmflatten .
   op XOR@BooleanOperations@pcmflatten : -> BooleanOperations@pcmflatten .
-  ---- <begin> Operation declarations
+  ---- <end> Operation declarations
    
   ---- <begin> Equations
   eq name(@pcmflatten@)
