@@ -1,14 +1,12 @@
 mod @ARCHITECTURECRA@BEHAVIOR@ is
-  ---- Importations
+   
+  ---- <begin> Importations
   pr E-MOTIONS .
   pr DISCRETE_TIME .
   pr @ARCHITECTURECRA@ .
-  
-  ---- Sort declarations
-  
-  ---- Subsort declarations
-  
-  ---- Operation declarations
+  ---- <end> Importations
+   
+  ---- <begin> Operation declarations
   op classes@OCLSf : -> @StructuralFeature .
   op features@OCLSf : -> @StructuralFeature .
   op encapsulates@OCLSf : -> @StructuralFeature .
@@ -23,8 +21,9 @@ mod @ARCHITECTURECRA@BEHAVIOR@ is
   op f : -> Vid .
   op m1 : -> Vid .
   op m2 : -> Vid .
-  
-  ---- Equations
+  ---- <begin> Operation declarations
+   
+  ---- <begin> Equations
   eq name(classes@OCLSf)
     = "classes" .
   
@@ -74,4 +73,5 @@ mod @ARCHITECTURECRA@BEHAVIOR@ is
   
   eq MAI(_#_(c1:OCL-Type,c2:OCL-Type))
     = _->`sum`(`)(_->`collect_(_->`select_(__(c1:OCL-Type,._(encapsulates@OCLSf)),_|_(f,_.`oclIsTypeOf`(_`)(f,Method@architectureCRA))),_|_(m1,_->`sum`(`)(_->`collect_(_->`select_(__(c2:OCL-Type,._(encapsulates@OCLSf)),_|_(f,_.`oclIsTypeOf`(_`)(f,Method@architectureCRA))),_|_(m2,__(self,._`(_`)(DMM,_#_(m1,m2))))))))) .
+  ---- <end> Equations
 endm

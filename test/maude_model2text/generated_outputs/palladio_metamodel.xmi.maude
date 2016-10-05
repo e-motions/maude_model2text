@@ -1,8 +1,10 @@
 mod @PCMFLATTEN@ is
-  ---- Importations
+   
+  ---- <begin> Importations
   pr @ECORE@ .
-  
-  ---- Sort declarations
+  ---- <end> Importations
+   
+  ---- <begin> Sort declarations
   sort PCMpcmDummyClass@pcmflatten .
   sort PCMcorePCMRandomVariable@pcmflatten .
   sort PCMentityResourceProvidedRole@pcmflatten .
@@ -206,8 +208,9 @@ mod @PCMFLATTEN@ is
   sort ProductOperations@pcmflatten .
   sort CompareOperations@pcmflatten .
   sort BooleanOperations@pcmflatten .
-  
-  ---- Subsort declarations
+  ---- <end> Sort declarations
+   
+  ---- <begin> Subsort declarations
   subsort PCMpcmDummyClass@pcmflatten < @Class .
   subsort PCMcorePCMRandomVariable@pcmflatten < STOEXstoexRandomVariable@pcmflatten .
   subsort PCMentityResourceProvidedRole@pcmflatten < PCMrepositoryRole@pcmflatten .
@@ -411,8 +414,9 @@ mod @PCMFLATTEN@ is
   subsort ProductOperations@pcmflatten < @EnumerationInstance .
   subsort CompareOperations@pcmflatten < @EnumerationInstance .
   subsort BooleanOperations@pcmflatten < @EnumerationInstance .
-  
-  ---- Operation declarations
+  ---- <end> Subsort declarations
+   
+  ---- <begin> Operation declarations
   op @pcmflatten@ : -> @Metamodel .
   op pcmflatten : -> @Package .
   op PCMpcmDummyClass@pcmflatten : -> PCMpcmDummyClass@pcmflatten .
@@ -1043,8 +1047,9 @@ mod @PCMFLATTEN@ is
   op AND@BooleanOperations@pcmflatten : -> BooleanOperations@pcmflatten .
   op OR@BooleanOperations@pcmflatten : -> BooleanOperations@pcmflatten .
   op XOR@BooleanOperations@pcmflatten : -> BooleanOperations@pcmflatten .
-  
-  ---- Equations
+  ---- <begin> Operation declarations
+   
+  ---- <begin> Equations
   eq name(@pcmflatten@)
     = "pcmflatten" .
   
@@ -15135,4 +15140,5 @@ mod @PCMFLATTEN@ is
   
   eq literals(BooleanOperations@pcmflatten)
     = _#_(AND@BooleanOperations@pcmflatten,OR@BooleanOperations@pcmflatten,XOR@BooleanOperations@pcmflatten) .
+  ---- <end> Equations
 endm

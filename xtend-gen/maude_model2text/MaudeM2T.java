@@ -43,7 +43,7 @@ import com.google.common.collect.Iterables;
 import java.io.PrintWriter;
 import java.util.Map;
 import java.util.Set;
-
+import maude_model2text.Util;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
@@ -149,19 +149,11 @@ public class MaudeM2T {
         _builder.append(" is");
         _builder.newLineIfNotEmpty();
         _builder.append("  ");
-        _builder.append("---- Importations");
-        _builder.newLine();
-        _builder.append("  ");
         EList<ModElement> _els_1 = smod.getEls();
         Iterable<ModImportation> _filter_2 = Iterables.<ModImportation>filter(_els_1, ModImportation.class);
         CharSequence _generateImportations = this.generateImportations(_filter_2);
         _builder.append(_generateImportations, "  ");
         _builder.newLineIfNotEmpty();
-        _builder.append("  ");
-        _builder.newLine();
-        _builder.append("  ");
-        _builder.append("---- Sort declarations");
-        _builder.newLine();
         _builder.append("  ");
         EList<ModElement> _els_2 = smod.getEls();
         Iterable<Sort> _filter_3 = Iterables.<Sort>filter(_els_2, Sort.class);
@@ -169,32 +161,17 @@ public class MaudeM2T {
         _builder.append(_generateSortDeclarations, "  ");
         _builder.newLineIfNotEmpty();
         _builder.append("  ");
-        _builder.newLine();
-        _builder.append("  ");
-        _builder.append("---- Subsort declarations");
-        _builder.newLine();
-        _builder.append("  ");
         EList<ModElement> _els_3 = smod.getEls();
         Iterable<SubsortRel> _filter_4 = Iterables.<SubsortRel>filter(_els_3, SubsortRel.class);
         CharSequence _generateSubsortDeclarations = this.generateSubsortDeclarations(_filter_4);
         _builder.append(_generateSubsortDeclarations, "  ");
         _builder.newLineIfNotEmpty();
         _builder.append("  ");
-        _builder.newLine();
-        _builder.append("  ");
-        _builder.append("---- Operation declarations");
-        _builder.newLine();
-        _builder.append("  ");
         EList<ModElement> _els_4 = smod.getEls();
         Iterable<Operation> _filter_5 = Iterables.<Operation>filter(_els_4, Operation.class);
         CharSequence _generateOperations = this.generateOperations(_filter_5);
         _builder.append(_generateOperations, "  ");
         _builder.newLineIfNotEmpty();
-        _builder.append("  ");
-        _builder.newLine();
-        _builder.append("  ");
-        _builder.append("---- Equations");
-        _builder.newLine();
         _builder.append("  ");
         EList<ModElement> _els_5 = smod.getEls();
         Iterable<Equation> _filter_6 = Iterables.<Equation>filter(_els_5, Equation.class);
@@ -215,6 +192,16 @@ public class MaudeM2T {
    */
   public CharSequence generateImportations(final Iterable<ModImportation> importations) {
     StringConcatenation _builder = new StringConcatenation();
+    {
+      int _size = IterableExtensions.size(importations);
+      boolean _greaterThan = (_size > 0);
+      if (_greaterThan) {
+        _builder.append(" ");
+        _builder.newLine();
+        _builder.append("---- <begin> Importations");
+      }
+    }
+    _builder.newLineIfNotEmpty();
     {
       for(final ModImportation imp : importations) {
         {
@@ -250,6 +237,14 @@ public class MaudeM2T {
         }
       }
     }
+    {
+      int _size_1 = IterableExtensions.size(importations);
+      boolean _greaterThan_1 = (_size_1 > 0);
+      if (_greaterThan_1) {
+        _builder.append("---- <end> Importations");
+      }
+    }
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
   
@@ -261,6 +256,16 @@ public class MaudeM2T {
   public CharSequence generateSortDeclarations(final Iterable<Sort> sorts) {
     StringConcatenation _builder = new StringConcatenation();
     {
+      boolean _isEmpty = IterableExtensions.isEmpty(sorts);
+      boolean _not = (!_isEmpty);
+      if (_not) {
+        _builder.append(" ");
+        _builder.newLine();
+        _builder.append("---- <begin> Sort declarations");
+      }
+    }
+    _builder.newLineIfNotEmpty();
+    {
       for(final Sort sort : sorts) {
         _builder.append("sort ");
         String _name = sort.getName();
@@ -269,6 +274,14 @@ public class MaudeM2T {
         _builder.newLineIfNotEmpty();
       }
     }
+    {
+      boolean _isEmpty_1 = IterableExtensions.isEmpty(sorts);
+      boolean _not_1 = (!_isEmpty_1);
+      if (_not_1) {
+        _builder.append("---- <end> Sort declarations");
+      }
+    }
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
   
@@ -279,6 +292,16 @@ public class MaudeM2T {
    */
   public CharSequence generateSubsortDeclarations(final Iterable<SubsortRel> ssorts) {
     StringConcatenation _builder = new StringConcatenation();
+    {
+      boolean _isEmpty = IterableExtensions.isEmpty(ssorts);
+      boolean _not = (!_isEmpty);
+      if (_not) {
+        _builder.append(" ");
+        _builder.newLine();
+        _builder.append("---- <begin> Subsort declarations");
+      }
+    }
+    _builder.newLineIfNotEmpty();
     {
       for(final SubsortRel ssort : ssorts) {
         _builder.append("subsort ");
@@ -295,11 +318,29 @@ public class MaudeM2T {
         _builder.newLineIfNotEmpty();
       }
     }
+    {
+      boolean _isEmpty_1 = IterableExtensions.isEmpty(ssorts);
+      boolean _not_1 = (!_isEmpty_1);
+      if (_not_1) {
+        _builder.append("---- <end> Subsort declarations");
+      }
+    }
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
   
   public CharSequence generateOperations(final Iterable<Operation> operations) {
     StringConcatenation _builder = new StringConcatenation();
+    {
+      boolean _isEmpty = IterableExtensions.isEmpty(operations);
+      boolean _not = (!_isEmpty);
+      if (_not) {
+        _builder.append(" ");
+        _builder.newLine();
+        _builder.append("---- <begin> Operation declarations");
+      }
+    }
+    _builder.newLineIfNotEmpty();
     {
       for(final Operation op : operations) {
         _builder.append("op ");
@@ -316,9 +357,9 @@ public class MaudeM2T {
         _builder.append(" ");
         {
           EList<String> _atts = op.getAtts();
-          boolean _isEmpty = _atts.isEmpty();
-          boolean _not = (!_isEmpty);
-          if (_not) {
+          boolean _isEmpty_1 = _atts.isEmpty();
+          boolean _not_1 = (!_isEmpty_1);
+          if (_not_1) {
             _builder.append("[");
             EList<String> _atts_1 = op.getAtts();
             CharSequence _printAtts = this.printAtts(_atts_1);
@@ -330,6 +371,14 @@ public class MaudeM2T {
         _builder.newLineIfNotEmpty();
       }
     }
+    {
+      boolean _isEmpty_2 = IterableExtensions.isEmpty(operations);
+      boolean _not_2 = (!_isEmpty_2);
+      if (_not_2) {
+        _builder.append("---- <begin> Operation declarations");
+      }
+    }
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
   
@@ -374,6 +423,16 @@ public class MaudeM2T {
   public CharSequence generateEquations(final Iterable<Equation> equations) {
     StringConcatenation _builder = new StringConcatenation();
     {
+      boolean _isEmpty = IterableExtensions.isEmpty(equations);
+      boolean _not = (!_isEmpty);
+      if (_not) {
+        _builder.append(" ");
+        _builder.newLine();
+        _builder.append("---- <begin> Equations");
+      }
+    }
+    _builder.newLineIfNotEmpty();
+    {
       boolean _hasElements = false;
       for(final Equation eq : equations) {
         if (!_hasElements) {
@@ -383,8 +442,8 @@ public class MaudeM2T {
         }
         {
           EList<Condition> _conds = eq.getConds();
-          boolean _isEmpty = _conds.isEmpty();
-          if (_isEmpty) {
+          boolean _isEmpty_1 = _conds.isEmpty();
+          if (_isEmpty_1) {
             CharSequence _printNoConditionalEq = this.printNoConditionalEq(eq);
             _builder.append(_printNoConditionalEq, "");
           } else {
@@ -392,6 +451,14 @@ public class MaudeM2T {
             _builder.append(_printConditionalEq, "");
           }
         }
+      }
+    }
+    _builder.newLineIfNotEmpty();
+    {
+      boolean _isEmpty_2 = IterableExtensions.isEmpty(equations);
+      boolean _not_1 = (!_isEmpty_2);
+      if (_not_1) {
+        _builder.append("---- <end> Equations");
       }
     }
     _builder.newLineIfNotEmpty();

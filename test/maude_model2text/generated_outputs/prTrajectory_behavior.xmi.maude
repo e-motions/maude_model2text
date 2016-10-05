@@ -1,14 +1,12 @@
 mod @DEFAULTNAME@BEHAVIOR@ is
-  ---- Importations
+   
+  ---- <begin> Importations
   pr E-MOTIONS .
   pr DENSE_TIME .
   pr @DEFAULTNAME@ .
-  
-  ---- Sort declarations
-  
-  ---- Subsort declarations
-  
-  ---- Operation declarations
+  ---- <end> Importations
+   
+  ---- <begin> Operation declarations
   op trajectory@OCLSf : -> @StructuralFeature .
   op x@OCLSf : -> @StructuralFeature .
   op y@OCLSf : -> @StructuralFeature .
@@ -19,8 +17,9 @@ mod @DEFAULTNAME@BEHAVIOR@ is
   op currentExec@Move : Set @Model -> Bool .
   op noarrow@Initial : Set Set{@Object} @Model -> Bool .
   op alreadyTrigInPeriod@Snapshot : Set @Model Time Time -> Bool .
-  
-  ---- Equations
+  ---- <begin> Operation declarations
+   
+  ---- <begin> Equations
   eq name(trajectory@OCLSf)
     = "trajectory" .
   
@@ -84,4 +83,5 @@ mod @DEFAULTNAME@BEHAVIOR@ is
     if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(a:OCL-Type,ARROW@DEFAULTNAME@a@CLASS:Arrow@defaultname,a@SFS:Set{@StructuralFeatureInstance}),<_:_|_>(c:OCL-Type,CAMERA@DEFAULTNAME@c@CLASS:Camera@defaultname,_#_(_:_(trajectory@Camera@defaultname,TRAJECTORY@c@ATT:OCL-Type),c@SFS:Set{@StructuralFeatureInstance})),<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
     /\ not_(alreadyTrigInPeriod@Snapshot(Set`{_`}(_;_(a:OCL-Type,c:OCL-Type)),MODEL@:@Model,TIME@CLK@:Time,toRat(0.5)))
     /\ multiple(TIME@CLK@:Time,toRat(0.5)) .
+  ---- <end> Equations
 endm

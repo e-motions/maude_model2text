@@ -37,7 +37,6 @@ import Maude.Term
 import Maude.Type
 import Maude.Variable
 import java.io.PrintWriter
-import maude_model2text.Main.Util
 import org.eclipse.emf.common.util.EList
 import org.eclipse.emf.common.util.URI
 import org.eclipse.emf.ecore.resource.Resource
@@ -109,19 +108,10 @@ class MaudeM2T {
     def generateCode(MaudeSpec mspec) '''
     «FOR smod:mspec.els.filter(typeof(SModule)).filter[Module m | !Util.skippedModules().contains(m.name)]»
     mod «smod.name» is
-      ---- Importations
       «generateImportations(smod.els.filter(typeof(ModImportation)))»
-      
-      ---- Sort declarations
       «generateSortDeclarations(smod.els.filter(typeof(Sort)))»
-      
-      ---- Subsort declarations
       «generateSubsortDeclarations(smod.els.filter(typeof(SubsortRel)))»
-      
-      ---- Operation declarations
       «generateOperations(smod.els.filter(typeof(Operation)))»
-      
-      ---- Equations
       «generateEquations(smod.els.filter(typeof(Equation)))»
     endm
     «ENDFOR»
@@ -133,6 +123,9 @@ class MaudeM2T {
      *  mod    the Module with none or more ModImportation objects
      */
     def generateImportations(Iterable<ModImportation> importations) '''
+    «IF importations.size > 0»
+     
+    ---- <begin> Importations«ENDIF»
     «FOR imp:importations»
     «IF imp.mode == ImportationMode.PROTECTING && imp.imports instanceof ModuleIdModExp»
     pr «(imp.imports as ModuleIdModExp).module.name» .
@@ -142,6 +135,7 @@ class MaudeM2T {
     ext «(imp.imports as ModuleIdModExp).module.name» .
     «ENDIF»
     «ENDFOR»
+    «IF importations.size > 0»---- <end> Importations«ENDIF»
     '''
     
     /**
@@ -150,9 +144,13 @@ class MaudeM2T {
      *  mod    the Module with none or more sort objects
      */
     def generateSortDeclarations(Iterable<Sort> sorts) '''
+    «IF !sorts.empty»
+     
+    ---- <begin> Sort declarations«ENDIF»
     «FOR sort:sorts»
     sort «sort.name» .
     «ENDFOR»
+    «IF !sorts.empty»---- <end> Sort declarations«ENDIF»
     '''
     
     /**
@@ -161,15 +159,23 @@ class MaudeM2T {
      *  mod    the Module with none or more sort objects
      */
     def generateSubsortDeclarations(Iterable<SubsortRel> ssorts) '''
+    «IF !ssorts.empty»
+     
+    ---- <begin> Subsort declarations«ENDIF»
     «FOR ssort:ssorts»
     subsort «ssort.subsorts.get(0).name» < «ssort.supersorts.get(0).name» .
     «ENDFOR»
+    «IF !ssorts.empty»---- <end> Subsort declarations«ENDIF»
     '''
     
     def generateOperations(Iterable<Operation> operations) '''
+    «IF !operations.empty»
+     
+    ---- <begin> Operation declarations«ENDIF»
     «FOR op:operations»
     op «op.name» : «printArity(op.arity)»-> «printCoarity(op.coarity)» «IF !op.atts.empty»[«printAtts(op.atts)»] «ENDIF».
     «ENDFOR»
+    «IF !operations.empty»---- <begin> Operation declarations«ENDIF»
     '''
     
     def printAtts(EList<String> list) '''
@@ -184,8 +190,12 @@ class MaudeM2T {
     def printCoarity(Type type) '''«type.name»'''
     
     def generateEquations(Iterable<Equation> equations) '''
+    «IF !equations.empty»
+     
+    ---- <begin> Equations«ENDIF»
     «FOR eq : equations SEPARATOR "\n"»
     «IF eq.conds.empty»«printNoConditionalEq(eq)»«ELSE»«printConditionalEq(eq)»«ENDIF»«ENDFOR»
+    «IF !equations.empty»---- <end> Equations«ENDIF»
     '''
     
     def printConditionalEq(Equation equation) '''

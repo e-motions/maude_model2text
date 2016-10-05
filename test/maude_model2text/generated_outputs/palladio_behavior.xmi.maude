@@ -1,14 +1,12 @@
 mod @PCMFLATTEN@BEHAVIOR@ is
-  ---- Importations
+   
+  ---- <begin> Importations
   pr E-MOTIONS .
   pr DISCRETE_TIME .
   pr @PCMFLATTEN@ .
-  
-  ---- Sort declarations
-  
-  ---- Subsort declarations
-  
-  ---- Operation declarations
+  ---- <end> Importations
+   
+  ---- <begin> Operation declarations
   op closedWorkload@-@PCMRandomVariable@OCLSf : -> @StructuralFeature .
   op passiveResource@-@capacity@-@PCMRandomVariable@OCLSf : -> @StructuralFeature .
   op variableCharacterisation@-@Specification@OCLSf : -> @StructuralFeature .
@@ -408,8 +406,9 @@ mod @PCMFLATTEN@BEHAVIOR@ is
   op v : -> Vid .
   op i : -> Vid .
   op S : -> Vid .
-  
-  ---- Equations
+  ---- <begin> Operation declarations
+   
+  ---- <begin> Equations
   eq name(closedWorkload@-@PCMRandomVariable@OCLSf)
     = "closedWorkload_PCMRandomVariable" .
   
@@ -1924,4 +1923,5 @@ mod @PCMFLATTEN@BEHAVIOR@ is
     /\ ind:OCL-Type := eval(_->`indexOf`(_`)(_->`asSequence`(`)(__(bA:OCL-Type,._(branchTransitions@-@Branch@OCLSf))),bT:OCL-Type),env(empty),MODEL@:@Model)
     /\ COMPLETED@t@ATT:OCL-Type := eval(false,env(_<-_(self,t:OCL-Type)),MODEL@:@Model)
     /\ eval(_.=._(ind:OCL-Type,__(t:OCL-Type,._(branchNumber@OCLSf))),env(empty),MODEL@:@Model) .
+  ---- <end> Equations
 endm

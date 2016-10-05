@@ -1,24 +1,28 @@
 mod @ARCHITECTURECRA@ is
-  ---- Importations
+   
+  ---- <begin> Importations
   pr @ECORE@ .
-  
-  ---- Sort declarations
+  ---- <end> Importations
+   
+  ---- <begin> Sort declarations
   sort ClassModel@architectureCRA .
   sort Class@architectureCRA .
   sort Attribute@architectureCRA .
   sort Method@architectureCRA .
   sort Feature@architectureCRA .
   sort NamedElement@architectureCRA .
-  
-  ---- Subsort declarations
+  ---- <end> Sort declarations
+   
+  ---- <begin> Subsort declarations
   subsort ClassModel@architectureCRA < NamedElement@architectureCRA .
   subsort Class@architectureCRA < NamedElement@architectureCRA .
   subsort Attribute@architectureCRA < Feature@architectureCRA .
   subsort Method@architectureCRA < Feature@architectureCRA .
   subsort Feature@architectureCRA < NamedElement@architectureCRA .
   subsort NamedElement@architectureCRA < @Class .
-  
-  ---- Operation declarations
+  ---- <end> Subsort declarations
+   
+  ---- <begin> Operation declarations
   op @architectureCRA@ : -> @Metamodel .
   op architectureCRA : -> @Package .
   op ClassModel@architectureCRA : -> ClassModel@architectureCRA .
@@ -34,8 +38,9 @@ mod @ARCHITECTURECRA@ is
   op functionalDependency@Method@architectureCRA : -> @Reference .
   op isEncapsulatedBy@Feature@architectureCRA : -> @Reference .
   op name@NamedElement@architectureCRA : -> @Attribute .
-  
-  ---- Equations
+  ---- <begin> Operation declarations
+   
+  ---- <begin> Equations
   eq name(@architectureCRA@)
     = "architectureCRA" .
   
@@ -350,4 +355,5 @@ mod @ARCHITECTURECRA@ is
   
   eq isUnique(name@NamedElement@architectureCRA)
     = true .
+  ---- <end> Equations
 endm

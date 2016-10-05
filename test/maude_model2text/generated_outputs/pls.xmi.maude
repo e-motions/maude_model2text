@@ -1,14 +1,12 @@
 mod @DEVSMM@BEHAVIOR@ is
-  ---- Importations
+   
+  ---- <begin> Importations
   pr E-MOTIONS .
   pr DISCRETE_TIME .
   pr @DEVSMM@ .
-  
-  ---- Sort declarations
-  
-  ---- Subsort declarations
-  
-  ---- Operation declarations
+  ---- <end> Importations
+   
+  ---- <begin> Operation declarations
   op els@OCLSf : -> @StructuralFeature .
   op xPos@OCLSf : -> @StructuralFeature .
   op yPos@OCLSf : -> @StructuralFeature .
@@ -32,8 +30,9 @@ mod @DEVSMM@BEHAVIOR@ is
   op currentExec@Collect : Set @Model -> Bool .
   op e : -> Vid .
   op nac@InitialRule : Set Set{@Object} @Model -> Bool .
-  
-  ---- Equations
+  ---- <begin> Operation declarations
+   
+  ---- <begin> Equations
   eq name(els@OCLSf)
     = "els" .
   
@@ -192,4 +191,5 @@ mod @DEVSMM@BEHAVIOR@ is
     = 0
     if MODEL@:@Model := _`{_`}(MM@:@Metamodel,__(<_:_|_>(CLK@:Oid,Clock@MGBehavior,_:_(time@Clock@MGBehavior,TIME@CLK@:Time)),<_:_|_>(oid('ids@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@ids@:Int)),<_:_|_>(oid('rdm@),Counter@MGBehavior,_:_(value@Counter@MGBehavior,VALUE@rdm@:Int)),OBJSET@:Set{@Object}))
     /\ not_(nac@InitialRule(Set`{_`}(mt),none,MODEL@:@Model)) .
+  ---- <end> Equations
 endm

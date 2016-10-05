@@ -1,18 +1,22 @@
 mod @DEFAULTNAME@ is
-  ---- Importations
+   
+  ---- <begin> Importations
   pr @ECORE@ .
-  
-  ---- Sort declarations
+  ---- <end> Importations
+   
+  ---- <begin> Sort declarations
   sort Camera@defaultname .
   sort Position@defaultname .
   sort Arrow@defaultname .
-  
-  ---- Subsort declarations
+  ---- <end> Sort declarations
+   
+  ---- <begin> Subsort declarations
   subsort Camera@defaultname < @Class .
   subsort Position@defaultname < @Class .
   subsort Arrow@defaultname < @Class .
-  
-  ---- Operation declarations
+  ---- <end> Subsort declarations
+   
+  ---- <begin> Operation declarations
   op @defaultname@ : -> @Metamodel .
   op defaultname : -> @Package .
   op Camera@defaultname : -> Camera@defaultname .
@@ -25,8 +29,9 @@ mod @DEFAULTNAME@ is
   op y@Arrow@defaultname : -> @Attribute .
   op xspeed@Arrow@defaultname : -> @Attribute .
   op yspeed@Arrow@defaultname : -> @Attribute .
-  
-  ---- Equations
+  ---- <begin> Operation declarations
+   
+  ---- <begin> Equations
   eq name(@defaultname@)
     = "defaultname" .
   
@@ -272,4 +277,5 @@ mod @DEFAULTNAME@ is
   
   eq isUnique(yspeed@Arrow@defaultname)
     = true .
+  ---- <end> Equations
 endm
