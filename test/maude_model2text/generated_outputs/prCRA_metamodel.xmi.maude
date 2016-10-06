@@ -60,7 +60,8 @@ mod @ARCHITECTURECRA@ is
     = nil .
   
   eq classes(architectureCRA)
-    = __(ClassModel@architectureCRA,Class@architectureCRA,Attribute@architectureCRA,Method@architectureCRA,Feature@architectureCRA,NamedElement@architectureCRA) .
+    = 
+        __(ClassModel@architectureCRA,Class@architectureCRA,Attribute@architectureCRA,Method@architectureCRA,Feature@architectureCRA,NamedElement@architectureCRA) .
   
   eq name(ClassModel@architectureCRA)
     = "ClassModel" .
@@ -75,7 +76,8 @@ mod @ARCHITECTURECRA@ is
     = NamedElement@architectureCRA .
   
   eq references(ClassModel@architectureCRA)
-    = __(classes@ClassModel@architectureCRA,features@ClassModel@architectureCRA) .
+    = 
+        __(classes@ClassModel@architectureCRA,features@ClassModel@architectureCRA) .
   
   eq attributes(ClassModel@architectureCRA)
     = nil .
@@ -129,7 +131,8 @@ mod @ARCHITECTURECRA@ is
     = Feature@architectureCRA .
   
   eq references(Method@architectureCRA)
-    = __(dataDependency@Method@architectureCRA,functionalDependency@Method@architectureCRA) .
+    = 
+        __(dataDependency@Method@architectureCRA,functionalDependency@Method@architectureCRA) .
   
   eq attributes(Method@architectureCRA)
     = nil .

@@ -51,7 +51,8 @@ mod @DEFAULTNAME@ is
     = nil .
   
   eq classes(defaultname)
-    = __(Camera@defaultname,Position@defaultname,Arrow@defaultname) .
+    = 
+        __(Camera@defaultname,Position@defaultname,Arrow@defaultname) .
   
   eq name(Camera@defaultname)
     = "Camera" .
@@ -87,7 +88,8 @@ mod @DEFAULTNAME@ is
     = nil .
   
   eq attributes(Position@defaultname)
-    = __(x@Position@defaultname,y@Position@defaultname) .
+    = 
+        __(x@Position@defaultname,y@Position@defaultname) .
   
   eq name(Arrow@defaultname)
     = "Arrow" .
@@ -105,7 +107,8 @@ mod @DEFAULTNAME@ is
     = nil .
   
   eq attributes(Arrow@defaultname)
-    = __(x@Arrow@defaultname,y@Arrow@defaultname,xspeed@Arrow@defaultname,yspeed@Arrow@defaultname) .
+    = 
+        __(x@Arrow@defaultname,y@Arrow@defaultname,xspeed@Arrow@defaultname,yspeed@Arrow@defaultname) .
   
   eq name(trajectory@Camera@defaultname)
     = "trajectory" .

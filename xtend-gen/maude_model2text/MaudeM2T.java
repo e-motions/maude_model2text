@@ -44,6 +44,7 @@ import com.google.common.collect.Iterables;
 import java.io.PrintWriter;
 import java.util.Map;
 import java.util.Set;
+import maude_model2text.MaudeOperators;
 import maude_model2text.Util;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
@@ -636,8 +637,29 @@ public class MaudeM2T {
   
   public CharSequence printRecTerm(final RecTerm rt) {
     StringConcatenation _builder = new StringConcatenation();
-    String _op = rt.getOp();
-    _builder.append(_op, "");
+    {
+      String _op = rt.getOp();
+      boolean _equals = _op.equals(MaudeOperators.MODEL);
+      if (_equals) {
+        _builder.append("\n  ", "");
+      } else {
+        String _op_1 = rt.getOp();
+        boolean _equals_1 = _op_1.equals(MaudeOperators.SET);
+        if (_equals_1) {
+          _builder.append("\n    ", "");
+        } else {
+          if ((rt.getOp().equals(MaudeOperators.OBJECT) || rt.getOp().equals(MaudeOperators.COMPLETE))) {
+            _builder.append("\n    ", "");
+          } else {
+            if ((rt.getOp().equals(MaudeOperators.SET_SF) || rt.getOp().equals(MaudeOperators.SF))) {
+              _builder.append("\n      ", "");
+            }
+          }
+        }
+      }
+    }
+    String _op_2 = rt.getOp();
+    _builder.append(_op_2, "");
     {
       EList<Term> _args = rt.getArgs();
       boolean _hasElements = false;
@@ -667,12 +689,27 @@ public class MaudeM2T {
   
   public CharSequence printVariable(final Variable variable) {
     StringConcatenation _builder = new StringConcatenation();
-    String _name = variable.getName();
-    _builder.append(_name, "");
+    {
+      Type _type = variable.getType();
+      String _name = _type.getName();
+      boolean _equals = _name.equals("Set{@StructuralFeatureInstance}");
+      if (_equals) {
+        _builder.append("\n      ", "");
+      } else {
+        Type _type_1 = variable.getType();
+        String _name_1 = _type_1.getName();
+        boolean _equals_1 = _name_1.equals("Set{@Object}");
+        if (_equals_1) {
+          _builder.append("\n    ", "");
+        }
+      }
+    }
+    String _name_2 = variable.getName();
+    _builder.append(_name_2, "");
     _builder.append(":");
-    Type _type = variable.getType();
-    String _name_1 = _type.getName();
-    _builder.append(_name_1, "");
+    Type _type_2 = variable.getType();
+    String _name_3 = _type_2.getName();
+    _builder.append(_name_3, "");
     return _builder;
   }
   

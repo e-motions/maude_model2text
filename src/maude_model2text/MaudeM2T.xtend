@@ -233,11 +233,18 @@ class MaudeM2T {
         }
     }
     
-    def printRecTerm(RecTerm rt) '''«rt.op»«FOR t : rt.args BEFORE "(" SEPARATOR "," AFTER ")"»«printTerm(t as Term)»«ENDFOR»'''
+    def printRecTerm(RecTerm rt) '''
+    «IF rt.op.equals(MaudeOperators.MODEL)
+     »«"\n  "»«
+    ELSEIF rt.op.equals(MaudeOperators.SET)»«"\n    "
+    »«ELSEIF rt.op.equals(MaudeOperators.OBJECT) ||  rt.op.equals(MaudeOperators.COMPLETE)»«"\n    "
+    »«ELSEIF rt.op.equals(MaudeOperators.SET_SF) ||  rt.op.equals(MaudeOperators.SF)»«"\n      "
+    »«ENDIF»«rt.op»«FOR t : rt.args BEFORE "(" SEPARATOR "," AFTER ")"»«printTerm(t as Term)»«ENDFOR»'''
 
     def printConstant(Constant constant) '''«constant.op»'''
     
-    def printVariable(Variable variable) '''«variable.name»:«variable.type.name»'''
+    def printVariable(Variable variable) '''«IF variable.type.name.equals("Set{@StructuralFeatureInstance}")»«"\n      "
+    »«ELSEIF variable.type.name.equals("Set{@Object}")»«"\n    "»«ENDIF»«variable.name»:«variable.type.name»'''
     
     def generateRules(Iterable<Rule> rules) '''
     «IF !rules.empty»

@@ -1069,7 +1069,8 @@ mod @PCMFLATTEN@ is
     = nil .
   
   eq classes(pcmflatten)
-    = __(PCMpcmDummyClass@pcmflatten,PCMcorePCMRandomVariable@pcmflatten,PCMentityResourceProvidedRole@pcmflatten,PCMentityInterfaceProvidingRequiringEntity@pcmflatten,PCMentityInterfaceProvidingEntity@pcmflatten,PCMentityInterfaceRequiringEntity@pcmflatten,PCMentityResourceInterfaceRequiringEntity@pcmflatten,PCMentityResourceRequiredRole@pcmflatten,PCMentityResourceInterfaceProvidingEntity@pcmflatten,PCMentityComposedProvidingRequiringEntity@pcmflatten,PCMentityNamedElement@pcmflatten,PCMentityResourceInterfaceProvidingRequiringEntity@pcmflatten,PCMentityEntity@pcmflatten,PCMcompositionDelegationConnector@pcmflatten,PCMcompositionConnector@pcmflatten,PCMcompositionComposedStructure@pcmflatten,PCMcompositionResourceRequiredDelegationConnector@pcmflatten,PCMcompositionEventChannel@pcmflatten,PCMcompositionEventChannelSourceConnector@pcmflatten,PCMcompositionEventChannelSinkConnector@pcmflatten,PCMcompositionProvidedDelegationConnector@pcmflatten,PCMcompositionRequiredDelegationConnector@pcmflatten,PCMcompositionAssemblyConnector@pcmflatten,PCMcompositionAssemblyEventConnector@pcmflatten,PCMcompositionSourceDelegationConnector@pcmflatten,PCMcompositionSinkDelegationConnector@pcmflatten,PCMcompositionAssemblyInfrastructureConnector@pcmflatten,PCMcompositionProvidedInfrastructureDelegationConnector@pcmflatten,PCMcompositionRequiredInfrastructureDelegationConnector@pcmflatten,PCMcompositionRequiredResourceDelegationConnector@pcmflatten,PCMcompositionAssemblyContext@pcmflatten,PCMusagemodelWorkload@pcmflatten,PCMusagemodelUsageScenario@pcmflatten,PCMusagemodelUserData@pcmflatten,PCMusagemodelUsageModel@pcmflatten,PCMusagemodelEntryLevelSystemCall@pcmflatten,PCMusagemodelAbstractUserAction@pcmflatten,PCMusagemodelScenarioBehaviour@pcmflatten,PCMusagemodelBranchTransition@pcmflatten,PCMusagemodelBranch@pcmflatten,PCMusagemodelLoop@pcmflatten,PCMusagemodelStop@pcmflatten,PCMusagemodelStart@pcmflatten,PCMusagemodelOpenWorkload@pcmflatten,PCMusagemodelDelay@pcmflatten,PCMusagemodelClosedWorkload@pcmflatten,PCMrepositoryPassiveResource@pcmflatten,PCMrepositoryBasicComponent@pcmflatten,PCMrepositoryImplementationComponentType@pcmflatten,PCMrepositoryRepositoryComponent@pcmflatten,PCMrepositoryProvidedRole@pcmflatten,PCMrepositoryParameter@pcmflatten,PCMrepositoryDataType@pcmflatten,PCMrepositoryRepository@pcmflatten,PCMrepositoryInterface@pcmflatten,PCMrepositoryRequiredCharacterisation@pcmflatten,PCMrepositoryEventGroup@pcmflatten,PCMrepositoryEventType@pcmflatten,PCMrepositorySignature@pcmflatten,PCMrepositoryExceptionType@pcmflatten,PCMrepositoryInfrastructureSignature@pcmflatten,PCMrepositoryInfrastructureInterface@pcmflatten,PCMrepositoryInfrastructureRequiredRole@pcmflatten,PCMrepositoryRequiredRole@pcmflatten,PCMrepositoryOperationSignature@pcmflatten,PCMrepositoryOperationInterface@pcmflatten,PCMrepositoryOperationRequiredRole@pcmflatten,PCMrepositorySourceRole@pcmflatten,PCMrepositorySinkRole@pcmflatten,PCMrepositoryOperationProvidedRole@pcmflatten,PCMrepositoryInfrastructureProvidedRole@pcmflatten,PCMrepositoryCompleteComponentType@pcmflatten,PCMrepositoryProvidesComponentType@pcmflatten,PCMrepositoryCompositeComponent@pcmflatten,PCMrepositoryPrimitiveDataType@pcmflatten,PCMrepositoryCollectionDataType@pcmflatten,PCMrepositoryCompositeDataType@pcmflatten,PCMrepositoryInnerDeclaration@pcmflatten,PCMrepositoryRole@pcmflatten,PCMresourcetypeResourceSignature@pcmflatten,PCMresourcetypeProcessingResourceType@pcmflatten,PCMresourcetypeResourceType@pcmflatten,PCMresourcetypeResourceRepository@pcmflatten,PCMresourcetypeSchedulingPolicy@pcmflatten,PCMresourcetypeCommunicationLinkResourceType@pcmflatten,PCMresourcetypeResourceInterface@pcmflatten,PCMprotocolProtocol@pcmflatten,PCMparameterVariableUsage@pcmflatten,PCMparameterVariableCharacterisation@pcmflatten,PCMparameterCharacterisedVariable@pcmflatten,PCMreliabilityFailureOccurrenceDescription@pcmflatten,PCMreliabilityHardwareInducedFailureType@pcmflatten,PCMreliabilitySoftwareInducedFailureType@pcmflatten,PCMreliabilityInternalFailureOccurrenceDescription@pcmflatten,PCMreliabilityNetworkInducedFailureType@pcmflatten,PCMreliabilityExternalFailureOccurrenceDescription@pcmflatten,PCMreliabilityResourceTimeoutFailureType@pcmflatten,PCMreliabilityFailureType@pcmflatten,PCMseffStopAction@pcmflatten,PCMseffAbstractInternalControlFlowAction@pcmflatten,PCMseffAbstractAction@pcmflatten,PCMseffResourceDemandingBehaviour@pcmflatten,PCMseffAbstractLoopAction@pcmflatten,PCMseffAbstractBranchTransition@pcmflatten,PCMseffBranchAction@pcmflatten,PCMseffCallAction@pcmflatten,PCMseffStartAction@pcmflatten,PCMseffServiceEffectSpecification@pcmflatten,PCMseffResourceDemandingSEFF@pcmflatten,PCMseffResourceDemandingInternalBehaviour@pcmflatten,PCMseffReleaseAction@pcmflatten,PCMseffLoopAction@pcmflatten,PCMseffForkAction@pcmflatten,PCMseffForkedBehaviour@pcmflatten,PCMseffSynchronisationPoint@pcmflatten,PCMseffExternalCallAction@pcmflatten,PCMseffCallReturnAction@pcmflatten,PCMseffProbabilisticBranchTransition@pcmflatten,PCMseffAcquireAction@pcmflatten,PCMseffCollectionIteratorAction@pcmflatten,PCMseffGuardedBranchTransition@pcmflatten,PCMseffSetVariableAction@pcmflatten,PCMseffInternalCallAction@pcmflatten,PCMseffEmitEventAction@pcmflatten,PCMseffInternalAction@pcmflatten,PCMseff@-@performanceInfrastructureCall@pcmflatten,PCMseff@-@performanceResourceCall@pcmflatten,PCMseffperformanceParametricResourceDemand@pcmflatten,PCMseff@-@reliabilityRecoveryActionBehaviour@pcmflatten,PCMseff@-@reliabilityRecoveryAction@pcmflatten,PCMseff@-@reliabilityFailureHandlingEntity@pcmflatten,PCMqosannotationsSpecifiedQoSAnnotation@pcmflatten,PCMqosannotationsQoSAnnotations@pcmflatten,PCMqosannotationsSpecifiedOutputParameterAbstraction@pcmflatten,PCMqos@-@performanceSystemSpecifiedExecutionTime@pcmflatten,PCMqos@-@performanceSpecifiedExecutionTime@pcmflatten,PCMqos@-@performanceComponentSpecifiedExecutionTime@pcmflatten,PCMqos@-@reliabilitySpecifiedReliabilityAnnotation@pcmflatten,PCMsystemSystem@pcmflatten,PCMresourceenvironmentResourceEnvironment@pcmflatten,PCMresourceenvironmentLinkingResource@pcmflatten,PCMresourceenvironmentResourceContainer@pcmflatten,PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,PCMresourceenvironmentCommunicationLinkResourceSpecification@pcmflatten,PCMallocationAllocationContext@pcmflatten,PCMallocationAllocation@pcmflatten,PCMsubsystemSubSystem@pcmflatten,STOEXstoexVariableReference@pcmflatten,STOEXstoexAbstractNamedReference@pcmflatten,STOEXstoexNamespaceReference@pcmflatten,STOEXstoexVariable@pcmflatten,STOEXstoexAtom@pcmflatten,STOEXstoexUnary@pcmflatten,STOEXstoexPower@pcmflatten,STOEXstoexProduct@pcmflatten,STOEXstoexTerm@pcmflatten,STOEXstoexComparison@pcmflatten,STOEXstoexBooleanExpression@pcmflatten,STOEXstoexIfElse@pcmflatten,STOEXstoexExpression@pcmflatten,STOEXstoexTermExpression@pcmflatten,STOEXstoexProductExpression@pcmflatten,STOEXstoexProbabilityFunctionLiteral@pcmflatten,STOEXstoexParenthesis@pcmflatten,STOEXstoexNumericLiteral@pcmflatten,STOEXstoexIntLiteral@pcmflatten,STOEXstoexDoubleLiteral@pcmflatten,STOEXstoexCompareExpression@pcmflatten,STOEXstoexBoolLiteral@pcmflatten,STOEXstoexStringLiteral@pcmflatten,STOEXstoexPowerExpression@pcmflatten,STOEXstoexBooleanOperatorExpression@pcmflatten,STOEXstoexNotExpression@pcmflatten,STOEXstoexNegativeExpression@pcmflatten,STOEXstoexFunctionLiteral@pcmflatten,STOEXstoexIfElseExpression@pcmflatten,STOEXstoexRandomVariable@pcmflatten,UNITSunitsBaseUnit@pcmflatten,UNITSunitsUnitRepository@pcmflatten,UNITSunitsUnit@pcmflatten,UNITSunitsUnitMultiplication@pcmflatten,UNITSunitsUnitPower@pcmflatten,UNITSunitsUnitLiteral@pcmflatten,UNITSunitsUnitCarryingElement@pcmflatten,IDENTIFIERidentifierIdentifier@pcmflatten,TOKENtokensUSToken@pcmflatten,TOKENtokensRETURNVar@pcmflatten,TOKENtokensSEFFToken@pcmflatten,TOKENtokensUSLoopToken@pcmflatten,TOKENtokensSEFFLoopToken@pcmflatten,TOKENtokensTokenProb@pcmflatten,TOKENtokensSandTimer@pcmflatten,ObTimeStamp@pcmflatten,ObResponseTime@pcmflatten,ObThroughPut@pcmflatten) .
+    = 
+        __(PCMpcmDummyClass@pcmflatten,PCMcorePCMRandomVariable@pcmflatten,PCMentityResourceProvidedRole@pcmflatten,PCMentityInterfaceProvidingRequiringEntity@pcmflatten,PCMentityInterfaceProvidingEntity@pcmflatten,PCMentityInterfaceRequiringEntity@pcmflatten,PCMentityResourceInterfaceRequiringEntity@pcmflatten,PCMentityResourceRequiredRole@pcmflatten,PCMentityResourceInterfaceProvidingEntity@pcmflatten,PCMentityComposedProvidingRequiringEntity@pcmflatten,PCMentityNamedElement@pcmflatten,PCMentityResourceInterfaceProvidingRequiringEntity@pcmflatten,PCMentityEntity@pcmflatten,PCMcompositionDelegationConnector@pcmflatten,PCMcompositionConnector@pcmflatten,PCMcompositionComposedStructure@pcmflatten,PCMcompositionResourceRequiredDelegationConnector@pcmflatten,PCMcompositionEventChannel@pcmflatten,PCMcompositionEventChannelSourceConnector@pcmflatten,PCMcompositionEventChannelSinkConnector@pcmflatten,PCMcompositionProvidedDelegationConnector@pcmflatten,PCMcompositionRequiredDelegationConnector@pcmflatten,PCMcompositionAssemblyConnector@pcmflatten,PCMcompositionAssemblyEventConnector@pcmflatten,PCMcompositionSourceDelegationConnector@pcmflatten,PCMcompositionSinkDelegationConnector@pcmflatten,PCMcompositionAssemblyInfrastructureConnector@pcmflatten,PCMcompositionProvidedInfrastructureDelegationConnector@pcmflatten,PCMcompositionRequiredInfrastructureDelegationConnector@pcmflatten,PCMcompositionRequiredResourceDelegationConnector@pcmflatten,PCMcompositionAssemblyContext@pcmflatten,PCMusagemodelWorkload@pcmflatten,PCMusagemodelUsageScenario@pcmflatten,PCMusagemodelUserData@pcmflatten,PCMusagemodelUsageModel@pcmflatten,PCMusagemodelEntryLevelSystemCall@pcmflatten,PCMusagemodelAbstractUserAction@pcmflatten,PCMusagemodelScenarioBehaviour@pcmflatten,PCMusagemodelBranchTransition@pcmflatten,PCMusagemodelBranch@pcmflatten,PCMusagemodelLoop@pcmflatten,PCMusagemodelStop@pcmflatten,PCMusagemodelStart@pcmflatten,PCMusagemodelOpenWorkload@pcmflatten,PCMusagemodelDelay@pcmflatten,PCMusagemodelClosedWorkload@pcmflatten,PCMrepositoryPassiveResource@pcmflatten,PCMrepositoryBasicComponent@pcmflatten,PCMrepositoryImplementationComponentType@pcmflatten,PCMrepositoryRepositoryComponent@pcmflatten,PCMrepositoryProvidedRole@pcmflatten,PCMrepositoryParameter@pcmflatten,PCMrepositoryDataType@pcmflatten,PCMrepositoryRepository@pcmflatten,PCMrepositoryInterface@pcmflatten,PCMrepositoryRequiredCharacterisation@pcmflatten,PCMrepositoryEventGroup@pcmflatten,PCMrepositoryEventType@pcmflatten,PCMrepositorySignature@pcmflatten,PCMrepositoryExceptionType@pcmflatten,PCMrepositoryInfrastructureSignature@pcmflatten,PCMrepositoryInfrastructureInterface@pcmflatten,PCMrepositoryInfrastructureRequiredRole@pcmflatten,PCMrepositoryRequiredRole@pcmflatten,PCMrepositoryOperationSignature@pcmflatten,PCMrepositoryOperationInterface@pcmflatten,PCMrepositoryOperationRequiredRole@pcmflatten,PCMrepositorySourceRole@pcmflatten,PCMrepositorySinkRole@pcmflatten,PCMrepositoryOperationProvidedRole@pcmflatten,PCMrepositoryInfrastructureProvidedRole@pcmflatten,PCMrepositoryCompleteComponentType@pcmflatten,PCMrepositoryProvidesComponentType@pcmflatten,PCMrepositoryCompositeComponent@pcmflatten,PCMrepositoryPrimitiveDataType@pcmflatten,PCMrepositoryCollectionDataType@pcmflatten,PCMrepositoryCompositeDataType@pcmflatten,PCMrepositoryInnerDeclaration@pcmflatten,PCMrepositoryRole@pcmflatten,PCMresourcetypeResourceSignature@pcmflatten,PCMresourcetypeProcessingResourceType@pcmflatten,PCMresourcetypeResourceType@pcmflatten,PCMresourcetypeResourceRepository@pcmflatten,PCMresourcetypeSchedulingPolicy@pcmflatten,PCMresourcetypeCommunicationLinkResourceType@pcmflatten,PCMresourcetypeResourceInterface@pcmflatten,PCMprotocolProtocol@pcmflatten,PCMparameterVariableUsage@pcmflatten,PCMparameterVariableCharacterisation@pcmflatten,PCMparameterCharacterisedVariable@pcmflatten,PCMreliabilityFailureOccurrenceDescription@pcmflatten,PCMreliabilityHardwareInducedFailureType@pcmflatten,PCMreliabilitySoftwareInducedFailureType@pcmflatten,PCMreliabilityInternalFailureOccurrenceDescription@pcmflatten,PCMreliabilityNetworkInducedFailureType@pcmflatten,PCMreliabilityExternalFailureOccurrenceDescription@pcmflatten,PCMreliabilityResourceTimeoutFailureType@pcmflatten,PCMreliabilityFailureType@pcmflatten,PCMseffStopAction@pcmflatten,PCMseffAbstractInternalControlFlowAction@pcmflatten,PCMseffAbstractAction@pcmflatten,PCMseffResourceDemandingBehaviour@pcmflatten,PCMseffAbstractLoopAction@pcmflatten,PCMseffAbstractBranchTransition@pcmflatten,PCMseffBranchAction@pcmflatten,PCMseffCallAction@pcmflatten,PCMseffStartAction@pcmflatten,PCMseffServiceEffectSpecification@pcmflatten,PCMseffResourceDemandingSEFF@pcmflatten,PCMseffResourceDemandingInternalBehaviour@pcmflatten,PCMseffReleaseAction@pcmflatten,PCMseffLoopAction@pcmflatten,PCMseffForkAction@pcmflatten,PCMseffForkedBehaviour@pcmflatten,PCMseffSynchronisationPoint@pcmflatten,PCMseffExternalCallAction@pcmflatten,PCMseffCallReturnAction@pcmflatten,PCMseffProbabilisticBranchTransition@pcmflatten,PCMseffAcquireAction@pcmflatten,PCMseffCollectionIteratorAction@pcmflatten,PCMseffGuardedBranchTransition@pcmflatten,PCMseffSetVariableAction@pcmflatten,PCMseffInternalCallAction@pcmflatten,PCMseffEmitEventAction@pcmflatten,PCMseffInternalAction@pcmflatten,PCMseff@-@performanceInfrastructureCall@pcmflatten,PCMseff@-@performanceResourceCall@pcmflatten,PCMseffperformanceParametricResourceDemand@pcmflatten,PCMseff@-@reliabilityRecoveryActionBehaviour@pcmflatten,PCMseff@-@reliabilityRecoveryAction@pcmflatten,PCMseff@-@reliabilityFailureHandlingEntity@pcmflatten,PCMqosannotationsSpecifiedQoSAnnotation@pcmflatten,PCMqosannotationsQoSAnnotations@pcmflatten,PCMqosannotationsSpecifiedOutputParameterAbstraction@pcmflatten,PCMqos@-@performanceSystemSpecifiedExecutionTime@pcmflatten,PCMqos@-@performanceSpecifiedExecutionTime@pcmflatten,PCMqos@-@performanceComponentSpecifiedExecutionTime@pcmflatten,PCMqos@-@reliabilitySpecifiedReliabilityAnnotation@pcmflatten,PCMsystemSystem@pcmflatten,PCMresourceenvironmentResourceEnvironment@pcmflatten,PCMresourceenvironmentLinkingResource@pcmflatten,PCMresourceenvironmentResourceContainer@pcmflatten,PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,PCMresourceenvironmentCommunicationLinkResourceSpecification@pcmflatten,PCMallocationAllocationContext@pcmflatten,PCMallocationAllocation@pcmflatten,PCMsubsystemSubSystem@pcmflatten,STOEXstoexVariableReference@pcmflatten,STOEXstoexAbstractNamedReference@pcmflatten,STOEXstoexNamespaceReference@pcmflatten,STOEXstoexVariable@pcmflatten,STOEXstoexAtom@pcmflatten,STOEXstoexUnary@pcmflatten,STOEXstoexPower@pcmflatten,STOEXstoexProduct@pcmflatten,STOEXstoexTerm@pcmflatten,STOEXstoexComparison@pcmflatten,STOEXstoexBooleanExpression@pcmflatten,STOEXstoexIfElse@pcmflatten,STOEXstoexExpression@pcmflatten,STOEXstoexTermExpression@pcmflatten,STOEXstoexProductExpression@pcmflatten,STOEXstoexProbabilityFunctionLiteral@pcmflatten,STOEXstoexParenthesis@pcmflatten,STOEXstoexNumericLiteral@pcmflatten,STOEXstoexIntLiteral@pcmflatten,STOEXstoexDoubleLiteral@pcmflatten,STOEXstoexCompareExpression@pcmflatten,STOEXstoexBoolLiteral@pcmflatten,STOEXstoexStringLiteral@pcmflatten,STOEXstoexPowerExpression@pcmflatten,STOEXstoexBooleanOperatorExpression@pcmflatten,STOEXstoexNotExpression@pcmflatten,STOEXstoexNegativeExpression@pcmflatten,STOEXstoexFunctionLiteral@pcmflatten,STOEXstoexIfElseExpression@pcmflatten,STOEXstoexRandomVariable@pcmflatten,UNITSunitsBaseUnit@pcmflatten,UNITSunitsUnitRepository@pcmflatten,UNITSunitsUnit@pcmflatten,UNITSunitsUnitMultiplication@pcmflatten,UNITSunitsUnitPower@pcmflatten,UNITSunitsUnitLiteral@pcmflatten,UNITSunitsUnitCarryingElement@pcmflatten,IDENTIFIERidentifierIdentifier@pcmflatten,TOKENtokensUSToken@pcmflatten,TOKENtokensRETURNVar@pcmflatten,TOKENtokensSEFFToken@pcmflatten,TOKENtokensUSLoopToken@pcmflatten,TOKENtokensSEFFLoopToken@pcmflatten,TOKENtokensTokenProb@pcmflatten,TOKENtokensSandTimer@pcmflatten,ObTimeStamp@pcmflatten,ObResponseTime@pcmflatten,ObThroughPut@pcmflatten) .
   
   eq name(PCMpcmDummyClass@pcmflatten)
     = "PCMpcmDummyClass" .
@@ -1102,7 +1103,8 @@ mod @PCMFLATTEN@ is
     = STOEXstoexRandomVariable@pcmflatten .
   
   eq references(PCMcorePCMRandomVariable@pcmflatten)
-    = __(closedWorkload@-@PCMRandomVariable@PCMcorePCMRandomVariable@pcmflatten,passiveResource@-@capacity@-@PCMRandomVariable@PCMcorePCMRandomVariable@pcmflatten,variableCharacterisation@-@Specification@PCMcorePCMRandomVariable@pcmflatten,infrastructureCall@-@@-@PCMRandomVariable@PCMcorePCMRandomVariable@pcmflatten,resourceCall@-@@-@PCMRandomVariable@PCMcorePCMRandomVariable@pcmflatten,parametricResourceDemand@-@PCMRandomVariable@PCMcorePCMRandomVariable@pcmflatten,loopAction@-@PCMRandomVariable@PCMcorePCMRandomVariable@pcmflatten,guardedBranchTransition@-@PCMRandomVariable@PCMcorePCMRandomVariable@pcmflatten,specifiedExecutionTime@-@PCMRandomVariable@PCMcorePCMRandomVariable@pcmflatten,eventChannelSinkConnector@-@@-@FilterCondition@PCMcorePCMRandomVariable@pcmflatten,assemblyEventConnector@-@@-@FilterCondition@PCMcorePCMRandomVariable@pcmflatten,loop@-@LoopIteration@PCMcorePCMRandomVariable@pcmflatten,openWorkload@-@PCMRandomVariable@PCMcorePCMRandomVariable@pcmflatten,delay@-@TimeSpecification@PCMcorePCMRandomVariable@pcmflatten,communicationLinkResourceSpecifcation@-@throughput@-@PCMRandomVariable@PCMcorePCMRandomVariable@pcmflatten,processingResourceSpecification@-@processingRate@-@PCMRandomVariable@PCMcorePCMRandomVariable@pcmflatten,communicationLinkResourceSpecification@-@latency@-@PCMRandomVariable@PCMcorePCMRandomVariable@pcmflatten) .
+    = 
+        __(closedWorkload@-@PCMRandomVariable@PCMcorePCMRandomVariable@pcmflatten,passiveResource@-@capacity@-@PCMRandomVariable@PCMcorePCMRandomVariable@pcmflatten,variableCharacterisation@-@Specification@PCMcorePCMRandomVariable@pcmflatten,infrastructureCall@-@@-@PCMRandomVariable@PCMcorePCMRandomVariable@pcmflatten,resourceCall@-@@-@PCMRandomVariable@PCMcorePCMRandomVariable@pcmflatten,parametricResourceDemand@-@PCMRandomVariable@PCMcorePCMRandomVariable@pcmflatten,loopAction@-@PCMRandomVariable@PCMcorePCMRandomVariable@pcmflatten,guardedBranchTransition@-@PCMRandomVariable@PCMcorePCMRandomVariable@pcmflatten,specifiedExecutionTime@-@PCMRandomVariable@PCMcorePCMRandomVariable@pcmflatten,eventChannelSinkConnector@-@@-@FilterCondition@PCMcorePCMRandomVariable@pcmflatten,assemblyEventConnector@-@@-@FilterCondition@PCMcorePCMRandomVariable@pcmflatten,loop@-@LoopIteration@PCMcorePCMRandomVariable@pcmflatten,openWorkload@-@PCMRandomVariable@PCMcorePCMRandomVariable@pcmflatten,delay@-@TimeSpecification@PCMcorePCMRandomVariable@pcmflatten,communicationLinkResourceSpecifcation@-@throughput@-@PCMRandomVariable@PCMcorePCMRandomVariable@pcmflatten,processingResourceSpecification@-@processingRate@-@PCMRandomVariable@PCMcorePCMRandomVariable@pcmflatten,communicationLinkResourceSpecification@-@latency@-@PCMRandomVariable@PCMcorePCMRandomVariable@pcmflatten) .
   
   eq attributes(PCMcorePCMRandomVariable@pcmflatten)
     = nil .
@@ -1120,7 +1122,8 @@ mod @PCMFLATTEN@ is
     = PCMrepositoryRole@pcmflatten .
   
   eq references(PCMentityResourceProvidedRole@pcmflatten)
-    = __(resourceInterfaceProvidingEntity@-@@-@ResourceProvidedRole@PCMentityResourceProvidedRole@pcmflatten,providedResourceInterface@-@@-@ResourceProvidedRole@PCMentityResourceProvidedRole@pcmflatten) .
+    = 
+        __(resourceInterfaceProvidingEntity@-@@-@ResourceProvidedRole@PCMentityResourceProvidedRole@pcmflatten,providedResourceInterface@-@@-@ResourceProvidedRole@PCMentityResourceProvidedRole@pcmflatten) .
   
   eq attributes(PCMentityResourceProvidedRole@pcmflatten)
     = nil .
@@ -1135,7 +1138,8 @@ mod @PCMFLATTEN@ is
     = pcmflatten .
   
   eq superTypes(PCMentityInterfaceProvidingRequiringEntity@pcmflatten)
-    = __(PCMentityInterfaceProvidingEntity@pcmflatten,PCMentityInterfaceRequiringEntity@pcmflatten) .
+    = 
+        __(PCMentityInterfaceProvidingEntity@pcmflatten,PCMentityInterfaceRequiringEntity@pcmflatten) .
   
   eq references(PCMentityInterfaceProvidingRequiringEntity@pcmflatten)
     = nil .
@@ -1171,7 +1175,8 @@ mod @PCMFLATTEN@ is
     = pcmflatten .
   
   eq superTypes(PCMentityInterfaceRequiringEntity@pcmflatten)
-    = __(PCMentityEntity@pcmflatten,PCMentityResourceInterfaceRequiringEntity@pcmflatten) .
+    = 
+        __(PCMentityEntity@pcmflatten,PCMentityResourceInterfaceRequiringEntity@pcmflatten) .
   
   eq references(PCMentityInterfaceRequiringEntity@pcmflatten)
     = requiredRoles@-@InterfaceRequiringEntity@PCMentityInterfaceRequiringEntity@pcmflatten .
@@ -1210,7 +1215,8 @@ mod @PCMFLATTEN@ is
     = PCMrepositoryRole@pcmflatten .
   
   eq references(PCMentityResourceRequiredRole@pcmflatten)
-    = __(requiredResourceInterface@-@@-@ResourceRequiredRole@PCMentityResourceRequiredRole@pcmflatten,resourceInterfaceRequiringEntity@-@@-@ResourceRequiredRole@PCMentityResourceRequiredRole@pcmflatten) .
+    = 
+        __(requiredResourceInterface@-@@-@ResourceRequiredRole@PCMentityResourceRequiredRole@pcmflatten,resourceInterfaceRequiringEntity@-@@-@ResourceRequiredRole@PCMentityResourceRequiredRole@pcmflatten) .
   
   eq attributes(PCMentityResourceRequiredRole@pcmflatten)
     = nil .
@@ -1243,7 +1249,8 @@ mod @PCMFLATTEN@ is
     = pcmflatten .
   
   eq superTypes(PCMentityComposedProvidingRequiringEntity@pcmflatten)
-    = __(PCMcompositionComposedStructure@pcmflatten,PCMentityInterfaceProvidingRequiringEntity@pcmflatten) .
+    = 
+        __(PCMcompositionComposedStructure@pcmflatten,PCMentityInterfaceProvidingRequiringEntity@pcmflatten) .
   
   eq references(PCMentityComposedProvidingRequiringEntity@pcmflatten)
     = nil .
@@ -1279,7 +1286,8 @@ mod @PCMFLATTEN@ is
     = pcmflatten .
   
   eq superTypes(PCMentityResourceInterfaceProvidingRequiringEntity@pcmflatten)
-    = __(PCMentityResourceInterfaceRequiringEntity@pcmflatten,PCMentityResourceInterfaceProvidingEntity@pcmflatten) .
+    = 
+        __(PCMentityResourceInterfaceRequiringEntity@pcmflatten,PCMentityResourceInterfaceProvidingEntity@pcmflatten) .
   
   eq references(PCMentityResourceInterfaceProvidingRequiringEntity@pcmflatten)
     = nil .
@@ -1297,7 +1305,8 @@ mod @PCMFLATTEN@ is
     = pcmflatten .
   
   eq superTypes(PCMentityEntity@pcmflatten)
-    = __(IDENTIFIERidentifierIdentifier@pcmflatten,PCMentityNamedElement@pcmflatten) .
+    = 
+        __(IDENTIFIERidentifierIdentifier@pcmflatten,PCMentityNamedElement@pcmflatten) .
   
   eq references(PCMentityEntity@pcmflatten)
     = nil .
@@ -1354,7 +1363,8 @@ mod @PCMFLATTEN@ is
     = PCMentityEntity@pcmflatten .
   
   eq references(PCMcompositionComposedStructure@pcmflatten)
-    = __(assemblyContexts@-@@-@ComposedStructure@PCMcompositionComposedStructure@pcmflatten,resourceRequiredDelegationConnectors@-@ComposedStructure@PCMcompositionComposedStructure@pcmflatten,eventChannel@-@@-@ComposedStructure@PCMcompositionComposedStructure@pcmflatten,connectors@-@@-@ComposedStructure@PCMcompositionComposedStructure@pcmflatten) .
+    = 
+        __(assemblyContexts@-@@-@ComposedStructure@PCMcompositionComposedStructure@pcmflatten,resourceRequiredDelegationConnectors@-@ComposedStructure@PCMcompositionComposedStructure@pcmflatten,eventChannel@-@@-@ComposedStructure@PCMcompositionComposedStructure@pcmflatten,connectors@-@@-@ComposedStructure@PCMcompositionComposedStructure@pcmflatten) .
   
   eq attributes(PCMcompositionComposedStructure@pcmflatten)
     = nil .
@@ -1372,7 +1382,8 @@ mod @PCMFLATTEN@ is
     = nil .
   
   eq references(PCMcompositionResourceRequiredDelegationConnector@pcmflatten)
-    = __(innerResourceRequiredRole@-@ResourceRequiredDelegationConnector@PCMcompositionResourceRequiredDelegationConnector@pcmflatten,outerResourceRequiredRole@-@ResourceRequiredDelegationConnector@PCMcompositionResourceRequiredDelegationConnector@pcmflatten,parentStructure@-@ResourceRequiredDelegationConnector@PCMcompositionResourceRequiredDelegationConnector@pcmflatten) .
+    = 
+        __(innerResourceRequiredRole@-@ResourceRequiredDelegationConnector@PCMcompositionResourceRequiredDelegationConnector@pcmflatten,outerResourceRequiredRole@-@ResourceRequiredDelegationConnector@PCMcompositionResourceRequiredDelegationConnector@pcmflatten,parentStructure@-@ResourceRequiredDelegationConnector@PCMcompositionResourceRequiredDelegationConnector@pcmflatten) .
   
   eq attributes(PCMcompositionResourceRequiredDelegationConnector@pcmflatten)
     = nil .
@@ -1390,7 +1401,8 @@ mod @PCMFLATTEN@ is
     = PCMentityEntity@pcmflatten .
   
   eq references(PCMcompositionEventChannel@pcmflatten)
-    = __(eventGroup@-@@-@EventChannel@PCMcompositionEventChannel@pcmflatten,eventChannelSourceConnector@-@@-@EventChannel@PCMcompositionEventChannel@pcmflatten,eventChannelSinkConnector@-@@-@EventChannel@PCMcompositionEventChannel@pcmflatten,parentStructure@-@@-@EventChannel@PCMcompositionEventChannel@pcmflatten) .
+    = 
+        __(eventGroup@-@@-@EventChannel@PCMcompositionEventChannel@pcmflatten,eventChannelSourceConnector@-@@-@EventChannel@PCMcompositionEventChannel@pcmflatten,eventChannelSinkConnector@-@@-@EventChannel@PCMcompositionEventChannel@pcmflatten,parentStructure@-@@-@EventChannel@PCMcompositionEventChannel@pcmflatten) .
   
   eq attributes(PCMcompositionEventChannel@pcmflatten)
     = nil .
@@ -1408,7 +1420,8 @@ mod @PCMFLATTEN@ is
     = PCMcompositionConnector@pcmflatten .
   
   eq references(PCMcompositionEventChannelSourceConnector@pcmflatten)
-    = __(sourceRole@-@@-@EventChannelSourceRole@PCMcompositionEventChannelSourceConnector@pcmflatten,assemblyContext@-@@-@EventChannelSourceConnector@PCMcompositionEventChannelSourceConnector@pcmflatten,eventChannel@-@@-@EventChannelSourceConnector@PCMcompositionEventChannelSourceConnector@pcmflatten) .
+    = 
+        __(sourceRole@-@@-@EventChannelSourceRole@PCMcompositionEventChannelSourceConnector@pcmflatten,assemblyContext@-@@-@EventChannelSourceConnector@PCMcompositionEventChannelSourceConnector@pcmflatten,eventChannel@-@@-@EventChannelSourceConnector@PCMcompositionEventChannelSourceConnector@pcmflatten) .
   
   eq attributes(PCMcompositionEventChannelSourceConnector@pcmflatten)
     = nil .
@@ -1426,7 +1439,8 @@ mod @PCMFLATTEN@ is
     = PCMcompositionConnector@pcmflatten .
   
   eq references(PCMcompositionEventChannelSinkConnector@pcmflatten)
-    = __(sinkRole@-@@-@EventChannelSinkConnector@PCMcompositionEventChannelSinkConnector@pcmflatten,filterCondition@-@@-@EventChannelSinkConnector@PCMcompositionEventChannelSinkConnector@pcmflatten,assemblyContext@-@@-@EventChannelSinkConnector@PCMcompositionEventChannelSinkConnector@pcmflatten,eventChannel@-@@-@EventChannelSinkConnector@PCMcompositionEventChannelSinkConnector@pcmflatten) .
+    = 
+        __(sinkRole@-@@-@EventChannelSinkConnector@PCMcompositionEventChannelSinkConnector@pcmflatten,filterCondition@-@@-@EventChannelSinkConnector@PCMcompositionEventChannelSinkConnector@pcmflatten,assemblyContext@-@@-@EventChannelSinkConnector@PCMcompositionEventChannelSinkConnector@pcmflatten,eventChannel@-@@-@EventChannelSinkConnector@PCMcompositionEventChannelSinkConnector@pcmflatten) .
   
   eq attributes(PCMcompositionEventChannelSinkConnector@pcmflatten)
     = nil .
@@ -1444,7 +1458,8 @@ mod @PCMFLATTEN@ is
     = PCMcompositionDelegationConnector@pcmflatten .
   
   eq references(PCMcompositionProvidedDelegationConnector@pcmflatten)
-    = __(innerProvidedRole@-@ProvidedDelegationConnector@PCMcompositionProvidedDelegationConnector@pcmflatten,outerProvidedRole@-@ProvidedDelegationConnector@PCMcompositionProvidedDelegationConnector@pcmflatten,assemblyContext@-@ProvidedDelegationConnector@PCMcompositionProvidedDelegationConnector@pcmflatten) .
+    = 
+        __(innerProvidedRole@-@ProvidedDelegationConnector@PCMcompositionProvidedDelegationConnector@pcmflatten,outerProvidedRole@-@ProvidedDelegationConnector@PCMcompositionProvidedDelegationConnector@pcmflatten,assemblyContext@-@ProvidedDelegationConnector@PCMcompositionProvidedDelegationConnector@pcmflatten) .
   
   eq attributes(PCMcompositionProvidedDelegationConnector@pcmflatten)
     = nil .
@@ -1462,7 +1477,8 @@ mod @PCMFLATTEN@ is
     = PCMcompositionDelegationConnector@pcmflatten .
   
   eq references(PCMcompositionRequiredDelegationConnector@pcmflatten)
-    = __(innerRequiredRole@-@RequiredDelegationConnector@PCMcompositionRequiredDelegationConnector@pcmflatten,outerRequiredRole@-@RequiredDelegationConnector@PCMcompositionRequiredDelegationConnector@pcmflatten,assemblyContext@-@RequiredDelegationConnector@PCMcompositionRequiredDelegationConnector@pcmflatten) .
+    = 
+        __(innerRequiredRole@-@RequiredDelegationConnector@PCMcompositionRequiredDelegationConnector@pcmflatten,outerRequiredRole@-@RequiredDelegationConnector@PCMcompositionRequiredDelegationConnector@pcmflatten,assemblyContext@-@RequiredDelegationConnector@PCMcompositionRequiredDelegationConnector@pcmflatten) .
   
   eq attributes(PCMcompositionRequiredDelegationConnector@pcmflatten)
     = nil .
@@ -1480,7 +1496,8 @@ mod @PCMFLATTEN@ is
     = PCMcompositionConnector@pcmflatten .
   
   eq references(PCMcompositionAssemblyConnector@pcmflatten)
-    = __(requiringAssemblyContext@-@AssemblyConnector@PCMcompositionAssemblyConnector@pcmflatten,providingAssemblyContext@-@AssemblyConnector@PCMcompositionAssemblyConnector@pcmflatten,providedRole@-@AssemblyConnector@PCMcompositionAssemblyConnector@pcmflatten,requiredRole@-@AssemblyConnector@PCMcompositionAssemblyConnector@pcmflatten) .
+    = 
+        __(requiringAssemblyContext@-@AssemblyConnector@PCMcompositionAssemblyConnector@pcmflatten,providingAssemblyContext@-@AssemblyConnector@PCMcompositionAssemblyConnector@pcmflatten,providedRole@-@AssemblyConnector@PCMcompositionAssemblyConnector@pcmflatten,requiredRole@-@AssemblyConnector@PCMcompositionAssemblyConnector@pcmflatten) .
   
   eq attributes(PCMcompositionAssemblyConnector@pcmflatten)
     = nil .
@@ -1498,7 +1515,8 @@ mod @PCMFLATTEN@ is
     = PCMcompositionConnector@pcmflatten .
   
   eq references(PCMcompositionAssemblyEventConnector@pcmflatten)
-    = __(sinkRole@-@@-@AssemblyEventConnector@PCMcompositionAssemblyEventConnector@pcmflatten,sourceRole@-@@-@AssemblyEventConnector@PCMcompositionAssemblyEventConnector@pcmflatten,sinkAssemblyContext@-@@-@AssemblyEventConnector@PCMcompositionAssemblyEventConnector@pcmflatten,sourceAssemblyContext@-@@-@AssemblyEventConnector@PCMcompositionAssemblyEventConnector@pcmflatten,filterCondition@-@@-@AssemblyEventConnector@PCMcompositionAssemblyEventConnector@pcmflatten) .
+    = 
+        __(sinkRole@-@@-@AssemblyEventConnector@PCMcompositionAssemblyEventConnector@pcmflatten,sourceRole@-@@-@AssemblyEventConnector@PCMcompositionAssemblyEventConnector@pcmflatten,sinkAssemblyContext@-@@-@AssemblyEventConnector@PCMcompositionAssemblyEventConnector@pcmflatten,sourceAssemblyContext@-@@-@AssemblyEventConnector@PCMcompositionAssemblyEventConnector@pcmflatten,filterCondition@-@@-@AssemblyEventConnector@PCMcompositionAssemblyEventConnector@pcmflatten) .
   
   eq attributes(PCMcompositionAssemblyEventConnector@pcmflatten)
     = nil .
@@ -1516,7 +1534,8 @@ mod @PCMFLATTEN@ is
     = PCMcompositionDelegationConnector@pcmflatten .
   
   eq references(PCMcompositionSourceDelegationConnector@pcmflatten)
-    = __(innerSourceRole@-@@-@SourceRole@PCMcompositionSourceDelegationConnector@pcmflatten,outerSourceRole@-@@-@SourceRole@PCMcompositionSourceDelegationConnector@pcmflatten,assemblyContext@-@@-@SourceDelegationConnector@PCMcompositionSourceDelegationConnector@pcmflatten) .
+    = 
+        __(innerSourceRole@-@@-@SourceRole@PCMcompositionSourceDelegationConnector@pcmflatten,outerSourceRole@-@@-@SourceRole@PCMcompositionSourceDelegationConnector@pcmflatten,assemblyContext@-@@-@SourceDelegationConnector@PCMcompositionSourceDelegationConnector@pcmflatten) .
   
   eq attributes(PCMcompositionSourceDelegationConnector@pcmflatten)
     = nil .
@@ -1534,7 +1553,8 @@ mod @PCMFLATTEN@ is
     = PCMcompositionDelegationConnector@pcmflatten .
   
   eq references(PCMcompositionSinkDelegationConnector@pcmflatten)
-    = __(assemblyContext@-@@-@SinkDelegationConnector@PCMcompositionSinkDelegationConnector@pcmflatten,innerSinkRole@-@@-@SinkRole@PCMcompositionSinkDelegationConnector@pcmflatten,outerSinkRole@-@@-@SinkRole@PCMcompositionSinkDelegationConnector@pcmflatten) .
+    = 
+        __(assemblyContext@-@@-@SinkDelegationConnector@PCMcompositionSinkDelegationConnector@pcmflatten,innerSinkRole@-@@-@SinkRole@PCMcompositionSinkDelegationConnector@pcmflatten,outerSinkRole@-@@-@SinkRole@PCMcompositionSinkDelegationConnector@pcmflatten) .
   
   eq attributes(PCMcompositionSinkDelegationConnector@pcmflatten)
     = nil .
@@ -1552,7 +1572,8 @@ mod @PCMFLATTEN@ is
     = PCMcompositionConnector@pcmflatten .
   
   eq references(PCMcompositionAssemblyInfrastructureConnector@pcmflatten)
-    = __(providedRole@-@@-@AssemblyInfrastructureConnector@PCMcompositionAssemblyInfrastructureConnector@pcmflatten,requiredRole@-@@-@AssemblyInfrastructureConnector@PCMcompositionAssemblyInfrastructureConnector@pcmflatten,providingAssemblyContext@-@@-@AssemblyInfrastructureConnector@PCMcompositionAssemblyInfrastructureConnector@pcmflatten,requiringAssemblyContext@-@@-@AssemblyInfrastructureConnector@PCMcompositionAssemblyInfrastructureConnector@pcmflatten) .
+    = 
+        __(providedRole@-@@-@AssemblyInfrastructureConnector@PCMcompositionAssemblyInfrastructureConnector@pcmflatten,requiredRole@-@@-@AssemblyInfrastructureConnector@PCMcompositionAssemblyInfrastructureConnector@pcmflatten,providingAssemblyContext@-@@-@AssemblyInfrastructureConnector@PCMcompositionAssemblyInfrastructureConnector@pcmflatten,requiringAssemblyContext@-@@-@AssemblyInfrastructureConnector@PCMcompositionAssemblyInfrastructureConnector@pcmflatten) .
   
   eq attributes(PCMcompositionAssemblyInfrastructureConnector@pcmflatten)
     = nil .
@@ -1570,7 +1591,8 @@ mod @PCMFLATTEN@ is
     = PCMcompositionDelegationConnector@pcmflatten .
   
   eq references(PCMcompositionProvidedInfrastructureDelegationConnector@pcmflatten)
-    = __(innerProvidedRole@-@@-@ProvidedInfrastructureDelegationConnector@PCMcompositionProvidedInfrastructureDelegationConnector@pcmflatten,outerProvidedRole@-@@-@ProvidedInfrastructureDelegationConnector@PCMcompositionProvidedInfrastructureDelegationConnector@pcmflatten,assemblyContext@-@@-@ProvidedInfrastructureDelegationConnector@PCMcompositionProvidedInfrastructureDelegationConnector@pcmflatten) .
+    = 
+        __(innerProvidedRole@-@@-@ProvidedInfrastructureDelegationConnector@PCMcompositionProvidedInfrastructureDelegationConnector@pcmflatten,outerProvidedRole@-@@-@ProvidedInfrastructureDelegationConnector@PCMcompositionProvidedInfrastructureDelegationConnector@pcmflatten,assemblyContext@-@@-@ProvidedInfrastructureDelegationConnector@PCMcompositionProvidedInfrastructureDelegationConnector@pcmflatten) .
   
   eq attributes(PCMcompositionProvidedInfrastructureDelegationConnector@pcmflatten)
     = nil .
@@ -1588,7 +1610,8 @@ mod @PCMFLATTEN@ is
     = PCMcompositionDelegationConnector@pcmflatten .
   
   eq references(PCMcompositionRequiredInfrastructureDelegationConnector@pcmflatten)
-    = __(innerRequiredRole@-@@-@RequiredInfrastructureDelegationConnector@PCMcompositionRequiredInfrastructureDelegationConnector@pcmflatten,outerRequiredRole@-@@-@RequiredInfrastructureDelegationConnector@PCMcompositionRequiredInfrastructureDelegationConnector@pcmflatten,assemblyContext@-@@-@RequiredInfrastructureDelegationConnector@PCMcompositionRequiredInfrastructureDelegationConnector@pcmflatten) .
+    = 
+        __(innerRequiredRole@-@@-@RequiredInfrastructureDelegationConnector@PCMcompositionRequiredInfrastructureDelegationConnector@pcmflatten,outerRequiredRole@-@@-@RequiredInfrastructureDelegationConnector@PCMcompositionRequiredInfrastructureDelegationConnector@pcmflatten,assemblyContext@-@@-@RequiredInfrastructureDelegationConnector@PCMcompositionRequiredInfrastructureDelegationConnector@pcmflatten) .
   
   eq attributes(PCMcompositionRequiredInfrastructureDelegationConnector@pcmflatten)
     = nil .
@@ -1606,7 +1629,8 @@ mod @PCMFLATTEN@ is
     = PCMcompositionDelegationConnector@pcmflatten .
   
   eq references(PCMcompositionRequiredResourceDelegationConnector@pcmflatten)
-    = __(assemblyContext@-@@-@RequiredResourceDelegationConnector@PCMcompositionRequiredResourceDelegationConnector@pcmflatten,innerRequiredRole@-@@-@RequiredResourceDelegationConnector@PCMcompositionRequiredResourceDelegationConnector@pcmflatten,outerRequiredRole@-@@-@RequiredResourceDelegationConnector@PCMcompositionRequiredResourceDelegationConnector@pcmflatten) .
+    = 
+        __(assemblyContext@-@@-@RequiredResourceDelegationConnector@PCMcompositionRequiredResourceDelegationConnector@pcmflatten,innerRequiredRole@-@@-@RequiredResourceDelegationConnector@PCMcompositionRequiredResourceDelegationConnector@pcmflatten,outerRequiredRole@-@@-@RequiredResourceDelegationConnector@PCMcompositionRequiredResourceDelegationConnector@pcmflatten) .
   
   eq attributes(PCMcompositionRequiredResourceDelegationConnector@pcmflatten)
     = nil .
@@ -1624,7 +1648,8 @@ mod @PCMFLATTEN@ is
     = PCMentityEntity@pcmflatten .
   
   eq references(PCMcompositionAssemblyContext@pcmflatten)
-    = __(parentStructure@-@@-@AssemblyContext@PCMcompositionAssemblyContext@pcmflatten,encapsulatedComponent@-@@-@AssemblyContext@PCMcompositionAssemblyContext@pcmflatten,configParameterUsages@-@@-@AssemblyContext@PCMcompositionAssemblyContext@pcmflatten) .
+    = 
+        __(parentStructure@-@@-@AssemblyContext@PCMcompositionAssemblyContext@pcmflatten,encapsulatedComponent@-@@-@AssemblyContext@PCMcompositionAssemblyContext@pcmflatten,configParameterUsages@-@@-@AssemblyContext@PCMcompositionAssemblyContext@pcmflatten) .
   
   eq attributes(PCMcompositionAssemblyContext@pcmflatten)
     = nil .
@@ -1660,7 +1685,8 @@ mod @PCMFLATTEN@ is
     = PCMentityEntity@pcmflatten .
   
   eq references(PCMusagemodelUsageScenario@pcmflatten)
-    = __(usageModel@-@UsageScenario@PCMusagemodelUsageScenario@pcmflatten,scenarioBehaviour@-@UsageScenario@PCMusagemodelUsageScenario@pcmflatten,workload@-@UsageScenario@PCMusagemodelUsageScenario@pcmflatten) .
+    = 
+        __(usageModel@-@UsageScenario@PCMusagemodelUsageScenario@pcmflatten,scenarioBehaviour@-@UsageScenario@PCMusagemodelUsageScenario@pcmflatten,workload@-@UsageScenario@PCMusagemodelUsageScenario@pcmflatten) .
   
   eq attributes(PCMusagemodelUsageScenario@pcmflatten)
     = nil .
@@ -1678,7 +1704,8 @@ mod @PCMFLATTEN@ is
     = nil .
   
   eq references(PCMusagemodelUserData@pcmflatten)
-    = __(assemblyContext@-@userData@PCMusagemodelUserData@pcmflatten,usageModel@-@UserData@PCMusagemodelUserData@pcmflatten,userDataParameterUsages@-@UserData@PCMusagemodelUserData@pcmflatten) .
+    = 
+        __(assemblyContext@-@userData@PCMusagemodelUserData@pcmflatten,usageModel@-@UserData@PCMusagemodelUserData@pcmflatten,userDataParameterUsages@-@UserData@PCMusagemodelUserData@pcmflatten) .
   
   eq attributes(PCMusagemodelUserData@pcmflatten)
     = nil .
@@ -1696,7 +1723,8 @@ mod @PCMFLATTEN@ is
     = nil .
   
   eq references(PCMusagemodelUsageModel@pcmflatten)
-    = __(usageScenario@-@UsageModel@PCMusagemodelUsageModel@pcmflatten,userData@-@UsageModel@PCMusagemodelUsageModel@pcmflatten) .
+    = 
+        __(usageScenario@-@UsageModel@PCMusagemodelUsageModel@pcmflatten,userData@-@UsageModel@PCMusagemodelUsageModel@pcmflatten) .
   
   eq attributes(PCMusagemodelUsageModel@pcmflatten)
     = nil .
@@ -1714,7 +1742,8 @@ mod @PCMFLATTEN@ is
     = PCMusagemodelAbstractUserAction@pcmflatten .
   
   eq references(PCMusagemodelEntryLevelSystemCall@pcmflatten)
-    = __(providedRole@-@EntryLevelSystemCall@PCMusagemodelEntryLevelSystemCall@pcmflatten,operationSignature@-@@-@EntryLevelSystemCall@PCMusagemodelEntryLevelSystemCall@pcmflatten,outputParameterUsages@-@EntryLevelSystemCall@PCMusagemodelEntryLevelSystemCall@pcmflatten,inputParameterUsages@-@EntryLevelSystemCall@PCMusagemodelEntryLevelSystemCall@pcmflatten) .
+    = 
+        __(providedRole@-@EntryLevelSystemCall@PCMusagemodelEntryLevelSystemCall@pcmflatten,operationSignature@-@@-@EntryLevelSystemCall@PCMusagemodelEntryLevelSystemCall@pcmflatten,outputParameterUsages@-@EntryLevelSystemCall@PCMusagemodelEntryLevelSystemCall@pcmflatten,inputParameterUsages@-@EntryLevelSystemCall@PCMusagemodelEntryLevelSystemCall@pcmflatten) .
   
   eq attributes(PCMusagemodelEntryLevelSystemCall@pcmflatten)
     = priority@PCMusagemodelEntryLevelSystemCall@pcmflatten .
@@ -1732,7 +1761,8 @@ mod @PCMFLATTEN@ is
     = PCMentityEntity@pcmflatten .
   
   eq references(PCMusagemodelAbstractUserAction@pcmflatten)
-    = __(successor@PCMusagemodelAbstractUserAction@pcmflatten,predecessor@PCMusagemodelAbstractUserAction@pcmflatten,scenarioBehaviour@-@AbstractUserAction@PCMusagemodelAbstractUserAction@pcmflatten,token@PCMusagemodelAbstractUserAction@pcmflatten) .
+    = 
+        __(successor@PCMusagemodelAbstractUserAction@pcmflatten,predecessor@PCMusagemodelAbstractUserAction@pcmflatten,scenarioBehaviour@-@AbstractUserAction@PCMusagemodelAbstractUserAction@pcmflatten,token@PCMusagemodelAbstractUserAction@pcmflatten) .
   
   eq attributes(PCMusagemodelAbstractUserAction@pcmflatten)
     = nil .
@@ -1750,7 +1780,8 @@ mod @PCMFLATTEN@ is
     = PCMentityEntity@pcmflatten .
   
   eq references(PCMusagemodelScenarioBehaviour@pcmflatten)
-    = __(usageScenario@-@SenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,branchTransition@-@ScenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,loop@-@ScenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,actions@-@ScenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,rtOb@PCMusagemodelScenarioBehaviour@pcmflatten,tpOb@PCMusagemodelScenarioBehaviour@pcmflatten) .
+    = 
+        __(usageScenario@-@SenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,branchTransition@-@ScenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,loop@-@ScenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,actions@-@ScenarioBehaviour@PCMusagemodelScenarioBehaviour@pcmflatten,rtOb@PCMusagemodelScenarioBehaviour@pcmflatten,tpOb@PCMusagemodelScenarioBehaviour@pcmflatten) .
   
   eq attributes(PCMusagemodelScenarioBehaviour@pcmflatten)
     = nil .
@@ -1768,7 +1799,8 @@ mod @PCMFLATTEN@ is
     = nil .
   
   eq references(PCMusagemodelBranchTransition@pcmflatten)
-    = __(branch@-@BranchTransition@PCMusagemodelBranchTransition@pcmflatten,branchedBehaviour@-@BranchTransition@PCMusagemodelBranchTransition@pcmflatten) .
+    = 
+        __(branch@-@BranchTransition@PCMusagemodelBranchTransition@pcmflatten,branchedBehaviour@-@BranchTransition@PCMusagemodelBranchTransition@pcmflatten) .
   
   eq attributes(PCMusagemodelBranchTransition@pcmflatten)
     = branchProbability@PCMusagemodelBranchTransition@pcmflatten .
@@ -1804,7 +1836,8 @@ mod @PCMFLATTEN@ is
     = PCMusagemodelAbstractUserAction@pcmflatten .
   
   eq references(PCMusagemodelLoop@pcmflatten)
-    = __(loopIteration@-@Loop@PCMusagemodelLoop@pcmflatten,bodyBehaviour@-@Loop@PCMusagemodelLoop@pcmflatten) .
+    = 
+        __(loopIteration@-@Loop@PCMusagemodelLoop@pcmflatten,bodyBehaviour@-@Loop@PCMusagemodelLoop@pcmflatten) .
   
   eq attributes(PCMusagemodelLoop@pcmflatten)
     = nil .
@@ -1858,7 +1891,8 @@ mod @PCMFLATTEN@ is
     = PCMusagemodelWorkload@pcmflatten .
   
   eq references(PCMusagemodelOpenWorkload@pcmflatten)
-    = __(interArrivalTime@-@OpenWorkload@PCMusagemodelOpenWorkload@pcmflatten,sandTimer@PCMusagemodelOpenWorkload@pcmflatten) .
+    = 
+        __(interArrivalTime@-@OpenWorkload@PCMusagemodelOpenWorkload@pcmflatten,sandTimer@PCMusagemodelOpenWorkload@pcmflatten) .
   
   eq attributes(PCMusagemodelOpenWorkload@pcmflatten)
     = nil .
@@ -1912,7 +1946,8 @@ mod @PCMFLATTEN@ is
     = PCMentityEntity@pcmflatten .
   
   eq references(PCMrepositoryPassiveResource@pcmflatten)
-    = __(capacity@-@PassiveResource@PCMrepositoryPassiveResource@pcmflatten,basicComponent@-@PassiveResource@PCMrepositoryPassiveResource@pcmflatten,resourceTimeoutFailureType@-@@-@PassiveResource@PCMrepositoryPassiveResource@pcmflatten) .
+    = 
+        __(capacity@-@PassiveResource@PCMrepositoryPassiveResource@pcmflatten,basicComponent@-@PassiveResource@PCMrepositoryPassiveResource@pcmflatten,resourceTimeoutFailureType@-@@-@PassiveResource@PCMrepositoryPassiveResource@pcmflatten) .
   
   eq attributes(PCMrepositoryPassiveResource@pcmflatten)
     = nil .
@@ -1930,7 +1965,8 @@ mod @PCMFLATTEN@ is
     = PCMrepositoryImplementationComponentType@pcmflatten .
   
   eq references(PCMrepositoryBasicComponent@pcmflatten)
-    = __(serviceEffectSpecifications@-@@-@BasicComponent@PCMrepositoryBasicComponent@pcmflatten,passiveResource@-@BasicComponent@PCMrepositoryBasicComponent@pcmflatten) .
+    = 
+        __(serviceEffectSpecifications@-@@-@BasicComponent@PCMrepositoryBasicComponent@pcmflatten,passiveResource@-@BasicComponent@PCMrepositoryBasicComponent@pcmflatten) .
   
   eq attributes(PCMrepositoryBasicComponent@pcmflatten)
     = nil .
@@ -1948,7 +1984,8 @@ mod @PCMFLATTEN@ is
     = PCMrepositoryRepositoryComponent@pcmflatten .
   
   eq references(PCMrepositoryImplementationComponentType@pcmflatten)
-    = __(parentCompleteComponentTypes@PCMrepositoryImplementationComponentType@pcmflatten,componentParameterUsage@-@ImplementationComponentType@PCMrepositoryImplementationComponentType@pcmflatten) .
+    = 
+        __(parentCompleteComponentTypes@PCMrepositoryImplementationComponentType@pcmflatten,componentParameterUsage@-@ImplementationComponentType@PCMrepositoryImplementationComponentType@pcmflatten) .
   
   eq attributes(PCMrepositoryImplementationComponentType@pcmflatten)
     = nil .
@@ -2002,10 +2039,12 @@ mod @PCMFLATTEN@ is
     = nil .
   
   eq references(PCMrepositoryParameter@pcmflatten)
-    = __(dataType@-@@-@Parameter@PCMrepositoryParameter@pcmflatten,infrastructureSignature@-@@-@Parameter@PCMrepositoryParameter@pcmflatten,operationSignature@-@@-@Parameter@PCMrepositoryParameter@pcmflatten,eventType@-@@-@Parameter@PCMrepositoryParameter@pcmflatten,resourceSignature@-@@-@Parameter@PCMrepositoryParameter@pcmflatten) .
+    = 
+        __(dataType@-@@-@Parameter@PCMrepositoryParameter@pcmflatten,infrastructureSignature@-@@-@Parameter@PCMrepositoryParameter@pcmflatten,operationSignature@-@@-@Parameter@PCMrepositoryParameter@pcmflatten,eventType@-@@-@Parameter@PCMrepositoryParameter@pcmflatten,resourceSignature@-@@-@Parameter@PCMrepositoryParameter@pcmflatten) .
   
   eq attributes(PCMrepositoryParameter@pcmflatten)
-    = __(parameterName@PCMrepositoryParameter@pcmflatten,modifier@-@@-@Parameter@PCMrepositoryParameter@pcmflatten) .
+    = 
+        __(parameterName@PCMrepositoryParameter@pcmflatten,modifier@-@@-@Parameter@PCMrepositoryParameter@pcmflatten) .
   
   eq name(PCMrepositoryDataType@pcmflatten)
     = "PCMrepositoryDataType" .
@@ -2038,7 +2077,8 @@ mod @PCMFLATTEN@ is
     = PCMentityEntity@pcmflatten .
   
   eq references(PCMrepositoryRepository@pcmflatten)
-    = __(components@-@@-@Repository@PCMrepositoryRepository@pcmflatten,interfaces@-@@-@Repository@PCMrepositoryRepository@pcmflatten,failureTypes@-@@-@Repository@PCMrepositoryRepository@pcmflatten,dataTypes@-@@-@Repository@PCMrepositoryRepository@pcmflatten) .
+    = 
+        __(components@-@@-@Repository@PCMrepositoryRepository@pcmflatten,interfaces@-@@-@Repository@PCMrepositoryRepository@pcmflatten,failureTypes@-@@-@Repository@PCMrepositoryRepository@pcmflatten,dataTypes@-@@-@Repository@PCMrepositoryRepository@pcmflatten) .
   
   eq attributes(PCMrepositoryRepository@pcmflatten)
     = repositoryDescription@PCMrepositoryRepository@pcmflatten .
@@ -2056,7 +2096,8 @@ mod @PCMFLATTEN@ is
     = PCMentityEntity@pcmflatten .
   
   eq references(PCMrepositoryInterface@pcmflatten)
-    = __(parentInterfaces@-@@-@Interface@PCMrepositoryInterface@pcmflatten,protocols@-@@-@Interface@PCMrepositoryInterface@pcmflatten,requiredCharacterisations@PCMrepositoryInterface@pcmflatten,repository@-@@-@Interface@PCMrepositoryInterface@pcmflatten) .
+    = 
+        __(parentInterfaces@-@@-@Interface@PCMrepositoryInterface@pcmflatten,protocols@-@@-@Interface@PCMrepositoryInterface@pcmflatten,requiredCharacterisations@PCMrepositoryInterface@pcmflatten,repository@-@@-@Interface@PCMrepositoryInterface@pcmflatten) .
   
   eq attributes(PCMrepositoryInterface@pcmflatten)
     = nil .
@@ -2074,7 +2115,8 @@ mod @PCMFLATTEN@ is
     = nil .
   
   eq references(PCMrepositoryRequiredCharacterisation@pcmflatten)
-    = __(parameter@PCMrepositoryRequiredCharacterisation@pcmflatten,interface@-@RequiredCharacterisation@PCMrepositoryRequiredCharacterisation@pcmflatten) .
+    = 
+        __(parameter@PCMrepositoryRequiredCharacterisation@pcmflatten,interface@-@RequiredCharacterisation@PCMrepositoryRequiredCharacterisation@pcmflatten) .
   
   eq attributes(PCMrepositoryRequiredCharacterisation@pcmflatten)
     = type@PCMrepositoryRequiredCharacterisation@pcmflatten .
@@ -2110,7 +2152,8 @@ mod @PCMFLATTEN@ is
     = PCMrepositorySignature@pcmflatten .
   
   eq references(PCMrepositoryEventType@pcmflatten)
-    = __(parameter@-@@-@EventType@PCMrepositoryEventType@pcmflatten,eventGroup@-@@-@EventType@PCMrepositoryEventType@pcmflatten) .
+    = 
+        __(parameter@-@@-@EventType@PCMrepositoryEventType@pcmflatten,eventGroup@-@@-@EventType@PCMrepositoryEventType@pcmflatten) .
   
   eq attributes(PCMrepositoryEventType@pcmflatten)
     = nil .
@@ -2128,7 +2171,8 @@ mod @PCMFLATTEN@ is
     = PCMentityEntity@pcmflatten .
   
   eq references(PCMrepositorySignature@pcmflatten)
-    = __(exceptions@-@@-@Signature@PCMrepositorySignature@pcmflatten,failureType@PCMrepositorySignature@pcmflatten) .
+    = 
+        __(exceptions@-@@-@Signature@PCMrepositorySignature@pcmflatten,failureType@PCMrepositorySignature@pcmflatten) .
   
   eq attributes(PCMrepositorySignature@pcmflatten)
     = nil .
@@ -2149,7 +2193,8 @@ mod @PCMFLATTEN@ is
     = nil .
   
   eq attributes(PCMrepositoryExceptionType@pcmflatten)
-    = __(exceptionName@PCMrepositoryExceptionType@pcmflatten,exceptionMessage@PCMrepositoryExceptionType@pcmflatten) .
+    = 
+        __(exceptionName@PCMrepositoryExceptionType@pcmflatten,exceptionMessage@PCMrepositoryExceptionType@pcmflatten) .
   
   eq name(PCMrepositoryInfrastructureSignature@pcmflatten)
     = "PCMrepositoryInfrastructureSignature" .
@@ -2164,7 +2209,8 @@ mod @PCMFLATTEN@ is
     = PCMrepositorySignature@pcmflatten .
   
   eq references(PCMrepositoryInfrastructureSignature@pcmflatten)
-    = __(parameters@-@@-@InfrastructureSignature@PCMrepositoryInfrastructureSignature@pcmflatten,infrastructureInterface@-@@-@InfrastructureSignature@PCMrepositoryInfrastructureSignature@pcmflatten) .
+    = 
+        __(parameters@-@@-@InfrastructureSignature@PCMrepositoryInfrastructureSignature@pcmflatten,infrastructureInterface@-@@-@InfrastructureSignature@PCMrepositoryInfrastructureSignature@pcmflatten) .
   
   eq attributes(PCMrepositoryInfrastructureSignature@pcmflatten)
     = nil .
@@ -2236,7 +2282,8 @@ mod @PCMFLATTEN@ is
     = PCMrepositorySignature@pcmflatten .
   
   eq references(PCMrepositoryOperationSignature@pcmflatten)
-    = __(interface@-@@-@OperationSignature@PCMrepositoryOperationSignature@pcmflatten,parameters@-@@-@OperationSignature@PCMrepositoryOperationSignature@pcmflatten,returnType@-@@-@OperationSignature@PCMrepositoryOperationSignature@pcmflatten) .
+    = 
+        __(interface@-@@-@OperationSignature@PCMrepositoryOperationSignature@pcmflatten,parameters@-@@-@OperationSignature@PCMrepositoryOperationSignature@pcmflatten,returnType@-@@-@OperationSignature@PCMrepositoryOperationSignature@pcmflatten) .
   
   eq attributes(PCMrepositoryOperationSignature@pcmflatten)
     = nil .
@@ -2395,7 +2442,8 @@ mod @PCMFLATTEN@ is
     = pcmflatten .
   
   eq superTypes(PCMrepositoryCompositeComponent@pcmflatten)
-    = __(PCMentityComposedProvidingRequiringEntity@pcmflatten,PCMrepositoryImplementationComponentType@pcmflatten) .
+    = 
+        __(PCMentityComposedProvidingRequiringEntity@pcmflatten,PCMrepositoryImplementationComponentType@pcmflatten) .
   
   eq references(PCMrepositoryCompositeComponent@pcmflatten)
     = nil .
@@ -2431,7 +2479,8 @@ mod @PCMFLATTEN@ is
     = pcmflatten .
   
   eq superTypes(PCMrepositoryCollectionDataType@pcmflatten)
-    = __(PCMentityEntity@pcmflatten,PCMrepositoryDataType@pcmflatten) .
+    = 
+        __(PCMentityEntity@pcmflatten,PCMrepositoryDataType@pcmflatten) .
   
   eq references(PCMrepositoryCollectionDataType@pcmflatten)
     = innerType@-@CollectionDataType@PCMrepositoryCollectionDataType@pcmflatten .
@@ -2449,10 +2498,12 @@ mod @PCMFLATTEN@ is
     = pcmflatten .
   
   eq superTypes(PCMrepositoryCompositeDataType@pcmflatten)
-    = __(PCMentityEntity@pcmflatten,PCMrepositoryDataType@pcmflatten) .
+    = 
+        __(PCMentityEntity@pcmflatten,PCMrepositoryDataType@pcmflatten) .
   
   eq references(PCMrepositoryCompositeDataType@pcmflatten)
-    = __(parentType@-@CompositeDataType@PCMrepositoryCompositeDataType@pcmflatten,innerDeclaration@-@CompositeDataType@PCMrepositoryCompositeDataType@pcmflatten) .
+    = 
+        __(parentType@-@CompositeDataType@PCMrepositoryCompositeDataType@pcmflatten,innerDeclaration@-@CompositeDataType@PCMrepositoryCompositeDataType@pcmflatten) .
   
   eq attributes(PCMrepositoryCompositeDataType@pcmflatten)
     = nil .
@@ -2470,7 +2521,8 @@ mod @PCMFLATTEN@ is
     = PCMentityNamedElement@pcmflatten .
   
   eq references(PCMrepositoryInnerDeclaration@pcmflatten)
-    = __(datatype@-@InnerDeclaration@PCMrepositoryInnerDeclaration@pcmflatten,compositeDataType@-@InnerDeclaration@PCMrepositoryInnerDeclaration@pcmflatten) .
+    = 
+        __(datatype@-@InnerDeclaration@PCMrepositoryInnerDeclaration@pcmflatten,compositeDataType@-@InnerDeclaration@PCMrepositoryInnerDeclaration@pcmflatten) .
   
   eq attributes(PCMrepositoryInnerDeclaration@pcmflatten)
     = nil .
@@ -2506,7 +2558,8 @@ mod @PCMFLATTEN@ is
     = PCMentityEntity@pcmflatten .
   
   eq references(PCMresourcetypeResourceSignature@pcmflatten)
-    = __(parameter@-@@-@ResourceSignature@PCMresourcetypeResourceSignature@pcmflatten,resourceInterface@-@@-@ResourceSignature@PCMresourcetypeResourceSignature@pcmflatten) .
+    = 
+        __(parameter@-@@-@ResourceSignature@PCMresourcetypeResourceSignature@pcmflatten,resourceInterface@-@@-@ResourceSignature@PCMresourcetypeResourceSignature@pcmflatten) .
   
   eq attributes(PCMresourcetypeResourceSignature@pcmflatten)
     = resourceServiceId@PCMresourcetypeResourceSignature@pcmflatten .
@@ -2539,7 +2592,8 @@ mod @PCMFLATTEN@ is
     = pcmflatten .
   
   eq superTypes(PCMresourcetypeResourceType@pcmflatten)
-    = __(PCMentityEntity@pcmflatten,UNITSunitsUnitCarryingElement@pcmflatten,PCMentityResourceInterfaceProvidingEntity@pcmflatten) .
+    = 
+        __(PCMentityEntity@pcmflatten,UNITSunitsUnitCarryingElement@pcmflatten,PCMentityResourceInterfaceProvidingEntity@pcmflatten) .
   
   eq references(PCMresourcetypeResourceType@pcmflatten)
     = resourceRepository@-@ResourceType@PCMresourcetypeResourceType@pcmflatten .
@@ -2560,7 +2614,8 @@ mod @PCMFLATTEN@ is
     = nil .
   
   eq references(PCMresourcetypeResourceRepository@pcmflatten)
-    = __(resourceInterfaces@-@@-@ResourceRepository@PCMresourcetypeResourceRepository@pcmflatten,schedulingPolicies@-@@-@ResourceRepository@PCMresourcetypeResourceRepository@pcmflatten,availableResourceTypes@-@ResourceRepository@PCMresourcetypeResourceRepository@pcmflatten) .
+    = 
+        __(resourceInterfaces@-@@-@ResourceRepository@PCMresourcetypeResourceRepository@pcmflatten,schedulingPolicies@-@@-@ResourceRepository@PCMresourcetypeResourceRepository@pcmflatten,availableResourceTypes@-@ResourceRepository@PCMresourcetypeResourceRepository@pcmflatten) .
   
   eq attributes(PCMresourcetypeResourceRepository@pcmflatten)
     = nil .
@@ -2614,7 +2669,8 @@ mod @PCMFLATTEN@ is
     = PCMentityEntity@pcmflatten .
   
   eq references(PCMresourcetypeResourceInterface@pcmflatten)
-    = __(resourceRepository@-@@-@ResourceInterface@PCMresourcetypeResourceInterface@pcmflatten,resourceSignatures@-@@-@ResourceInterface@PCMresourcetypeResourceInterface@pcmflatten) .
+    = 
+        __(resourceRepository@-@@-@ResourceInterface@PCMresourcetypeResourceInterface@pcmflatten,resourceSignatures@-@@-@ResourceInterface@PCMresourcetypeResourceInterface@pcmflatten) .
   
   eq attributes(PCMresourcetypeResourceInterface@pcmflatten)
     = nil .
@@ -2650,7 +2706,8 @@ mod @PCMFLATTEN@ is
     = nil .
   
   eq references(PCMparameterVariableUsage@pcmflatten)
-    = __(variableCharacterisation@-@VariableUsage@PCMparameterVariableUsage@pcmflatten,userData@-@VariableUsage@PCMparameterVariableUsage@pcmflatten,callAction@-@@-@VariableUsage@PCMparameterVariableUsage@pcmflatten,synchronisationPoint@-@VariableUsage@PCMparameterVariableUsage@pcmflatten,callReturnAction@-@@-@VariableUsage@PCMparameterVariableUsage@pcmflatten,setVariableAction@-@VariableUsage@PCMparameterVariableUsage@pcmflatten,specifiedOutputParameterAbstraction@-@expectedExternalOutputs@-@VariableUsage@PCMparameterVariableUsage@pcmflatten,assemblyContext@-@@-@VariableUsage@PCMparameterVariableUsage@pcmflatten,entryLevelSystemCall@-@InputParameterUsage@PCMparameterVariableUsage@pcmflatten,entryLevelSystemCall@-@OutputParameterUsage@PCMparameterVariableUsage@pcmflatten,namedReference@-@@-@VariableUsage@PCMparameterVariableUsage@pcmflatten) .
+    = 
+        __(variableCharacterisation@-@VariableUsage@PCMparameterVariableUsage@pcmflatten,userData@-@VariableUsage@PCMparameterVariableUsage@pcmflatten,callAction@-@@-@VariableUsage@PCMparameterVariableUsage@pcmflatten,synchronisationPoint@-@VariableUsage@PCMparameterVariableUsage@pcmflatten,callReturnAction@-@@-@VariableUsage@PCMparameterVariableUsage@pcmflatten,setVariableAction@-@VariableUsage@PCMparameterVariableUsage@pcmflatten,specifiedOutputParameterAbstraction@-@expectedExternalOutputs@-@VariableUsage@PCMparameterVariableUsage@pcmflatten,assemblyContext@-@@-@VariableUsage@PCMparameterVariableUsage@pcmflatten,entryLevelSystemCall@-@InputParameterUsage@PCMparameterVariableUsage@pcmflatten,entryLevelSystemCall@-@OutputParameterUsage@PCMparameterVariableUsage@pcmflatten,namedReference@-@@-@VariableUsage@PCMparameterVariableUsage@pcmflatten) .
   
   eq attributes(PCMparameterVariableUsage@pcmflatten)
     = nil .
@@ -2668,7 +2725,8 @@ mod @PCMFLATTEN@ is
     = nil .
   
   eq references(PCMparameterVariableCharacterisation@pcmflatten)
-    = __(specification@-@VariableCharacterisation@PCMparameterVariableCharacterisation@pcmflatten,variableUsage@-@VariableCharacterisation@PCMparameterVariableCharacterisation@pcmflatten) .
+    = 
+        __(specification@-@VariableCharacterisation@PCMparameterVariableCharacterisation@pcmflatten,variableUsage@-@VariableCharacterisation@PCMparameterVariableCharacterisation@pcmflatten) .
   
   eq attributes(PCMparameterVariableCharacterisation@pcmflatten)
     = type@PCMparameterVariableCharacterisation@pcmflatten .
@@ -2758,7 +2816,8 @@ mod @PCMFLATTEN@ is
     = PCMreliabilityFailureOccurrenceDescription@pcmflatten .
   
   eq references(PCMreliabilityInternalFailureOccurrenceDescription@pcmflatten)
-    = __(internalAction@-@@-@InternalFailureOccurrenceDescription@PCMreliabilityInternalFailureOccurrenceDescription@pcmflatten,softwareInducedFailureType@-@@-@InternalFailureOccurrenceDescription@PCMreliabilityInternalFailureOccurrenceDescription@pcmflatten) .
+    = 
+        __(internalAction@-@@-@InternalFailureOccurrenceDescription@PCMreliabilityInternalFailureOccurrenceDescription@pcmflatten,softwareInducedFailureType@-@@-@InternalFailureOccurrenceDescription@PCMreliabilityInternalFailureOccurrenceDescription@pcmflatten) .
   
   eq attributes(PCMreliabilityInternalFailureOccurrenceDescription@pcmflatten)
     = nil .
@@ -2794,7 +2853,8 @@ mod @PCMFLATTEN@ is
     = PCMreliabilityFailureOccurrenceDescription@pcmflatten .
   
   eq references(PCMreliabilityExternalFailureOccurrenceDescription@pcmflatten)
-    = __(specifiedReliabilityAnnotation@-@@-@ExternalFailureOccurrenceDescription@PCMreliabilityExternalFailureOccurrenceDescription@pcmflatten,failureType@-@@-@ExternalFailureOccurrenceDescription@PCMreliabilityExternalFailureOccurrenceDescription@pcmflatten) .
+    = 
+        __(specifiedReliabilityAnnotation@-@@-@ExternalFailureOccurrenceDescription@PCMreliabilityExternalFailureOccurrenceDescription@pcmflatten,failureType@-@@-@ExternalFailureOccurrenceDescription@PCMreliabilityExternalFailureOccurrenceDescription@pcmflatten) .
   
   eq attributes(PCMreliabilityExternalFailureOccurrenceDescription@pcmflatten)
     = nil .
@@ -2866,7 +2926,8 @@ mod @PCMFLATTEN@ is
     = PCMseffAbstractAction@pcmflatten .
   
   eq references(PCMseffAbstractInternalControlFlowAction@pcmflatten)
-    = __(resourceDemand@-@Action@PCMseffAbstractInternalControlFlowAction@pcmflatten,infrastructureCall@-@@-@Action@PCMseffAbstractInternalControlFlowAction@pcmflatten,resourceCall@-@@-@Action@PCMseffAbstractInternalControlFlowAction@pcmflatten) .
+    = 
+        __(resourceDemand@-@Action@PCMseffAbstractInternalControlFlowAction@pcmflatten,infrastructureCall@-@@-@Action@PCMseffAbstractInternalControlFlowAction@pcmflatten,resourceCall@-@@-@Action@PCMseffAbstractInternalControlFlowAction@pcmflatten) .
   
   eq attributes(PCMseffAbstractInternalControlFlowAction@pcmflatten)
     = nil .
@@ -2884,7 +2945,8 @@ mod @PCMFLATTEN@ is
     = PCMentityEntity@pcmflatten .
   
   eq references(PCMseffAbstractAction@pcmflatten)
-    = __(predecessor@-@AbstractAction@PCMseffAbstractAction@pcmflatten,successor@-@AbstractAction@PCMseffAbstractAction@pcmflatten,resourceDemandingBehaviour@-@AbstractAction@PCMseffAbstractAction@pcmflatten,token@PCMseffAbstractAction@pcmflatten) .
+    = 
+        __(predecessor@-@AbstractAction@PCMseffAbstractAction@pcmflatten,successor@-@AbstractAction@PCMseffAbstractAction@pcmflatten,resourceDemandingBehaviour@-@AbstractAction@PCMseffAbstractAction@pcmflatten,token@PCMseffAbstractAction@pcmflatten) .
   
   eq attributes(PCMseffAbstractAction@pcmflatten)
     = nil .
@@ -2902,7 +2964,8 @@ mod @PCMFLATTEN@ is
     = IDENTIFIERidentifierIdentifier@pcmflatten .
   
   eq references(PCMseffResourceDemandingBehaviour@pcmflatten)
-    = __(abstractLoopAction@-@ResourceDemandingBehaviour@PCMseffResourceDemandingBehaviour@pcmflatten,abstractBranchTransition@-@ResourceDemandingBehaviour@PCMseffResourceDemandingBehaviour@pcmflatten,steps@-@Behaviour@PCMseffResourceDemandingBehaviour@pcmflatten,tpOb@PCMseffResourceDemandingBehaviour@pcmflatten,rtOb@PCMseffResourceDemandingBehaviour@pcmflatten) .
+    = 
+        __(abstractLoopAction@-@ResourceDemandingBehaviour@PCMseffResourceDemandingBehaviour@pcmflatten,abstractBranchTransition@-@ResourceDemandingBehaviour@PCMseffResourceDemandingBehaviour@pcmflatten,steps@-@Behaviour@PCMseffResourceDemandingBehaviour@pcmflatten,tpOb@PCMseffResourceDemandingBehaviour@pcmflatten,rtOb@PCMseffResourceDemandingBehaviour@pcmflatten) .
   
   eq attributes(PCMseffResourceDemandingBehaviour@pcmflatten)
     = nil .
@@ -2938,7 +3001,8 @@ mod @PCMFLATTEN@ is
     = PCMentityEntity@pcmflatten .
   
   eq references(PCMseffAbstractBranchTransition@pcmflatten)
-    = __(branchAction@-@AbstractBranchTransition@PCMseffAbstractBranchTransition@pcmflatten,branchBehaviour@-@BranchTransition@PCMseffAbstractBranchTransition@pcmflatten) .
+    = 
+        __(branchAction@-@AbstractBranchTransition@PCMseffAbstractBranchTransition@pcmflatten,branchBehaviour@-@BranchTransition@PCMseffAbstractBranchTransition@pcmflatten) .
   
   eq attributes(PCMseffAbstractBranchTransition@pcmflatten)
     = nil .
@@ -3010,7 +3074,8 @@ mod @PCMFLATTEN@ is
     = nil .
   
   eq references(PCMseffServiceEffectSpecification@pcmflatten)
-    = __(describedService@-@@-@SEFF@PCMseffServiceEffectSpecification@pcmflatten,basicComponent@-@ServiceEffectSpecification@PCMseffServiceEffectSpecification@pcmflatten) .
+    = 
+        __(describedService@-@@-@SEFF@PCMseffServiceEffectSpecification@pcmflatten,basicComponent@-@ServiceEffectSpecification@PCMseffServiceEffectSpecification@pcmflatten) .
   
   eq attributes(PCMseffServiceEffectSpecification@pcmflatten)
     = seffTypeID@PCMseffServiceEffectSpecification@pcmflatten .
@@ -3025,7 +3090,8 @@ mod @PCMFLATTEN@ is
     = pcmflatten .
   
   eq superTypes(PCMseffResourceDemandingSEFF@pcmflatten)
-    = __(IDENTIFIERidentifierIdentifier@pcmflatten,PCMseffServiceEffectSpecification@pcmflatten,PCMseffResourceDemandingBehaviour@pcmflatten) .
+    = 
+        __(IDENTIFIERidentifierIdentifier@pcmflatten,PCMseffServiceEffectSpecification@pcmflatten,PCMseffResourceDemandingBehaviour@pcmflatten) .
   
   eq references(PCMseffResourceDemandingSEFF@pcmflatten)
     = resourceDemandingInternalBehaviours@PCMseffResourceDemandingSEFF@pcmflatten .
@@ -3100,7 +3166,8 @@ mod @PCMFLATTEN@ is
     = PCMseffAbstractInternalControlFlowAction@pcmflatten .
   
   eq references(PCMseffForkAction@pcmflatten)
-    = __(asynchronousForkedBehaviours@-@ForkAction@PCMseffForkAction@pcmflatten,synchronisingBehaviours@-@ForkAction@PCMseffForkAction@pcmflatten) .
+    = 
+        __(asynchronousForkedBehaviours@-@ForkAction@PCMseffForkAction@pcmflatten,synchronisingBehaviours@-@ForkAction@PCMseffForkAction@pcmflatten) .
   
   eq attributes(PCMseffForkAction@pcmflatten)
     = nil .
@@ -3118,7 +3185,8 @@ mod @PCMFLATTEN@ is
     = PCMseffResourceDemandingBehaviour@pcmflatten .
   
   eq references(PCMseffForkedBehaviour@pcmflatten)
-    = __(synchronisationPoint@-@ForkedBehaviour@PCMseffForkedBehaviour@pcmflatten,forkAction@-@ForkedBehaivour@PCMseffForkedBehaviour@pcmflatten) .
+    = 
+        __(synchronisationPoint@-@ForkedBehaviour@PCMseffForkedBehaviour@pcmflatten,forkAction@-@ForkedBehaivour@PCMseffForkedBehaviour@pcmflatten) .
   
   eq attributes(PCMseffForkedBehaviour@pcmflatten)
     = nil .
@@ -3136,7 +3204,8 @@ mod @PCMFLATTEN@ is
     = nil .
   
   eq references(PCMseffSynchronisationPoint@pcmflatten)
-    = __(outputParameterUsage@-@SynchronisationPoint@PCMseffSynchronisationPoint@pcmflatten,forkAction@-@SynchronisationPoint@PCMseffSynchronisationPoint@pcmflatten,synchronousForkedBehaviours@-@SynchronisationPoint@PCMseffSynchronisationPoint@pcmflatten) .
+    = 
+        __(outputParameterUsage@-@SynchronisationPoint@PCMseffSynchronisationPoint@pcmflatten,forkAction@-@SynchronisationPoint@PCMseffSynchronisationPoint@pcmflatten,synchronousForkedBehaviours@-@SynchronisationPoint@PCMseffSynchronisationPoint@pcmflatten) .
   
   eq attributes(PCMseffSynchronisationPoint@pcmflatten)
     = nil .
@@ -3151,10 +3220,12 @@ mod @PCMFLATTEN@ is
     = pcmflatten .
   
   eq superTypes(PCMseffExternalCallAction@pcmflatten)
-    = __(PCMseffAbstractAction@pcmflatten,PCMseffCallReturnAction@pcmflatten,PCMseff@-@reliabilityFailureHandlingEntity@pcmflatten) .
+    = 
+        __(PCMseffAbstractAction@pcmflatten,PCMseffCallReturnAction@pcmflatten,PCMseff@-@reliabilityFailureHandlingEntity@pcmflatten) .
   
   eq references(PCMseffExternalCallAction@pcmflatten)
-    = __(calledService@-@ExternalService@PCMseffExternalCallAction@pcmflatten,role@-@ExternalService@PCMseffExternalCallAction@pcmflatten) .
+    = 
+        __(calledService@-@ExternalService@PCMseffExternalCallAction@pcmflatten,role@-@ExternalService@PCMseffExternalCallAction@pcmflatten) .
   
   eq attributes(PCMseffExternalCallAction@pcmflatten)
     = retryCount@PCMseffExternalCallAction@pcmflatten .
@@ -3211,7 +3282,8 @@ mod @PCMFLATTEN@ is
     = passiveresource@-@AcquireAction@PCMseffAcquireAction@pcmflatten .
   
   eq attributes(PCMseffAcquireAction@pcmflatten)
-    = __(timeout@PCMseffAcquireAction@pcmflatten,timeoutValue@PCMseffAcquireAction@pcmflatten) .
+    = 
+        __(timeout@PCMseffAcquireAction@pcmflatten,timeoutValue@PCMseffAcquireAction@pcmflatten) .
   
   eq name(PCMseffCollectionIteratorAction@pcmflatten)
     = "PCMseffCollectionIteratorAction" .
@@ -3277,7 +3349,8 @@ mod @PCMFLATTEN@ is
     = pcmflatten .
   
   eq superTypes(PCMseffInternalCallAction@pcmflatten)
-    = __(PCMseffCallAction@pcmflatten,PCMseffAbstractInternalControlFlowAction@pcmflatten) .
+    = 
+        __(PCMseffCallAction@pcmflatten,PCMseffAbstractInternalControlFlowAction@pcmflatten) .
   
   eq references(PCMseffInternalCallAction@pcmflatten)
     = calledResourceDemandingInternalBehaviour@PCMseffInternalCallAction@pcmflatten .
@@ -3295,10 +3368,12 @@ mod @PCMFLATTEN@ is
     = pcmflatten .
   
   eq superTypes(PCMseffEmitEventAction@pcmflatten)
-    = __(PCMseffAbstractAction@pcmflatten,PCMseffCallAction@pcmflatten) .
+    = 
+        __(PCMseffAbstractAction@pcmflatten,PCMseffCallAction@pcmflatten) .
   
   eq references(PCMseffEmitEventAction@pcmflatten)
-    = __(eventType@-@@-@EmitEventAction@PCMseffEmitEventAction@pcmflatten,sourceRole@-@@-@EmitEventAction@PCMseffEmitEventAction@pcmflatten) .
+    = 
+        __(eventType@-@@-@EmitEventAction@PCMseffEmitEventAction@pcmflatten,sourceRole@-@@-@EmitEventAction@PCMseffEmitEventAction@pcmflatten) .
   
   eq attributes(PCMseffEmitEventAction@pcmflatten)
     = nil .
@@ -3316,7 +3391,8 @@ mod @PCMFLATTEN@ is
     = PCMseffAbstractInternalControlFlowAction@pcmflatten .
   
   eq references(PCMseffInternalAction@pcmflatten)
-    = __(internalFailureOccurrenceDescriptions@-@@-@InternalAction@PCMseffInternalAction@pcmflatten,queue@PCMseffInternalAction@pcmflatten) .
+    = 
+        __(internalFailureOccurrenceDescriptions@-@@-@InternalAction@PCMseffInternalAction@pcmflatten,queue@PCMseffInternalAction@pcmflatten) .
   
   eq attributes(PCMseffInternalAction@pcmflatten)
     = nil .
@@ -3334,7 +3410,8 @@ mod @PCMFLATTEN@ is
     = PCMseffCallAction@pcmflatten .
   
   eq references(PCMseff@-@performanceInfrastructureCall@pcmflatten)
-    = __(signature@-@@-@InfrastructureCall@PCMseff@-@performanceInfrastructureCall@pcmflatten,numberOfCalls@-@@-@InfrastructureCall@PCMseff@-@performanceInfrastructureCall@pcmflatten,action@-@@-@InfrastructureCall@PCMseff@-@performanceInfrastructureCall@pcmflatten,requiredRole@-@@-@InfrastructureCall@PCMseff@-@performanceInfrastructureCall@pcmflatten) .
+    = 
+        __(signature@-@@-@InfrastructureCall@PCMseff@-@performanceInfrastructureCall@pcmflatten,numberOfCalls@-@@-@InfrastructureCall@PCMseff@-@performanceInfrastructureCall@pcmflatten,action@-@@-@InfrastructureCall@PCMseff@-@performanceInfrastructureCall@pcmflatten,requiredRole@-@@-@InfrastructureCall@PCMseff@-@performanceInfrastructureCall@pcmflatten) .
   
   eq attributes(PCMseff@-@performanceInfrastructureCall@pcmflatten)
     = nil .
@@ -3352,7 +3429,8 @@ mod @PCMFLATTEN@ is
     = PCMseffCallAction@pcmflatten .
   
   eq references(PCMseff@-@performanceResourceCall@pcmflatten)
-    = __(action@-@@-@ResourceCall@PCMseff@-@performanceResourceCall@pcmflatten,resourceRequiredRole@-@@-@ResourceCall@PCMseff@-@performanceResourceCall@pcmflatten,signature@-@@-@ResourceCall@PCMseff@-@performanceResourceCall@pcmflatten,numberOfCalls@-@@-@ResourceCall@PCMseff@-@performanceResourceCall@pcmflatten) .
+    = 
+        __(action@-@@-@ResourceCall@PCMseff@-@performanceResourceCall@pcmflatten,resourceRequiredRole@-@@-@ResourceCall@PCMseff@-@performanceResourceCall@pcmflatten,signature@-@@-@ResourceCall@PCMseff@-@performanceResourceCall@pcmflatten,numberOfCalls@-@@-@ResourceCall@PCMseff@-@performanceResourceCall@pcmflatten) .
   
   eq attributes(PCMseff@-@performanceResourceCall@pcmflatten)
     = nil .
@@ -3370,7 +3448,8 @@ mod @PCMFLATTEN@ is
     = nil .
   
   eq references(PCMseffperformanceParametricResourceDemand@pcmflatten)
-    = __(specification@-@ParametericResourceDemand@PCMseffperformanceParametricResourceDemand@pcmflatten,requiredResource@-@ParametricResourceDemand@PCMseffperformanceParametricResourceDemand@pcmflatten,action@-@ParametricResourceDemand@PCMseffperformanceParametricResourceDemand@pcmflatten) .
+    = 
+        __(specification@-@ParametericResourceDemand@PCMseffperformanceParametricResourceDemand@pcmflatten,requiredResource@-@ParametricResourceDemand@PCMseffperformanceParametricResourceDemand@pcmflatten,action@-@ParametricResourceDemand@PCMseffperformanceParametricResourceDemand@pcmflatten) .
   
   eq attributes(PCMseffperformanceParametricResourceDemand@pcmflatten)
     = nil .
@@ -3385,10 +3464,12 @@ mod @PCMFLATTEN@ is
     = pcmflatten .
   
   eq superTypes(PCMseff@-@reliabilityRecoveryActionBehaviour@pcmflatten)
-    = __(PCMseff@-@reliabilityFailureHandlingEntity@pcmflatten,PCMseffResourceDemandingBehaviour@pcmflatten) .
+    = 
+        __(PCMseff@-@reliabilityFailureHandlingEntity@pcmflatten,PCMseffResourceDemandingBehaviour@pcmflatten) .
   
   eq references(PCMseff@-@reliabilityRecoveryActionBehaviour@pcmflatten)
-    = __(failureHandlingAlternatives@-@@-@RecoveryActionBehaviour@PCMseff@-@reliabilityRecoveryActionBehaviour@pcmflatten,recoveryAction@-@@-@RecoveryActionBehaviour@PCMseff@-@reliabilityRecoveryActionBehaviour@pcmflatten) .
+    = 
+        __(failureHandlingAlternatives@-@@-@RecoveryActionBehaviour@PCMseff@-@reliabilityRecoveryActionBehaviour@pcmflatten,recoveryAction@-@@-@RecoveryActionBehaviour@PCMseff@-@reliabilityRecoveryActionBehaviour@pcmflatten) .
   
   eq attributes(PCMseff@-@reliabilityRecoveryActionBehaviour@pcmflatten)
     = nil .
@@ -3406,7 +3487,8 @@ mod @PCMFLATTEN@ is
     = PCMseffAbstractInternalControlFlowAction@pcmflatten .
   
   eq references(PCMseff@-@reliabilityRecoveryAction@pcmflatten)
-    = __(primaryBehaviour@-@@-@RecoveryAction@PCMseff@-@reliabilityRecoveryAction@pcmflatten,recoveryActionBehaviours@-@@-@RecoveryAction@PCMseff@-@reliabilityRecoveryAction@pcmflatten) .
+    = 
+        __(primaryBehaviour@-@@-@RecoveryAction@PCMseff@-@reliabilityRecoveryAction@pcmflatten,recoveryActionBehaviours@-@@-@RecoveryAction@PCMseff@-@reliabilityRecoveryAction@pcmflatten) .
   
   eq attributes(PCMseff@-@reliabilityRecoveryAction@pcmflatten)
     = nil .
@@ -3442,7 +3524,8 @@ mod @PCMFLATTEN@ is
     = nil .
   
   eq references(PCMqosannotationsSpecifiedQoSAnnotation@pcmflatten)
-    = __(signature@-@SpecifiedQoSAnnation@PCMqosannotationsSpecifiedQoSAnnotation@pcmflatten,role@-@SpecifiedQoSAnnotation@PCMqosannotationsSpecifiedQoSAnnotation@pcmflatten,qosAnnotations@-@SpecifiedQoSAnnotation@PCMqosannotationsSpecifiedQoSAnnotation@pcmflatten) .
+    = 
+        __(signature@-@SpecifiedQoSAnnation@PCMqosannotationsSpecifiedQoSAnnotation@pcmflatten,role@-@SpecifiedQoSAnnotation@PCMqosannotationsSpecifiedQoSAnnotation@pcmflatten,qosAnnotations@-@SpecifiedQoSAnnotation@PCMqosannotationsSpecifiedQoSAnnotation@pcmflatten) .
   
   eq attributes(PCMqosannotationsSpecifiedQoSAnnotation@pcmflatten)
     = nil .
@@ -3460,7 +3543,8 @@ mod @PCMFLATTEN@ is
     = PCMentityEntity@pcmflatten .
   
   eq references(PCMqosannotationsQoSAnnotations@pcmflatten)
-    = __(specifiedOutputParameterAbstractions@-@QoSAnnotations@PCMqosannotationsQoSAnnotations@pcmflatten,system@-@QoSAnnotations@PCMqosannotationsQoSAnnotations@pcmflatten,specifiedQoSAnnotations@-@QoSAnnotations@PCMqosannotationsQoSAnnotations@pcmflatten) .
+    = 
+        __(specifiedOutputParameterAbstractions@-@QoSAnnotations@PCMqosannotationsQoSAnnotations@pcmflatten,system@-@QoSAnnotations@PCMqosannotationsQoSAnnotations@pcmflatten,specifiedQoSAnnotations@-@QoSAnnotations@PCMqosannotationsQoSAnnotations@pcmflatten) .
   
   eq attributes(PCMqosannotationsQoSAnnotations@pcmflatten)
     = nil .
@@ -3478,7 +3562,8 @@ mod @PCMFLATTEN@ is
     = nil .
   
   eq references(PCMqosannotationsSpecifiedOutputParameterAbstraction@pcmflatten)
-    = __(signature@-@SpecifiedOutputParameterAbstraction@PCMqosannotationsSpecifiedOutputParameterAbstraction@pcmflatten,role@-@SpecifiedOutputParameterAbstraction@PCMqosannotationsSpecifiedOutputParameterAbstraction@pcmflatten,expectedExternalOutputs@-@SpecifiedOutputParameterAbstraction@PCMqosannotationsSpecifiedOutputParameterAbstraction@pcmflatten,qosAnnotations@-@SpecifiedOutputParameterAbstraction@PCMqosannotationsSpecifiedOutputParameterAbstraction@pcmflatten) .
+    = 
+        __(signature@-@SpecifiedOutputParameterAbstraction@PCMqosannotationsSpecifiedOutputParameterAbstraction@pcmflatten,role@-@SpecifiedOutputParameterAbstraction@PCMqosannotationsSpecifiedOutputParameterAbstraction@pcmflatten,expectedExternalOutputs@-@SpecifiedOutputParameterAbstraction@PCMqosannotationsSpecifiedOutputParameterAbstraction@pcmflatten,qosAnnotations@-@SpecifiedOutputParameterAbstraction@PCMqosannotationsSpecifiedOutputParameterAbstraction@pcmflatten) .
   
   eq attributes(PCMqosannotationsSpecifiedOutputParameterAbstraction@pcmflatten)
     = nil .
@@ -3565,7 +3650,8 @@ mod @PCMFLATTEN@ is
     = pcmflatten .
   
   eq superTypes(PCMsystemSystem@pcmflatten)
-    = __(PCMentityEntity@pcmflatten,PCMentityComposedProvidingRequiringEntity@pcmflatten) .
+    = 
+        __(PCMentityEntity@pcmflatten,PCMentityComposedProvidingRequiringEntity@pcmflatten) .
   
   eq references(PCMsystemSystem@pcmflatten)
     = qosAnnotations@-@System@PCMsystemSystem@pcmflatten .
@@ -3586,7 +3672,8 @@ mod @PCMFLATTEN@ is
     = PCMentityNamedElement@pcmflatten .
   
   eq references(PCMresourceenvironmentResourceEnvironment@pcmflatten)
-    = __(linkingResources@-@@-@ResourceEnvironment@PCMresourceenvironmentResourceEnvironment@pcmflatten,resourceContainer@-@ResourceEnvironment@PCMresourceenvironmentResourceEnvironment@pcmflatten) .
+    = 
+        __(linkingResources@-@@-@ResourceEnvironment@PCMresourceenvironmentResourceEnvironment@pcmflatten,resourceContainer@-@ResourceEnvironment@PCMresourceenvironmentResourceEnvironment@pcmflatten) .
   
   eq attributes(PCMresourceenvironmentResourceEnvironment@pcmflatten)
     = nil .
@@ -3604,7 +3691,8 @@ mod @PCMFLATTEN@ is
     = PCMentityEntity@pcmflatten .
   
   eq references(PCMresourceenvironmentLinkingResource@pcmflatten)
-    = __(connectedResourceContainers@-@LinkingResource@PCMresourceenvironmentLinkingResource@pcmflatten,communicationLinkResourceSpecifications@-@LinkingResource@PCMresourceenvironmentLinkingResource@pcmflatten,resourceEnvironment@-@LinkingResource@PCMresourceenvironmentLinkingResource@pcmflatten) .
+    = 
+        __(connectedResourceContainers@-@LinkingResource@PCMresourceenvironmentLinkingResource@pcmflatten,communicationLinkResourceSpecifications@-@LinkingResource@PCMresourceenvironmentLinkingResource@pcmflatten,resourceEnvironment@-@LinkingResource@PCMresourceenvironmentLinkingResource@pcmflatten) .
   
   eq attributes(PCMresourceenvironmentLinkingResource@pcmflatten)
     = nil .
@@ -3622,7 +3710,8 @@ mod @PCMFLATTEN@ is
     = PCMentityEntity@pcmflatten .
   
   eq references(PCMresourceenvironmentResourceContainer@pcmflatten)
-    = __(activeResourceSpecifications@-@ResourceContainer@PCMresourceenvironmentResourceContainer@pcmflatten,resourceEnvironment@-@ResourceContainer@PCMresourceenvironmentResourceContainer@pcmflatten,nestedResourceContainers@-@@-@ResourceContainer@PCMresourceenvironmentResourceContainer@pcmflatten,parentResourceContainer@-@@-@ResourceContainer@PCMresourceenvironmentResourceContainer@pcmflatten) .
+    = 
+        __(activeResourceSpecifications@-@ResourceContainer@PCMresourceenvironmentResourceContainer@pcmflatten,resourceEnvironment@-@ResourceContainer@PCMresourceenvironmentResourceContainer@pcmflatten,nestedResourceContainers@-@@-@ResourceContainer@PCMresourceenvironmentResourceContainer@pcmflatten,parentResourceContainer@-@@-@ResourceContainer@PCMresourceenvironmentResourceContainer@pcmflatten) .
   
   eq attributes(PCMresourceenvironmentResourceContainer@pcmflatten)
     = nil .
@@ -3640,10 +3729,12 @@ mod @PCMFLATTEN@ is
     = IDENTIFIERidentifierIdentifier@pcmflatten .
   
   eq references(PCMresourceenvironmentProcessingResourceSpecification@pcmflatten)
-    = __(schedulingPolicy@PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,activeResourceType@-@ActiveResourceSpecification@PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,processingRate@-@ProcessingResourceSpecification@PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,resourceContainer@-@ProcessingResourceSpecification@PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,queue@PCMresourceenvironmentProcessingResourceSpecification@pcmflatten) .
+    = 
+        __(schedulingPolicy@PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,activeResourceType@-@ActiveResourceSpecification@PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,processingRate@-@ProcessingResourceSpecification@PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,resourceContainer@-@ProcessingResourceSpecification@PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,queue@PCMresourceenvironmentProcessingResourceSpecification@pcmflatten) .
   
   eq attributes(PCMresourceenvironmentProcessingResourceSpecification@pcmflatten)
-    = __(MTTR@PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,MTTF@PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,requiredByContainer@PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,numberOfReplicas@PCMresourceenvironmentProcessingResourceSpecification@pcmflatten) .
+    = 
+        __(MTTR@PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,MTTF@PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,requiredByContainer@PCMresourceenvironmentProcessingResourceSpecification@pcmflatten,numberOfReplicas@PCMresourceenvironmentProcessingResourceSpecification@pcmflatten) .
   
   eq name(PCMresourceenvironmentCommunicationLinkResourceSpecification@pcmflatten)
     = "PCMresourceenvironmentCommunicationLinkResourceSpecification" .
@@ -3658,7 +3749,8 @@ mod @PCMFLATTEN@ is
     = IDENTIFIERidentifierIdentifier@pcmflatten .
   
   eq references(PCMresourceenvironmentCommunicationLinkResourceSpecification@pcmflatten)
-    = __(linkingResource@-@CommunicationLinkResourceSpecification@PCMresourceenvironmentCommunicationLinkResourceSpecification@pcmflatten,communicationLinkResourceType@-@CommunicationLinkResourceSpecification@PCMresourceenvironmentCommunicationLinkResourceSpecification@pcmflatten,latency@-@CommunicationLinkResourceSpecification@PCMresourceenvironmentCommunicationLinkResourceSpecification@pcmflatten,throughput@-@CommunicationLinkResourceSpecification@PCMresourceenvironmentCommunicationLinkResourceSpecification@pcmflatten) .
+    = 
+        __(linkingResource@-@CommunicationLinkResourceSpecification@PCMresourceenvironmentCommunicationLinkResourceSpecification@pcmflatten,communicationLinkResourceType@-@CommunicationLinkResourceSpecification@PCMresourceenvironmentCommunicationLinkResourceSpecification@pcmflatten,latency@-@CommunicationLinkResourceSpecification@PCMresourceenvironmentCommunicationLinkResourceSpecification@pcmflatten,throughput@-@CommunicationLinkResourceSpecification@PCMresourceenvironmentCommunicationLinkResourceSpecification@pcmflatten) .
   
   eq attributes(PCMresourceenvironmentCommunicationLinkResourceSpecification@pcmflatten)
     = failureProbability@PCMresourceenvironmentCommunicationLinkResourceSpecification@pcmflatten .
@@ -3676,7 +3768,8 @@ mod @PCMFLATTEN@ is
     = PCMentityEntity@pcmflatten .
   
   eq references(PCMallocationAllocationContext@pcmflatten)
-    = __(resourceContainer@-@AllocationContext@PCMallocationAllocationContext@pcmflatten,assemblyContext@-@AllocationContext@PCMallocationAllocationContext@pcmflatten,allocation@-@AllocationContext@PCMallocationAllocationContext@pcmflatten,eventChannel@-@@-@AllocationContext@PCMallocationAllocationContext@pcmflatten) .
+    = 
+        __(resourceContainer@-@AllocationContext@PCMallocationAllocationContext@pcmflatten,assemblyContext@-@AllocationContext@PCMallocationAllocationContext@pcmflatten,allocation@-@AllocationContext@PCMallocationAllocationContext@pcmflatten,eventChannel@-@@-@AllocationContext@PCMallocationAllocationContext@pcmflatten) .
   
   eq attributes(PCMallocationAllocationContext@pcmflatten)
     = nil .
@@ -3694,7 +3787,8 @@ mod @PCMFLATTEN@ is
     = PCMentityEntity@pcmflatten .
   
   eq references(PCMallocationAllocation@pcmflatten)
-    = __(targetResourceEnvironment@-@Allocation@PCMallocationAllocation@pcmflatten,system@-@Allocation@PCMallocationAllocation@pcmflatten,allocationContexts@-@Allocation@PCMallocationAllocation@pcmflatten) .
+    = 
+        __(targetResourceEnvironment@-@Allocation@PCMallocationAllocation@pcmflatten,system@-@Allocation@PCMallocationAllocation@pcmflatten,allocationContexts@-@Allocation@PCMallocationAllocation@pcmflatten) .
   
   eq attributes(PCMallocationAllocation@pcmflatten)
     = nil .
@@ -3709,7 +3803,8 @@ mod @PCMFLATTEN@ is
     = pcmflatten .
   
   eq superTypes(PCMsubsystemSubSystem@pcmflatten)
-    = __(PCMentityComposedProvidingRequiringEntity@pcmflatten,PCMrepositoryRepositoryComponent@pcmflatten) .
+    = 
+        __(PCMentityComposedProvidingRequiringEntity@pcmflatten,PCMrepositoryRepositoryComponent@pcmflatten) .
   
   eq references(PCMsubsystemSubSystem@pcmflatten)
     = nil .
@@ -3964,7 +4059,8 @@ mod @PCMFLATTEN@ is
     = STOEXstoexTerm@pcmflatten .
   
   eq references(STOEXstoexTermExpression@pcmflatten)
-    = __(left@STOEXstoexTermExpression@pcmflatten,right@STOEXstoexTermExpression@pcmflatten) .
+    = 
+        __(left@STOEXstoexTermExpression@pcmflatten,right@STOEXstoexTermExpression@pcmflatten) .
   
   eq attributes(STOEXstoexTermExpression@pcmflatten)
     = operation@STOEXstoexTermExpression@pcmflatten .
@@ -3982,7 +4078,8 @@ mod @PCMFLATTEN@ is
     = STOEXstoexProduct@pcmflatten .
   
   eq references(STOEXstoexProductExpression@pcmflatten)
-    = __(left@STOEXstoexProductExpression@pcmflatten,right@STOEXstoexProductExpression@pcmflatten) .
+    = 
+        __(left@STOEXstoexProductExpression@pcmflatten,right@STOEXstoexProductExpression@pcmflatten) .
   
   eq attributes(STOEXstoexProductExpression@pcmflatten)
     = operation@STOEXstoexProductExpression@pcmflatten .
@@ -4033,7 +4130,8 @@ mod @PCMFLATTEN@ is
     = pcmflatten .
   
   eq superTypes(STOEXstoexNumericLiteral@pcmflatten)
-    = __(UNITSunitsUnitCarryingElement@pcmflatten,STOEXstoexAtom@pcmflatten) .
+    = 
+        __(UNITSunitsUnitCarryingElement@pcmflatten,STOEXstoexAtom@pcmflatten) .
   
   eq references(STOEXstoexNumericLiteral@pcmflatten)
     = nil .
@@ -4090,7 +4188,8 @@ mod @PCMFLATTEN@ is
     = STOEXstoexComparison@pcmflatten .
   
   eq references(STOEXstoexCompareExpression@pcmflatten)
-    = __(left@STOEXstoexCompareExpression@pcmflatten,right@STOEXstoexCompareExpression@pcmflatten) .
+    = 
+        __(left@STOEXstoexCompareExpression@pcmflatten,right@STOEXstoexCompareExpression@pcmflatten) .
   
   eq attributes(STOEXstoexCompareExpression@pcmflatten)
     = operation@STOEXstoexCompareExpression@pcmflatten .
@@ -4144,7 +4243,8 @@ mod @PCMFLATTEN@ is
     = STOEXstoexPower@pcmflatten .
   
   eq references(STOEXstoexPowerExpression@pcmflatten)
-    = __(base@STOEXstoexPowerExpression@pcmflatten,exponent@STOEXstoexPowerExpression@pcmflatten) .
+    = 
+        __(base@STOEXstoexPowerExpression@pcmflatten,exponent@STOEXstoexPowerExpression@pcmflatten) .
   
   eq attributes(STOEXstoexPowerExpression@pcmflatten)
     = nil .
@@ -4162,7 +4262,8 @@ mod @PCMFLATTEN@ is
     = STOEXstoexBooleanExpression@pcmflatten .
   
   eq references(STOEXstoexBooleanOperatorExpression@pcmflatten)
-    = __(left@STOEXstoexBooleanOperatorExpression@pcmflatten,right@STOEXstoexBooleanOperatorExpression@pcmflatten) .
+    = 
+        __(left@STOEXstoexBooleanOperatorExpression@pcmflatten,right@STOEXstoexBooleanOperatorExpression@pcmflatten) .
   
   eq attributes(STOEXstoexBooleanOperatorExpression@pcmflatten)
     = operation@STOEXstoexBooleanOperatorExpression@pcmflatten .
@@ -4234,7 +4335,8 @@ mod @PCMFLATTEN@ is
     = STOEXstoexIfElse@pcmflatten .
   
   eq references(STOEXstoexIfElseExpression@pcmflatten)
-    = __(ifExpression@STOEXstoexIfElseExpression@pcmflatten,elseExpression@STOEXstoexIfElseExpression@pcmflatten,conditionExpression@STOEXstoexIfElseExpression@pcmflatten) .
+    = 
+        __(ifExpression@STOEXstoexIfElseExpression@pcmflatten,elseExpression@STOEXstoexIfElseExpression@pcmflatten,conditionExpression@STOEXstoexIfElseExpression@pcmflatten) .
   
   eq attributes(STOEXstoexIfElseExpression@pcmflatten)
     = nil .
@@ -4414,10 +4516,12 @@ mod @PCMFLATTEN@ is
     = nil .
   
   eq references(TOKENtokensUSToken@pcmflatten)
-    = __(tsOb@TOKENtokensUSToken@pcmflatten,cToken@TOKENtokensUSToken@pcmflatten,loopToken@TOKENtokensUSToken@pcmflatten) .
+    = 
+        __(tsOb@TOKENtokensUSToken@pcmflatten,cToken@TOKENtokensUSToken@pcmflatten,loopToken@TOKENtokensUSToken@pcmflatten) .
   
   eq attributes(TOKENtokensUSToken@pcmflatten)
-    = __(id@TOKENtokensUSToken@pcmflatten,completed@TOKENtokensUSToken@pcmflatten,branchNumber@TOKENtokensUSToken@pcmflatten,branchesProb@TOKENtokensUSToken@pcmflatten,prob@TOKENtokensUSToken@pcmflatten) .
+    = 
+        __(id@TOKENtokensUSToken@pcmflatten,completed@TOKENtokensUSToken@pcmflatten,branchNumber@TOKENtokensUSToken@pcmflatten,branchesProb@TOKENtokensUSToken@pcmflatten,prob@TOKENtokensUSToken@pcmflatten) .
   
   eq name(TOKENtokensRETURNVar@pcmflatten)
     = "TOKENtokensRETURNVar" .
@@ -4450,10 +4554,12 @@ mod @PCMFLATTEN@ is
     = nil .
   
   eq references(TOKENtokensSEFFToken@pcmflatten)
-    = __(tsOb@TOKENtokensSEFFToken@pcmflatten,context@TOKENtokensSEFFToken@pcmflatten,nestedToken@TOKENtokensSEFFToken@pcmflatten,loopToken@TOKENtokensSEFFToken@pcmflatten,returnVars@TOKENtokensSEFFToken@pcmflatten) .
+    = 
+        __(tsOb@TOKENtokensSEFFToken@pcmflatten,context@TOKENtokensSEFFToken@pcmflatten,nestedToken@TOKENtokensSEFFToken@pcmflatten,loopToken@TOKENtokensSEFFToken@pcmflatten,returnVars@TOKENtokensSEFFToken@pcmflatten) .
   
   eq attributes(TOKENtokensSEFFToken@pcmflatten)
-    = __(id@TOKENtokensSEFFToken@pcmflatten,completed@TOKENtokensSEFFToken@pcmflatten,branchNumber@TOKENtokensSEFFToken@pcmflatten,branchesProb@TOKENtokensSEFFToken@pcmflatten,prob@TOKENtokensSEFFToken@pcmflatten) .
+    = 
+        __(id@TOKENtokensSEFFToken@pcmflatten,completed@TOKENtokensSEFFToken@pcmflatten,branchNumber@TOKENtokensSEFFToken@pcmflatten,branchesProb@TOKENtokensSEFFToken@pcmflatten,prob@TOKENtokensSEFFToken@pcmflatten) .
   
   eq name(TOKENtokensUSLoopToken@pcmflatten)
     = "TOKENtokensUSLoopToken" .
@@ -4471,7 +4577,8 @@ mod @PCMFLATTEN@ is
     = nil .
   
   eq attributes(TOKENtokensUSLoopToken@pcmflatten)
-    = __(iterations@TOKENtokensUSLoopToken@pcmflatten,started@TOKENtokensUSLoopToken@pcmflatten) .
+    = 
+        __(iterations@TOKENtokensUSLoopToken@pcmflatten,started@TOKENtokensUSLoopToken@pcmflatten) .
   
   eq name(TOKENtokensSEFFLoopToken@pcmflatten)
     = "TOKENtokensSEFFLoopToken" .
@@ -4489,7 +4596,8 @@ mod @PCMFLATTEN@ is
     = nil .
   
   eq attributes(TOKENtokensSEFFLoopToken@pcmflatten)
-    = __(iterations@TOKENtokensSEFFLoopToken@pcmflatten,started@TOKENtokensSEFFLoopToken@pcmflatten) .
+    = 
+        __(iterations@TOKENtokensSEFFLoopToken@pcmflatten,started@TOKENtokensSEFFLoopToken@pcmflatten) .
   
   eq name(TOKENtokensTokenProb@pcmflatten)
     = "TOKENtokensTokenProb" .
@@ -4507,7 +4615,8 @@ mod @PCMFLATTEN@ is
     = nil .
   
   eq attributes(TOKENtokensTokenProb@pcmflatten)
-    = __(branchesProb@TOKENtokensTokenProb@pcmflatten,prob@TOKENtokensTokenProb@pcmflatten) .
+    = 
+        __(branchesProb@TOKENtokensTokenProb@pcmflatten,prob@TOKENtokensTokenProb@pcmflatten) .
   
   eq name(TOKENtokensSandTimer@pcmflatten)
     = "TOKENtokensSandTimer" .
@@ -4561,7 +4670,8 @@ mod @PCMFLATTEN@ is
     = nil .
   
   eq attributes(ObResponseTime@pcmflatten)
-    = __(counter@ObResponseTime@pcmflatten,tTime@ObResponseTime@pcmflatten,rTime@ObResponseTime@pcmflatten,allRT@ObResponseTime@pcmflatten) .
+    = 
+        __(counter@ObResponseTime@pcmflatten,tTime@ObResponseTime@pcmflatten,rTime@ObResponseTime@pcmflatten,allRT@ObResponseTime@pcmflatten) .
   
   eq name(ObThroughPut@pcmflatten)
     = "ObThroughPut" .
@@ -4579,7 +4689,8 @@ mod @PCMFLATTEN@ is
     = nil .
   
   eq attributes(ObThroughPut@pcmflatten)
-    = __(counter@ObThroughPut@pcmflatten,thp@ObThroughPut@pcmflatten) .
+    = 
+        __(counter@ObThroughPut@pcmflatten,thp@ObThroughPut@pcmflatten) .
   
   eq name(closedWorkload@-@PCMRandomVariable@PCMcorePCMRandomVariable@pcmflatten)
     = "closedWorkload_PCMRandomVariable" .
@@ -15034,7 +15145,8 @@ mod @PCMFLATTEN@ is
     = none@ParameterModifier@pcmflatten .
   
   eq literals(ParameterModifier@pcmflatten)
-    = _#_(none@ParameterModifier@pcmflatten,in@ParameterModifier@pcmflatten,out@ParameterModifier@pcmflatten,inout@ParameterModifier@pcmflatten) .
+    = 
+          _#_(none@ParameterModifier@pcmflatten,in@ParameterModifier@pcmflatten,out@ParameterModifier@pcmflatten,inout@ParameterModifier@pcmflatten) .
   
   eq metaAux(X:ComponentType@pcmflatten)
     = ComponentType@pcmflatten .
@@ -15049,7 +15161,8 @@ mod @PCMFLATTEN@ is
     = BUSINESSCOMPONENT@ComponentType@pcmflatten .
   
   eq literals(ComponentType@pcmflatten)
-    = _#_(BUSINESSCOMPONENT@ComponentType@pcmflatten,INFRASTRUCTURECOMPONENT@ComponentType@pcmflatten) .
+    = 
+          _#_(BUSINESSCOMPONENT@ComponentType@pcmflatten,INFRASTRUCTURECOMPONENT@ComponentType@pcmflatten) .
   
   eq metaAux(X:PrimitiveTypeEnum@pcmflatten)
     = PrimitiveTypeEnum@pcmflatten .
@@ -15064,7 +15177,8 @@ mod @PCMFLATTEN@ is
     = INT@PrimitiveTypeEnum@pcmflatten .
   
   eq literals(PrimitiveTypeEnum@pcmflatten)
-    = _#_(INT@PrimitiveTypeEnum@pcmflatten,STRING@PrimitiveTypeEnum@pcmflatten,BOOL@PrimitiveTypeEnum@pcmflatten,DOUBLE@PrimitiveTypeEnum@pcmflatten,CHAR@PrimitiveTypeEnum@pcmflatten,BYTE@PrimitiveTypeEnum@pcmflatten,LONG@PrimitiveTypeEnum@pcmflatten) .
+    = 
+          _#_(INT@PrimitiveTypeEnum@pcmflatten,STRING@PrimitiveTypeEnum@pcmflatten,BOOL@PrimitiveTypeEnum@pcmflatten,DOUBLE@PrimitiveTypeEnum@pcmflatten,CHAR@PrimitiveTypeEnum@pcmflatten,BYTE@PrimitiveTypeEnum@pcmflatten,LONG@PrimitiveTypeEnum@pcmflatten) .
   
   eq metaAux(X:VariableCharacterisationType@pcmflatten)
     = VariableCharacterisationType@pcmflatten .
@@ -15079,7 +15193,8 @@ mod @PCMFLATTEN@ is
     = STRUCTURE@VariableCharacterisationType@pcmflatten .
   
   eq literals(VariableCharacterisationType@pcmflatten)
-    = _#_(STRUCTURE@VariableCharacterisationType@pcmflatten,NUMBER@-@OF@-@ELEMENTS@VariableCharacterisationType@pcmflatten,VALUE@VariableCharacterisationType@pcmflatten,BYTESIZE@VariableCharacterisationType@pcmflatten,TYPE@VariableCharacterisationType@pcmflatten) .
+    = 
+          _#_(STRUCTURE@VariableCharacterisationType@pcmflatten,NUMBER@-@OF@-@ELEMENTS@VariableCharacterisationType@pcmflatten,VALUE@VariableCharacterisationType@pcmflatten,BYTESIZE@VariableCharacterisationType@pcmflatten,TYPE@VariableCharacterisationType@pcmflatten) .
   
   eq metaAux(X:TermOperations@pcmflatten)
     = TermOperations@pcmflatten .
@@ -15094,7 +15209,8 @@ mod @PCMFLATTEN@ is
     = ADD@TermOperations@pcmflatten .
   
   eq literals(TermOperations@pcmflatten)
-    = _#_(ADD@TermOperations@pcmflatten,SUB@TermOperations@pcmflatten) .
+    = 
+          _#_(ADD@TermOperations@pcmflatten,SUB@TermOperations@pcmflatten) .
   
   eq metaAux(X:ProductOperations@pcmflatten)
     = ProductOperations@pcmflatten .
@@ -15109,7 +15225,8 @@ mod @PCMFLATTEN@ is
     = MULT@ProductOperations@pcmflatten .
   
   eq literals(ProductOperations@pcmflatten)
-    = _#_(MULT@ProductOperations@pcmflatten,DIV@ProductOperations@pcmflatten,MOD@ProductOperations@pcmflatten) .
+    = 
+          _#_(MULT@ProductOperations@pcmflatten,DIV@ProductOperations@pcmflatten,MOD@ProductOperations@pcmflatten) .
   
   eq metaAux(X:CompareOperations@pcmflatten)
     = CompareOperations@pcmflatten .
@@ -15124,7 +15241,8 @@ mod @PCMFLATTEN@ is
     = GREATER@CompareOperations@pcmflatten .
   
   eq literals(CompareOperations@pcmflatten)
-    = _#_(GREATER@CompareOperations@pcmflatten,EQUALS@CompareOperations@pcmflatten,LESS@CompareOperations@pcmflatten,NOTEQUAL@CompareOperations@pcmflatten,LESSEQUAL@CompareOperations@pcmflatten,GREATEREQUAL@CompareOperations@pcmflatten) .
+    = 
+          _#_(GREATER@CompareOperations@pcmflatten,EQUALS@CompareOperations@pcmflatten,LESS@CompareOperations@pcmflatten,NOTEQUAL@CompareOperations@pcmflatten,LESSEQUAL@CompareOperations@pcmflatten,GREATEREQUAL@CompareOperations@pcmflatten) .
   
   eq metaAux(X:BooleanOperations@pcmflatten)
     = BooleanOperations@pcmflatten .
@@ -15139,6 +15257,7 @@ mod @PCMFLATTEN@ is
     = AND@BooleanOperations@pcmflatten .
   
   eq literals(BooleanOperations@pcmflatten)
-    = _#_(AND@BooleanOperations@pcmflatten,OR@BooleanOperations@pcmflatten,XOR@BooleanOperations@pcmflatten) .
+    = 
+          _#_(AND@BooleanOperations@pcmflatten,OR@BooleanOperations@pcmflatten,XOR@BooleanOperations@pcmflatten) .
   ---- <end> Equations
 endm
