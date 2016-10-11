@@ -201,7 +201,8 @@ class MaudeM2T {
     def printConditionalEq(Equation equation) '''
     ceq «IF equation.label != null && !equation.label.equals("")»[«equation.label»] : «ENDIF»«printTerm(equation.lhs)»
       = «printTerm(equation.rhs)»
-      if «printConditions(equation.conds)» «IF !equation.atts.empty»[«printAtts(equation.atts)»] «ENDIF».
+      if «printConditions(equation.conds)» «IF !equation.atts.empty»[«printAtts(equation.atts)»] «ELSEIF equation.atts.empty 
+      && equation.lhs instanceof RecTerm && (equation.lhs as RecTerm).op.equals("mte")»[print "mte «equation.label» in time " TIME@CLK@:Time] «ENDIF».
     '''
     
     def printConditions(EList<Condition> conditions) '''«FOR cond : conditions SEPARATOR "\n/\\ "»«printCond(cond)»«ENDFOR»'''
@@ -263,6 +264,7 @@ class MaudeM2T {
     def printConditionalRule(Rule rl) '''
     crl «IF rl.label != null && !rl.label.equals("")»[«rl.label»] : «ENDIF»«printTerm(rl.lhs)»
       => «printTerm(rl.rhs)»
-      if «printConditions(rl.conds)» «IF !rl.atts.empty»[«printAtts(rl.atts)»] «ENDIF».
+      if «printConditions(rl.conds)» «IF !rl.atts.empty»[«printAtts(rl.atts)»] «ELSEIF rl.atts.empty 
+            »[print " -> «rl.label» in time " TIME@CLK@:Time] «ENDIF».
     '''
 }

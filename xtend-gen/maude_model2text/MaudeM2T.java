@@ -519,6 +519,13 @@ public class MaudeM2T {
         CharSequence _printAtts = this.printAtts(_atts_1);
         _builder.append(_printAtts, "  ");
         _builder.append("] ");
+      } else {
+        if (((equation.getAtts().isEmpty() && (equation.getLhs() instanceof RecTerm)) && ((RecTerm) equation.getLhs()).getOp().equals("mte"))) {
+          _builder.append("[print \"mte ");
+          String _label_1 = equation.getLabel();
+          _builder.append(_label_1, "  ");
+          _builder.append(" in time \" TIME@CLK@:Time] ");
+        }
       }
     }
     _builder.append(".");
@@ -833,6 +840,15 @@ public class MaudeM2T {
         CharSequence _printAtts = this.printAtts(_atts_1);
         _builder.append(_printAtts, "  ");
         _builder.append("] ");
+      } else {
+        EList<String> _atts_2 = rl.getAtts();
+        boolean _isEmpty_1 = _atts_2.isEmpty();
+        if (_isEmpty_1) {
+          _builder.append("[print \" -> ");
+          String _label_1 = rl.getLabel();
+          _builder.append(_label_1, "  ");
+          _builder.append(" in time \" TIME@CLK@:Time] ");
+        }
       }
     }
     _builder.append(".");
