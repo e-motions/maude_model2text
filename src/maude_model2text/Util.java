@@ -14,16 +14,32 @@
  * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR 
  * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package maude_model2text.Main;
+package maude_model2text;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Util {
 	public final static String PATH = "resources/";
 	public final static String[] CASE_STUDIES = {
 		"prTrajectory_behavior.xmi",
 		"prCRA_behavior.xmi",
-		"palladio_behavior.xmi"};
+		"palladio_behavior.xmi",
+		"prTrajectory_metamodel.xmi",
+		"prCRA_metamodel.xmi",
+		"palladio_metamodel.xmi",
+		"pls.xmi"};
+	
+	public final static String[] SKIPPED_MODULES = {
+		"@ECORE@"
+	};
 	
 	public static String getPath(String caseStudy) {
 		return PATH + "/" + caseStudy;
+	}
+	
+	public static Set<String> skippedModules() {
+		return new HashSet<String>(Arrays.asList(SKIPPED_MODULES));
 	}
 }

@@ -1,0 +1,284 @@
+mod @DEFAULTNAME@ is
+   
+  ---- <begin> Importations
+  pr @ECORE@ .
+  ---- <end> Importations
+   
+  ---- <begin> Sort declarations
+  sort Camera@defaultname .
+  sort Position@defaultname .
+  sort Arrow@defaultname .
+  ---- <end> Sort declarations
+   
+  ---- <begin> Subsort declarations
+  subsort Camera@defaultname < @Class .
+  subsort Position@defaultname < @Class .
+  subsort Arrow@defaultname < @Class .
+  ---- <end> Subsort declarations
+   
+  ---- <begin> Operation declarations
+  op @defaultname@ : -> @Metamodel .
+  op defaultname : -> @Package .
+  op Camera@defaultname : -> Camera@defaultname .
+  op Position@defaultname : -> Position@defaultname .
+  op Arrow@defaultname : -> Arrow@defaultname .
+  op trajectory@Camera@defaultname : -> @Reference .
+  op x@Position@defaultname : -> @Attribute .
+  op y@Position@defaultname : -> @Attribute .
+  op x@Arrow@defaultname : -> @Attribute .
+  op y@Arrow@defaultname : -> @Attribute .
+  op xspeed@Arrow@defaultname : -> @Attribute .
+  op yspeed@Arrow@defaultname : -> @Attribute .
+  ---- <end> Operation declarations
+   
+  ---- <begin> Equations
+  eq name(@defaultname@)
+    = "defaultname" .
+  
+  eq packages(@defaultname@)
+    = defaultname .
+  
+  eq name(defaultname)
+    = "defaultname" .
+  
+  eq metamodel(defaultname)
+    = @defaultname@ .
+  
+  eq superPackage(defaultname)
+    = null .
+  
+  eq subPackages(defaultname)
+    = nil .
+  
+  eq classes(defaultname)
+    = 
+        __(Camera@defaultname,Position@defaultname,Arrow@defaultname) .
+  
+  eq name(Camera@defaultname)
+    = "Camera" .
+  
+  eq isAbstract(Camera@defaultname)
+    = false .
+  
+  eq package(Camera@defaultname)
+    = defaultname .
+  
+  eq superTypes(Camera@defaultname)
+    = nil .
+  
+  eq references(Camera@defaultname)
+    = trajectory@Camera@defaultname .
+  
+  eq attributes(Camera@defaultname)
+    = nil .
+  
+  eq name(Position@defaultname)
+    = "Position" .
+  
+  eq isAbstract(Position@defaultname)
+    = false .
+  
+  eq package(Position@defaultname)
+    = defaultname .
+  
+  eq superTypes(Position@defaultname)
+    = nil .
+  
+  eq references(Position@defaultname)
+    = nil .
+  
+  eq attributes(Position@defaultname)
+    = 
+        __(x@Position@defaultname,y@Position@defaultname) .
+  
+  eq name(Arrow@defaultname)
+    = "Arrow" .
+  
+  eq isAbstract(Arrow@defaultname)
+    = false .
+  
+  eq package(Arrow@defaultname)
+    = defaultname .
+  
+  eq superTypes(Arrow@defaultname)
+    = nil .
+  
+  eq references(Arrow@defaultname)
+    = nil .
+  
+  eq attributes(Arrow@defaultname)
+    = 
+        __(x@Arrow@defaultname,y@Arrow@defaultname,xspeed@Arrow@defaultname,yspeed@Arrow@defaultname) .
+  
+  eq name(trajectory@Camera@defaultname)
+    = "trajectory" .
+  
+  eq type(trajectory@Camera@defaultname)
+    = Position@defaultname .
+  
+  eq opposite(trajectory@Camera@defaultname)
+    = null .
+  
+  eq lowerBound(trajectory@Camera@defaultname)
+    = 0 .
+  
+  eq upperBound(trajectory@Camera@defaultname)
+    = * .
+  
+  eq containingClass(trajectory@Camera@defaultname)
+    = Camera@defaultname .
+  
+  eq isContainment(trajectory@Camera@defaultname)
+    = false .
+  
+  eq isOrdered(trajectory@Camera@defaultname)
+    = true .
+  
+  eq isUnique(trajectory@Camera@defaultname)
+    = true .
+  
+  eq name(x@Position@defaultname)
+    = "x" .
+  
+  eq type(x@Position@defaultname)
+    = @Float .
+  
+  eq lowerBound(x@Position@defaultname)
+    = 0 .
+  
+  eq upperBound(x@Position@defaultname)
+    = 1 .
+  
+  eq containingClass(x@Position@defaultname)
+    = Position@defaultname .
+  
+  eq isId(x@Position@defaultname)
+    = false .
+  
+  eq isOrdered(x@Position@defaultname)
+    = true .
+  
+  eq isUnique(x@Position@defaultname)
+    = true .
+  
+  eq name(y@Position@defaultname)
+    = "y" .
+  
+  eq type(y@Position@defaultname)
+    = @Float .
+  
+  eq lowerBound(y@Position@defaultname)
+    = 0 .
+  
+  eq upperBound(y@Position@defaultname)
+    = 1 .
+  
+  eq containingClass(y@Position@defaultname)
+    = Position@defaultname .
+  
+  eq isId(y@Position@defaultname)
+    = false .
+  
+  eq isOrdered(y@Position@defaultname)
+    = true .
+  
+  eq isUnique(y@Position@defaultname)
+    = true .
+  
+  eq name(x@Arrow@defaultname)
+    = "x" .
+  
+  eq type(x@Arrow@defaultname)
+    = @Float .
+  
+  eq lowerBound(x@Arrow@defaultname)
+    = 0 .
+  
+  eq upperBound(x@Arrow@defaultname)
+    = 1 .
+  
+  eq containingClass(x@Arrow@defaultname)
+    = Arrow@defaultname .
+  
+  eq isId(x@Arrow@defaultname)
+    = false .
+  
+  eq isOrdered(x@Arrow@defaultname)
+    = true .
+  
+  eq isUnique(x@Arrow@defaultname)
+    = true .
+  
+  eq name(y@Arrow@defaultname)
+    = "y" .
+  
+  eq type(y@Arrow@defaultname)
+    = @Float .
+  
+  eq lowerBound(y@Arrow@defaultname)
+    = 0 .
+  
+  eq upperBound(y@Arrow@defaultname)
+    = 1 .
+  
+  eq containingClass(y@Arrow@defaultname)
+    = Arrow@defaultname .
+  
+  eq isId(y@Arrow@defaultname)
+    = false .
+  
+  eq isOrdered(y@Arrow@defaultname)
+    = true .
+  
+  eq isUnique(y@Arrow@defaultname)
+    = true .
+  
+  eq name(xspeed@Arrow@defaultname)
+    = "xspeed" .
+  
+  eq type(xspeed@Arrow@defaultname)
+    = @Float .
+  
+  eq lowerBound(xspeed@Arrow@defaultname)
+    = 0 .
+  
+  eq upperBound(xspeed@Arrow@defaultname)
+    = 1 .
+  
+  eq containingClass(xspeed@Arrow@defaultname)
+    = Arrow@defaultname .
+  
+  eq isId(xspeed@Arrow@defaultname)
+    = false .
+  
+  eq isOrdered(xspeed@Arrow@defaultname)
+    = true .
+  
+  eq isUnique(xspeed@Arrow@defaultname)
+    = true .
+  
+  eq name(yspeed@Arrow@defaultname)
+    = "yspeed" .
+  
+  eq type(yspeed@Arrow@defaultname)
+    = @Float .
+  
+  eq lowerBound(yspeed@Arrow@defaultname)
+    = 0 .
+  
+  eq upperBound(yspeed@Arrow@defaultname)
+    = 1 .
+  
+  eq containingClass(yspeed@Arrow@defaultname)
+    = Arrow@defaultname .
+  
+  eq isId(yspeed@Arrow@defaultname)
+    = false .
+  
+  eq isOrdered(yspeed@Arrow@defaultname)
+    = true .
+  
+  eq isUnique(yspeed@Arrow@defaultname)
+    = true .
+  ---- <end> Equations
+endm

@@ -28,43 +28,53 @@ import org.junit.Test;
 
 import Maude.MaudeSpec;
 import Maude.SModule;
+import Maude.Sort;
 
-public class TestMaudeM2TModules {
-
+public class TestMaudeM2TSorts {
+	
 	private static MaudeM2T transformation;
 	private static Set<MaudeSpec> models;
-
+	
 	@BeforeClass
-	public static void loadModels() {
+	public static void loadModels(){
 		transformation = new MaudeM2T();
 		models = new HashSet<>();
-		for (String caseStudy : Util.CASE_STUDIES) {
+		for(String caseStudy : Util.CASE_STUDIES) {
 			Resource res = transformation.load(Util.getPath(caseStudy));
-			MaudeSpec spec = (MaudeSpec) res.getContents().stream().filter(MaudeSpec.class::isInstance).findAny()
+			MaudeSpec spec = (MaudeSpec) res.getContents().stream()
+					.filter(o -> o instanceof MaudeSpec)
+					.findAny()
 					.orElse(null);
-			if (spec != null) {
+			if(spec != null) {
 				models.add(spec);
 			}
 		}
 	}
-
+	
 	/**
-	 * Tests (for each case study) if the same modules defined in the model have
-	 * been defined in the code
+	 * Tests (for each case study), for each system module, it tests sorts declarations
 	 */
 	@Test
-	public void testSystemModule() {
-		for (MaudeSpec spec : models) {
+	public void testSorts() {
+		for(MaudeSpec spec : models) {
 			String result = transformation.generateCode(spec).toString();
 			Set<SModule> smods = spec.getEls().stream()
 					.filter(SModule.class::isInstance)
 					.filter(m -> !Util.skippedModules().contains(m.getName()))
 					.map(SModule.class::cast)
 					.collect(Collectors.toSet());
-			for (SModule smod : smods) {
-				assertTrue(result.indexOf("mod " + smod.getName() + " is") > -1);
+			for(SModule smod : smods) {
+				for(Sort sort : smod.getEls().stream()
+						.filter(Sort.class::isInstance)
+						.map(Sort.class::cast)
+						.collect(Collectors.toList())) {
+					/* there is a sort... */
+					assertTrue(result.indexOf("sort " + sort.getName()) > -1);
+					/* the sort is inside the module */
+					assertTrue(result.indexOf("sort " + sort.getName()) >
+							result.indexOf("mod " + sort.getModule().getName() + "is"));
+				}
 			}
 		}
 	}
-
 }

@@ -1,0 +1,519 @@
+---- ----------------------------------------------- ----
+---- Programmatically generated code using e-Motions ----
+---- @date Tue Oct 04 16:06:54 CEST 2016             ----
+---- ----------------------------------------------- ----
+
+mod @DEVSMM@ is
+  pr @ECORE@ .
+    
+  sort Plant@devsmm .
+  sort PositionedEl@devsmm .
+  sort Machine@devsmm .
+  sort Generator@devsmm .
+  sort GenHead@devsmm .
+  sort GenHandle@devsmm .
+  sort Assemble@devsmm .
+  sort Container@devsmm .
+  sort Tray@devsmm .
+  sort User@devsmm .
+  sort Conveyor@devsmm .
+  sort LimitedContainer@devsmm .
+  sort Part@devsmm .
+  sort Head@devsmm .
+  sort Handle@devsmm .
+  sort Hammer@devsmm .
+    
+  subsort Plant@devsmm < @Class .
+  subsort PositionedEl@devsmm < @Class .
+  subsort Machine@devsmm < PositionedEl@devsmm .
+  subsort Generator@devsmm < Machine@devsmm .
+  subsort GenHead@devsmm < Generator@devsmm .
+  subsort GenHandle@devsmm < Generator@devsmm .
+  subsort Assemble@devsmm < Machine@devsmm .
+  subsort Container@devsmm < PositionedEl@devsmm .
+  subsort Tray@devsmm < LimitedContainer@devsmm .
+  subsort User@devsmm < Container@devsmm .
+  subsort Conveyor@devsmm < LimitedContainer@devsmm .
+  subsort LimitedContainer@devsmm < Container@devsmm .
+  subsort Part@devsmm < PositionedEl@devsmm .
+  subsort Head@devsmm < Part@devsmm .
+  subsort Handle@devsmm < Part@devsmm .
+  subsort Hammer@devsmm < Part@devsmm .
+    
+  op @devsmm@ : -> @Metamodel  .
+  op devsmm : -> @Package  .
+  op Plant@devsmm : -> Plant@devsmm  .
+  op PositionedEl@devsmm : -> PositionedEl@devsmm  .
+  op Machine@devsmm : -> Machine@devsmm  .
+  op Generator@devsmm : -> Generator@devsmm  .
+  op GenHead@devsmm : -> GenHead@devsmm  .
+  op GenHandle@devsmm : -> GenHandle@devsmm  .
+  op Assemble@devsmm : -> Assemble@devsmm  .
+  op Container@devsmm : -> Container@devsmm  .
+  op Tray@devsmm : -> Tray@devsmm  .
+  op User@devsmm : -> User@devsmm  .
+  op Conveyor@devsmm : -> Conveyor@devsmm  .
+  op LimitedContainer@devsmm : -> LimitedContainer@devsmm  .
+  op Part@devsmm : -> Part@devsmm  .
+  op Head@devsmm : -> Head@devsmm  .
+  op Handle@devsmm : -> Handle@devsmm  .
+  op Hammer@devsmm : -> Hammer@devsmm  .
+  op els@Plant@devsmm : -> @Reference  .
+  op in@Machine@devsmm : -> @Reference  .
+  op out@Machine@devsmm : -> @Reference  .
+  op parts@Container@devsmm : -> @Reference  .
+  op out@Conveyor@devsmm : -> @Reference  .
+  op outParts@Conveyor@devsmm : -> @Reference  .
+  op xPos@PositionedEl@devsmm : -> @Attribute  .
+  op yPos@PositionedEl@devsmm : -> @Attribute  .
+  op pt@Machine@devsmm : -> @Attribute  .
+  op defective@-@rate@Machine@devsmm : -> @Attribute  .
+  op counter@Generator@devsmm : -> @Attribute  .
+  op speed@Conveyor@devsmm : -> @Attribute  .
+  op capacity@LimitedContainer@devsmm : -> @Attribute  .
+  op defective@Part@devsmm : -> @Attribute  .
+    
+  eq name(@devsmm@)
+    = "devsmm" .
+  eq packages(@devsmm@)
+    = devsmm .
+  eq name(devsmm)
+    = "devsmm" .
+  eq metamodel(devsmm)
+    = @devsmm@ .
+  eq superPackage(devsmm)
+    = null .
+  eq subPackages(devsmm)
+    = nil .
+  eq classes(devsmm)
+    = __(Plant@devsmm, PositionedEl@devsmm, Machine@devsmm, Generator@devsmm, GenHead@devsmm, GenHandle@devsmm, Assemble@devsmm, Container@devsmm, Tray@devsmm, User@devsmm, Conveyor@devsmm, LimitedContainer@devsmm, Part@devsmm, Head@devsmm, Handle@devsmm, Hammer@devsmm) .
+  eq name(Plant@devsmm)
+    = "Plant" .
+  eq isAbstract(Plant@devsmm)
+    = false .
+  eq package(Plant@devsmm)
+    = devsmm .
+  eq superTypes(Plant@devsmm)
+    = nil .
+  eq references(Plant@devsmm)
+    = els@Plant@devsmm .
+  eq attributes(Plant@devsmm)
+    = nil .
+  eq name(PositionedEl@devsmm)
+    = "PositionedEl" .
+  eq isAbstract(PositionedEl@devsmm)
+    = false .
+  eq package(PositionedEl@devsmm)
+    = devsmm .
+  eq superTypes(PositionedEl@devsmm)
+    = nil .
+  eq references(PositionedEl@devsmm)
+    = nil .
+  eq attributes(PositionedEl@devsmm)
+    = __(xPos@PositionedEl@devsmm, yPos@PositionedEl@devsmm) .
+  eq name(Machine@devsmm)
+    = "Machine" .
+  eq isAbstract(Machine@devsmm)
+    = false .
+  eq package(Machine@devsmm)
+    = devsmm .
+  eq superTypes(Machine@devsmm)
+    = PositionedEl@devsmm .
+  eq references(Machine@devsmm)
+    = __(in@Machine@devsmm, out@Machine@devsmm) .
+  eq attributes(Machine@devsmm)
+    = __(pt@Machine@devsmm, defective@-@rate@Machine@devsmm) .
+  eq name(Generator@devsmm)
+    = "Generator" .
+  eq isAbstract(Generator@devsmm)
+    = false .
+  eq package(Generator@devsmm)
+    = devsmm .
+  eq superTypes(Generator@devsmm)
+    = Machine@devsmm .
+  eq references(Generator@devsmm)
+    = nil .
+  eq attributes(Generator@devsmm)
+    = counter@Generator@devsmm .
+  eq name(GenHead@devsmm)
+    = "GenHead" .
+  eq isAbstract(GenHead@devsmm)
+    = false .
+  eq package(GenHead@devsmm)
+    = devsmm .
+  eq superTypes(GenHead@devsmm)
+    = Generator@devsmm .
+  eq references(GenHead@devsmm)
+    = nil .
+  eq attributes(GenHead@devsmm)
+    = nil .
+  eq name(GenHandle@devsmm)
+    = "GenHandle" .
+  eq isAbstract(GenHandle@devsmm)
+    = false .
+  eq package(GenHandle@devsmm)
+    = devsmm .
+  eq superTypes(GenHandle@devsmm)
+    = Generator@devsmm .
+  eq references(GenHandle@devsmm)
+    = nil .
+  eq attributes(GenHandle@devsmm)
+    = nil .
+  eq name(Assemble@devsmm)
+    = "Assemble" .
+  eq isAbstract(Assemble@devsmm)
+    = false .
+  eq package(Assemble@devsmm)
+    = devsmm .
+  eq superTypes(Assemble@devsmm)
+    = Machine@devsmm .
+  eq references(Assemble@devsmm)
+    = nil .
+  eq attributes(Assemble@devsmm)
+    = nil .
+  eq name(Container@devsmm)
+    = "Container" .
+  eq isAbstract(Container@devsmm)
+    = false .
+  eq package(Container@devsmm)
+    = devsmm .
+  eq superTypes(Container@devsmm)
+    = PositionedEl@devsmm .
+  eq references(Container@devsmm)
+    = parts@Container@devsmm .
+  eq attributes(Container@devsmm)
+    = nil .
+  eq name(Tray@devsmm)
+    = "Tray" .
+  eq isAbstract(Tray@devsmm)
+    = false .
+  eq package(Tray@devsmm)
+    = devsmm .
+  eq superTypes(Tray@devsmm)
+    = LimitedContainer@devsmm .
+  eq references(Tray@devsmm)
+    = nil .
+  eq attributes(Tray@devsmm)
+    = nil .
+  eq name(User@devsmm)
+    = "User" .
+  eq isAbstract(User@devsmm)
+    = false .
+  eq package(User@devsmm)
+    = devsmm .
+  eq superTypes(User@devsmm)
+    = Container@devsmm .
+  eq references(User@devsmm)
+    = nil .
+  eq attributes(User@devsmm)
+    = nil .
+  eq name(Conveyor@devsmm)
+    = "Conveyor" .
+  eq isAbstract(Conveyor@devsmm)
+    = false .
+  eq package(Conveyor@devsmm)
+    = devsmm .
+  eq superTypes(Conveyor@devsmm)
+    = LimitedContainer@devsmm .
+  eq references(Conveyor@devsmm)
+    = __(out@Conveyor@devsmm, outParts@Conveyor@devsmm) .
+  eq attributes(Conveyor@devsmm)
+    = speed@Conveyor@devsmm .
+  eq name(LimitedContainer@devsmm)
+    = "LimitedContainer" .
+  eq isAbstract(LimitedContainer@devsmm)
+    = false .
+  eq package(LimitedContainer@devsmm)
+    = devsmm .
+  eq superTypes(LimitedContainer@devsmm)
+    = Container@devsmm .
+  eq references(LimitedContainer@devsmm)
+    = nil .
+  eq attributes(LimitedContainer@devsmm)
+    = capacity@LimitedContainer@devsmm .
+  eq name(Part@devsmm)
+    = "Part" .
+  eq isAbstract(Part@devsmm)
+    = false .
+  eq package(Part@devsmm)
+    = devsmm .
+  eq superTypes(Part@devsmm)
+    = PositionedEl@devsmm .
+  eq references(Part@devsmm)
+    = nil .
+  eq attributes(Part@devsmm)
+    = defective@Part@devsmm .
+  eq name(Head@devsmm)
+    = "Head" .
+  eq isAbstract(Head@devsmm)
+    = false .
+  eq package(Head@devsmm)
+    = devsmm .
+  eq superTypes(Head@devsmm)
+    = Part@devsmm .
+  eq references(Head@devsmm)
+    = nil .
+  eq attributes(Head@devsmm)
+    = nil .
+  eq name(Handle@devsmm)
+    = "Handle" .
+  eq isAbstract(Handle@devsmm)
+    = false .
+  eq package(Handle@devsmm)
+    = devsmm .
+  eq superTypes(Handle@devsmm)
+    = Part@devsmm .
+  eq references(Handle@devsmm)
+    = nil .
+  eq attributes(Handle@devsmm)
+    = nil .
+  eq name(Hammer@devsmm)
+    = "Hammer" .
+  eq isAbstract(Hammer@devsmm)
+    = false .
+  eq package(Hammer@devsmm)
+    = devsmm .
+  eq superTypes(Hammer@devsmm)
+    = Part@devsmm .
+  eq references(Hammer@devsmm)
+    = nil .
+  eq attributes(Hammer@devsmm)
+    = nil .
+  eq name(els@Plant@devsmm)
+    = "els" .
+  eq type(els@Plant@devsmm)
+    = PositionedEl@devsmm .
+  eq opposite(els@Plant@devsmm)
+    = null .
+  eq lowerBound(els@Plant@devsmm)
+    = 0 .
+  eq upperBound(els@Plant@devsmm)
+    = * .
+  eq containingClass(els@Plant@devsmm)
+    = Plant@devsmm .
+  eq isContainment(els@Plant@devsmm)
+    = true .
+  eq isOrdered(els@Plant@devsmm)
+    = true .
+  eq isUnique(els@Plant@devsmm)
+    = true .
+  eq name(in@Machine@devsmm)
+    = "in" .
+  eq type(in@Machine@devsmm)
+    = Tray@devsmm .
+  eq opposite(in@Machine@devsmm)
+    = null .
+  eq lowerBound(in@Machine@devsmm)
+    = 0 .
+  eq upperBound(in@Machine@devsmm)
+    = 1 .
+  eq containingClass(in@Machine@devsmm)
+    = Machine@devsmm .
+  eq isContainment(in@Machine@devsmm)
+    = false .
+  eq isOrdered(in@Machine@devsmm)
+    = true .
+  eq isUnique(in@Machine@devsmm)
+    = true .
+  eq name(out@Machine@devsmm)
+    = "out" .
+  eq type(out@Machine@devsmm)
+    = Conveyor@devsmm .
+  eq opposite(out@Machine@devsmm)
+    = null .
+  eq lowerBound(out@Machine@devsmm)
+    = 1 .
+  eq upperBound(out@Machine@devsmm)
+    = 1 .
+  eq containingClass(out@Machine@devsmm)
+    = Machine@devsmm .
+  eq isContainment(out@Machine@devsmm)
+    = false .
+  eq isOrdered(out@Machine@devsmm)
+    = true .
+  eq isUnique(out@Machine@devsmm)
+    = true .
+  eq name(parts@Container@devsmm)
+    = "parts" .
+  eq type(parts@Container@devsmm)
+    = Part@devsmm .
+  eq opposite(parts@Container@devsmm)
+    = null .
+  eq lowerBound(parts@Container@devsmm)
+    = 0 .
+  eq upperBound(parts@Container@devsmm)
+    = * .
+  eq containingClass(parts@Container@devsmm)
+    = Container@devsmm .
+  eq isContainment(parts@Container@devsmm)
+    = true .
+  eq isOrdered(parts@Container@devsmm)
+    = true .
+  eq isUnique(parts@Container@devsmm)
+    = false .
+  eq name(out@Conveyor@devsmm)
+    = "out" .
+  eq type(out@Conveyor@devsmm)
+    = Tray@devsmm .
+  eq opposite(out@Conveyor@devsmm)
+    = null .
+  eq lowerBound(out@Conveyor@devsmm)
+    = 1 .
+  eq upperBound(out@Conveyor@devsmm)
+    = 1 .
+  eq containingClass(out@Conveyor@devsmm)
+    = Conveyor@devsmm .
+  eq isContainment(out@Conveyor@devsmm)
+    = false .
+  eq isOrdered(out@Conveyor@devsmm)
+    = true .
+  eq isUnique(out@Conveyor@devsmm)
+    = true .
+  eq name(outParts@Conveyor@devsmm)
+    = "outParts" .
+  eq type(outParts@Conveyor@devsmm)
+    = Part@devsmm .
+  eq opposite(outParts@Conveyor@devsmm)
+    = null .
+  eq lowerBound(outParts@Conveyor@devsmm)
+    = 0 .
+  eq upperBound(outParts@Conveyor@devsmm)
+    = * .
+  eq containingClass(outParts@Conveyor@devsmm)
+    = Conveyor@devsmm .
+  eq isContainment(outParts@Conveyor@devsmm)
+    = true .
+  eq isOrdered(outParts@Conveyor@devsmm)
+    = true .
+  eq isUnique(outParts@Conveyor@devsmm)
+    = true .
+  eq name(xPos@PositionedEl@devsmm)
+    = "xPos" .
+  eq type(xPos@PositionedEl@devsmm)
+    = @Int .
+  eq lowerBound(xPos@PositionedEl@devsmm)
+    = 1 .
+  eq upperBound(xPos@PositionedEl@devsmm)
+    = 1 .
+  eq containingClass(xPos@PositionedEl@devsmm)
+    = PositionedEl@devsmm .
+  eq isId(xPos@PositionedEl@devsmm)
+    = false .
+  eq isOrdered(xPos@PositionedEl@devsmm)
+    = true .
+  eq isUnique(xPos@PositionedEl@devsmm)
+    = true .
+  eq name(yPos@PositionedEl@devsmm)
+    = "yPos" .
+  eq type(yPos@PositionedEl@devsmm)
+    = @Int .
+  eq lowerBound(yPos@PositionedEl@devsmm)
+    = 1 .
+  eq upperBound(yPos@PositionedEl@devsmm)
+    = 1 .
+  eq containingClass(yPos@PositionedEl@devsmm)
+    = PositionedEl@devsmm .
+  eq isId(yPos@PositionedEl@devsmm)
+    = false .
+  eq isOrdered(yPos@PositionedEl@devsmm)
+    = true .
+  eq isUnique(yPos@PositionedEl@devsmm)
+    = true .
+  eq name(pt@Machine@devsmm)
+    = "pt" .
+  eq type(pt@Machine@devsmm)
+    = @Int .
+  eq lowerBound(pt@Machine@devsmm)
+    = 1 .
+  eq upperBound(pt@Machine@devsmm)
+    = 1 .
+  eq containingClass(pt@Machine@devsmm)
+    = Machine@devsmm .
+  eq isId(pt@Machine@devsmm)
+    = false .
+  eq isOrdered(pt@Machine@devsmm)
+    = true .
+  eq isUnique(pt@Machine@devsmm)
+    = true .
+  eq name(defective@-@rate@Machine@devsmm)
+    = "defective_rate" .
+  eq type(defective@-@rate@Machine@devsmm)
+    = @Int .
+  eq lowerBound(defective@-@rate@Machine@devsmm)
+    = 1 .
+  eq upperBound(defective@-@rate@Machine@devsmm)
+    = 1 .
+  eq containingClass(defective@-@rate@Machine@devsmm)
+    = Machine@devsmm .
+  eq isId(defective@-@rate@Machine@devsmm)
+    = false .
+  eq isOrdered(defective@-@rate@Machine@devsmm)
+    = true .
+  eq isUnique(defective@-@rate@Machine@devsmm)
+    = true .
+  eq name(counter@Generator@devsmm)
+    = "counter" .
+  eq type(counter@Generator@devsmm)
+    = @Int .
+  eq lowerBound(counter@Generator@devsmm)
+    = 1 .
+  eq upperBound(counter@Generator@devsmm)
+    = 1 .
+  eq containingClass(counter@Generator@devsmm)
+    = Generator@devsmm .
+  eq isId(counter@Generator@devsmm)
+    = false .
+  eq isOrdered(counter@Generator@devsmm)
+    = true .
+  eq isUnique(counter@Generator@devsmm)
+    = true .
+  eq name(speed@Conveyor@devsmm)
+    = "speed" .
+  eq type(speed@Conveyor@devsmm)
+    = @Int .
+  eq lowerBound(speed@Conveyor@devsmm)
+    = 1 .
+  eq upperBound(speed@Conveyor@devsmm)
+    = 1 .
+  eq containingClass(speed@Conveyor@devsmm)
+    = Conveyor@devsmm .
+  eq isId(speed@Conveyor@devsmm)
+    = false .
+  eq isOrdered(speed@Conveyor@devsmm)
+    = true .
+  eq isUnique(speed@Conveyor@devsmm)
+    = true .
+  eq name(capacity@LimitedContainer@devsmm)
+    = "capacity" .
+  eq type(capacity@LimitedContainer@devsmm)
+    = @Int .
+  eq lowerBound(capacity@LimitedContainer@devsmm)
+    = 1 .
+  eq upperBound(capacity@LimitedContainer@devsmm)
+    = 1 .
+  eq containingClass(capacity@LimitedContainer@devsmm)
+    = LimitedContainer@devsmm .
+  eq isId(capacity@LimitedContainer@devsmm)
+    = false .
+  eq isOrdered(capacity@LimitedContainer@devsmm)
+    = true .
+  eq isUnique(capacity@LimitedContainer@devsmm)
+    = true .
+  eq name(defective@Part@devsmm)
+    = "defective" .
+  eq type(defective@Part@devsmm)
+    = @Bool .
+  eq lowerBound(defective@Part@devsmm)
+    = 0 .
+  eq upperBound(defective@Part@devsmm)
+    = 1 .
+  eq containingClass(defective@Part@devsmm)
+    = Part@devsmm .
+  eq isId(defective@Part@devsmm)
+    = false .
+  eq isOrdered(defective@Part@devsmm)
+    = true .
+  eq isUnique(defective@Part@devsmm)
+    = true .
+    
+endm ---- end system module @DEVSMM@

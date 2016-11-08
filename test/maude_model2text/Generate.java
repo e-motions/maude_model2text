@@ -14,17 +14,17 @@
  * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR 
  * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package maude_model2text.Main;
+package maude_model2text;
 
 import maude_model2text.MaudeM2T;
 
-public class Main {
+public class Generate {
 
 	public static void main(String[] args) {
 		MaudeM2T trans = new MaudeM2T();
 		for(String caseStudy : Util.CASE_STUDIES) {
-			trans.generate(Util.getPath(caseStudy), "resources/output/" + caseStudy + ".maude");
+			trans.generate(Util.getPath(caseStudy), "test/maude_model2text/generated_outputs/" + caseStudy + ".maude");
 		}
 	}
-
+	
 }

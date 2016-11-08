@@ -1,0 +1,10 @@
+---- ----------------------------------------------- ----
+---- Programmatically generated code using e-Motions ----
+---- @date Tue Oct 04 16:06:55 CEST 2016             ----
+---- ----------------------------------------------- ----
+
+mod EMPTYMODEL is
+  pr @DEVSMM@ .
+  op emptyModel : -> @Model .
+  eq emptyModel = _`{_`}( @devsmm@ , none ) .
+endm

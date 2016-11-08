@@ -1,0 +1,31 @@
+
+set print attribute off .
+set show advisories off .
+
+load ../mOdCL.maude
+load model-checker.maude
+load ../MGDefinitions.maude
+load ../MGRealTimeMaude24.maude
+load ../EcoreMM.maude
+load ../e-Motions.maude
+
+load DEVSMM.ecore.maude
+load DEVSBehavior.behavior.maude
+load EmptyModel.maude
+
+mod TICKRULE is
+  pr EMPTYMODEL .
+  pr @DEVSMM@BEHAVIOR@ .
+  var T TE : Time .
+  var MODEL : @Model .
+
+  crl [tick] :
+     { MODEL } in time T
+  =>
+    { delta(MODEL, TE) } in time (T plus TE)
+  if TE := mte(MODEL) /\ TE =/= zero .
+endm
+
+rewrite init(emptyModel) .
+
+q
